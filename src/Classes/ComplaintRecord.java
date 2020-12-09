@@ -21,27 +21,27 @@ public class ComplaintRecord {
    private File file;
 //------------------------Getters----------------------
     public String getComplaintType() {
-        return complaintType;
+        return this.complaintType;
     }
 
     public int getPhoneNo() {
-        return PhoneNo;
+        return this.PhoneNo;
     }
 
     public date getCurrentDate() {
-        return currentDate;
+        return this.currentDate;
     }
 
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public String getActionTaken() {
-        return actionTaken;
+        return this.actionTaken;
     }
 
     public File getFile() {
-        return file;
+        return this.file;
     }
    
 //--------------------Setters-------------------------------
