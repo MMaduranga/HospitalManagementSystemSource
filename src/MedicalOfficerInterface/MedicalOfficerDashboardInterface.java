@@ -1,23 +1,20 @@
 package MedicalOfficerInterface;
 
-
 import java.awt.Color;
 import Classes.JpanelGradient;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import Classes.ResizeInternalFrame;
+import LoginInterface.Login;
+
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import javax.swing.JPanel;
+import javax.swing.JButton;
+
 
 public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
-
-   // Admin_AddPatient adminAddPatient = new Admin_AddPatient();//create jinternal frame object
 
     public MedicalOfficerDashboardInterface() {
         initComponents();
         setBackgroundColor(new Color(0, 0, 0, 0));//set background null
-       // resizeInternalFrame();//call rezsizeInternalFrame method
 
     }
 
@@ -33,31 +30,6 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         jButton16.setBackground(color);//set background null
         jButton17.setBackground(color);//set background null
 
-    }
-
-    public void resizeInternalFrame() {//to create resizeable j internal frames
-       /*jDesktopPane1.setOpaque(true);
-
-        adminAddPatient.setSize(jDesktopPane1.getSize());
-
-        jDesktopPane1.addComponentListener(new ComponentListener() {
-            public void componentResized(ComponentEvent e) {
-
-                adminAddPatient.setSize(jDesktopPane1.getSize());
-            }
-
-            public void componentMoved(ComponentEvent e) {
-            }
-
-            public void componentShown(ComponentEvent e) {
-            }
-
-            public void componentHidden(ComponentEvent e) {
-            }
-        });
-
-        jDesktopPane1.add(adminAddPatient).setVisible(true);
-*/
     }
 
     @SuppressWarnings("unchecked")
@@ -130,7 +102,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton4.setForeground(new java.awt.Color(204, 204, 204));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-user-50.png"))); // NOI18N
-        jButton4.setText("My Profile                   ");
+        jButton4.setText("My Profile                         ");
         jButton4.setBorder(null);
         jButton4.setPreferredSize(new java.awt.Dimension(271, 25));
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -142,8 +114,13 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton6.setForeground(new java.awt.Color(204, 204, 204));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-new-view-30.png"))); // NOI18N
-        jButton6.setText("  View Appoinment     ");
+        jButton6.setText("  View Appoinment              ");
         jButton6.setBorder(null);
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -153,7 +130,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         jButton15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton15.setForeground(new java.awt.Color(204, 204, 204));
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-inquiry-30.png"))); // NOI18N
-        jButton15.setText("  Help                       ");
+        jButton15.setText("  Help                                ");
         jButton15.setBorder(null);
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,28 +141,32 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         jButton16.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton16.setForeground(new java.awt.Color(204, 204, 204));
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-night-50.png"))); // NOI18N
-        jButton16.setText("Dark Mode              ");
+        jButton16.setText("Dark Mode                        ");
         jButton16.setBorder(null);
 
         jButton17.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton17.setForeground(new java.awt.Color(204, 204, 204));
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-key-50.png"))); // NOI18N
-        jButton17.setText("Log Out               ");
+        jButton17.setText("Log Out                            ");
         jButton17.setBorder(null);
+        jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton17MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton17)
-                        .addComponent(jButton16)
-                        .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                        .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 39, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 1, Short.MAX_VALUE))
+            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,6 +236,30 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();//close the programme
     }//GEN-LAST:event_jButton1ActionPerformed
+    public void resizeInternalFrame(javax.swing.JInternalFrame internalFrame) {//to create resizeable j internal frames
+        jDesktopPane1.setOpaque(true);
+
+        internalFrame.setSize(jDesktopPane1.getSize());
+
+        jDesktopPane1.addComponentListener(new ComponentListener() {
+            public void componentResized(ComponentEvent e) {
+
+                internalFrame.setSize(jDesktopPane1.getSize());
+            }
+
+            public void componentMoved(ComponentEvent e) {
+            }
+
+            public void componentShown(ComponentEvent e) {
+            }
+
+            public void componentHidden(ComponentEvent e) {
+            }
+        });
+
+        jDesktopPane1.add(internalFrame).setVisible(true);
+
+    }
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.setExtendedState(MedicalOfficerDashboardInterface.ICONIFIED);//minimize the frame
@@ -269,7 +274,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-     
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
@@ -277,8 +282,27 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
- 
+
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+        this.dispose();
+        new Login().setVisible(true);
+
+    }//GEN-LAST:event_jButton17MouseClicked
+    public void clearDesktopPane(JButton button) {
+        setBackgroundColor(new Color(0, 0, 0, 0));
+        jDesktopPane1.removeAll();
+        jDesktopPane1.repaint();
+        button.setBackground(new Color(0, 0, 0, 100));
+    }
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+
+        clearDesktopPane(jButton6);
+
+        new ResizeInternalFrame(new ViewAppointmentMedicalOfficer1(), jDesktopPane1);
+
+    }//GEN-LAST:event_jButton6MouseClicked
 
     /**
      * @param args the command line arguments
