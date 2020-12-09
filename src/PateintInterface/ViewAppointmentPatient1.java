@@ -1,3 +1,7 @@
+package PateintInterface;
+
+import javax.swing.plaf.basic.BasicInternalFrameUI;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +19,9 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
      */
     public ViewAppointmentPatient1() {
         initComponents();
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
+        BasicInternalFrameUI basicinternalform=(BasicInternalFrameUI)this.getUI();
+        basicinternalform.setNorthPane(null);
     }
 
     /**

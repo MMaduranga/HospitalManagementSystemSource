@@ -1,4 +1,4 @@
-
+package AdminInterface;
 import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 

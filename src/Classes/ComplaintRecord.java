@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hms.pkg1;
+package Classes;
 
 import java.util.Date;
 import java.io.File;
+import java.time.LocalDate;
 /**
  *
  * @Erandika
@@ -15,7 +16,7 @@ public class ComplaintRecord {
  //-----------------Variables------------------------
    private String complaintType;
    private int PhoneNo; 
-   private date currentDate;
+   private LocalDate currentDate;
    private String description;
    private String actionTaken;
    private File file;
@@ -28,7 +29,7 @@ public class ComplaintRecord {
         return this.PhoneNo;
     }
 
-    public date getCurrentDate() {
+    public LocalDate getCurrentDate() {
         return this.currentDate;
     }
 
@@ -54,7 +55,7 @@ public class ComplaintRecord {
         this.PhoneNo = PhoneNo;
     }
 
-    public void setCurrentDate(date currentDate) {
+    public void setCurrentDate(LocalDate currentDate) {
         this.currentDate = currentDate;
     }
 

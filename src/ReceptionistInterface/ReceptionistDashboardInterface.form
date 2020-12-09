@@ -183,31 +183,25 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton12" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton16" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton17" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton11" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jButton8" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton7" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="jButton5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton18" min="-2" pref="270" max="-2" attributes="0"/>
-                          <Component id="jButton14" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jButton4" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jButton9" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="jButton6" alignment="0" min="-2" pref="247" max="-2" attributes="0"/>
-                          <Component id="jButton15" alignment="0" min="-2" pref="243" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jButton10" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton13" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jButton17" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton16" max="32767" attributes="0"/>
+                          <Component id="jButton15" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton10" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton6" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton8" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton7" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton12" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton4" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton9" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton14" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton18" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton11" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton13" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="7" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -261,7 +255,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-user-50.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="My Profile                   "/>
+                <Property name="text" type="java.lang.String" value="My Profile                         "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -281,12 +275,13 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-add-female-user-50.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Add Visitor                  "/>
+                <Property name="text" type="java.lang.String" value="Add Visitor                         "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton5MouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
               </Events>
             </Component>
@@ -301,11 +296,14 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-new-view-30.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  View Appoinment     "/>
+                <Property name="text" type="java.lang.String" value="  View Appoinment              "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton6MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton7">
               <Properties>
@@ -318,12 +316,13 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-view-50.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="View Complaient           "/>
+                <Property name="text" type="java.lang.String" value="View Complaient               "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton7MouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
               </Events>
             </Component>
@@ -338,12 +337,15 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-fever-30.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  View Patient                "/>
+                <Property name="text" type="java.lang.String" value=" View Patient                     "/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton8MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton9">
               <Properties>
@@ -356,11 +358,14 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-patient-care-50.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Add Patient                 "/>
+                <Property name="text" type="java.lang.String" value="Add Patient                       "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton9MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton10">
               <Properties>
@@ -373,11 +378,14 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-search-client-48.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="View Visitor               "/>
+                <Property name="text" type="java.lang.String" value="View Visitor                       "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton10MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton11">
               <Properties>
@@ -393,11 +401,14 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-mail-50.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Add Dispatched PostalMail"/>
+                <Property name="text" type="java.lang.String" value="Add Dispatched PostalMail "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton11MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton12">
               <Properties>
@@ -410,11 +421,14 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-important-mail-50.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Add Received PostalMail "/>
+                <Property name="text" type="java.lang.String" value="Add Received PostalMail    "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton12MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton13">
               <Properties>
@@ -427,11 +441,14 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-google-web-search-50.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="View PostalMail         "/>
+                <Property name="text" type="java.lang.String" value="View PostalMail                 "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton13MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton14">
               <Properties>
@@ -444,11 +461,14 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-concerned-face-50.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Add Complaint            "/>
+                <Property name="text" type="java.lang.String" value="Add Complaint                  "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton14MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton15">
               <Properties>
@@ -461,7 +481,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-inquiry-30.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  Help                       "/>
+                <Property name="text" type="java.lang.String" value="   Help                                "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -481,7 +501,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-night-50.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Dark Mode              "/>
+                <Property name="text" type="java.lang.String" value="Dark Mode                        "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -498,12 +518,13 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-key-50.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Log Out               "/>
+                <Property name="text" type="java.lang.String" value="Log Out                            "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton17MouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton17ActionPerformed"/>
               </Events>
             </Component>
@@ -518,11 +539,14 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/icons8-health-checkup-30.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  Add Appoinment          "/>
+                <Property name="text" type="java.lang.String" value="  Add Appoinment               "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton18MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
