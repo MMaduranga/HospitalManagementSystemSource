@@ -438,14 +438,22 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        try {
+              clearDesktopPane(jButton5);
 
+        new ResizeInternalFrame(new ReceptionistAddVisitor(), jDesktopPane1);
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
        
-       clearDesktopPane(jButton9);
+        try {
+              clearDesktopPane(jButton9);
 
         new ResizeInternalFrame(new Receptionist_AddPatient(), jDesktopPane1);
+        } catch (Exception e) {
+        }
 
     }//GEN-LAST:event_jButton9MouseClicked
 
