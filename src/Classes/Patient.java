@@ -1,16 +1,19 @@
+package Classes;
 
-package hms;
+import java.io.File;
+import java.time.LocalDate;
 
-public class Patient extends User{
+public class Patient extends User {
+
     private String bloodGroup;
     private String allergies;
 
-    
-   
-    public Patient(String bloodGroup, String allergies, String userName, String name, String gender, int phoneNo, int idNo, String address, String materialStatus, int password) {
-        super(userName, name, gender, phoneNo, idNo, address, materialStatus, password);
-        this.bloodGroup = bloodGroup;
-        this.allergies = allergies;
+    public Patient(String bloodGroup, String allergies, String userName,
+            String name, String gender, int phoneNo, String idNo, String address,
+            String materialStatus, String password, LocalDate DOB, File profilePic) {
+        super(userName, name, gender, phoneNo, idNo, address, materialStatus, password, DOB, profilePic);
+        this.setBloodGroup(bloodGroup);
+        this.setAllergies(allergies);
     }
 
     public String getBloodGroup() {
@@ -29,6 +32,11 @@ public class Patient extends User{
         this.allergies = allergies;
     }
 
-    
-    
+    //other methods
+    public String toString() {
+        return "|~" + this.getUserName() + "~" + this.getPhoneNo() + "~" + this.getName()
+                + "~" + this.getGender() + "~" + this.getPhoneNo() + "~" + this.getIdNo()
+                + "~" + this.getDOB() + "~" + this.getAddress() + "~" + this.getMaterialStatus()
+                + "~" + this.getBloodGroup() + "~" + this.getAllergies() + "~" + this.getProFilePic();
+    }
 }

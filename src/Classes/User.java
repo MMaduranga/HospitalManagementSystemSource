@@ -1,31 +1,41 @@
+package Classes;
 
-package hms;
+import java.io.File;
+import java.time.LocalDate;
 
-/**
- *
- * @author USER PC
- */
 public class User {
-    private String userName ;
+
+    private String userName;
     private String name;
     private String gender;
     private int phoneNo;
-    private int idNo;
-    //private date dob;
+    private String idNo;
+    private LocalDate dob;
     private String address;
     private String materialStatus;
-    private int password;
-    //private photo profilePic;
+    private String password;
+    private File profilePic;
 
-    public User(String userName, String name, String gender, int phoneNo, int idNo, String address, String materialStatus, int password) {
-        this.userName = userName;
-        this.name = name;
-        this.gender = gender;
-        this.phoneNo = phoneNo;
-        this.idNo = idNo;
-        this.address = address;
-        this.materialStatus = materialStatus;
-        this.password = password;
+    public User(String userName, String name, String gender, int phoneNo,
+            String idNo, String address, String materialStatus, String password, LocalDate dob, File profilePic) {
+        this.setUserName(userName);
+        this.setName(name);
+        this.setGender(gender);
+        this.setPhoneNo(phoneNo);
+        this.setIdNo(idNo);
+        this.setAddress(address);
+        this.setMaterialStatus(materialStatus);
+        this.setPassword(password);
+        this.setDOB(dob);
+        this.setProfilePic(profilePic);
+    }
+
+    public void setProfilePic(File profilepic) {
+        this.profilePic = profilepic;
+    }
+
+    public void setDOB(LocalDate date) {
+        this.dob = date;
     }
 
     public String getUserName() {
@@ -44,7 +54,7 @@ public class User {
         return this.phoneNo;
     }
 
-    public int getIdNo() {
+    public String getIdNo() {
         return this.idNo;
     }
 
@@ -56,7 +66,7 @@ public class User {
         return this.materialStatus;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return this.password;
     }
 
@@ -76,7 +86,7 @@ public class User {
         this.phoneNo = phoneNo;
     }
 
-    public void setIdNo(int idNo) {
+    public void setIdNo(String idNo) {
         this.idNo = idNo;
     }
 
@@ -88,8 +98,15 @@ public class User {
         this.materialStatus = materialStatus;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
-    
+
+    public LocalDate getDOB() {
+        return this.dob;
+    }
+
+    public File getProFilePic() {
+        return this.profilePic;
+    }
 }

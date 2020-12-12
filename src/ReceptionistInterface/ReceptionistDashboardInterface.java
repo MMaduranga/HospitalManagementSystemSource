@@ -475,7 +475,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
      
       clearDesktopPane(jButton11);
 
-        new ResizeInternalFrame(new AdminAddDispatchMail(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistAddDispatchMail(), jDesktopPane1);
 
     }//GEN-LAST:event_jButton11MouseClicked
 
@@ -483,7 +483,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
       
        clearDesktopPane(jButton12);
 
-        new ResizeInternalFrame(new AdminAddReceivedMail(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistAddReceivedMail(), jDesktopPane1);
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
