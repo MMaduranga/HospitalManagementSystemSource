@@ -1,4 +1,4 @@
-
+package Classes;
 import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -13,11 +13,29 @@ public  class Visitor {
     private LocalTime outTime;
     private File attachDoc;
     private String note;
-
+    private int phoneNo;
+//constructor
+    public Visitor(String purpose,String name,String idNo,LocalDate date,
+            LocalTime intime,LocalTime outtime,File attachdoc,String note,int phoneNo){
+    this.setPurpose(purpose);
+    this.setName(name);
+    this.setDate(date);
+    this.setIdNO(idNo);
+    this.setAttachDoc(attachdoc);
+    this.setInTime(intime);
+    this.setOutTime(outtime);
+    this.setNote(note);
+    this.setPhoneNo(phoneNo);
+    }
     
     
-    
- //getters and setters   
+ //getters and setters
+    public void setPhoneNo(int phoneNo){
+    this.phoneNo=phoneNo;
+    }
+    public int getPhoneNo(){
+    return this.phoneNo;
+    }
     public String getPurpose() {
         return purpose;
     }
@@ -80,6 +98,12 @@ public  class Visitor {
     public void setNote(String note) {
         this.note = note;
     }
-
+//other methods
+    @Override
+    public String toString(){
+    return "|~"+this.getPurpose()+"~"+this.getName()+"~"+this.getPhoneNo()+"~"
+            +this.getIdNo()+"~"+this.getDate()+"~"+this.getInTime()+"~"+this.getOutTime()+
+            "~"+this.getNote()+"~"+this.getAttachDoc();
+    }
     
 }

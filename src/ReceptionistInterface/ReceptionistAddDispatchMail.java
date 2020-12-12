@@ -1,4 +1,4 @@
-
+package ReceptionistInterface;
 import java.awt.Color;
 import java.io.File;
 import javax.swing.JFileChooser;
