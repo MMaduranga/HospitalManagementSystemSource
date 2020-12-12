@@ -1,17 +1,12 @@
+package LoginInterface;
 
 import Classes.JpanelGradient;
 import java.awt.Color;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import Classes.SignIn;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
-
-    private String strUserName;
-    private String strPassword;
-    private String strUserMode;
 
     public Login() {
         initComponents();
@@ -306,31 +301,8 @@ public class Login extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-//encapsulation
 
-    public void setUserName(String userName) {
-        this.strUserName = userName;//save user name to username veriable
-    }
 
-    public void setPassword(String password) {
-        this.strPassword = password;//save password to password veriable
-    }
-
-    public void setUserMode(String userMode) {
-        this.strUserMode = userMode;//save user mode to usermode veriable
-    }
-
-    public String getUserName() {
-        return this.strUserName;//return user name value
-    }
-
-    public String getPassword() {
-        return this.strPassword;//return password value
-    }
-
-    public String getUserMode() {
-        return this.strUserMode;//return user mode value
-    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();//close the programme
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -345,60 +317,30 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        setUserName(jTextField1.getText());//get user input add save it to veriable
-        setPassword(jTextField2.getText());//get user input add save it to veriable
-        setUserMode(jComboBox1.getSelectedItem().toString());//get user input add save it to veriable
-        if (compare()) {
-            /*
-            if user name and password are valid ,to do list code here
-             */
-        } else {
-            JOptionPane.showMessageDialog(null, "Invalid UserName or Password Please Check Again", "", 3);//if user name or password is invalid shaow a message
+        try {
+            SignIn signIn = new SignIn(jTextField1.getText().toLowerCase(), jTextField2.getText().toLowerCase(), jComboBox1.getSelectedItem().toString());
+            JFrame frame = signIn.compare();
+            if (frame != null) {
+                setFrameVisible(frame);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid UserName or Password Please Check Again", "", 3);//if user name or password is invalid shaow a message
+            }
+        } catch (Exception e) {
+
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    public void setFrameVisible(JFrame frame) {
+        this.dispose();
+        frame.setVisible(true);
+    }
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-    this.setExtendedState(Login.ICONIFIED);//minimize the frame
+        this.setExtendedState(Login.ICONIFIED);//minimize the frame
     }//GEN-LAST:event_jButton4ActionPerformed
-    private boolean compare() {//validate user information
-        boolean validation = false;
-        try {//to catch the error
-            FileReader readUserFile = new FileReader("C:\\Users\\DELL\\Desktop\\abc.txt");//open users file to read
-            BufferedReader readFile = new BufferedReader(readUserFile);
-            String strLine = readFile.readLine();//save 1st line of users file to a string
-            while (strLine != null) {//compare the line is not equals to null
-                String strNextLine = readFile.readLine();
-                if (strLine.charAt(0) == '|' && strNextLine != null && strNextLine.charAt(0) == '|'
-                        || strLine.charAt(0) == '|' && strNextLine.equals(null)) {//check the validation of 1st and 2nd lines 
-                    String usersDetails[] = strLine.split("*$*");//users details stored in this array
-                    if (this.getUserName().equals(usersDetails[1])
-                            && this.getPassword().equals(usersDetails[2]) && this.getUserMode().equals(usersDetails[3])) {
-
-                        validation = true;//if user name and password is valid return true
-                    }
-
-                } else if (strLine.charAt(0) == '|' && strNextLine != null && strNextLine.charAt(0) != '|') {//check the validation of 1st and 2nd lines 
-                    String usersDetails[] = (strLine + strNextLine).split("*$*");//visitor details stored in this array
-                    if (this.getUserName().equals(usersDetails[1])
-                            && this.getPassword().equals(usersDetails[2]) && this.getUserMode().equals(usersDetails[3])) {
-
-                        validation = true;//if user name and password is valid return true
-                    }
-                    strNextLine = readFile.readLine();//save next line to continue the loop
-                }
-                strLine = strNextLine;//save next line of the txt file to rotate
-            }
-            readUserFile.close();//close the opened file
-            readFile.close();
-        } catch (IOException e) {
-
-        }
-        return validation; //return true or false by compareing the user name and password validation
-    }
 
     /**
      * @param args the command line arguments

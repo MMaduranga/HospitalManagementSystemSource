@@ -292,15 +292,22 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
-        this.dispose();
+        try {
+               this.dispose();
         new Login().setVisible(true);
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButton17MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
 
         clearDesktopPane(jButton13);
 
-        new ResizeInternalFrame(new PatientAddAppointment(), jDesktopPane1);
+        try {
+            new ResizeInternalFrame(new PatientAddAppointment(), jDesktopPane1);
+        } catch (Exception e) {
+       
+        }
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
@@ -314,7 +321,10 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
 
         clearDesktopPane(jButton6);
 
-        new ResizeInternalFrame(new ViewAppointmentPatient1(), jDesktopPane1);
+        try {
+            new ResizeInternalFrame(new ViewAppointmentPatient1(), jDesktopPane1);
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
