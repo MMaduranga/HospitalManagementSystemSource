@@ -3,7 +3,7 @@ package Classes;
 import java.io.File;
 import java.time.LocalDate;
 
-public class User {
+public class User extends Main{
 
     private String userName;
     private String name;

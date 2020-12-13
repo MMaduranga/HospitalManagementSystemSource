@@ -16,7 +16,7 @@ public class SignIn {
     private String strPassword;
     private String strUserMode;
 
-    private String[] filePath = {"src\\TxtFiles\\Admin.txt", "src\\TxtFiles\\MedicalOfficer.txt", ""
+    private String[] filePath = {"src\\TxtFiles\\Admin.txt", "src\\TxtFiles\\MedicalOfficer.txt",""
         + "src\\TxtFiles\\Pateint.txt", "src\\TxtFiles\\Receptionist.txt"};
 
     public SignIn(String userName, String password, String userMode) {

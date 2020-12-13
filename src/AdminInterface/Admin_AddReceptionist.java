@@ -716,8 +716,10 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
         File staffPhoto = new File("");
         File attachDoc = new File("");
         try {
-            new WriteFile().WriteInUsersFile(new Receptionist(staffId, staffEmailAddress, userName, name, gender, phoneNo, idNo,
-                    address, materialStatus, password, DOB, profilePic, dateOfJoin, staffPhoto, attachDoc), new File("src\\TxtFiles\\Receptionist.txt"));
+            new WriteFile().WriteInFile(new Receptionist(staffId, staffEmailAddress,
+                    userName, name, gender, phoneNo, idNo, address, materialStatus,
+                    password, DOB, profilePic, dateOfJoin, staffPhoto, attachDoc),
+                    new File("src\\TxtFiles\\Receptionist.txt"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);

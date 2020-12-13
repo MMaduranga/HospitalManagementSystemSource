@@ -3,7 +3,7 @@ import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public  class Visitor {
+public  class Visitor extends Main{
 
     private String purpose;
     private String name;

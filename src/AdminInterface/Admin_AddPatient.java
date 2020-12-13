@@ -625,8 +625,10 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         File profilePic = new File("");
         String bloodGroup = jComboBox4.getSelectedItem().toString();;
         String allergies = jTextArea3.getText().toLowerCase();
+        
+        
         try {
-            new WriteFile().WriteInUsersFile(new Patient(bloodGroup, allergies, userName, name, gender, phoneNo, idNo, address, materialStatus, password, dob, profilePic), new File("src\\TxtFiles\\Pateint.txt"));
+            new WriteFile().WriteInFile(new Patient(bloodGroup, allergies, userName, name, gender, phoneNo, idNo, address, materialStatus, password, dob, profilePic), new File("src\\TxtFiles\\Pateint.txt"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);
