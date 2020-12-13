@@ -757,7 +757,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         File staffPhoto = new File("");
         File attachDoc = new File("");
         String spetialtyArea = jComboBox3.getSelectedItem().toString().toLowerCase();
-            new WriteFile().WriteInUsersFile(new MedicalOfficer(staffId, staffEmailAddress,
+            new WriteFile().WriteInFile(new MedicalOfficer(staffId, staffEmailAddress,
                     userName, name, gender, phoneNo, idNo,
                     address, materialStatus, password, DOB, profilePic, dateOfJoin, 
                     staffPhoto, attachDoc, spetialtyArea), new File("src\\TxtFiles\\MedicalOfficer.txt"));

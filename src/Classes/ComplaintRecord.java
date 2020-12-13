@@ -1,28 +1,47 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Classes;
 
-import java.util.Date;
 import java.io.File;
 import java.time.LocalDate;
+
 /**
  *
  * @Erandika
  */
-public class ComplaintRecord {
- //-----------------Variables------------------------
-   private String complaintType;
-   private int PhoneNo; 
-   private LocalDate currentDate;
-   private String description;
-   private String actionTaken;
-   private File file;
+public class ComplaintRecord extends Main{
+    //-----------------Variables------------------------
+
+    private String complaintBy;
+    private String complaintType;
+    private int PhoneNo;
+    private LocalDate currentDate;
+    private String description;
+    private String actionTaken;
+    private String note;
+    private File attachDoc;
+
+    public ComplaintRecord(String complaintType, String complaintBy, int phoneNo,
+            LocalDate date, String description, String actionTaken, String note, File attachDoc) {
+this.setComplaintType(complaintType);
+this.setComplaintBy(complaintBy);
+this.setPhoneNo(phoneNo);
+this.setCurrentDate(date);
+this.setNote(note);
+this.setDescription(description);
+this.setActionTaken(actionTaken);
+this.setAttachDoc(attachDoc);
+    }
 //------------------------Getters----------------------
+
     public String getComplaintType() {
         return this.complaintType;
+    }
+
+    public String getComplaintBy() {
+        return this.complaintBy;
+    }
+
+    public String getNote() {
+        return this.note;
     }
 
     public int getPhoneNo() {
@@ -41,14 +60,17 @@ public class ComplaintRecord {
         return this.actionTaken;
     }
 
-    public File getFile() {
-        return this.file;
+    public File getAttachDoc() {
+        return this.attachDoc;
     }
-   
-//--------------------Setters-------------------------------
 
+//--------------------Setters-------------------------------
     public void setComplaintType(String complaintType) {
         this.complaintType = complaintType;
+    }
+
+    public void setComplaintBy(String complaintBy) {
+        this.complaintBy = complaintBy;
     }
 
     public void setPhoneNo(int PhoneNo) {
@@ -67,13 +89,19 @@ public class ComplaintRecord {
         this.actionTaken = actionTaken;
     }
 
-    public void setFile(File file) {
-        this.file = file;
+    public void setAttachDoc(File file) {
+        this.attachDoc = file;
     }
- 
-    
-    
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+//other methods
+
+    @Override
+    public String toString() {
+        return "|~" + this.getComplaintType() + "~" + this.getPhoneNo() + "~"
+                + this.getComplaintBy() + "~" + this.getActionTaken() + "~" + this.getCurrentDate()
+                + "~" + this.getDescription() + "~" + this.getNote() + "~" + this.getAttachDoc();
+    }
 }
-
-
-
