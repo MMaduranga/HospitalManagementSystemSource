@@ -519,7 +519,7 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
         int PhoneNo = Integer.valueOf(jTextField2.getText());
         LocalDate currentDate = LocalDate.now();
         String description = jTextField3.getText().toLowerCase();
-        String actionTaken = jTextField4.getText().toLowerCase();
+        String actionTaken = jTextField5.getText().toLowerCase();
         String note = jTextArea2.getText().toLowerCase();
         File attachDoc = new File(jTextField4.getText());
         try {

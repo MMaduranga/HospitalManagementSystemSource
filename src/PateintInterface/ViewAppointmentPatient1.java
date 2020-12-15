@@ -1,5 +1,8 @@
 package PateintInterface;
 
+import Classes.ReadFile;
+import java.io.File;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /*
@@ -7,20 +10,22 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author User
  */
 public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
 
+    ReadFile readFileObj = new ReadFile();
+
+
     /**
      * Creates new form ViewAppointmentPatient
      */
     public ViewAppointmentPatient1() {
         initComponents();
-        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
-        BasicInternalFrameUI basicinternalform=(BasicInternalFrameUI)this.getUI();
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
     }
 
@@ -123,6 +128,7 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
         jPanel6.setMinimumSize(new java.awt.Dimension(1066, 756));
         jPanel6.setPreferredSize(new java.awt.Dimension(1066, 756));
 
+        jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(240, 248, 255));
         jTextField4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
@@ -137,6 +143,7 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
         jTextField6.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
 
+        jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(240, 248, 255));
         jTextField8.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
@@ -147,7 +154,7 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
         });
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel9.setText("Enter Phone Number");
+        jLabel9.setText("Enter Appoinment Number");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel10.setText("Patient Name");
@@ -162,6 +169,7 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel12.setText("Apoinment Date");
 
+        jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(240, 248, 255));
         jTextField5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
@@ -169,6 +177,7 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel14.setText("Symptoms");
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextArea1.setRows(5);
@@ -188,6 +197,7 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel15.setText("Appoinment Time");
 
+        jTextField10.setEditable(false);
         jTextField10.setBackground(new java.awt.Color(240, 248, 255));
         jTextField10.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
@@ -204,6 +214,7 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel21.setText(":");
 
+        jTextField7.setEditable(false);
         jTextField7.setBackground(new java.awt.Color(240, 248, 255));
         jTextField7.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
@@ -232,6 +243,7 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
         jLabel28.setForeground(new java.awt.Color(255, 0, 0));
         jLabel28.setText("*");
 
+        jTextField9.setEditable(false);
         jTextField9.setBackground(new java.awt.Color(240, 248, 255));
         jTextField9.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
@@ -239,6 +251,7 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel29.setText("Speciality Area");
 
+        jTextField11.setEditable(false);
         jTextField11.setBackground(new java.awt.Color(240, 248, 255));
         jTextField11.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
@@ -445,7 +458,7 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
         );
 
         jLabel2.setBackground(new java.awt.Color(0, 153, 204));
@@ -582,9 +595,39 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField8ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        compareAppoinmentNo(jTextField6.getText());
     }//GEN-LAST:event_jButton3ActionPerformed
+    public void compareAppoinmentNo(String primarykey) {
+        if (primarykey.length() == 0) {
+            JOptionPane.showMessageDialog(null, "Please Enter Appoinment Number");
+        } else {
 
+            try {
+                String[] strAppoinmentDetailsArray = readFileObj.findObjLine(primarykey,
+                        new File("src\\TxtFiles\\Appoinment.txt"), 6);
+                if (strAppoinmentDetailsArray == null) {
+                    JOptionPane.showMessageDialog(null, "Invalid Appoinment Number");
+                } else {
+                    setTextFieldText(strAppoinmentDetailsArray);
+
+                    JOptionPane.showMessageDialog(null, "Done");
+                }
+            } catch (Exception e) {
+
+            }
+        }
+    }
+
+    public void setTextFieldText(String[] datails) {
+        jTextArea1.setText(datails[4]);
+        jTextField10.setText(datails[7]);
+        jTextField9.setText(datails[1]);
+        jTextField5.setText(datails[5]);
+        jTextField7.setText(datails[3]);
+        jTextField8.setText(datails[6]);
+        jTextField11.setText(datails[2]);
+
+    }
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed

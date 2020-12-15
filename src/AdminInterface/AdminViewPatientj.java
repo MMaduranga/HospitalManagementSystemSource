@@ -659,12 +659,13 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 public void addChanges() {
 
+        try {
         String userName = jTextField2.getText().toLowerCase();
         String name = jTextField6.getText().toLowerCase();
         String gender = jComboBox4.getSelectedItem().toString();
         int phoneNo = Integer.valueOf(jTextField4.getText());
         String idNo = jTextField3.getText().toLowerCase();
-        LocalDate dob = LocalDate.now();
+        LocalDate dob =LocalDate.parse(jTextField5.getText());
         String address = jTextArea1.getText().toLowerCase();
         String materialStatus = jComboBox1.getSelectedItem().toString();;
         String password = jTextField7.getText();
@@ -672,7 +673,6 @@ public void addChanges() {
         String bloodGroup = jComboBox2.getSelectedItem().toString();;
         String allergies = jTextArea2.getText().toLowerCase();
 
-        try {
             new WriteFile().WriteInFile(new Patient(bloodGroup, allergies, userName,
                     name, gender, phoneNo, idNo, address, materialStatus, password,
                     dob, profilePic), new File("src\\TxtFiles\\Pateint.txt"));
@@ -682,7 +682,7 @@ public void addChanges() {
         }
     }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if (jTextField3.getText().length() != 0) {
+        if (jTextField3.getText().length() != 0||jTextField2.getText().length()>0) {
 
             try {
                 readFileObj.deleteObj(new File("src\\TxtFiles\\Pateint.txt"));
@@ -714,7 +714,7 @@ public void addChanges() {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
-        if (jTextField3.getText().length() != 0) {
+        if (jTextField3.getText().length() != 0||jTextField2.getText().length()>0) {
 
             try {
                 readFileObj.deleteObj(new File("src\\TxtFiles\\Pateint.txt"));
