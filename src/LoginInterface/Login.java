@@ -3,6 +3,7 @@ package LoginInterface;
 import Classes.JpanelGradient;
 import java.awt.Color;
 import Classes.SignIn;
+import Classes.WriteFile;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -318,9 +319,10 @@ public class Login extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         try {
-            SignIn signIn = new SignIn(jTextField1.getText().toLowerCase(), jTextField2.getText().toLowerCase(), jComboBox1.getSelectedItem().toString());
+            SignIn signIn = new SignIn(jTextField1.getText(), jTextField2.getText(), jComboBox1.getSelectedItem().toString());
             JFrame frame = signIn.compare();
             if (frame != null) {
+                 new WriteFile().UserLog(jTextField1.getText(),jComboBox1.getSelectedItem().toString());
                 setFrameVisible(frame);
 
             } else {

@@ -34,7 +34,7 @@ public class Patient extends User {
 
     //other methods
     public String toString() {
-        return "|~" + this.getUserName() + "~" + this.getPhoneNo() + "~" + this.getName()
+        return "|~" + this.getUserName() + "~" + this.getPassword() + "~" + this.getName()
                 + "~" + this.getGender() + "~" + this.getPhoneNo() + "~" + this.getIdNo()
                 + "~" + this.getDOB() + "~" + this.getAddress() + "~" + this.getMaterialStatus()
                 + "~" + this.getBloodGroup() + "~" + this.getAllergies() + "~" + this.getProFilePic();

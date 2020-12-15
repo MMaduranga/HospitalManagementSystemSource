@@ -628,7 +628,9 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         
         
         try {
-            new WriteFile().WriteInFile(new Patient(bloodGroup, allergies, userName, name, gender, phoneNo, idNo, address, materialStatus, password, dob, profilePic), new File("src\\TxtFiles\\Pateint.txt"));
+            new WriteFile().WriteInFile(new Patient(bloodGroup, allergies, userName, 
+                    name, gender, phoneNo, idNo, address, materialStatus, password,
+                    dob, profilePic), new File("src\\TxtFiles\\Pateint.txt"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);
