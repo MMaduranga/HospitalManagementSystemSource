@@ -663,7 +663,7 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
         }
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        setTextFieldText(blankArray);
+      
         if (jTextField6.getText().length() != 0) {
 
             readFileObj.deleteObj(new File("src\\TxtFiles\\Appoinment.txt"));
@@ -671,6 +671,7 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Please Enter Appoinment Number");
         }
+          setTextFieldText(blankArray);
     }//GEN-LAST:event_jButton2ActionPerformed
     public void setTextFieldText(String[] datails) {
         jTextArea1.setText(datails[4]);

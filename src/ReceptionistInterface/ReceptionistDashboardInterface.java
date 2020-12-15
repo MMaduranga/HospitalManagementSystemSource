@@ -6,12 +6,10 @@ import LoginInterface.Login;
 
 import java.awt.Color;
 
-
 import javax.swing.JButton;
 
 public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
- 
     public ReceptionistDashboardInterface() {
         initComponents();
         setBackgroundColor(new Color(0, 0, 0, 0));//set background null
@@ -37,10 +35,8 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         jButton16.setBackground(color);//set background null
         jButton17.setBackground(color);//set background null
         jButton18.setBackground(color);//set background null
-
+        jButton19.setBackground(color);//set background null
     }
-
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -63,10 +59,11 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hospital Management System");
@@ -229,7 +226,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         jButton13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton13.setForeground(new java.awt.Color(204, 204, 204));
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-google-web-search-50.png"))); // NOI18N
-        jButton13.setText("View PostalMail                 ");
+        jButton13.setText("View ReceivedMail            ");
         jButton13.setBorder(null);
         jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -245,17 +242,6 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton14MouseClicked(evt);
-            }
-        });
-
-        jButton15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton15.setForeground(new java.awt.Color(204, 204, 204));
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-inquiry-30.png"))); // NOI18N
-        jButton15.setText("   Help                                ");
-        jButton15.setBorder(null);
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
             }
         });
 
@@ -292,6 +278,26 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton19.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jButton19.setForeground(new java.awt.Color(204, 204, 204));
+        jButton19.setText("View DispatchMail");
+        jButton19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton19MouseClicked(evt);
+            }
+        });
+
+        jButton15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jButton15.setForeground(new java.awt.Color(204, 204, 204));
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-inquiry-30.png"))); // NOI18N
+        jButton15.setText("   Help                                ");
+        jButton15.setBorder(null);
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -299,8 +305,8 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -312,7 +318,8 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
                     .addComponent(jButton14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -342,6 +349,8 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -439,49 +448,49 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         try {
-              clearDesktopPane(jButton5);
+            clearDesktopPane(jButton5);
 
-        new ResizeInternalFrame(new ReceptionistAddVisitor(), jDesktopPane1);
+            new ResizeInternalFrame(new ReceptionistAddVisitor(), jDesktopPane1);
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-       
-        try {
-              clearDesktopPane(jButton9);
 
-        new ResizeInternalFrame(new Receptionist_AddPatient(), jDesktopPane1);
+        try {
+            clearDesktopPane(jButton9);
+
+            new ResizeInternalFrame(new Receptionist_AddPatient(), jDesktopPane1);
         } catch (Exception e) {
         }
 
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
-        
+
         clearDesktopPane(jButton14);
 
         new ResizeInternalFrame(new ReceptionistAddComplaint(), jDesktopPane1);
     }//GEN-LAST:event_jButton14MouseClicked
 
     private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
-        
-       clearDesktopPane(jButton18);
+
+        clearDesktopPane(jButton18);
 
         new ResizeInternalFrame(new ReceptionistAddAppointment(), jDesktopPane1);
     }//GEN-LAST:event_jButton18MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
-     
-      clearDesktopPane(jButton11);
+
+        clearDesktopPane(jButton11);
 
         new ResizeInternalFrame(new ReceptionistAddDispatchMail(), jDesktopPane1);
 
     }//GEN-LAST:event_jButton11MouseClicked
 
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
-      
-       clearDesktopPane(jButton12);
+
+        clearDesktopPane(jButton12);
 
         new ResizeInternalFrame(new ReceptionistAddReceivedMail(), jDesktopPane1);
     }//GEN-LAST:event_jButton12MouseClicked
@@ -491,32 +500,38 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
-        
-       clearDesktopPane(jButton8);
+
+        clearDesktopPane(jButton8);
 
         new ResizeInternalFrame(new ReceptionistViewPatientj(), jDesktopPane1);
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        
-      clearDesktopPane(jButton6);
 
-        new ResizeInternalFrame( new ReceptionistViewAppointment1(), jDesktopPane1);
+        clearDesktopPane(jButton6);
+
+        new ResizeInternalFrame(new ReceptionistViewAppointment1(), jDesktopPane1);
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
-        
-         clearDesktopPane(jButton10);
+
+        clearDesktopPane(jButton10);
 
         new ResizeInternalFrame(new ReceptionistViewVisitorj1(), jDesktopPane1);
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
-        
-       clearDesktopPane(jButton13);
 
-        new ResizeInternalFrame( new AdminViewReceivedj(), jDesktopPane1);
+        clearDesktopPane(jButton13);
+
+        new ResizeInternalFrame(new AdminViewReceivedj(), jDesktopPane1);
     }//GEN-LAST:event_jButton13MouseClicked
+
+    private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
+        clearDesktopPane(jButton19);
+
+        new ResizeInternalFrame(new AdminViewDispachMailj(), jDesktopPane1);
+    }//GEN-LAST:event_jButton19MouseClicked
 
     public void clearDesktopPane(JButton button) {
         setBackgroundColor(new Color(0, 0, 0, 0));
@@ -571,6 +586,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
