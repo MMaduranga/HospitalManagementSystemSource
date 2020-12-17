@@ -1,6 +1,6 @@
 package AdminInterface;
 
-import Classes.ReadFile;
+import Classes.SubClasses.ReadFile;
 import java.io.File;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -418,7 +418,12 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
                             .addComponent(jLabel36)
                             .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
                         .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
+=======
+                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(262, 262, 262))
+>>>>>>> 4e938046484e2701293a47d9c0ffaf242909fa4b
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -591,7 +596,7 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
 
             try {
                 String[] strAppoinmentDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\Appoinment.txt"), 6);
+                        new File("src\\TxtFiles\\Appoinment.mov"), 6);
                 if (strAppoinmentDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid Appoinment Number");
                 } else {
@@ -608,7 +613,7 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
       
         if (jTextField6.getText().length() != 0) {
 
-            readFileObj.deleteObj(new File("src\\TxtFiles\\Appoinment.txt"));
+            readFileObj.deleteObj(new File("src\\TxtFiles\\Appoinment.mov"));
             JOptionPane.showMessageDialog(null, "Deleted");
         } else {
             JOptionPane.showMessageDialog(null, "Please Enter Appoinment Number");
@@ -618,11 +623,11 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
     public void setTextFieldText(String[] datails) {
         jTextArea1.setText(datails[4]);
         jTextField10.setText(datails[7]);
-        jTextField12.setText(datails[1]);
+        jTextField11.setText(datails[1]);
         jTextField5.setText(datails[5]);
         jTextField7.setText(datails[3]);
-        jTextField8.setText(datails[6]);
-        jTextField9.setText(datails[2]);
+        jTextField6.setText(datails[6]);
+        jTextField8.setText(datails[2]);
 
     }
 

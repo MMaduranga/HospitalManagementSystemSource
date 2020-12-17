@@ -1,6 +1,6 @@
 package PateintInterface;
 
-import Classes.ReadFile;
+import Classes.SubClasses.ReadFile;
 import java.io.File;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -604,7 +604,7 @@ public class ViewAppointmentPatient1 extends javax.swing.JInternalFrame {
 
             try {
                 String[] strAppoinmentDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\Appoinment.txt"), 6);
+                        new File("src\\TxtFiles\\Appoinment.mov"), 6);
                 if (strAppoinmentDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid Appoinment Number");
                 } else {

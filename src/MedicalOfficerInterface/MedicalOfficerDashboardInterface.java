@@ -1,8 +1,8 @@
 package MedicalOfficerInterface;
 
 import java.awt.Color;
-import Classes.JpanelGradient;
-import Classes.ResizeInternalFrame;
+import Classes.SubClasses.JpanelGradient;
+import Classes.SubClasses.ResizeInternalFrame;
 import LoginInterface.Login;
 
 import java.awt.event.ComponentEvent;

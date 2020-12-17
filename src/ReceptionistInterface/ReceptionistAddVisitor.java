@@ -1,12 +1,12 @@
 package ReceptionistInterface;
 
-import Classes.SimpleMethods;
+import Classes.SubClasses.SimpleMethods;
 import java.awt.Color;
-import Classes.Visitor;
+import Classes.MainClasses.Visitor;
 import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import Classes.WriteFile;
+import Classes.SubClasses.WriteFile;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JFileChooser;
@@ -624,7 +624,8 @@ public class ReceptionistAddVisitor extends javax.swing.JInternalFrame {
         File attachDoc = new File(jTextField4.getText());
         String note = jTextArea2.getText().toLowerCase();
         try {
-             new WriteFile().WriteInFile(new Visitor(purpose, name, idNo, date, inTime, outTime, attachDoc, note, phone),new File("src\\TxtFiles\\Visitor.txt"));
+             new WriteFile().WriteInFile(new Visitor(purpose, name, idNo, date,
+                     inTime, outTime, attachDoc, note, phone),new File("src\\TxtFiles\\Visitor.mov"));
              JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail","",2);

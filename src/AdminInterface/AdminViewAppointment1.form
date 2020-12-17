@@ -440,7 +440,12 @@
                                           <Component id="jLabel28" alignment="3" pref="32" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
                                       <Component id="jTextField9" pref="33" max="32767" attributes="0"/>
+=======
+                                      <Component id="jTextField11" min="-2" pref="37" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="262" max="-2" attributes="0"/>
+>>>>>>> 4e938046484e2701293a47d9c0ffaf242909fa4b
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">

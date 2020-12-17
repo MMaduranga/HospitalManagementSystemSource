@@ -1,7 +1,7 @@
 package ReceptionistInterface;
 
-import Classes.JpanelGradient;
-import Classes.ResizeInternalFrame;
+import Classes.SubClasses.JpanelGradient;
+import Classes.SubClasses.ResizeInternalFrame;
 import LoginInterface.Login;
 
 import java.awt.Color;
@@ -122,6 +122,11 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         jButton4.setText("My Profile                         ");
         jButton4.setBorder(null);
         jButton4.setPreferredSize(new java.awt.Dimension(271, 25));
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
         jButton5.setForeground(new java.awt.Color(204, 204, 204));
@@ -532,6 +537,12 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
         new ResizeInternalFrame(new AdminViewDispachMailj(), jDesktopPane1);
     }//GEN-LAST:event_jButton19MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+      clearDesktopPane(jButton4);
+
+        new ResizeInternalFrame(new ReceptionistProfile(), jDesktopPane1);
+    }//GEN-LAST:event_jButton4MouseClicked
 
     public void clearDesktopPane(JButton button) {
         setBackgroundColor(new Color(0, 0, 0, 0));

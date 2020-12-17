@@ -1,7 +1,7 @@
 package ReceptionistInterface;
 
-import Classes.Patient;
-import Classes.WriteFile;
+import Classes.MainClasses.Patient;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -618,7 +618,7 @@ public class Receptionist_AddPatient extends javax.swing.JInternalFrame {
         try {
             new WriteFile().WriteInFile(new Patient(bloodGroup, allergies, userName,
                     name, gender, phoneNo, idNo, address, materialStatus, password, 
-                    dob, profilePic), new File("src\\TxtFiles\\Pateint.txt"));
+                    dob, profilePic), new File("src\\TxtFiles\\Pateint.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);
