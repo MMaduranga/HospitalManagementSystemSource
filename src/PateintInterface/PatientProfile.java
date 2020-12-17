@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Admin;
+package PateintInterface;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -11,12 +11,12 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  *
  * @author DELL
  */
-public class profile extends javax.swing.JInternalFrame {
+public class PatientProfile extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form NewJInternalFrame
      */
-    public profile() {
+    public PatientProfile() {
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI basicinternalform=(BasicInternalFrameUI)this.getUI();
