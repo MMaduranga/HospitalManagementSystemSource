@@ -202,7 +202,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel6" alignment="0" pref="760" max="32767" attributes="0"/>
+                      <Component id="jPanel6" alignment="0" pref="764" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>

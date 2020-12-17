@@ -1,8 +1,8 @@
 package AdminInterface;
 
-import Classes.Patient;
-import Classes.ReadFile;
-import Classes.WriteFile;
+import Classes.MainClasses.Patient;
+import Classes.SubClasses.ReadFile;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;
@@ -455,7 +455,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField6)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -465,17 +465,17 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
                         .addGap(5, 5, 5))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
+                            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
                         .addGap(4, 4, 4)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(jTextField5))
                 .addGap(4, 4, 4)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
+                        .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -487,7 +487,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
                         .addGap(1, 1, 1))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                         .addGap(54, 54, 54)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -495,7 +495,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
                         .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                        .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -522,7 +522,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                         .addGap(89, 89, 89)))
                 .addGap(12, 12, 12))
         );
@@ -547,7 +547,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
                 .addGap(14, 14, 14)
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 771, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -638,7 +638,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 822, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -652,7 +652,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 972, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 992, Short.MAX_VALUE)
         );
 
         pack();
@@ -675,7 +675,7 @@ public void addChanges() {
 
             new WriteFile().WriteInFile(new Patient(bloodGroup, allergies, userName,
                     name, gender, phoneNo, idNo, address, materialStatus, password,
-                    dob, profilePic), new File("src\\TxtFiles\\Pateint.txt"));
+                    dob, profilePic), new File("src\\TxtFiles\\Pateint.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);
@@ -685,7 +685,7 @@ public void addChanges() {
         if (jTextField3.getText().length() != 0||jTextField2.getText().length()>0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\Pateint.txt"));
+                readFileObj.deleteObj(new File("src\\TxtFiles\\Pateint.mov"));
                 addChanges();
 
             } catch (Exception e) {
@@ -717,7 +717,7 @@ public void addChanges() {
         if (jTextField3.getText().length() != 0||jTextField2.getText().length()>0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\Pateint.txt"));
+                readFileObj.deleteObj(new File("src\\TxtFiles\\Pateint.mov"));
                 JOptionPane.showMessageDialog(null, "Deleted");
             } catch (Exception e) {
                 System.out.println(e);
@@ -734,7 +734,7 @@ public void addChanges() {
 
             try {
                 String[] strPatientDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\Pateint.txt"), location);
+                        new File("src\\TxtFiles\\Pateint.mov"), location);
                 if (strPatientDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid ID Number");
                 } else {

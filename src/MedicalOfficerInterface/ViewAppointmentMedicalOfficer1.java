@@ -1,8 +1,8 @@
 package MedicalOfficerInterface;
 
-import Classes.Apponitment;
-import Classes.ReadFile;
-import Classes.WriteFile;
+import Classes.MainClasses.Apponitment;
+import Classes.SubClasses.ReadFile;
+import Classes.SubClasses.WriteFile;
 import java.awt.HeadlessException;
 import java.io.File;
 import java.time.LocalDate;
@@ -329,9 +329,6 @@ public class ViewAppointmentMedicalOfficer1 extends javax.swing.JInternalFrame {
                             .addComponent(jScrollPane1)
                             .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -359,7 +356,10 @@ public class ViewAppointmentMedicalOfficer1 extends javax.swing.JInternalFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel33))
                                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton4)))))
                 .addGap(47, 47, 47))
         );
         jPanel6Layout.setVerticalGroup(
@@ -425,7 +425,7 @@ public class ViewAppointmentMedicalOfficer1 extends javax.swing.JInternalFrame {
                 .addGap(24, 24, 24)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel27)
                         .addComponent(jLabel31)
@@ -435,8 +435,8 @@ public class ViewAppointmentMedicalOfficer1 extends javax.swing.JInternalFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextField11)
                     .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
-                .addGap(74, 74, 74)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, Short.MAX_VALUE)
+                .addGap(66, 66, 66)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -448,7 +448,7 @@ public class ViewAppointmentMedicalOfficer1 extends javax.swing.JInternalFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 761, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
         );
 
         jLabel2.setBackground(new java.awt.Color(0, 153, 204));
@@ -602,7 +602,7 @@ public class ViewAppointmentMedicalOfficer1 extends javax.swing.JInternalFrame {
 
             new WriteFile().WriteInFile(new Apponitment(patient, appointmentDate,
                     appointmentTime, symptoms, appointmentRecordStatus, appointmentNo,
-                    medicalOfficer), new File("src\\TxtFiles\\Appoinment.txt"));
+                    medicalOfficer), new File("src\\TxtFiles\\Appoinment.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             System.out.println(e);
@@ -617,7 +617,7 @@ public class ViewAppointmentMedicalOfficer1 extends javax.swing.JInternalFrame {
 
             try {
                 String[] strAppoinmentDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\Appoinment.txt"), 6);
+                        new File("src\\TxtFiles\\Appoinment.mov"), 6);
                 if (strAppoinmentDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid Appoinment Number");
                 } else {

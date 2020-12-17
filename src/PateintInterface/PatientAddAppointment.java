@@ -1,8 +1,8 @@
 package PateintInterface;
 
-import Classes.WriteFile;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
-import Classes.Apponitment;
+import Classes.MainClasses.Apponitment;
 import java.awt.HeadlessException;
 import java.io.File;
 import java.time.LocalDate;
@@ -499,7 +499,7 @@ public class PatientAddAppointment extends javax.swing.JInternalFrame {
         try {
             new WriteFile().WriteInFile(new Apponitment(patient, appointmentDate,
                     appointmentTime, symptoms, appointmentRecordStatus, appointmentNo,
-                    medicalOfficer), new File("src\\TxtFiles\\Appoinment.txt"));
+                    medicalOfficer), new File("src\\TxtFiles\\Appoinment.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (HeadlessException e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);

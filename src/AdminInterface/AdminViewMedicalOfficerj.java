@@ -1,9 +1,9 @@
 package AdminInterface;
 
 
-import Classes.Patient;
-import Classes.ReadFile;
-import Classes.WriteFile;
+import Classes.MainClasses.Patient;
+import Classes.SubClasses.ReadFile;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;

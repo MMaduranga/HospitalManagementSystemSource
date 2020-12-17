@@ -1,8 +1,8 @@
 package ReceptionistInterface;
 
-import Classes.DispatchPostalMail;
-import Classes.ReadFile;
-import Classes.WriteFile;
+import Classes.MainClasses.DispatchPostalMail;
+import Classes.SubClasses.ReadFile;
+import Classes.SubClasses.WriteFile;
 import java.io.File;
 import java.awt.Color;
 import java.time.LocalDate;
@@ -494,7 +494,7 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
         String fromName = jTextField9.getText().toLowerCase();
         try {
             new WriteFile().WriteInFile(new DispatchPostalMail(referenceNo, currentDate,
-                    attachDoc, note, toName, toAddress, fromName), new File("src\\TxtFiles\\DispatchMail.txt"));
+                    attachDoc, note, toName, toAddress, fromName), new File("src\\TxtFiles\\DispatchMail.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);
@@ -504,7 +504,7 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
         if (jTextField1.getText().length() > 0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\DispatchMail.txt"));
+                readFileObj.deleteObj(new File("src\\TxtFiles\\DispatchMail.mov"));
                 addChanges();
 
             } catch (Exception e) {
@@ -520,7 +520,7 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
         if (jTextField1.getText().length() > 0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\DispatchMail.txt"));
+                readFileObj.deleteObj(new File("src\\TxtFiles\\DispatchMail.mov"));
                 JOptionPane.showMessageDialog(null, "Deleted");
             } catch (Exception e) {
                 System.out.println(e);
@@ -537,7 +537,7 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
 
             try {
                 String[] strAppoinmentDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\DispatchMail.txt"), 7);
+                        new File("src\\TxtFiles\\DispatchMail.mov"), 7);
                 if (strAppoinmentDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid Reference Number");
                 } else {
