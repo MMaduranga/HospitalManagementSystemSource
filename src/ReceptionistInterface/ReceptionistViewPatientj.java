@@ -1,24 +1,18 @@
 package ReceptionistInterface;
+import Classes.MainClasses.Patient;
+import Classes.SubClasses.ReadFile;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
+import java.io.File;
+import java.time.LocalDate;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author DELL
- */
 public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
-
-    /**
-     * Creates new form NewJInternalFrame
-     */
+ ReadFile readFileObj = new ReadFile();
+    String[] blankArray = {"", "", "", "", "", "", "", "", "", "", "", ""};
     public ReceptionistViewPatientj() {
         initComponents();
         jComboBox1.setSelectedItem(null);
@@ -241,6 +235,11 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Save Changes");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel30.setForeground(java.awt.Color.red);
@@ -373,7 +372,7 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
                                         .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE)
+                                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jScrollPane1)
@@ -401,13 +400,13 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
                                         .addComponent(jLabel35)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel33)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 432, Short.MAX_VALUE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE)
+                                    .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
@@ -452,11 +451,10 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -523,21 +521,23 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
                         .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
                     .addComponent(jLabel26))
                 .addGap(5, 5, 5)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton6)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jTextField11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3)
+                        .addComponent(jButton6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -560,7 +560,7 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1078, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1072, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -642,11 +642,11 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1078, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1084, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1078, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1072, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -676,7 +676,7 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 972, Short.MAX_VALUE)
         );
 
         pack();
@@ -691,9 +691,93 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField8ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+          String IdNumber = jTextField6.getText().toLowerCase();
+        String userName = jTextField8.getText().toLowerCase();
+        if (IdNumber.length() > 0 && userName.length() == 0) {
+            compareAppoinmentNo(IdNumber, 6);
+        } else if (userName.length() > 0 && IdNumber.length() == 0) {
+            compareAppoinmentNo(userName, 1);
+        } else if (userName.length() > 0 && IdNumber.length() > 0) {
+            compareAppoinmentNo(IdNumber, 6);
+        } else {
+            JOptionPane.showMessageDialog(null, "Enter Id number Or User Name");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+         if (jTextField6.getText().length() != 0 || jTextField8.getText().length() > 0) {
+
+            try {
+                readFileObj.deleteObj(new File("src\\TxtFiles\\Pateint.mov"));
+                addChanges();
+
+            } catch (Exception e) {
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Enter ID Number");
+        }
+        setTextFieldText(blankArray);
+    }//GEN-LAST:event_jButton4ActionPerformed
+public void addChanges() {
+        try {
+            String userName = jTextField8.getText().toLowerCase();
+            String name = jTextField10.getText().toLowerCase();
+            String gender = jComboBox1.getSelectedItem().toString();
+            int phoneNo = Integer.valueOf(jTextField5.getText());
+            String idNo = jTextField6.getText().toLowerCase();
+            LocalDate dob = LocalDate.parse(jTextField9.getText());
+            String address = jTextArea1.getText().toLowerCase();
+            String materialStatus = jComboBox2.getSelectedItem().toString();;
+            String password = jTextField7.getText();
+            File profilePic = new File("");
+            String bloodGroup = jComboBox3.getSelectedItem().toString();;
+            String allergies = jTextArea2.getText().toLowerCase();
+
+            new WriteFile().WriteInFile(new Patient(bloodGroup, allergies, userName,
+                    name, gender, phoneNo, idNo, address, materialStatus, password,
+                    dob, profilePic), new File("src\\TxtFiles\\Pateint.mov"));
+            JOptionPane.showMessageDialog(null, "Success");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Fail", "", 2);
+        }
+    }
+
+    public void compareAppoinmentNo(String primarykey, int location) {
+        if (primarykey.length() == 0) {
+            JOptionPane.showMessageDialog(null, "Enter Id number Or User Name");
+        } else {
+
+            try {
+                String[] strPatientDetailsArray = readFileObj.findObjLine(primarykey,
+                        new File("src\\TxtFiles\\Pateint.mov"), location);
+                if (strPatientDetailsArray == null) {
+                    JOptionPane.showMessageDialog(null, "Invalid ID Number or UserName");
+                } else {
+                    setTextFieldText(strPatientDetailsArray);
+
+                    JOptionPane.showMessageDialog(null, "Done");
+                }
+            } catch (Exception e) {
+
+            }
+        }
+    }
+
+    public void setTextFieldText(String[] details) {
+        jTextArea1.setText(details[8]);
+        jComboBox1.setSelectedItem(details[4]);
+        jTextField10.setText(details[3]);
+        jTextField5.setText(details[5]);
+        jTextField6.setText(details[6]);
+        jTextField8.setText(details[1]);
+        jTextField9.setText(details[7]);
+        jComboBox2.setSelectedItem(details[9]);
+        jTextField7.setText(details[2]);
+        jComboBox3.setSelectedItem(details[10]);
+        jTextArea2.setText(details[11]);
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -1,29 +1,24 @@
 package ReceptionistInterface;
 
 
+import Classes.MainClasses.Visitor;
+import Classes.SubClasses.ReadFile;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.io.File;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import static javafx.scene.paint.Color.color;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author DELL
- */
 public class ReceptionistViewVisitorj1 extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form NewJInternalFrame
-     */
+      ReadFile readFileObj = new ReadFile();
+    String[] blankArray = {"", "", "", "", "", "", "", "", "", ""};
     public ReceptionistViewVisitorj1() {
         initComponents();
         jButton1.setBackground(new Color(0,0,0,0));
@@ -141,6 +136,11 @@ public class ReceptionistViewVisitorj1 extends javax.swing.JInternalFrame {
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("View");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel15.setText("Name : ");
@@ -233,6 +233,11 @@ public class ReceptionistViewVisitorj1 extends javax.swing.JInternalFrame {
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Delete");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jTextField2.setBackground(new java.awt.Color(240, 248, 255));
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -378,16 +383,13 @@ public class ReceptionistViewVisitorj1 extends javax.swing.JInternalFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addGap(4, 4, 4)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addGap(4, 4, 4)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jLabel33)
+                    .addComponent(jLabel32)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -398,11 +400,11 @@ public class ReceptionistViewVisitorj1 extends javax.swing.JInternalFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
                                 .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
-                            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel39)))
                     .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel18)
@@ -417,12 +419,13 @@ public class ReceptionistViewVisitorj1 extends javax.swing.JInternalFrame {
                         .addGap(4, 4, 4)
                         .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
                                 .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(10, 10, 10)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -433,13 +436,12 @@ public class ReceptionistViewVisitorj1 extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addGap(3, 3, 3)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addGap(6, 6, 6)
-                            .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -556,7 +558,7 @@ public class ReceptionistViewVisitorj1 extends javax.swing.JInternalFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1078, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1084, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
         jPanel1Layout.setVerticalGroup(
@@ -586,17 +588,96 @@ public class ReceptionistViewVisitorj1 extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 972, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+       if (jTextField1.getText().length() > 0) {
+
+            try {
+                readFileObj.deleteObj(new File("src\\TxtFiles\\Visitor.mov"));
+                addChanges();
+
+            } catch (Exception e) {
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Enter ID Number");
+        }
+        setTextFieldText(blankArray);
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+     compareAppoinmentNo(jTextField1.getText());
+    }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+       if (jTextField1.getText().length() > 0) {
+
+            try {
+                readFileObj.deleteObj(new File("src\\TxtFiles\\Visitor.mov"));
+                JOptionPane.showMessageDialog(null, "Deleted");
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Enter ID Number");
+        }
+        setTextFieldText(blankArray);
+    }//GEN-LAST:event_jButton8ActionPerformed
+ public void compareAppoinmentNo(String primarykey) {
+        if (primarykey.length() == 0) {
+            JOptionPane.showMessageDialog(null, "Please Enter ID Number");
+        } else {
+
+            try {
+                String[] strAppoinmentDetailsArray = readFileObj.findObjLine(primarykey,
+                        new File("src\\TxtFiles\\Visitor.mov"), 4);
+                if (strAppoinmentDetailsArray == null) {
+                    JOptionPane.showMessageDialog(null, "Invalid ID Number");
+                } else {
+                    setTextFieldText(strAppoinmentDetailsArray);
+
+                    JOptionPane.showMessageDialog(null, "Done");
+                }
+            } catch (Exception e) {
+
+            }
+        }
+    }
+
+    public void setTextFieldText(String[] details) {
+        jTextField1.setText(details[4]);
+        jTextField3.setText(details[7]);
+        jTextArea3.setText(details[1]);
+        jTextField4.setText(details[5]);
+        jTextField9.setText(details[9]);
+        //jTextField7.setText(datails[3]);
+        jTextField5.setText(details[6]);
+        jTextField2.setText(details[2]);
+        jTextArea2.setText(details[8]);
+    }
+public void addChanges() {
+        String purpose = jTextArea3.getText().toLowerCase();
+        String name = jTextField2.getText().toLowerCase();
+        String idNo = jTextField1.getText().toLowerCase();
+        int phone = 0;//Integer.valueOf(jTextField2.getText());
+        LocalDate date = LocalDate.parse(jTextField4.getText());
+        LocalTime inTime = LocalTime.parse(jTextField5.getText());
+        LocalTime outTime = LocalTime.parse(jTextField3.getText());
+        File attachDoc = new File(jTextField9.getText());
+        String note = jTextArea2.getText().toLowerCase();
+        try {
+            new WriteFile().WriteInFile(new Visitor(purpose, name, idNo, date,
+                    inTime, outTime, attachDoc, note, phone), new File("src\\TxtFiles\\Visitor.mov"));
+            JOptionPane.showMessageDialog(null, "Success");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Fail", "", 2);
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
