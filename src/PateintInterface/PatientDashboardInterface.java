@@ -111,6 +111,11 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
         jButton4.setText("My Profile                         ");
         jButton4.setBorder(null);
         jButton4.setPreferredSize(new java.awt.Dimension(271, 25));
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton6.setForeground(new java.awt.Color(204, 204, 204));
@@ -333,6 +338,16 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
 
         new ResizeInternalFrame(new PatientViewComplain1(), jDesktopPane1);
     }//GEN-LAST:event_jButton7MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        clearDesktopPane(jButton4);
+
+        try {
+            new ResizeInternalFrame(new PatientProfile(), jDesktopPane1);
+        } catch (Exception e) {
+       
+        }
+    }//GEN-LAST:event_jButton4MouseClicked
     public void clearDesktopPane(JButton button) {
         setBackgroundColor(new Color(0, 0, 0, 0));
         jDesktopPane1.removeAll();
