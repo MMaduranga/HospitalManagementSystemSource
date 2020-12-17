@@ -1,9 +1,9 @@
 package ReceptionistInterface;
 
-import Classes.DispatchPostalMail;
+import Classes.MainClasses.DispatchPostalMail;
 
-import Classes.SimpleMethods;
-import Classes.WriteFile;
+import Classes.SubClasses.SimpleMethods;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;
@@ -496,7 +496,7 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
         String fromName = jTextField3.getText().toLowerCase();
         try {
             new WriteFile().WriteInFile(new DispatchPostalMail(referenceNo, currentDate,
-                    attachDoc, note, toName, toAddress, fromName), new File("src\\TxtFiles\\DispatchMail.txt"));
+                    attachDoc, note, toName, toAddress, fromName), new File("src\\TxtFiles\\DispatchMail.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);

@@ -1,8 +1,8 @@
 package ReceptionistInterface;
 
-import Classes.ReadFile;
-import Classes.ReceivedPostalMail;
-import Classes.WriteFile;
+import Classes.SubClasses.ReadFile;
+import Classes.MainClasses.ReceivedPostalMail;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;
@@ -490,7 +490,7 @@ public class AdminViewReceivedj extends javax.swing.JInternalFrame {
         String toName = jTextField10.getText().toLowerCase();
         try {
             new WriteFile().WriteInFile(new ReceivedPostalMail(referenceNo, currentDate,
-                    attachDoc, note, fromName, fromAddress, toName), new File("src\\TxtFiles\\ReceviedMail.txt"));
+                    attachDoc, note, fromName, fromAddress, toName), new File("src\\TxtFiles\\ReceviedMail.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);
@@ -500,7 +500,7 @@ public class AdminViewReceivedj extends javax.swing.JInternalFrame {
         if (jTextField1.getText().length() > 0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\ReceviedMail.txt"));
+                readFileObj.deleteObj(new File("src\\TxtFiles\\ReceviedMail.mov"));
                 addChanges();
 
             } catch (Exception e) {
@@ -516,7 +516,7 @@ public class AdminViewReceivedj extends javax.swing.JInternalFrame {
         if (jTextField1.getText().length() > 0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\ReceviedMail.txt"));
+                readFileObj.deleteObj(new File("src\\TxtFiles\\ReceviedMail.mov"));
                 JOptionPane.showMessageDialog(null, "Deleted");
             } catch (Exception e) {
                 System.out.println(e);
@@ -533,7 +533,7 @@ public class AdminViewReceivedj extends javax.swing.JInternalFrame {
 
             try {
                 String[] strAppoinmentDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\ReceviedMail.txt"), 7);
+                        new File("src\\TxtFiles\\ReceviedMail.mov"), 7);
                 if (strAppoinmentDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid Reference Number");
                 } else {

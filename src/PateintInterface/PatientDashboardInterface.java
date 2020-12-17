@@ -1,8 +1,8 @@
 package PateintInterface;
 
-import Classes.ResizeInternalFrame;
+import Classes.SubClasses.ResizeInternalFrame;
 import java.awt.Color;
-import Classes.JpanelGradient;
+import Classes.SubClasses.JpanelGradient;
 import LoginInterface.Login;
 
 import javax.swing.JButton;

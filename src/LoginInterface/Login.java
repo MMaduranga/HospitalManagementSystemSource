@@ -1,9 +1,9 @@
 package LoginInterface;
 
-import Classes.JpanelGradient;
+import Classes.SubClasses.JpanelGradient;
 import java.awt.Color;
-import Classes.SignIn;
-import Classes.WriteFile;
+import Classes.SubClasses.SignIn;
+import Classes.SubClasses.WriteFile;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 

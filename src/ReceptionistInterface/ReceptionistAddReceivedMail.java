@@ -1,10 +1,10 @@
 package ReceptionistInterface;
-import Classes.SimpleMethods;
-import Classes.WriteFile;
+import Classes.SubClasses.SimpleMethods;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;
-import Classes.ReceivedPostalMail;
+import Classes.MainClasses.ReceivedPostalMail;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -489,7 +489,7 @@ public class ReceptionistAddReceivedMail extends javax.swing.JInternalFrame {
         String toName=jTextField3.getText().toLowerCase();
         try {
             new WriteFile().WriteInFile(new ReceivedPostalMail(referenceNo, currentDate,
-                    attachDoc, note, fromName, fromAddress, toName), new File("src\\TxtFiles\\ReceviedMail.txt"));
+                    attachDoc, note, fromName, fromAddress, toName), new File("src\\TxtFiles\\ReceviedMail.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);

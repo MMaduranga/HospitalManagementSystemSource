@@ -1,11 +1,11 @@
 package PateintInterface;
 
-import Classes.ComplaintRecord;
-import Classes.WriteFile;
+import Classes.MainClasses.ComplaintRecord;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;
-import Classes.SimpleMethods;
+import Classes.SubClasses.SimpleMethods;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -493,7 +493,7 @@ public class PatientAddComplaint extends javax.swing.JInternalFrame {
         try {
             new WriteFile().WriteInFile(new ComplaintRecord(complaintType, complaintBy,
                     PhoneNo, currentDate, description, actionTaken, note, attachDoc),
-                    new File("src\\TxtFiles\\Complaint.txt"));
+                    new File("src\\TxtFiles\\Complaint.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);

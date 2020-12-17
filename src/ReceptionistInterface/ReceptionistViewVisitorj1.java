@@ -1,8 +1,8 @@
 package ReceptionistInterface;
 
-import Classes.ReadFile;
-import Classes.Visitor;
-import Classes.WriteFile;
+import Classes.SubClasses.ReadFile;
+import Classes.MainClasses.Visitor;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;
@@ -286,7 +286,8 @@ public class ReceptionistViewVisitorj1 extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68)
+                        .addComponent(jButton4)
                         .addGap(18, 18, 18)
                         .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
@@ -506,7 +507,7 @@ public class ReceptionistViewVisitorj1 extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 972, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 976, Short.MAX_VALUE)
         );
 
         pack();
@@ -523,7 +524,7 @@ public void addChanges() {
         String note = jTextArea2.getText().toLowerCase();
         try {
             new WriteFile().WriteInFile(new Visitor(purpose, name, idNo, date,
-                    inTime, outTime, attachDoc, note, phone), new File("src\\TxtFiles\\Visitor.txt"));
+                    inTime, outTime, attachDoc, note, phone), new File("src\\TxtFiles\\Visitor.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);
@@ -533,7 +534,7 @@ public void addChanges() {
         if (jTextField1.getText().length() > 0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\Visitor.txt"));
+                readFileObj.deleteObj(new File("src\\TxtFiles\\Visitor.mov"));
                 addChanges();
 
             } catch (Exception e) {
@@ -553,7 +554,7 @@ public void addChanges() {
         if (jTextField1.getText().length() > 0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\Visitor.txt"));
+                readFileObj.deleteObj(new File("src\\TxtFiles\\Visitor.mov"));
                 JOptionPane.showMessageDialog(null, "Deleted");
             } catch (Exception e) {
                 System.out.println(e);
@@ -570,7 +571,7 @@ public void addChanges() {
 
             try {
                 String[] strAppoinmentDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\Visitor.txt"), 4);
+                        new File("src\\TxtFiles\\Visitor.mov"), 4);
                 if (strAppoinmentDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid ID Number");
                 } else {

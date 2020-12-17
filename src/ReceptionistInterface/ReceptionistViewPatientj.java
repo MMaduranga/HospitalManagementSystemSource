@@ -1,8 +1,8 @@
 package ReceptionistInterface;
 
-import Classes.Patient;
-import Classes.ReadFile;
-import Classes.WriteFile;
+import Classes.MainClasses.Patient;
+import Classes.SubClasses.ReadFile;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;
@@ -674,7 +674,7 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
         if (jTextField6.getText().length() != 0 || jTextField8.getText().length() > 0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\Pateint.txt"));
+                readFileObj.deleteObj(new File("src\\TxtFiles\\Pateint.mov"));
                 addChanges();
 
             } catch (Exception e) {
@@ -702,7 +702,7 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
 
             new WriteFile().WriteInFile(new Patient(bloodGroup, allergies, userName,
                     name, gender, phoneNo, idNo, address, materialStatus, password,
-                    dob, profilePic), new File("src\\TxtFiles\\Pateint.txt"));
+                    dob, profilePic), new File("src\\TxtFiles\\Pateint.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);
@@ -716,7 +716,7 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
 
             try {
                 String[] strPatientDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\Pateint.txt"), location);
+                        new File("src\\TxtFiles\\Pateint.mov"), location);
                 if (strPatientDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid ID Number or UserName");
                 } else {

@@ -1,8 +1,8 @@
 package PateintInterface;
 
-import Classes.ComplaintRecord;
-import Classes.ReadFile;
-import Classes.WriteFile;
+import Classes.MainClasses.ComplaintRecord;
+import Classes.SubClasses.ReadFile;
+import Classes.SubClasses.WriteFile;
 import java.io.File;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
@@ -521,7 +521,7 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
         if (jTextField6.getText().length() != 0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\Complaint.txt"));
+                readFileObj.deleteObj(new File("src\\TxtFiles\\Complaint.mov"));
                 addChanges();
 
             } catch (Exception e) {
@@ -545,7 +545,7 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
             File attachDoc = new File(jTextField8.getText());
             new WriteFile().WriteInFile(new ComplaintRecord(complaintType,
                     complaintBy, PhoneNo, currentDate, description, actionTaken,
-                    note, attachDoc), new File("src\\TxtFiles\\Complaint.txt"));
+                    note, attachDoc), new File("src\\TxtFiles\\Complaint.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);
@@ -560,7 +560,7 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
 
             try {
                 String[] strComplanitDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\Complaint.txt"), location);
+                        new File("src\\TxtFiles\\Complaint.mov"), location);
                 if (strComplanitDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid Phone Number");
                 } else {

@@ -1,8 +1,8 @@
 package AdminInterface;
 
-import Classes.MedicalOfficer;
-import Classes.Receptionist;
-import Classes.WriteFile;
+import Classes.MainClasses.MedicalOfficer;
+import Classes.MainClasses.Receptionist;
+import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -760,7 +760,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
             new WriteFile().WriteInFile(new MedicalOfficer(staffId, staffEmailAddress,
                     userName, name, gender, phoneNo, idNo,
                     address, materialStatus, password, DOB, profilePic, dateOfJoin, 
-                    staffPhoto, attachDoc, spetialtyArea), new File("src\\TxtFiles\\MedicalOfficer.txt"));
+                    staffPhoto, attachDoc, spetialtyArea), new File("src\\TxtFiles\\MedicalOfficer.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);

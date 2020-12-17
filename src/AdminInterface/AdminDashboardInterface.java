@@ -1,9 +1,10 @@
 package AdminInterface;
 
-import Classes.ResizeInternalFrame;
+import Classes.SubClasses.ResizeInternalFrame;
 import java.awt.Color;
-import Classes.JpanelGradient;
+import Classes.SubClasses.JpanelGradient;
 import LoginInterface.Login;
+import java.io.File;
 
 import javax.swing.JButton;
 
@@ -12,6 +13,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     public AdminDashboardInterface() {
         initComponents();
         setBackgroundColor(new Color(0, 0, 0, 0));//set background null
+     
 
     }
 
