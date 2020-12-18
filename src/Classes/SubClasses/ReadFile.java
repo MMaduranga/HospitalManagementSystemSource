@@ -86,4 +86,45 @@ public class ReadFile {
         }
     }
 
+    public int getStaffIdNo() {
+        int intStaffId = 0;
+        try {
+            FileSecurity fileSecurity = new FileSecurity("src\\TxtFiles\\StaffIdNo.mov");
+            FileReader readUserFile = new FileReader(fileSecurity.setFilePathToTxt());//open users file to read
+            BufferedReader readFile = new BufferedReader(readUserFile);
+            intStaffId = Integer.valueOf(readFile.readLine());
+
+            readUserFile.close();//close the opened file
+            fileSecurity.setFilePathMOV();
+            readFile.close();
+        } catch (IOException e) {
+        }
+        return intStaffId;
+    }
+
+    public ArrayList<String> getItemsForDropdownList(File fileLocation) {
+        String strDropDownListItems = "";
+        String[] strDropDownListItemsArray;
+        ArrayList<String> dropDownlistArray = new ArrayList<>();
+        try {
+            FileSecurity fileSecurity = new FileSecurity(fileLocation.toString());
+            FileReader readUserFile = new FileReader(fileSecurity.setFilePathToTxt());//open users file to read
+            BufferedReader readFile = new BufferedReader(readUserFile);
+            String strLine = readFile.readLine();//save 1st line of users file to a string
+            while (strLine != null) {
+                strDropDownListItems += strLine;
+                strLine = readFile.readLine();
+            }
+            readFile.close();
+            fileSecurity.setFilePathMOV();
+            readUserFile.close();
+        } catch (IOException e) {
+        }
+        strDropDownListItemsArray = strDropDownListItems.split("~");
+        for (int count = 0; count < strDropDownListItemsArray.length; count++) {
+            dropDownlistArray.add(strDropDownListItemsArray[count]);
+        }
+
+        return dropDownlistArray;
+    }
 }

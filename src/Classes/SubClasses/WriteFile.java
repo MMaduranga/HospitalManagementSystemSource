@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import Classes.SubClasses.FileSecurity;
+import java.util.ArrayList;
 
 public class WriteFile {
 
@@ -53,5 +54,38 @@ public class WriteFile {
         } catch (IOException e) {
         }
 
+    }
+
+    public void setStaffId() {
+
+        try {
+            FileSecurity fileSecuryty = new FileSecurity("src\\TxtFiles\\StaffIdNo.mov");
+            int intNewStaffIdNo = new ReadFile().getStaffIdNo() + 1;
+            FileWriter file = new FileWriter(fileSecuryty.setFilePathToTxt());
+            PrintWriter write = new PrintWriter(file);
+            write.print(intNewStaffIdNo);
+            file.close();
+            write.close();
+            fileSecuryty.setFilePathMOV();
+        } catch (IOException e) {
+        }
+    }
+
+    public void AddpdownListItem(ArrayList<String> strNewItem, File fileLocation) {
+        try {
+            FileSecurity fileSecuryty = new FileSecurity(fileLocation.toString());
+            new File(fileSecuryty.setFilePathToTxt()).delete();
+
+            FileWriter file = new FileWriter(fileSecuryty.setFilePathToTxt(), true);
+            PrintWriter write = new PrintWriter(file);
+            write.print(strNewItem.get(0));
+            for (int count = 1; count < strNewItem.size(); count++) {
+                write.print("~" + strNewItem.get(count));
+            }
+            file.close();
+            write.close();
+            fileSecuryty.setFilePathMOV();
+        } catch (IOException e) {
+        }
     }
 }
