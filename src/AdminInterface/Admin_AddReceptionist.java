@@ -1,6 +1,7 @@
 package AdminInterface;
 
 import Classes.MainClasses.Receptionist;
+import Classes.SubClasses.ReadFile;
 import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -10,7 +11,6 @@ import java.time.LocalDate;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
-
 
 public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
 
@@ -27,11 +27,10 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
         jComboBox2.setSelectedItem(null);
 
         setPreferredSize(getMinimumSize());
-
+        setStaffId();
         pack();
     }
 
-  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -701,10 +700,12 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
         File staffPhoto = new File("");
         File attachDoc = new File("");
         try {
-            new WriteFile().WriteInFile(new Receptionist(staffId, staffEmailAddress,
+            WriteFile writeFileObj = new WriteFile();
+            writeFileObj.WriteInFile(new Receptionist(staffId, staffEmailAddress,
                     userName, name, gender, phoneNo, idNo, address, materialStatus,
                     password, DOB, profilePic, dateOfJoin, staffPhoto, attachDoc),
                     new File("src\\TxtFiles\\Receptionist.mov"));
+            writeFileObj.setStaffId();
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);
@@ -737,7 +738,10 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
+    public void setStaffId() {
 
+        jTextField7.setText(new ReadFile().getStaffIdNo() + "");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

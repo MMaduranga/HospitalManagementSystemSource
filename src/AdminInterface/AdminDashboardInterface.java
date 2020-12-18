@@ -5,6 +5,10 @@ import java.awt.Color;
 import Classes.SubClasses.JpanelGradient;
 import LoginInterface.Login;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 
 import javax.swing.JButton;
 
@@ -13,7 +17,15 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     public AdminDashboardInterface() {
         initComponents();
         setBackgroundColor(new Color(0, 0, 0, 0));//set background null
-     
+        /*        try {
+        FileWriter a=new FileWriter("src\\TxtFiles\\SpecialistArea.txt");
+        PrintWriter b=new PrintWriter(a);
+        b.print("");
+        a.close();
+        b.close();
+        new File("src\\TxtFiles\\SpecialistArea.txt").renameTo(new File("src\\TxtFiles\\SpecialistArea.mov"));
+        } catch (Exception e) {
+        }*/
 
     }
 
@@ -238,6 +250,11 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-menu-50.png"))); // NOI18N
         jButton14.setText("reference module              ");
         jButton14.setBorder(null);
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
 
         jButton15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton15.setForeground(new java.awt.Color(204, 204, 204));
@@ -484,6 +501,12 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         new ResizeInternalFrame(new AdminViewMedicalOfficerj(), jDesktopPane1);
     }//GEN-LAST:event_jButton19MouseClicked
+
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+          clearDesktopPane(jButton14);
+
+        new ResizeInternalFrame(new DropdownListEditor(), jDesktopPane1);
+    }//GEN-LAST:event_jButton14MouseClicked
 
     /**
      * @param args the command line arguments

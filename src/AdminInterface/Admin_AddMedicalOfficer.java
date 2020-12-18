@@ -2,6 +2,8 @@ package AdminInterface;
 
 import Classes.MainClasses.MedicalOfficer;
 import Classes.MainClasses.Receptionist;
+import Classes.SubClasses.CheckValidation;
+import Classes.SubClasses.ReadFile;
 import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -41,8 +43,9 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jComboBox3.setSelectedItem(null);
 
         setPreferredSize(getMinimumSize());
-
+        setStaffId();
         pack();
+
     }
 
     /**
@@ -202,9 +205,27 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jTextField4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
         jTextField4.setPreferredSize(new java.awt.Dimension(460, 37));
+        jTextField4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField4FocusLost(evt);
+            }
+        });
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
+            }
+        });
+        jTextField4.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jTextField4PropertyChange(evt);
+            }
+        });
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField4KeyTyped(evt);
             }
         });
 
@@ -296,6 +317,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel28.setText("Staff Email Address :");
 
+        jTextField7.setEditable(false);
         jTextField7.setBackground(new java.awt.Color(240, 248, 255));
         jTextField7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jTextField7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
@@ -332,6 +354,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel32.setText("Speaciality :");
 
         jComboBox3.setBackground(new java.awt.Color(240, 248, 255));
+        jComboBox3.setEditable(true);
         jComboBox3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALLERGY SPECIALIST", "ANOMALY SCAN", "CARDIAC ELECTROPHYSIOLOGIST", "CARDIOLOGIST", "CHEST PHYSICIAN", "CHEST SPECIALIST", "CHILD AND ADOLESCENT PHYCHIATRIST", "CLINICAL HAEMATOLOGIST", "CLINICAL PHYSIOLOGIST", "CONSULTANT DENTAL SURGEON AND PROSTHODONTIST", "CONSULTANT DENTAL SURGEON IN RESTORATIVE PERIODONTOLOGY", "CONSULTANT JUDICIAL MEDICINE", "DENTAL ORAL AND MAXILLOFACIAL SURGEON", "DENTAL SURGEON", "DENTAL SURGEON AND GENERAL AND LASER", "DENTAL SURGEON IN PROSTHODONTICS AND ENDODONTICS", "DERMATOLOGIST", "DIABETIC EDUCATOR", "DIETICIAN", "DIETICIAN AND NUTRICIAN", "EMBRYOLOGIST", "ENDOCRINOLOGIST AND DIABETOLOGIST", "ENT SURGEON", "EYE SURGEON", "FAMILY PHYSICIAN", "GASTROENTEROLOGICAL SURGEON", "GASTROENTEROLOGIST", "GENERAL PHYSICIAN", "GENERAL SURGEON", "GENITO URINARY SURGEON", "GYNAECOLOGICAL ONCOLOGIST", "HAEMATO ONCOLOGIST", "HAEMATOLOGIST", "MEDICAL MICROBIOLOGIST", "MYCOLOGIST", "NEPHROLOGIST", "NEURO PHYSICIAN", "NEURO PHYSIOLOGIST", "NEURO SURGEON", "NEUROLOGIST", "NUTRITIONIST", "OBSTETRICIAN AND GYNAECOLOGIST", "OCCUPATIONAL THERAPIST", "ONCOLOGICAL SURGEON", "ONCOLOGIST", "ONCOLOGIST AND CANCER SPECIALIST", "ORAL AND MAXILLOFACIAL SURGEON", "ORTHODONTIST", "ORTHOPAEDIC SURGEON", "ORTHOPAEDIC SURGEON AND SPORTS MEDICINE", "PAEDIATRIC AND ADOLESCENTS ONCOLOGIST", "PAEDIATRIC CARDIOLOGIST", "PAEDIATRIC CHEST PHYSICIAN", "PAEDIATRIC ENDOCRINOLOGIST", "PAEDIATRIC NEONATOLOGIST", "PAEDIATRIC NEPHROLOGIST", "PAEDIATRIC NEUROLOGIST", "PAEDIATRIC ONCOLOGIST", "PAEDIATRIC SURGEON", "PAEDIATRICIAN", "PAEDIATRICIAN AND NEONATAL PAEDIATRICIAN", "PAIN MANAGEMENT", "PEDIATRIC CARDIAC SURGEON", "PHYSICIAN", "PHYSICIAN AND GASTRO ENTEROLOGISTS", "PHYSIOTHERAPIST", "PHYSIOTHERAPY AND REHABILITATION", "PLASTIC AND RECONSTRUCTIVE SURGEON", "PLASTIC SURGEON", "PSYCHIATRIST", "PSYCHOLOGICAL COUNSELOR", "PSYCHOLOGIST", "PSYCOLOGIST PSYCOTHERAPIST PROFESSIONAL COUNSELOR", "PSYCOTHERAPIST", "RADIOLOGISTS", "RHEUMATOLOGIST", "S.T.D", "SEXUAL WELLNESS AND S. T. D", "SPEECH AND LANGUAGE THERAPIST", "SPEECH THERAPIST", "SPEECH THERAPIST AND AUDIOLOGIST", "SPORTS AND EXERCISE MEDICINE", "SPORTS MEDICINE", "SURGEON", "THORACIC SURGEON", "TRANSPLANT SURGEON", "UROLOGICAL AND TRANSPLANT SURGEON", "UROLOGICAL SURGEON", "UROLOGIST", "VASCULAR AND TRANSPLANT SURGEON", "VASCULAR SURGEON", "VENERELOGY", "VENEREOLOGIST", "VENEREOLOGIST AND STD AND SEXUAL HEALTH", "VENEREOLOGIST(CONSULTANT IN SEXUAL MEDICINE)", "VENEREOLOGIST(S.T.D)", "WOUND CONSULTATION" }));
         jComboBox3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
@@ -544,10 +567,10 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
                         .addGap(4, 4, 4)
                         .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                         .addGap(4, 4, 4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addGap(12, 12, 12)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
@@ -558,7 +581,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                         .addGap(24, 24, 24)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -569,7 +592,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
                         .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -587,7 +610,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                         .addGap(75, 75, 75))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -612,9 +635,9 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -696,7 +719,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -705,7 +728,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 831, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -719,7 +742,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 996, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE)
         );
 
         pack();
@@ -730,7 +753,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
@@ -738,33 +761,36 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    
-        try {
-                String userName = jTextField4.getText().toLowerCase();
-        String name = jTextField2.getText().toLowerCase();
-        String gender = jComboBox1.getSelectedItem().toString().toLowerCase();
-        int phoneNo = Integer.valueOf(jTextField5.getText());
-        String idNo = jTextField6.getText().toLowerCase();
-        LocalDate DOB = LocalDate.now();
-        String address = jTextArea2.getText().toLowerCase();
-        String materialStatus = jComboBox2.getSelectedItem().toString().toLowerCase();
-        String password = jPasswordField1.getText();
-        File profilePic = new File("");
 
-        int staffId = Integer.valueOf(jTextField7.getText());
-        String staffEmailAddress = jTextField8.getText().toLowerCase();
-        LocalDate dateOfJoin = LocalDate.now();
-        File staffPhoto = new File("");
-        File attachDoc = new File("");
-        String spetialtyArea = jComboBox3.getSelectedItem().toString().toLowerCase();
-            new WriteFile().WriteInFile(new MedicalOfficer(staffId, staffEmailAddress,
+        try {
+            String userName = jTextField4.getText().toLowerCase();
+            String name = jTextField2.getText().toLowerCase();
+            String gender = jComboBox1.getSelectedItem().toString().toLowerCase();
+            int phoneNo = Integer.valueOf(jTextField5.getText());
+            String idNo = jTextField6.getText().toLowerCase();
+            LocalDate DOB = LocalDate.now();
+            String address = jTextArea2.getText().toLowerCase();
+            String materialStatus = jComboBox2.getSelectedItem().toString().toLowerCase();
+            String password = jPasswordField1.getText();
+            File profilePic = new File("");
+
+            int staffId = Integer.valueOf(jTextField7.getText());
+            String staffEmailAddress = jTextField8.getText().toLowerCase();
+            LocalDate dateOfJoin = LocalDate.now();
+            File staffPhoto = new File("");
+            File attachDoc = new File("");
+            String spetialtyArea = jComboBox3.getSelectedItem().toString().toLowerCase();
+            WriteFile writeFileObj=new WriteFile();
+            writeFileObj.WriteInFile(new MedicalOfficer(staffId, staffEmailAddress,
                     userName, name, gender, phoneNo, idNo,
-                    address, materialStatus, password, DOB, profilePic, dateOfJoin, 
+                    address, materialStatus, password, DOB, profilePic, dateOfJoin,
                     staffPhoto, attachDoc, spetialtyArea), new File("src\\TxtFiles\\MedicalOfficer.mov"));
+            writeFileObj.setStaffId();
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);
         }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
@@ -798,6 +824,25 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
+    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
+
+    }//GEN-LAST:event_jTextField4KeyReleased
+
+    private void jTextField4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyTyped
+
+    }//GEN-LAST:event_jTextField4KeyTyped
+
+    private void jTextField4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusLost
+        //new CheckValidation().checkUserName(jTextField4.getText(),new File("src\\TxtFiles\\MedicalOfficer.mov") , SOMEBITS);
+    }//GEN-LAST:event_jTextField4FocusLost
+
+    private void jTextField4PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTextField4PropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4PropertyChange
+    public void setStaffId() {
+
+        jTextField7.setText( new ReadFile().getStaffIdNo()+"");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
