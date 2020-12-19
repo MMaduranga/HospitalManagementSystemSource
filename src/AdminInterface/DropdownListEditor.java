@@ -3,6 +3,7 @@ package AdminInterface;
 import Classes.SubClasses.ReadFile;
 import Classes.SubClasses.SimpleMethods;
 import Classes.SubClasses.WriteFile;
+import java.awt.Color;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -21,7 +22,8 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
-
+jComboBox1.setBackground(new Color(0,0,0,0));
+jComboBox2.setBackground(new Color(0,0,0,0));
         handleDropdownListItem();
         AutoCompleteDecorator.decorate(jComboBox1);
         AutoCompleteDecorator.decorate(jComboBox2);
@@ -73,7 +75,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         jButton1.setBackground(new java.awt.Color(0, 26, 51));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Add");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_add_new_30px.png"))); // NOI18N
         jButton1.setPreferredSize(new java.awt.Dimension(67, 37));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +86,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         jButton2.setBackground(new java.awt.Color(0, 26, 51));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Delete");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_waste_30px.png"))); // NOI18N
         jButton2.setPreferredSize(new java.awt.Dimension(91, 37));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,7 +107,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         jButton3.setBackground(new java.awt.Color(0, 26, 51));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Add");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_add_new_30px.png"))); // NOI18N
         jButton3.setPreferredSize(new java.awt.Dimension(67, 37));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +118,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         jButton4.setBackground(new java.awt.Color(0, 26, 51));
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Delete");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_waste_30px.png"))); // NOI18N
         jButton4.setPreferredSize(new java.awt.Dimension(91, 37));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,7 +199,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
                 .addGap(25, 25, 25))
         );
 
@@ -212,7 +214,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 972, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 

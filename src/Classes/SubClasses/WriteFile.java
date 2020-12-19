@@ -28,8 +28,9 @@ public class WriteFile {
     }
 
     public void WriteInFile(String line, File filelocation) {
-        FileSecurity fileSecuryty = new FileSecurity(filelocation.toString());
+
         try {
+            FileSecurity fileSecuryty = new FileSecurity(filelocation.toString());
             FileWriter file = new FileWriter(fileSecuryty.setFilePathToTxt(), true);
             PrintWriter write = new PrintWriter(file);
             write.print(line + "\n");
@@ -86,6 +87,19 @@ public class WriteFile {
             write.close();
             fileSecuryty.setFilePathMOV();
         } catch (IOException e) {
+        }
+    }
+
+    public void writeInSavedUserFile(String line, File fileLocation) {
+        try {
+            FileSecurity fileSecuryty = new FileSecurity(fileLocation.toString());
+            FileWriter file = new FileWriter(fileSecuryty.setFilePathToTxt());
+            PrintWriter write = new PrintWriter(file);
+            write.print(line);
+            file.close();
+            write.close();
+            fileSecuryty.setFilePathMOV();
+        } catch (Exception e) {
         }
     }
 }
