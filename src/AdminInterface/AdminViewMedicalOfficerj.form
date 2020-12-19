@@ -25,7 +25,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" pref="1130" max="32767" attributes="0"/>
+
+              <Component id="jPanel1" pref="1011" max="32767" attributes="0"/>
+
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -92,7 +94,9 @@
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+
                   <Component id="jPanel3" pref="986" max="32767" attributes="0"/>
+
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
@@ -929,6 +933,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Preview"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField5">
                       <Properties>
@@ -1102,6 +1109,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Select"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField9">
                       <Properties>
@@ -1592,6 +1602,9 @@
                           <Dimension value="[460, 37]"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
