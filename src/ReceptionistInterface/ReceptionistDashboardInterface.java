@@ -118,7 +118,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton4.setForeground(new java.awt.Color(204, 204, 204));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-user-50.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8_client_management_50px.png"))); // NOI18N
         jButton4.setText("My Profile                         ");
         jButton4.setBorder(null);
         jButton4.setPreferredSize(new java.awt.Dimension(271, 25));
@@ -294,7 +294,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
         jButton15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton15.setForeground(new java.awt.Color(204, 204, 204));
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-inquiry-30.png"))); // NOI18N
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8_help_50px.png"))); // NOI18N
         jButton15.setText("   Help                                ");
         jButton15.setBorder(null);
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -324,7 +324,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
                     .addComponent(jButton18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
