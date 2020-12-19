@@ -1,14 +1,15 @@
 package AdminInterface;
 
-
 import Classes.SubClasses.ReadFile;
 import Classes.SubClasses.SimpleMethods;
+
 import java.awt.Color;
+import java.awt.Image;
 import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
-
-
 
 public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
 
@@ -17,23 +18,24 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
      */
     public AdminViewMedicalOfficerj() {
         initComponents();
-         jComboBox1.setSelectedItem(null);
-           jComboBox2.setSelectedItem(null);
-        jButton1.setBackground(new Color(0,0,0,0));
-        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
-        BasicInternalFrameUI basicinternalform=(BasicInternalFrameUI)this.getUI();
+        jComboBox1.setSelectedItem(null);
+        jComboBox2.setSelectedItem(null);
+        jButton1.setBackground(new Color(0, 0, 0, 0));
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
-        jComboBox1.setBackground(new Color(0,0,0,0));
-          jComboBox2.setBackground(new Color(0,0,0,0));  
+        jComboBox1.setBackground(new Color(0, 0, 0, 0));
+        jComboBox2.setBackground(new Color(0, 0, 0, 0));
         handleDropdownListItem();
         AutoCompleteDecorator.decorate(jComboBox3);
     }
-public void handleDropdownListItem() {
-       
-       new SimpleMethods().addItemsToDropdown(new ReadFile().getItemsForDropdownList
-        (new File("src\\TxtFiles\\SpecialistArea.mov")), jComboBox3);
-   
+
+    public void handleDropdownListItem() {
+
+        new SimpleMethods().addItemsToDropdown(new ReadFile().getItemsForDropdownList(new File("src\\TxtFiles\\SpecialistArea.mov")), jComboBox3);
+
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -249,6 +251,11 @@ public void handleDropdownListItem() {
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Preview");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jTextField5.setBackground(new java.awt.Color(240, 248, 255));
         jTextField5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -308,6 +315,11 @@ public void handleDropdownListItem() {
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Select");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jTextField9.setBackground(new java.awt.Color(240, 248, 255));
         jTextField9.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -402,6 +414,11 @@ public void handleDropdownListItem() {
         jButton7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Select");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jLabel44.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel44.setText("Speaciality :");
@@ -448,6 +465,11 @@ public void handleDropdownListItem() {
         jButton11.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("Preview");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -857,7 +879,7 @@ public void handleDropdownListItem() {
                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 847, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
@@ -872,7 +894,7 @@ public void handleDropdownListItem() {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1003, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1007, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -920,8 +942,42 @@ public void handleDropdownListItem() {
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+      jTextField13.setText(new SimpleMethods().fileChooser().toString());
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        jTextField9.setText(new SimpleMethods().fileChooser().toString());
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String imagePath = jTextField9.getText();
+        if (imagePath.length() != 0) {
+            ImageIcon image = new ImageIcon(imagePath);
+            Image resize = image.getImage();
+            Image resizedImage = resize.getScaledInstance(900, 507, Image.SCALE_SMOOTH);
+            image = new ImageIcon(resizedImage);
+            JOptionPane.showMessageDialog(null, null, null, JOptionPane.INFORMATION_MESSAGE, image);
+        } else {
+            JOptionPane.showMessageDialog(null, "Select a Image");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+         String imagePath = jTextField13.getText();
+        if (imagePath.length() != 0) {
+            ImageIcon image = new ImageIcon(imagePath);
+            Image resize = image.getImage();
+            Image resizedImage = resize.getScaledInstance(900, 507, Image.SCALE_SMOOTH);
+            image = new ImageIcon(resizedImage);
+            JOptionPane.showMessageDialog(null, null, null, JOptionPane.INFORMATION_MESSAGE, image);
+        } else {
+            JOptionPane.showMessageDialog(null, "Select a Image");
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+      jTextField2.setText(new SimpleMethods().fileChooser().toString());
+    }//GEN-LAST:event_jButton7ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
