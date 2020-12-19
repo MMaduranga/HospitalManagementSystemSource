@@ -256,7 +256,7 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8_client_management_50px.png"/>
+                  <Image iconType="3" name="/Icon/icons8_male_user_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="My Profile                         "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -279,7 +279,7 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-add-female-user-50.png"/>
+                  <Image iconType="3" name="/Icon/icons8_user_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Add Visitor                         "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -300,9 +300,9 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-new-view-30.png"/>
+                  <Image iconType="3" name="/Icon/icons8_view_schedule_30px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  View Appoinment              "/>
+                <Property name="text" type="java.lang.String" value="View Appoinment              "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -320,7 +320,7 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-view-50.png"/>
+                  <Image iconType="3" name="/Icon/icons8_survey_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="View Complaient               "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -341,9 +341,9 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-fever-30.png"/>
+                  <Image iconType="3" name="/Icon/icons8_protection_mask_30px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" View Patient                     "/>
+                <Property name="text" type="java.lang.String" value="View Patient                     "/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -362,7 +362,7 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-patient-care-50.png"/>
+                  <Image iconType="3" name="/Icon/icons8_being_sick_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Add Patient                       "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -382,7 +382,7 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-search-client-48.png"/>
+                  <Image iconType="3" name="/Icon/icons8_find_user_male_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="View Visitor                       "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -405,7 +405,7 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-mail-50.png"/>
+                  <Image iconType="3" name="/Icon/icons8_forward_message_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Add Dispatched PostalMail "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -425,7 +425,7 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-important-mail-50.png"/>
+                  <Image iconType="3" name="/Icon/icons8_reply_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Add Received PostalMail    "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -445,7 +445,7 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-google-web-search-50.png"/>
+                  <Image iconType="3" name="/Icon/icons8_mail_privacy_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="View ReceivedMail            "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -465,7 +465,7 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-concerned-face-50.png"/>
+                  <Image iconType="3" name="/Icon/icons8_complaint_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Add Complaint                  "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -485,11 +485,14 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-night-50.png"/>
+                  <Image iconType="3" name="/Icon/icons8_night_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Dark Mode                        "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
+                </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[275, 45]"/>
                 </Property>
               </Properties>
             </Component>
@@ -502,7 +505,7 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-key-50.png"/>
+                  <Image iconType="3" name="/Icon/icons8_sign_out_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Log Out                            "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -523,9 +526,9 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8-health-checkup-30.png"/>
+                  <Image iconType="3" name="/Icon/icons8_health_checkup_30px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  Add Appoinment               "/>
+                <Property name="text" type="java.lang.String" value="Add Appoinment               "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -542,7 +545,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="View DispatchMail"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Icon/icons8_message_preview_30px.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="View DispatchMail            "/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton19MouseClicked"/>
@@ -557,9 +563,9 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Icons/icons8_help_50px.png"/>
+                  <Image iconType="3" name="/Icon/icons8_ask_question_30px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="   Help                                "/>
+                <Property name="text" type="java.lang.String" value="Help                                "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>

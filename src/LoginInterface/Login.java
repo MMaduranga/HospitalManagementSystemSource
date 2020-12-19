@@ -1,9 +1,13 @@
 package LoginInterface;
 
 import Classes.SubClasses.JpanelGradient;
+import Classes.SubClasses.ReadFile;
 import java.awt.Color;
 import Classes.SubClasses.SignIn;
 import Classes.SubClasses.WriteFile;
+
+import java.io.File;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -16,6 +20,9 @@ public class Login extends javax.swing.JFrame {
         jButton3.setBackground(new Color(0, 0, 0, 0));//hide jbutton3 background
         jComboBox1.setSelectedItem(null);//blank the jcomboBox1 at the start
         jButton4.setBackground(new Color(0, 0, 0, 0));//hide jbutton1 background
+        checkLogin();
+        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -303,7 +310,14 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    public void checkLogin() {
+        String strLine = new ReadFile().readLoginSavedUser();
+        if (strLine != null) {
+            String[] strLineArry = strLine.split("~");
+            executeLogin(strLineArry[0], strLineArry[1], strLineArry[2]);
 
+        }
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();//close the programme
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -315,27 +329,38 @@ public class Login extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         JOptionPane.showMessageDialog(null, "Contact Receptionist or Admin");//show a message to user to create and new account
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+    public void executeLogin(String strUserName, String strPassword, String strUserMode) {
         try {
-            SignIn signIn = new SignIn(jTextField1.getText(), jTextField2.getText(), jComboBox1.getSelectedItem().toString());
+            SignIn signIn = new SignIn(strUserName, strPassword, strUserMode);
             JFrame frame = signIn.compare();
             if (frame != null) {
-                 new WriteFile().UserLog(jTextField1.getText(),jComboBox1.getSelectedItem().toString());
+                new WriteFile().UserLog(strUserName, strUserMode);
                 setFrameVisible(frame);
-
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Invalid UserName or Password Please Check Again", "", 3);//if user name or password is invalid shaow a message
             }
         } catch (Exception e) {
 
         }
+    }
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String strUserName = jTextField1.getText();
+        String strPassword = jTextField2.getText();
+        String strUserMode = jComboBox1.getSelectedItem().toString();
+
+        if (jCheckBox1.isSelected()) {
+            new WriteFile().writeInSavedUserFile(strUserName + "~" + strPassword + "~"
+                    + strUserMode, new File("src\\TxtFiles\\SavedUser.mov"));
+        }
+        this.executeLogin(strUserName, strPassword, strUserMode);
     }//GEN-LAST:event_jButton2ActionPerformed
     public void setFrameVisible(JFrame frame) {
+      
         this.dispose();
         frame.setVisible(true);
     }
+  
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed

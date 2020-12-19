@@ -1,3 +1,0 @@
-Date:2020-12-15 Time:2020-12-15T09:43:01.256 UserName:ict User Mode:Admin
-Date:2020-12-15 Time:09:45:59.458 UserName:mdw User Mode:Admin
-Date:2020-12-15 Time:16:37:30.386 UserName:ict UserMode:Admin

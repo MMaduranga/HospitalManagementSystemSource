@@ -15,6 +15,7 @@ import javax.swing.JButton;
 public class AdminDashboardInterface extends javax.swing.JFrame {
 
     public AdminDashboardInterface() {
+      
         initComponents();
         setBackgroundColor(new Color(0, 0, 0, 0));//set background null
         /*        try {
@@ -139,7 +140,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton4.setForeground(new java.awt.Color(204, 204, 204));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-user-50.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_male_user_30px.png"))); // NOI18N
         jButton4.setText("My Profile                        ");
         jButton4.setBorder(null);
         jButton4.setPreferredSize(new java.awt.Dimension(271, 25));
@@ -151,9 +152,14 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
         jButton5.setForeground(new java.awt.Color(204, 204, 204));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-pdf-50 (1).png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_send_file_30px_1.png"))); // NOI18N
         jButton5.setText("Export Appoinment Record  ");
         jButton5.setBorder(null);
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -162,8 +168,8 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton6.setForeground(new java.awt.Color(204, 204, 204));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-new-view-30.png"))); // NOI18N
-        jButton6.setText("  View Appoinment             ");
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_view_schedule_30px.png"))); // NOI18N
+        jButton6.setText("View Appoinment             ");
         jButton6.setBorder(null);
         jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -173,7 +179,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         jButton7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton7.setForeground(new java.awt.Color(204, 204, 204));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-view-50.png"))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_survey_30px.png"))); // NOI18N
         jButton7.setText("View Complaint                ");
         jButton7.setBorder(null);
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -184,7 +190,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         jButton8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton8.setForeground(new java.awt.Color(204, 204, 204));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-find-user-male-50.png"))); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_protection_mask_30px.png"))); // NOI18N
         jButton8.setText("View Patient                    ");
         jButton8.setToolTipText("");
         jButton8.setBorder(null);
@@ -196,7 +202,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         jButton9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton9.setForeground(new java.awt.Color(204, 204, 204));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-patient-care-50.png"))); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_being_sick_30px.png"))); // NOI18N
         jButton9.setText("Add Patient                      ");
         jButton9.setBorder(null);
         jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -207,7 +213,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         jButton10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton10.setForeground(new java.awt.Color(204, 204, 204));
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-medical-doctor-50.png"))); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_stethoscope_30px.png"))); // NOI18N
         jButton10.setText("Add Medical Officer           ");
         jButton10.setBorder(null);
         jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -219,7 +225,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         jButton11.setBackground(new java.awt.Color(204, 204, 204));
         jButton11.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton11.setForeground(new java.awt.Color(204, 204, 204));
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-lady-with-moleskine-50.png"))); // NOI18N
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_workspace_30px.png"))); // NOI18N
         jButton11.setText("Add Receptionist               ");
         jButton11.setBorder(null);
         jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -235,20 +241,30 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         jButton12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton12.setForeground(new java.awt.Color(204, 204, 204));
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-export-48.png"))); // NOI18N
-        jButton12.setText("Export User log                  ");
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_export_pdf_30px.png"))); // NOI18N
+        jButton12.setText("Export User log                 ");
         jButton12.setBorder(null);
+        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton12MouseClicked(evt);
+            }
+        });
 
         jButton13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton13.setForeground(new java.awt.Color(204, 204, 204));
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-health-checkup-30.png"))); // NOI18N
-        jButton13.setText("   Patient Login Credential     ");
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_doctors_folder_30px.png"))); // NOI18N
+        jButton13.setText("Patient Login Credential    ");
         jButton13.setBorder(null);
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
 
         jButton14.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton14.setForeground(new java.awt.Color(204, 204, 204));
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-menu-50.png"))); // NOI18N
-        jButton14.setText("reference module              ");
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_pull_down_30px.png"))); // NOI18N
+        jButton14.setText("Manage DropdownLists     ");
         jButton14.setBorder(null);
         jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -258,19 +274,21 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         jButton15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton15.setForeground(new java.awt.Color(204, 204, 204));
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-inquiry-30.png"))); // NOI18N
-        jButton15.setText("  Help                              ");
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_ask_question_30px.png"))); // NOI18N
+        jButton15.setText("Help                                 ");
         jButton15.setBorder(null);
 
         jButton16.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton16.setForeground(new java.awt.Color(204, 204, 204));
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-night-50.png"))); // NOI18N
-        jButton16.setText("Dark Mode                        ");
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_night_30px.png"))); // NOI18N
+        jButton16.setText("Dark Mode                         ");
         jButton16.setBorder(null);
+        jButton16.setPreferredSize(new java.awt.Dimension(275, 45));
 
         jButton18.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton18.setForeground(new java.awt.Color(204, 204, 204));
-        jButton18.setText("View Receptionist");
+        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_front_desk_30px.png"))); // NOI18N
+        jButton18.setText("View Receptionist            ");
         jButton18.setPreferredSize(new java.awt.Dimension(299, 51));
         jButton18.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -280,7 +298,8 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         jButton19.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton19.setForeground(new java.awt.Color(204, 204, 204));
-        jButton19.setText("View MedicalOfficer ");
+        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_doctor_male_30px.png"))); // NOI18N
+        jButton19.setText("View MedicalOfficer         ");
         jButton19.setPreferredSize(new java.awt.Dimension(299, 51));
         jButton19.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -290,12 +309,17 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         jButton17.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton17.setForeground(new java.awt.Color(204, 204, 204));
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-key-50.png"))); // NOI18N
+        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_sign_out_30px.png"))); // NOI18N
         jButton17.setText("Log Out                             ");
         jButton17.setBorder(null);
         jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton17MouseClicked(evt);
+            }
+        });
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
             }
         });
 
@@ -311,20 +335,17 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
             .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,7 +379,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton16)
+                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -481,6 +502,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+        new File("src\\TxtFiles\\SavedUser.mov").delete();
         this.dispose();
         new Login().setVisible(true);
 
@@ -507,6 +529,28 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         new ResizeInternalFrame(new DropdownListEditor(), jDesktopPane1);
     }//GEN-LAST:event_jButton14MouseClicked
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+      clearDesktopPane(jButton13);
+
+        new ResizeInternalFrame(new PatientLogin(), jDesktopPane1);
+    }//GEN-LAST:event_jButton13MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        clearDesktopPane(jButton5);
+
+        new ResizeInternalFrame(new AppoinmentReport(), jDesktopPane1);
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+      clearDesktopPane(jButton12);
+
+        new ResizeInternalFrame(new UserLog(), jDesktopPane1);
+    }//GEN-LAST:event_jButton12MouseClicked
 
     /**
      * @param args the command line arguments

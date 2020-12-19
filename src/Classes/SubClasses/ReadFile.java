@@ -127,4 +127,19 @@ public class ReadFile {
 
         return dropDownlistArray;
     }
+
+    public String readLoginSavedUser() {
+        try {
+            FileSecurity fileSecurity = new FileSecurity("src\\TxtFiles\\SavedUser.mov");
+            FileReader readUserFile = new FileReader(fileSecurity.setFilePathToTxt());//open users file to read
+            BufferedReader readFile = new BufferedReader(readUserFile);
+            String strLine = readFile.readLine();
+            readFile.close();
+            fileSecurity.setFilePathMOV();
+            readUserFile.close();
+            return strLine;
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }
