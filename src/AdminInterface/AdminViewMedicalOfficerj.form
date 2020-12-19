@@ -25,7 +25,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" pref="999" max="32767" attributes="0"/>
+              <Component id="jPanel1" pref="1003" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -92,7 +92,7 @@
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPanel3" pref="836" max="32767" attributes="0"/>
+                  <Component id="jPanel3" pref="847" max="32767" attributes="0"/>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
@@ -186,7 +186,7 @@
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="jLabel2" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" pref="764" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" pref="779" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1376,105 +1376,7 @@
                           <Font name="Tahoma" size="18" style="1"/>
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="97">
-                            <StringItem index="0" value="ALLERGY SPECIALIST"/>
-                            <StringItem index="1" value="ANOMALY SCAN"/>
-                            <StringItem index="2" value="CARDIAC ELECTROPHYSIOLOGIST"/>
-                            <StringItem index="3" value="CARDIOLOGIST"/>
-                            <StringItem index="4" value="CHEST PHYSICIAN"/>
-                            <StringItem index="5" value="CHEST SPECIALIST"/>
-                            <StringItem index="6" value="CHILD AND ADOLESCENT PHYCHIATRIST"/>
-                            <StringItem index="7" value="CLINICAL HAEMATOLOGIST"/>
-                            <StringItem index="8" value="CLINICAL PHYSIOLOGIST"/>
-                            <StringItem index="9" value="CONSULTANT DENTAL SURGEON AND PROSTHODONTIST"/>
-                            <StringItem index="10" value="CONSULTANT DENTAL SURGEON IN RESTORATIVE PERIODONTOLOGY"/>
-                            <StringItem index="11" value="CONSULTANT JUDICIAL MEDICINE"/>
-                            <StringItem index="12" value="DENTAL ORAL AND MAXILLOFACIAL SURGEON"/>
-                            <StringItem index="13" value="DENTAL SURGEON"/>
-                            <StringItem index="14" value="DENTAL SURGEON AND GENERAL AND LASER"/>
-                            <StringItem index="15" value="DENTAL SURGEON IN PROSTHODONTICS AND ENDODONTICS"/>
-                            <StringItem index="16" value="DERMATOLOGIST"/>
-                            <StringItem index="17" value="DIABETIC EDUCATOR"/>
-                            <StringItem index="18" value="DIETICIAN"/>
-                            <StringItem index="19" value="DIETICIAN AND NUTRICIAN"/>
-                            <StringItem index="20" value="EMBRYOLOGIST"/>
-                            <StringItem index="21" value="ENDOCRINOLOGIST AND DIABETOLOGIST"/>
-                            <StringItem index="22" value="ENT SURGEON"/>
-                            <StringItem index="23" value="EYE SURGEON"/>
-                            <StringItem index="24" value="FAMILY PHYSICIAN"/>
-                            <StringItem index="25" value="GASTROENTEROLOGICAL SURGEON"/>
-                            <StringItem index="26" value="GASTROENTEROLOGIST"/>
-                            <StringItem index="27" value="GENERAL PHYSICIAN"/>
-                            <StringItem index="28" value="GENERAL SURGEON"/>
-                            <StringItem index="29" value="GENITO URINARY SURGEON"/>
-                            <StringItem index="30" value="GYNAECOLOGICAL ONCOLOGIST"/>
-                            <StringItem index="31" value="HAEMATO ONCOLOGIST"/>
-                            <StringItem index="32" value="HAEMATOLOGIST"/>
-                            <StringItem index="33" value="MEDICAL MICROBIOLOGIST"/>
-                            <StringItem index="34" value="MYCOLOGIST"/>
-                            <StringItem index="35" value="NEPHROLOGIST"/>
-                            <StringItem index="36" value="NEURO PHYSICIAN"/>
-                            <StringItem index="37" value="NEURO PHYSIOLOGIST"/>
-                            <StringItem index="38" value="NEURO SURGEON"/>
-                            <StringItem index="39" value="NEUROLOGIST"/>
-                            <StringItem index="40" value="NUTRITIONIST"/>
-                            <StringItem index="41" value="OBSTETRICIAN AND GYNAECOLOGIST"/>
-                            <StringItem index="42" value="OCCUPATIONAL THERAPIST"/>
-                            <StringItem index="43" value="ONCOLOGICAL SURGEON"/>
-                            <StringItem index="44" value="ONCOLOGIST"/>
-                            <StringItem index="45" value="ONCOLOGIST AND CANCER SPECIALIST"/>
-                            <StringItem index="46" value="ORAL AND MAXILLOFACIAL SURGEON"/>
-                            <StringItem index="47" value="ORTHODONTIST"/>
-                            <StringItem index="48" value="ORTHOPAEDIC SURGEON"/>
-                            <StringItem index="49" value="ORTHOPAEDIC SURGEON AND SPORTS MEDICINE"/>
-                            <StringItem index="50" value="PAEDIATRIC AND ADOLESCENTS ONCOLOGIST"/>
-                            <StringItem index="51" value="PAEDIATRIC CARDIOLOGIST"/>
-                            <StringItem index="52" value="PAEDIATRIC CHEST PHYSICIAN"/>
-                            <StringItem index="53" value="PAEDIATRIC ENDOCRINOLOGIST"/>
-                            <StringItem index="54" value="PAEDIATRIC NEONATOLOGIST"/>
-                            <StringItem index="55" value="PAEDIATRIC NEPHROLOGIST"/>
-                            <StringItem index="56" value="PAEDIATRIC NEUROLOGIST"/>
-                            <StringItem index="57" value="PAEDIATRIC ONCOLOGIST"/>
-                            <StringItem index="58" value="PAEDIATRIC SURGEON"/>
-                            <StringItem index="59" value="PAEDIATRICIAN"/>
-                            <StringItem index="60" value="PAEDIATRICIAN AND NEONATAL PAEDIATRICIAN"/>
-                            <StringItem index="61" value="PAIN MANAGEMENT"/>
-                            <StringItem index="62" value="PEDIATRIC CARDIAC SURGEON"/>
-                            <StringItem index="63" value="PHYSICIAN"/>
-                            <StringItem index="64" value="PHYSICIAN AND GASTRO ENTEROLOGISTS"/>
-                            <StringItem index="65" value="PHYSIOTHERAPIST"/>
-                            <StringItem index="66" value="PHYSIOTHERAPY AND REHABILITATION"/>
-                            <StringItem index="67" value="PLASTIC AND RECONSTRUCTIVE SURGEON"/>
-                            <StringItem index="68" value="PLASTIC SURGEON"/>
-                            <StringItem index="69" value="PSYCHIATRIST"/>
-                            <StringItem index="70" value="PSYCHOLOGICAL COUNSELOR"/>
-                            <StringItem index="71" value="PSYCHOLOGIST"/>
-                            <StringItem index="72" value="PSYCOLOGIST PSYCOTHERAPIST PROFESSIONAL COUNSELOR"/>
-                            <StringItem index="73" value="PSYCOTHERAPIST"/>
-                            <StringItem index="74" value="RADIOLOGISTS"/>
-                            <StringItem index="75" value="RHEUMATOLOGIST"/>
-                            <StringItem index="76" value="S.T.D"/>
-                            <StringItem index="77" value="SEXUAL WELLNESS AND S. T. D"/>
-                            <StringItem index="78" value="SPEECH AND LANGUAGE THERAPIST"/>
-                            <StringItem index="79" value="SPEECH THERAPIST"/>
-                            <StringItem index="80" value="SPEECH THERAPIST AND AUDIOLOGIST"/>
-                            <StringItem index="81" value="SPORTS AND EXERCISE MEDICINE"/>
-                            <StringItem index="82" value="SPORTS MEDICINE"/>
-                            <StringItem index="83" value="SURGEON"/>
-                            <StringItem index="84" value="THORACIC SURGEON"/>
-                            <StringItem index="85" value="TRANSPLANT SURGEON"/>
-                            <StringItem index="86" value="UROLOGICAL AND TRANSPLANT SURGEON"/>
-                            <StringItem index="87" value="UROLOGICAL SURGEON"/>
-                            <StringItem index="88" value="UROLOGIST"/>
-                            <StringItem index="89" value="VASCULAR AND TRANSPLANT SURGEON"/>
-                            <StringItem index="90" value="VASCULAR SURGEON"/>
-                            <StringItem index="91" value="VENERELOGY"/>
-                            <StringItem index="92" value="VENEREOLOGIST"/>
-                            <StringItem index="93" value="VENEREOLOGIST AND STD AND SEXUAL HEALTH"/>
-                            <StringItem index="94" value="VENEREOLOGIST(CONSULTANT IN SEXUAL MEDICINE)"/>
-                            <StringItem index="95" value="VENEREOLOGIST(S.T.D)"/>
-                            <StringItem index="96" value="WOUND CONSULTATION"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">

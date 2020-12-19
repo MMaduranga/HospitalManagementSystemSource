@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 public class DropdownListEditor extends javax.swing.JInternalFrame {
 
@@ -22,6 +23,8 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         basicinternalform.setNorthPane(null);
 
         handleDropdownListItem();
+        AutoCompleteDecorator.decorate(jComboBox1);
+        AutoCompleteDecorator.decorate(jComboBox2);
 
     }
 
@@ -61,6 +64,11 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jComboBox1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
         jComboBox1.setPreferredSize(new java.awt.Dimension(460, 42));
+        jComboBox1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jComboBox1KeyReleased(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(0, 26, 51));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -189,7 +197,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 916, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE)
                 .addGap(25, 25, 25))
         );
 
@@ -204,7 +212,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 972, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -279,6 +287,10 @@ public void handleDropdownListItem() {
         }
 
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jComboBox1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jComboBox1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1KeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Admin;
+package ReceptionistInterface;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 

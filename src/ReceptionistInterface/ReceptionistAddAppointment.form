@@ -25,7 +25,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" pref="972" max="32767" attributes="0"/>
+              <Component id="jPanel1" pref="976" max="32767" attributes="0"/>
               <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -89,7 +89,7 @@
                       <Component id="jLabel7" alignment="3" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPanel3" pref="817" max="32767" attributes="0"/>
+                  <Component id="jPanel3" pref="821" max="32767" attributes="0"/>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -178,9 +178,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel2" pref="30" max="32767" attributes="0"/>
+                      <Component id="jLabel2" pref="32" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanel5" pref="765" max="32767" attributes="0"/>
+                      <Component id="jPanel5" pref="769" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -483,13 +483,7 @@
                       <Font name="Tahoma" size="20" style="1"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="speciality area"/>
-                        <StringItem index="1" value="Item 1"/>
-                        <StringItem index="2" value="Item 2"/>
-                        <StringItem index="3" value="Item 3"/>
-                        <StringItem index="4" value="Item 4"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
