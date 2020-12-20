@@ -3,11 +3,10 @@ package AdminInterface;
 import Classes.SubClasses.ResizeInternalFrame;
 import java.awt.Color;
 import Classes.SubClasses.JpanelGradient;
+import CommonFrames.WelcomeFrameArt;
 import LoginInterface.Login;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.PrintWriter;
+
 
 
 import javax.swing.JButton;
@@ -18,15 +17,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
       
         initComponents();
         setBackgroundColor(new Color(0, 0, 0, 0));//set background null
-        /*        try {
-        FileWriter a=new FileWriter("src\\TxtFiles\\SpecialistArea.txt");
-        PrintWriter b=new PrintWriter(a);
-        b.print("");
-        a.close();
-        b.close();
-        new File("src\\TxtFiles\\SpecialistArea.txt").renameTo(new File("src\\TxtFiles\\SpecialistArea.mov"));
-        } catch (Exception e) {
-        }*/
+       new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
 
     }
 

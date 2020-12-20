@@ -48,7 +48,7 @@ public class WriteFile {
             FileWriter file = new FileWriter(fileSecuryty.setFilePathToTxt(), true);
             PrintWriter write = new PrintWriter(file);
 
-            write.print("Date:" + LocalDate.now() + " Time:" + LocalDateTime.now().toLocalTime() + " UserName:" + username + " UserMode:" + userType + "\n");
+            write.print("|~"+LocalDate.now() + "~" + LocalDateTime.now().toLocalTime() + " ~" + username + "~" + userType + "\n");
             file.close();
             write.close();
             fileSecuryty.setFilePathMOV();
@@ -61,7 +61,7 @@ public class WriteFile {
 
         try {
             FileSecurity fileSecuryty = new FileSecurity("src\\TxtFiles\\StaffIdNo.mov");
-            int intNewStaffIdNo = new ReadFile().getStaffIdNo() + 1;
+            int intNewStaffIdNo = new ReadFile().getStaffIdNo("src\\TxtFiles\\StaffIdNo.mov") + 1;
             FileWriter file = new FileWriter(fileSecuryty.setFilePathToTxt());
             PrintWriter write = new PrintWriter(file);
             write.print(intNewStaffIdNo);

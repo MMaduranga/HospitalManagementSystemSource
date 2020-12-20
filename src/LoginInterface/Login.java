@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
-
+    
     public Login() {
         initComponents();
         jButton1.setBackground(new Color(0, 0, 0, 0));//hide jbutton1 background
@@ -22,9 +22,8 @@ public class Login extends javax.swing.JFrame {
         jButton4.setBackground(new Color(0, 0, 0, 0));//hide jbutton1 background
         checkLogin();
         
-
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -314,8 +313,11 @@ public class Login extends javax.swing.JFrame {
         String strLine = new ReadFile().readLoginSavedUser();
         if (strLine != null) {
             String[] strLineArry = strLine.split("~");
-            executeLogin(strLineArry[0], strLineArry[1], strLineArry[2]);
-
+            jTextField1.setText(strLineArry[0]);
+            jTextField2.setText(strLineArry[1]);
+            jComboBox1.setSelectedItem(strLineArry[2]);
+            jCheckBox1.setSelected(true);
+            
         }
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -341,14 +343,14 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Invalid UserName or Password Please Check Again", "", 3);//if user name or password is invalid shaow a message
             }
         } catch (Exception e) {
-
+            
         }
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String strUserName = jTextField1.getText();
         String strPassword = jTextField2.getText();
         String strUserMode = jComboBox1.getSelectedItem().toString();
-
+        
         if (jCheckBox1.isSelected()) {
             new WriteFile().writeInSavedUserFile(strUserName + "~" + strPassword + "~"
                     + strUserMode, new File("src\\TxtFiles\\SavedUser.mov"));
@@ -356,11 +358,11 @@ public class Login extends javax.swing.JFrame {
         this.executeLogin(strUserName, strPassword, strUserMode);
     }//GEN-LAST:event_jButton2ActionPerformed
     public void setFrameVisible(JFrame frame) {
-      
+        
         this.dispose();
         frame.setVisible(true);
     }
-  
+
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed

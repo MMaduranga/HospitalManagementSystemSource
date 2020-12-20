@@ -1,8 +1,8 @@
 package AdminInterface;
 
-import Classes.ComplaintRecord;
-import Classes.ReadFile;
-import Classes.WriteFile;
+import Classes.MainClasses.ComplaintRecord;
+import Classes.SubClasses.ReadFile;
+import Classes.SubClasses.WriteFile;
 import java.io.File;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;

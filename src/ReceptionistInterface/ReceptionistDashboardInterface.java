@@ -2,6 +2,7 @@ package ReceptionistInterface;
 
 import Classes.SubClasses.JpanelGradient;
 import Classes.SubClasses.ResizeInternalFrame;
+import CommonFrames.WelcomeFrameArt;
 import LoginInterface.Login;
 
 import java.awt.Color;
@@ -13,7 +14,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     public ReceptionistDashboardInterface() {
         initComponents();
         setBackgroundColor(new Color(0, 0, 0, 0));//set background null
-
+new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
     }
 
     public void setBackgroundColor(Color color) {

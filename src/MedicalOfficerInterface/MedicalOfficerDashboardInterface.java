@@ -3,6 +3,7 @@ package MedicalOfficerInterface;
 import java.awt.Color;
 import Classes.SubClasses.JpanelGradient;
 import Classes.SubClasses.ResizeInternalFrame;
+import CommonFrames.WelcomeFrameArt;
 import LoginInterface.Login;
 
 import java.awt.event.ComponentEvent;
@@ -15,7 +16,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     public MedicalOfficerDashboardInterface() {
         initComponents();
         setBackgroundColor(new Color(0, 0, 0, 0));//set background null
-
+new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
     }
 
     public void setBackgroundColor(Color color) {
