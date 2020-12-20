@@ -1,6 +1,6 @@
 package AdminInterface;
 
-import Classes.ReadFile;
+import Classes.SubClasses.ReadFile;
 import java.io.File;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -618,7 +618,7 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
     public void setTextFieldText(String[] datails) {
         jTextArea1.setText(datails[4]);
         jTextField10.setText(datails[7]);
-        jTextField12.setText(datails[1]);
+       // jTextField9.setText(datails[1]);
         jTextField5.setText(datails[5]);
         jTextField7.setText(datails[3]);
         jTextField8.setText(datails[6]);

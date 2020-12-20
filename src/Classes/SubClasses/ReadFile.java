@@ -86,10 +86,10 @@ public class ReadFile {
         }
     }
 
-    public int getStaffIdNo() {
+    public int getStaffIdNo(String filePath) {
         int intStaffId = 0;
         try {
-            FileSecurity fileSecurity = new FileSecurity("src\\TxtFiles\\StaffIdNo.mov");
+            FileSecurity fileSecurity = new FileSecurity(filePath);
             FileReader readUserFile = new FileReader(fileSecurity.setFilePathToTxt());//open users file to read
             BufferedReader readFile = new BufferedReader(readUserFile);
             intStaffId = Integer.valueOf(readFile.readLine());
@@ -141,5 +141,33 @@ public class ReadFile {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public ArrayList<String> readTotalFile(File fileLocation) {
+        ArrayList<String> totalRowsArray = new ArrayList<>();
+        try {
+            FileSecurity fileSecurity = new FileSecurity(fileLocation.toString());
+            FileReader readUserFile = new FileReader(fileSecurity.setFilePathToTxt());//open users file to read
+            BufferedReader readFile = new BufferedReader(readUserFile);
+            String strLine = readFile.readLine();
+            while (strLine != null) {//compare the line is not equals to null
+                String strNextLine = readFile.readLine();
+
+                if (strLine.charAt(0) == '|' && strNextLine != null
+                        && strNextLine.charAt(0) == '|' || strLine.charAt(0) == '|' && strNextLine == null) {//check the validation of 1st and 2nd lines
+                    totalRowsArray.add(strLine);
+                } else if (strLine.charAt(0) == '|' && strNextLine != null && strNextLine.charAt(0) != '|') {
+                    totalRowsArray.add(strLine + strNextLine);
+                    strNextLine = readFile.readLine();
+                }
+                strLine = strNextLine;
+            }
+            readFile.close();
+            fileSecurity.setFilePathMOV();
+            readUserFile.close();
+        } catch (IOException e) {
+        }
+
+        return totalRowsArray;
     }
 }
