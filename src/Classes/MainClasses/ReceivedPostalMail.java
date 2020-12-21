@@ -4,15 +4,17 @@ package Classes.MainClasses;
 import java.io.File;
 import java.time.LocalDate;
 
-public class ReceivedPostalMail extends PostalMail {
+public class ReceivedPostalMail extends PostalMail {//inheritance 
 
+    //Declare Varibales 
     private String fromName;
     private String fromAddress;
     private String toName;
 
+    //Parameterized Constructor 
     public ReceivedPostalMail(int referenceNo, LocalDate currentDate, File attachDoc,
-            String note, String fromName, String fromAddress, String toName) {
-        super(referenceNo, currentDate, attachDoc, note);
+            String note, String fromName, String fromAddress, String toName) { 
+        super(referenceNo, currentDate, attachDoc, note);//calling the constructor of the super class 
         this.setFromName(fromName);
         this.setFromAddress(fromAddress);
         this.setToName(toName);
@@ -44,6 +46,7 @@ public class ReceivedPostalMail extends PostalMail {
         this.toName = toName;
     }
 
+    //Declare toString method 
     public String toString() {
         return "|~" + this.getFromAddress() + "~" + this.getFromName() + "~"
                 + this.getToName() + "~" + this.getNote() + "~" + this.getAttachDoc()

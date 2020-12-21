@@ -16,11 +16,13 @@ import java.time.LocalDate;
  */
 public class PostalMail extends Main {
     
+    //Declare vatiables 
     private int referenceNo;
     private LocalDate currentDate;
     private File attachDoc;
     private String note;
     
+    //Parametrized Constructor
     public PostalMail(int referenceNo, LocalDate currentDate, File attachDoc, String note) {
         this.setCurrentDate(currentDate);
         this.setNote(note);
