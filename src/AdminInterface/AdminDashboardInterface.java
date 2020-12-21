@@ -449,7 +449,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         clearDesktopPane(jButton7);
 
-        new ResizeInternalFrame(new ViewComplaintAdmin1(), jDesktopPane1);
+        new ResizeInternalFrame(new AdminViewComplaint(), jDesktopPane1);
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

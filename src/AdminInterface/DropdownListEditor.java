@@ -1,7 +1,7 @@
 package AdminInterface;
 
 import Classes.SubClasses.ReadFile;
-import Classes.SubClasses.SimpleMethods;
+import Classes.SubClasses.SimpleMethodsController;
 import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 
@@ -262,7 +262,7 @@ jComboBox2.setBackground(new Color(0,0,0,0));
     }// </editor-fold>//GEN-END:initComponents
 public void handleDropdownListItem() {
         ReadFile raedFileObj = new ReadFile();
-        SimpleMethods simpleMethodsObj = new SimpleMethods();
+        SimpleMethodsController simpleMethodsObj = new SimpleMethodsController();
         specialityArea = raedFileObj.getItemsForDropdownList(new File("src\\TxtFiles\\SpecialistArea.mov"));
         complaintType = raedFileObj.getItemsForDropdownList(new File("src\\TxtFiles\\ComplaintType.mov"));
         simpleMethodsObj.addItemsToDropdown(this.specialityArea, jComboBox1);

@@ -1,16 +1,21 @@
 package AdminInterface;
 
 import Classes.MainClasses.Receptionist;
+import Classes.SubClasses.CheckValidation;
+import Classes.SubClasses.ImageController;
 import Classes.SubClasses.ReadFile;
+import Classes.SubClasses.SimpleMethodsController;
 import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
+
+    private String strReceptionistFilePath = "src\\TxtFiles\\Receptionist.mov";
 
     public Admin_AddReceptionist() {
         initComponents();
@@ -27,6 +32,10 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
         setPreferredSize(getMinimumSize());
         setStaffId();
         pack();
+    }
+
+    public String getReceptionistFilePath() {
+        return this.strReceptionistFilePath;
     }
 
     @SuppressWarnings("unchecked")
@@ -319,7 +328,7 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
         jLabel30.setText("Profile Picture :");
 
         jTextField1.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
         jTextField1.setPreferredSize(new java.awt.Dimension(363, 37));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -377,7 +386,7 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
         jLabel32.setText("*");
 
         jTextField9.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField9.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jTextField9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jTextField9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
         jTextField9.setPreferredSize(new java.awt.Dimension(460, 37));
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
@@ -414,6 +423,7 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
 
         jDateChooser1.setBackground(new java.awt.Color(240, 248, 255));
         jDateChooser1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jDateChooser1.setDateFormatString("yyyy-MM-dd");
         jDateChooser1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jDateChooser1.setMaximumSize(new java.awt.Dimension(460, 37));
         jDateChooser1.setMinimumSize(new java.awt.Dimension(460, 37));
@@ -580,8 +590,8 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
                                         .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel33))
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(83, 83, 83))))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -717,9 +727,9 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 783, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -812,7 +822,7 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 843, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -826,7 +836,7 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1028, Short.MAX_VALUE)
         );
 
         pack();
@@ -845,32 +855,53 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String userName = jTextField4.getText().toLowerCase();
-        String name = jTextField2.getText().toLowerCase();
-        String gender = jComboBox1.getSelectedItem().toString().toLowerCase();
-        int phoneNo = Integer.valueOf(jTextField5.getText());
-        String idNo = jTextField6.getText().toLowerCase();
-        LocalDate DOB = LocalDate.now();
-        String address = jTextArea2.getText().toLowerCase();
-        String materialStatus = jComboBox2.getSelectedItem().toString().toLowerCase();
-        String password = jPasswordField1.getText();
-        File profilePic = new File("");
-
-        int staffId = Integer.valueOf(jTextField7.getText());
-        String staffEmailAddress = jTextField8.getText().toLowerCase();
-        LocalDate dateOfJoin = LocalDate.now();
-        File staffPhoto = new File("");
-        File attachDoc = new File("");
+        String strErrorMessage = "Fail";
         try {
+
+            CheckValidation checkValidation = new CheckValidation();
+
+            String userName = jTextField4.getText().toLowerCase();
+            if (!checkValidation.checkUserName(userName, this.getReceptionistFilePath(), 1)) {
+                strErrorMessage = "User Name Already Exists";
+                throw new IOException();
+            }
+            String name = jTextField2.getText().toLowerCase();
+            String gender = jComboBox1.getSelectedItem().toString().toLowerCase();
+            int phoneNo = Integer.valueOf(jTextField5.getText());
+            if (!checkValidation.checkPhoneNumber(phoneNo, this.getReceptionistFilePath(), 5)) {
+                strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
+                throw new IOException();
+            }
+            String idNo = jTextField6.getText().toLowerCase();
+            if (!checkValidation.checkIdNumber(idNo, this.getReceptionistFilePath(), 6)) {
+                strErrorMessage = "Invalid Id Numbers Or Id Number Already Exists";
+                throw new IOException();
+            }
+
+            LocalDate DOB = new SimpleMethodsController().typeCastDateToLocalDate(jDateChooser1);
+            String address = jTextArea2.getText().toLowerCase();
+            String materialStatus = jComboBox2.getSelectedItem().toString().toLowerCase();
+            String password = jPasswordField1.getText();
+            File profilePic = new File(jTextField9.getText());
+            int staffId = Integer.valueOf(jTextField7.getText());
+            String staffEmailAddress = jTextField8.getText().toLowerCase();
+            if (!checkValidation.checkEmailId(staffEmailAddress, this.getReceptionistFilePath(), 12)) {
+                strErrorMessage = "Invalid Email Address Numbers Or Email Address Already Exists";
+                throw new IOException();
+            }
+            LocalDate dateOfJoin = new SimpleMethodsController().typeCastDateToLocalDate(jDateChooser2);
+            File staffPhoto = new File(jTextField10.getText());
+            File attachDoc = new File(jTextField1.getText());
+
             WriteFile writeFileObj = new WriteFile();
             writeFileObj.WriteInFile(new Receptionist(staffId, staffEmailAddress,
                     userName, name, gender, phoneNo, idNo, address, materialStatus,
                     password, DOB, profilePic, dateOfJoin, staffPhoto, attachDoc),
-                    new File("src\\TxtFiles\\Receptionist.mov"));
+                    new File(this.getReceptionistFilePath()));
             writeFileObj.setStaffId();
             JOptionPane.showMessageDialog(null, "Success");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Fail", "", 2);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -887,9 +918,7 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        JFileChooser jfile = new JFileChooser();
-        jfile.showOpenDialog(null);
-        File file = new File(jfile.getSelectedFile().getAbsolutePath());
+        jTextField1.setText(new SimpleMethodsController().fileChooser().toString());
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -906,13 +935,12 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField9ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        JFileChooser jfile = new JFileChooser();
-        jfile.showOpenDialog(null);
-        File file = new File(jfile.getSelectedFile().getAbsolutePath());
+        jTextField9.setText(new SimpleMethodsController().fileChooser().toString());
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        new ImageController().previewImage(jTextField9.getText());
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
@@ -920,11 +948,11 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField10ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        new ImageController().previewImage(jTextField10.getText());
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        jTextField10.setText(new SimpleMethodsController().fileChooser().toString());
     }//GEN-LAST:event_jButton7ActionPerformed
     public void setStaffId() {
 
