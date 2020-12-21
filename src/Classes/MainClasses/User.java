@@ -1,9 +1,16 @@
+/*
+Date : 25-11-2020
+Author : H.A.N.Sahani Hettiarachchi
+Version : 1
+Description : Class for User
+*/
+//import packages
 package Classes.MainClasses;
 
 import Classes.SubClasses.Main;
 import java.io.File;
 import java.time.LocalDate;
-
+//Declare variables
 public class User extends Main{
 
     private String userName;
@@ -16,7 +23,7 @@ public class User extends Main{
     private String materialStatus;
     private String password;
     private File profilePic;
-
+//Constructor
     public User(String userName, String name, String gender, int phoneNo,
             String idNo, String address, String materialStatus, String password, LocalDate dob, File profilePic) {
         this.setUserName(userName);
@@ -30,7 +37,7 @@ public class User extends Main{
         this.setDOB(dob);
         this.setProfilePic(profilePic);
     }
-
+//Generate Setters
     public void setProfilePic(File profilepic) {
         this.profilePic = profilepic;
     }
@@ -38,7 +45,7 @@ public class User extends Main{
     public void setDOB(LocalDate date) {
         this.dob = date;
     }
-
+//Generate Getters
     public String getUserName() {
         return this.userName;
     }
@@ -70,7 +77,7 @@ public class User extends Main{
     public String getPassword() {
         return this.password;
     }
-
+//Generate Setters
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -106,7 +113,7 @@ public class User extends Main{
     public LocalDate getDOB() {
         return this.dob;
     }
-
+//Generate Getters
     public File getProFilePic() {
         return this.profilePic;
     }

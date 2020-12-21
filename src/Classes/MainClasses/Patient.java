@@ -1,13 +1,20 @@
+/*
+Date : 25-11-2020
+Author : H.A.N.Sahani Hettiarachchi
+Version : 1
+Description : Class for Patient
+*/
+//import packages
 package Classes.MainClasses;
 
 import java.io.File;
 import java.time.LocalDate;
-
+//Declare variables
 public class Patient extends User {
 
     private String bloodGroup;
     private String allergies;
-
+//Constructor
     public Patient(String bloodGroup, String allergies, String userName,
             String name, String gender, int phoneNo, String idNo, String address,
             String materialStatus, String password, LocalDate DOB, File profilePic) {
@@ -15,7 +22,7 @@ public class Patient extends User {
         this.setBloodGroup(bloodGroup);
         this.setAllergies(allergies);
     }
-
+//Generate Getters
     public String getBloodGroup() {
         return bloodGroup;
     }
