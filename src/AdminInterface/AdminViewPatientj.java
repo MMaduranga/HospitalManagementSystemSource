@@ -1,24 +1,28 @@
 package AdminInterface;
 
 import Classes.MainClasses.Patient;
-import Classes.SubClasses.ChangeFileDestination;
+import Classes.SubClasses.CheckValidation;
+
+import Classes.SubClasses.ImageController;
 import Classes.SubClasses.ReadFile;
-import Classes.SubClasses.SimpleMethods;
+import Classes.SubClasses.SimpleMethodsController;
 import Classes.SubClasses.WriteFile;
 import java.awt.Color;
-import java.awt.Image;
+
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
-import javax.swing.ImageIcon;
+
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class AdminViewPatientj extends javax.swing.JInternalFrame {
-    
+
     ReadFile readFileObj = new ReadFile();
     String[] blankArray = {"", "", "", "", "", "", "", "", "", "", "", ""};
-    
+    private String strPatientFilePath = "src\\TxtFiles\\Pateint.mov";
+
     public AdminViewPatientj() {
         initComponents();
         jComboBox1.setSelectedItem(null);
@@ -31,9 +35,13 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
         jComboBox1.setBackground(new Color(0, 0, 0, 0));
         jComboBox2.setBackground(new Color(0, 0, 0, 0));
         jComboBox4.setBackground(new Color(0, 0, 0, 0));
-        
+
     }
-    
+
+    public String getPatientFilePath() {
+        return this.strPatientFilePath;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -296,6 +304,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
         jLabel35.setForeground(java.awt.Color.red);
         jLabel35.setText("*");
 
+        jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(240, 248, 255));
         jTextField5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
@@ -341,7 +350,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
         jTextField9.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel28.setText("Gender : ");
+        jLabel28.setText("Allergies: ");
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel29.setForeground(java.awt.Color.red);
@@ -510,7 +519,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
                 .addGap(13, 13, 13)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -620,7 +629,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
                 .addGap(14, 14, 14)
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 761, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 771, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -711,7 +720,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 822, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -725,22 +734,22 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 992, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        new SimpleMethods().changeFilesLocation(jTextField8);
+        new SimpleMethodsController().changeFilesLocation(jTextField8);
         if (jTextField3.getText().length() != 0 || jTextField2.getText().length() > 0) {
-            
+
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\Pateint.mov"));
+                readFileObj.deleteObj(new File(this.getPatientFilePath()));
                 addChanges();
-                
+
             } catch (Exception e) {
-                
+
             }
         } else {
             JOptionPane.showMessageDialog(null, "Please Enter ID Number");
@@ -749,7 +758,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jTextField8.setText(new SimpleMethods().fileChooser().toString());
+        jTextField8.setText(new SimpleMethodsController().fileChooser().toString());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -767,14 +776,14 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        
+
         if (jTextField3.getText().length() != 0 || jTextField2.getText().length() > 0) {
-            
+
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\Pateint.mov"));
+                readFileObj.deleteObj(new File(this.getPatientFilePath()));
                 JOptionPane.showMessageDialog(null, "Deleted");
             } catch (Exception e) {
-                System.out.println(e);
+
             }
         } else {
             JOptionPane.showMessageDialog(null, "Please Enter ID Number");
@@ -783,38 +792,29 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        String imagePath = jTextField8.getText();
-        if (imagePath.length() != 0) {
-            ImageIcon image = new ImageIcon(imagePath);
-            Image resize = image.getImage();
-            Image resizedImage = resize.getScaledInstance(900, 507, Image.SCALE_SMOOTH);
-            image = new ImageIcon(resizedImage);
-            JOptionPane.showMessageDialog(null, null, null, JOptionPane.INFORMATION_MESSAGE, image);
-        } else {
-            JOptionPane.showMessageDialog(null, "Select a Image");
-        }
+        new ImageController().previewImage(jTextField8.getText());
     }//GEN-LAST:event_jButton6ActionPerformed
     public void compareAppoinmentNo(String primarykey, int location) {
         if (primarykey.length() == 0) {
             JOptionPane.showMessageDialog(null, "Please Enter ID Number");
         } else {
-            
+
             try {
                 String[] strPatientDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\Pateint.mov"), location);
+                        new File(this.getPatientFilePath()), location);
                 if (strPatientDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid ID Number");
                 } else {
                     setTextFieldText(strPatientDetailsArray);
-                    
+
                     JOptionPane.showMessageDialog(null, "Done");
                 }
             } catch (Exception e) {
-                
+
             }
         }
     }
-    
+
     public void setTextFieldText(String[] details) {
         jTextArea1.setText(details[8]);
         jComboBox4.setSelectedItem(details[4]);
@@ -827,32 +827,48 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
         jTextField9.setText(details[2]);
         jComboBox2.setSelectedItem(details[10]);
         jTextArea2.setText(details[11]);
-        
+        jTextField8.setText(details[12]);
     }
-    
+
     public void addChanges() {
-        
+
+        String strErrorMessage = "Fail";
         try {
+            CheckValidation checkValidation = new CheckValidation();
+
             String userName = jTextField2.getText().toLowerCase();
+            if (!checkValidation.checkUserName(userName, this.getPatientFilePath(), 1)) {
+                strErrorMessage = "User Name Already Exists";
+                throw new IOException();
+            }
             String name = jTextField6.getText().toLowerCase();
             String gender = jComboBox4.getSelectedItem().toString();
             int phoneNo = Integer.valueOf(jTextField4.getText());
+            if (!checkValidation.checkPhoneNumber(phoneNo, this.getPatientFilePath(), 5)) {
+                strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
+                throw new IOException();
+            }
             String idNo = jTextField3.getText().toLowerCase();
+            if (!checkValidation.checkIdNumber(idNo, this.getPatientFilePath(), 6)) {
+                strErrorMessage = "Invalid Id Numbers Or Id Number Already Exists";
+                throw new IOException();
+            }
             LocalDate dob = LocalDate.parse(jTextField5.getText());
             String address = jTextArea1.getText().toLowerCase();
-            String materialStatus = jComboBox1.getSelectedItem().toString();;
+            String materialStatus = jComboBox1.getSelectedItem().toString();
             String password = jTextField9.getText();
-            File profilePic = new File("");
-            String bloodGroup = jComboBox2.getSelectedItem().toString();;
+            File profilePic = new File(jTextField8.getText());
+            String bloodGroup = jComboBox2.getSelectedItem().toString();
             String allergies = jTextArea2.getText().toLowerCase();
-            
+
             new WriteFile().WriteInFile(new Patient(bloodGroup, allergies, userName,
                     name, gender, phoneNo, idNo, address, materialStatus, password,
-                    dob, profilePic), new File("src\\TxtFiles\\Pateint.mov"));
+                    dob, profilePic), new File(this.getPatientFilePath()));
             JOptionPane.showMessageDialog(null, "Success");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Fail", "", 2);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
         }
+
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

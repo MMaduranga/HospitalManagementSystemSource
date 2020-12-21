@@ -1,22 +1,24 @@
 package AdminInterface;
 
 import Classes.MainClasses.Patient;
+import Classes.SubClasses.CheckValidation;
+import Classes.SubClasses.ImageController;
+import Classes.SubClasses.SimpleMethodsController;
 import Classes.SubClasses.WriteFile;
 
 import java.awt.Color;
 
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-
 public class Admin_AddPatient extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form NewJInternalFrame
-     */
+    private String strPatientFilePath = "src\\TxtFiles\\Pateint.mov";
+
     public Admin_AddPatient() {
         initComponents();
         jButton1.setBackground(new Color(0, 0, 0, 0));
@@ -32,6 +34,10 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         setPreferredSize(getMinimumSize());
 
         pack();
+    }
+
+    public String getPatientFilePath() {
+        return this.strPatientFilePath;
     }
 
     @SuppressWarnings("unchecked")
@@ -326,6 +332,7 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         jLabel23.setText("*");
 
         jDateChooser1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jDateChooser1.setDateFormatString("yyyy-MM-dd");
         jDateChooser1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jDateChooser1.setMaximumSize(new java.awt.Dimension(460, 37));
         jDateChooser1.setMinimumSize(new java.awt.Dimension(460, 37));
@@ -575,9 +582,9 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -670,7 +677,7 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 847, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -684,7 +691,7 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1032, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1036, Short.MAX_VALUE)
         );
 
         pack();
@@ -703,27 +710,40 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String userName = jTextField4.getText().toLowerCase();
-        String name = jTextField2.getText().toLowerCase();
-        String gender = jComboBox1.getSelectedItem().toString();
-        int phoneNo = Integer.valueOf(jTextField5.getText());
-        String idNo = jTextField6.getText().toLowerCase();
-        LocalDate dob = LocalDate.now();
-        String address = jTextArea2.getText().toLowerCase();
-        String materialStatus = jComboBox2.getSelectedItem().toString();;
-        String password = jPasswordField1.getText();
-        File profilePic = new File("");
-        String bloodGroup = jComboBox4.getSelectedItem().toString();;
-        String allergies = jTextArea3.getText().toLowerCase();
-        
-        
+        String strErrorMessage = "Fail";
         try {
-            new WriteFile().WriteInFile(new Patient(bloodGroup, allergies, userName, 
+            CheckValidation checkValidation = new CheckValidation();
+            String userName = jTextField4.getText().toLowerCase();
+            if (!checkValidation.checkUserName(userName, this.getPatientFilePath(), 1)) {
+                strErrorMessage = "User Name Already Exists";
+                throw new IOException();
+            }
+            String name = jTextField2.getText().toLowerCase();
+            String gender = jComboBox1.getSelectedItem().toString();
+            int phoneNo = Integer.valueOf(jTextField5.getText());
+            if (!checkValidation.checkPhoneNumber(phoneNo, this.getPatientFilePath(), 5)) {
+                strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
+                throw new IOException();
+            }
+            String idNo = jTextField6.getText().toLowerCase();
+            if (!checkValidation.checkIdNumber(idNo, this.getPatientFilePath(), 6)) {
+                strErrorMessage = "Invalid Id Numbers Or Id Number Already Exists";
+                throw new IOException();
+            }
+            LocalDate dob = new SimpleMethodsController().typeCastDateToLocalDate(jDateChooser1);
+            String address = jTextArea2.getText().toLowerCase();
+            String materialStatus = jComboBox2.getSelectedItem().toString();
+            String password = jPasswordField1.getText();
+            File profilePic = new File(jTextField7.getText());
+            String bloodGroup = jComboBox4.getSelectedItem().toString();
+            String allergies = jTextArea3.getText().toLowerCase();
+
+            new WriteFile().WriteInFile(new Patient(bloodGroup, allergies, userName,
                     name, gender, phoneNo, idNo, address, materialStatus, password,
-                    dob, profilePic),new File("src\\TxtFiles\\Pateint.mov"));
+                    dob, profilePic), new File(this.getPatientFilePath()));
             JOptionPane.showMessageDialog(null, "Success");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Fail", "", 2);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
         }
 
 
@@ -746,11 +766,11 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField7ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        jTextField7.setText(new SimpleMethodsController().fileChooser().toString());
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        new ImageController().previewImage(jTextField7.getText());
     }//GEN-LAST:event_jButton7ActionPerformed
 
 
