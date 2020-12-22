@@ -1,9 +1,9 @@
 package AdminInterface;
 
-import Classes.MainClasses.ComplaintRecord;
-import Classes.SubClasses.CheckValidation;
-import Classes.SubClasses.ReadFile;
-import Classes.SubClasses.WriteFile;
+import Model.ComplaintRecord;
+import Controllers.CheckValidation;
+import Controllers.ReadFile;
+import Controllers.WriteFile;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;

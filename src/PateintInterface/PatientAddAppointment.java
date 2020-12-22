@@ -1,9 +1,9 @@
 package PateintInterface;
 
-import Classes.MainClasses.Apponitment;
-import Classes.SubClasses.ReadFile;
-import Classes.SubClasses.SimpleMethodsController;
-import Classes.SubClasses.WriteFile;
+import Model.Apponitment;
+import Controllers.ReadFile;
+import Controllers.SimpleMethodsController;
+import Controllers.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.text.DateFormat;

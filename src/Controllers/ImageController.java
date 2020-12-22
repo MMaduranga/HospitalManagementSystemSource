@@ -1,7 +1,8 @@
-package Classes.SubClasses;
+package Controllers;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class ImageController {
@@ -16,5 +17,15 @@ public class ImageController {
         } else {
             JOptionPane.showMessageDialog(null, "Select a Image");
         }
+    }
+      public ImageIcon setImageSize(String imagePath,JLabel ladel) {
+        if (imagePath.length() != 0) {
+            ImageIcon image = new ImageIcon(imagePath);
+            Image resize = image.getImage();
+            Image resizedImage = resize.getScaledInstance(450, 337, Image.SCALE_SMOOTH);
+            image = new ImageIcon(resizedImage);
+            return image;
+        }
+        return null;
     }
 }

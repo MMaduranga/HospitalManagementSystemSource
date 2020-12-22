@@ -1,7 +1,7 @@
 package ReceptionistInterface;
 
-import Classes.MainClasses.Patient;
-import Classes.SubClasses.WriteFile;
+import Model.Patient;
+import Controllers.WriteFile;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;

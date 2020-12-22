@@ -1,4 +1,4 @@
-package Classes.SubClasses;
+package Controllers;
 
 import javax.swing.JFrame;
 import java.io.BufferedReader;
@@ -16,7 +16,7 @@ public class SignIn {
     private String strPassword;
     private String strUserMode;
 
-    private String[] filePath = {"src\\TxtFiles\\Admin.mov", "src\\TxtFiles\\MedicalOfficer.mov",""
+    private String[] filePath = {"src\\TxtFiles\\Admin.mov", "src\\TxtFiles\\MedicalOfficer.mov", ""
         + "src\\TxtFiles\\Pateint.mov", "src\\TxtFiles\\Receptionist.mov"};
 
     public SignIn(String userName, String password, String userMode) {
@@ -58,9 +58,9 @@ public class SignIn {
     //other methods
     public JFrame compare() {//validate user information
         JFrame usersFrame = null;
-
+        FileSecurity fileSecurity = new FileSecurity(selectUserMode());
         try {//to catch the error
-            FileSecurity fileSecurity=new FileSecurity(selectUserMode());
+
             FileReader readUserFile = new FileReader(fileSecurity.setFilePathToTxt());//open users file to read
             BufferedReader readFile = new BufferedReader(readUserFile);
 
@@ -68,6 +68,7 @@ public class SignIn {
 
             while (strLine != null) {//compare the line is not equals to null
                 String strNextLine = readFile.readLine();
+
                 if (this.getUserMode().equals("Admin")) {
 
                     if (strLine.charAt(0) == '|') {
@@ -75,24 +76,27 @@ public class SignIn {
                         String[] strAdminDetails = strLine.split("~");
 
                         if (CompareUserNameAndPassword(strAdminDetails[1], strAdminDetails[2])) {
-                            usersFrame = chooseFrame();
-
+                            usersFrame = chooseFrame(strLine);
                             break;
                         }
                     }
                 } else {
                     if (strLine.charAt(0) == '|' && strNextLine != null && strNextLine.charAt(0) == '|'
-                            || strLine.charAt(0) == '|' && strNextLine.equals(null)) {//check the validation of 1st and 2nd lines 
+                            || strLine.charAt(0) == '|' && strNextLine == null) {//check the validation of 1st and 2nd lines 
                         String usersDetails[] = strLine.split("~");//users details stored in this array
+                       
                         if (CompareUserNameAndPassword(usersDetails[1], usersDetails[2])) {
-                            usersFrame = chooseFrame();
+                            usersFrame = chooseFrame(strLine);
                             break;
+
                         }
 
                     } else if (strLine.charAt(0) == '|' && strNextLine != null && strNextLine.charAt(0) != '|') {//check the validation of 1st and 2nd lines 
                         String usersDetails[] = (strLine + strNextLine).split("~");//visitor details stored in this array
                         if (CompareUserNameAndPassword(usersDetails[1], usersDetails[2])) {
-                            usersFrame = chooseFrame();
+                            usersFrame = chooseFrame(strLine + strNextLine);
+                            break;
+
                         }
                         strNextLine = readFile.readLine();//save next line to continue the loop
                     }
@@ -101,10 +105,11 @@ public class SignIn {
             }
             readUserFile.close();//close the opened file
             readFile.close();
-            fileSecurity.setFilePathMOV();
+
         } catch (IOException e) {
 
         }
+        fileSecurity.setFilePathMOV();
         return usersFrame; //return true or false by compareing the user name and password validation
     }
 
@@ -116,14 +121,14 @@ public class SignIn {
         }
     }
 
-    public JFrame chooseFrame() {
+    public JFrame chooseFrame(String userDetails) {
         JFrame frame = null;
         try {
             if (this.getUserMode().equals("Admin")) {
                 return new AdminDashboardInterface();
             }
             if (this.getUserMode().equals("Medical Officer")) {
-                return new MedicalOfficerDashboardInterface();
+                return new MedicalOfficerDashboardInterface(userDetails);
             }
             if (this.getUserMode().equals("Patient")) {
                 return new PatientDashboardInterface();

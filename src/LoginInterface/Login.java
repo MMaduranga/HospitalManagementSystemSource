@@ -1,10 +1,10 @@
 package LoginInterface;
 
-import Classes.SubClasses.JpanelGradient;
-import Classes.SubClasses.ReadFile;
+import Controllers.JpanelGradient;
+import Controllers.ReadFile;
 import java.awt.Color;
-import Classes.SubClasses.SignIn;
-import Classes.SubClasses.WriteFile;
+import Controllers.SignIn;
+import Controllers.WriteFile;
 
 import java.io.File;
 
@@ -362,8 +362,12 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
     public void setFrameVisible(JFrame frame) {
         
-        this.dispose();
+        try {
+             this.dispose();
         frame.setVisible(true);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed

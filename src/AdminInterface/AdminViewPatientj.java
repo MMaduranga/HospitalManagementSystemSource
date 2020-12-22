@@ -1,12 +1,11 @@
 package AdminInterface;
 
-import Classes.MainClasses.Patient;
-import Classes.SubClasses.CheckValidation;
-
-import Classes.SubClasses.ImageController;
-import Classes.SubClasses.ReadFile;
-import Classes.SubClasses.SimpleMethodsController;
-import Classes.SubClasses.WriteFile;
+import Model.Patient;
+import Controllers.CheckValidation;
+import Controllers.ImageController;
+import Controllers.ReadFile;
+import Controllers.SimpleMethodsController;
+import Controllers.WriteFile;
 import java.awt.Color;
 
 import java.io.File;

@@ -1,8 +1,8 @@
 package AdminInterface;
 
-import Classes.SubClasses.ResizeInternalFrame;
+import Controllers.ResizeInternalFrame;
 import java.awt.Color;
-import Classes.SubClasses.JpanelGradient;
+import Controllers.JpanelGradient;
 import CommonFrames.WelcomeFrameArt;
 import LoginInterface.Login;
 import java.io.File;

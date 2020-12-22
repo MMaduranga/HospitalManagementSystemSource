@@ -5,9 +5,9 @@ Version : 1
 Description : Class for User
 */
 //import packages
-package Classes.MainClasses;
+package Model;
 
-import Classes.SubClasses.Main;
+import Controllers.Main;
 import java.io.File;
 import java.time.LocalDate;
 //Declare variables

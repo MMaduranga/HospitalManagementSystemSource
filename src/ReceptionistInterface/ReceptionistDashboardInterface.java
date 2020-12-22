@@ -1,7 +1,7 @@
 package ReceptionistInterface;
 
-import Classes.SubClasses.JpanelGradient;
-import Classes.SubClasses.ResizeInternalFrame;
+import Controllers.JpanelGradient;
+import Controllers.ResizeInternalFrame;
 import CommonFrames.WelcomeFrameArt;
 import LoginInterface.Login;
 

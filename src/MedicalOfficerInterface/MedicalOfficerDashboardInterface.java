@@ -1,8 +1,8 @@
 package MedicalOfficerInterface;
 
 import java.awt.Color;
-import Classes.SubClasses.JpanelGradient;
-import Classes.SubClasses.ResizeInternalFrame;
+import Controllers.JpanelGradient;
+import Controllers.ResizeInternalFrame;
 import CommonFrames.WelcomeFrameArt;
 import LoginInterface.Login;
 
@@ -10,13 +10,33 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import javax.swing.JButton;
 
-
 public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
+
+    private String medicalofficerDetails;
 
     public MedicalOfficerDashboardInterface() {
         initComponents();
+        startUp();
+    }
+
+    public MedicalOfficerDashboardInterface(String medicalofficerDetails) {
+        initComponents();
+        startUp();
+        this.setMedicalofficerDetails(medicalofficerDetails);
+    }
+
+    public void setMedicalofficerDetails(String medicalofficerDetails) {
+        this.medicalofficerDetails = medicalofficerDetails;
+    }
+
+    public String getMedicalofficerDetails() {
+        return this.medicalofficerDetails;
+    }
+
+    public void startUp() {
         setBackgroundColor(new Color(0, 0, 0, 0));//set background null
-new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
+        new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
+        
     }
 
     public void setBackgroundColor(Color color) {
@@ -32,7 +52,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         jButton17.setBackground(color);//set background null
 
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -237,27 +257,27 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
     }//GEN-LAST:event_jButton1ActionPerformed
     public void resizeInternalFrame(javax.swing.JInternalFrame internalFrame) {//to create resizeable j internal frames
         jDesktopPane1.setOpaque(true);
-
+        
         internalFrame.setSize(jDesktopPane1.getSize());
-
+        
         jDesktopPane1.addComponentListener(new ComponentListener() {
             public void componentResized(ComponentEvent e) {
-
+                
                 internalFrame.setSize(jDesktopPane1.getSize());
             }
-
+            
             public void componentMoved(ComponentEvent e) {
             }
-
+            
             public void componentShown(ComponentEvent e) {
             }
-
+            
             public void componentHidden(ComponentEvent e) {
             }
         });
-
+        
         jDesktopPane1.add(internalFrame).setVisible(true);
-
+        
     }
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -281,10 +301,10 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-
+        
         clearDesktopPane(jButton4);
-
-        new ResizeInternalFrame(new Admin.MedicalOfficer_profile(), jDesktopPane1);
+        
+        new ResizeInternalFrame(new MedicalOfficer_profile(this.getMedicalofficerDetails()), jDesktopPane1);
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
@@ -299,9 +319,9 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         button.setBackground(new Color(0, 0, 0, 100));
     }
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-
+        
         clearDesktopPane(jButton6);
-
+        
         new ResizeInternalFrame(new ViewAppointmentMedicalOfficer1(), jDesktopPane1);
 
     }//GEN-LAST:event_jButton6MouseClicked

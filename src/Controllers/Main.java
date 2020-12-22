@@ -1,5 +1,5 @@
 
-package Classes.SubClasses;
+package Controllers;
 
 public class Main {
     

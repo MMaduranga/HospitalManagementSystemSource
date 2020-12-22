@@ -1,12 +1,12 @@
 package ReceptionistInterface;
 
-import Classes.SubClasses.SimpleMethodsController;
+import Controllers.SimpleMethodsController;
 import java.awt.Color;
-import Classes.MainClasses.Visitor;
+import Model.Visitor;
 import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import Classes.SubClasses.WriteFile;
+import Controllers.WriteFile;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JFileChooser;
