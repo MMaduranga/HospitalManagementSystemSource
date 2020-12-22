@@ -1,8 +1,8 @@
 package ReceptionistInterface;
 
-import Classes.Apponitment;
-import Classes.ReadFile;
-import Classes.WriteFile;
+import Classes.MainClasses.Apponitment;
+import Classes.SubClasses.ReadFile;
+import Classes.SubClasses.WriteFile;
 import java.awt.HeadlessException;
 import java.io.File;
 import java.time.LocalDate;

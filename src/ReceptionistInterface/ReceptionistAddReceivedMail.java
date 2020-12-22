@@ -1,5 +1,5 @@
 package ReceptionistInterface;
-import Classes.SubClasses.SimpleMethods;
+import Classes.SubClasses.SimpleMethodsController;
 import Classes.SubClasses.WriteFile;
 import java.awt.Color;
 import java.io.File;
@@ -504,7 +504,7 @@ public class ReceptionistAddReceivedMail extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       jTextField5.setText(new SimpleMethods().fileChooser().toString());
+       jTextField5.setText(new SimpleMethodsController().fileChooser().toString());
     }//GEN-LAST:event_jButton3ActionPerformed
 
 

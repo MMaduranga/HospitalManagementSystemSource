@@ -48,7 +48,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         setBackgroundColor(new Color(0, 0, 0, 0));
         jDesktopPane1.removeAll();
         jDesktopPane1.repaint();
-        button.setBackground(new Color(0, 0, 0, 100));
+        button.setBackground(new Color(0,0,0,100));
     }
 
     @SuppressWarnings("unchecked")
@@ -60,7 +60,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jPanel3 = new JpanelGradient(new Color(0,51,121), new Color(0,0,0));
+        jPanel3 = new JpanelGradient(new Color(0,216,255), new Color(0,26,51),2);
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
@@ -83,7 +83,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1397, 988));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(240, 248, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1397, 988));
         jPanel1.setPreferredSize(new java.awt.Dimension(1397, 988));
@@ -126,11 +126,12 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 26, 51), 2));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.setMinimumSize(new java.awt.Dimension(300, 960));
         jPanel3.setPreferredSize(new java.awt.Dimension(300, 960));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(204, 204, 204));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_male_user_30px.png"))); // NOI18N
         jButton4.setText("My Profile                        ");
         jButton4.setBorder(null);
@@ -142,7 +143,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(204, 204, 204));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_send_file_30px_1.png"))); // NOI18N
         jButton5.setText("Export Appoinment Record  ");
         jButton5.setBorder(null);
@@ -158,7 +159,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(204, 204, 204));
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_view_schedule_30px.png"))); // NOI18N
         jButton6.setText("View Appoinment             ");
         jButton6.setBorder(null);
@@ -169,7 +170,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(204, 204, 204));
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_survey_30px.png"))); // NOI18N
         jButton7.setText("View Complaint                ");
         jButton7.setBorder(null);
@@ -180,7 +181,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(204, 204, 204));
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_protection_mask_30px.png"))); // NOI18N
         jButton8.setText("View Patient                    ");
         jButton8.setToolTipText("");
@@ -192,7 +193,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(204, 204, 204));
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_being_sick_30px.png"))); // NOI18N
         jButton9.setText("Add Patient                      ");
         jButton9.setBorder(null);
@@ -203,7 +204,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(204, 204, 204));
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_stethoscope_30px.png"))); // NOI18N
         jButton10.setText("Add Medical Officer           ");
         jButton10.setBorder(null);
@@ -215,7 +216,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         jButton11.setBackground(new java.awt.Color(204, 204, 204));
         jButton11.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(204, 204, 204));
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_workspace_30px.png"))); // NOI18N
         jButton11.setText("Add Receptionist               ");
         jButton11.setBorder(null);
@@ -231,7 +232,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton12.setForeground(new java.awt.Color(204, 204, 204));
+        jButton12.setForeground(new java.awt.Color(255, 255, 255));
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_export_pdf_30px.png"))); // NOI18N
         jButton12.setText("Export User log                 ");
         jButton12.setBorder(null);
@@ -242,7 +243,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton13.setForeground(new java.awt.Color(204, 204, 204));
+        jButton13.setForeground(new java.awt.Color(255, 255, 255));
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_doctors_folder_30px.png"))); // NOI18N
         jButton13.setText("Patient Login Credential    ");
         jButton13.setBorder(null);
@@ -253,7 +254,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton14.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton14.setForeground(new java.awt.Color(204, 204, 204));
+        jButton14.setForeground(new java.awt.Color(255, 255, 255));
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_pull_down_30px.png"))); // NOI18N
         jButton14.setText("Manage DropdownLists     ");
         jButton14.setBorder(null);
@@ -264,20 +265,20 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton15.setForeground(new java.awt.Color(204, 204, 204));
+        jButton15.setForeground(new java.awt.Color(255, 255, 255));
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_ask_question_30px.png"))); // NOI18N
         jButton15.setText("Help                                 ");
         jButton15.setBorder(null);
 
         jButton16.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton16.setForeground(new java.awt.Color(204, 204, 204));
+        jButton16.setForeground(new java.awt.Color(255, 255, 255));
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_night_30px.png"))); // NOI18N
         jButton16.setText("Dark Mode                         ");
         jButton16.setBorder(null);
         jButton16.setPreferredSize(new java.awt.Dimension(275, 45));
 
         jButton18.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton18.setForeground(new java.awt.Color(204, 204, 204));
+        jButton18.setForeground(new java.awt.Color(255, 255, 255));
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_front_desk_30px.png"))); // NOI18N
         jButton18.setText("View Receptionist            ");
         jButton18.setPreferredSize(new java.awt.Dimension(299, 51));
@@ -288,7 +289,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton19.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton19.setForeground(new java.awt.Color(204, 204, 204));
+        jButton19.setForeground(new java.awt.Color(255, 255, 255));
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_doctor_male_30px.png"))); // NOI18N
         jButton19.setText("View MedicalOfficer         ");
         jButton19.setPreferredSize(new java.awt.Dimension(299, 51));
@@ -299,7 +300,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton17.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton17.setForeground(new java.awt.Color(204, 204, 204));
+        jButton17.setForeground(new java.awt.Color(255, 255, 255));
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_sign_out_30px.png"))); // NOI18N
         jButton17.setText("Log Out                             ");
         jButton17.setBorder(null);

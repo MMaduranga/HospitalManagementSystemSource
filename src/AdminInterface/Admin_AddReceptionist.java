@@ -898,7 +898,7 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
                     userName, name, gender, phoneNo, idNo, address, materialStatus,
                     password, DOB, profilePic, dateOfJoin, staffPhoto, attachDoc),
                     new File(this.getReceptionistFilePath()));
-            writeFileObj.setStaffId();
+            writeFileObj.setNumber("src\\TxtFiles\\StaffIdNo.mov");
             JOptionPane.showMessageDialog(null, "Success");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
@@ -956,7 +956,7 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
     public void setStaffId() {
 
-        jTextField7.setText(new ReadFile().getStaffIdNo("src\\TxtFiles\\StaffIdNo.mov") + "");
+        jTextField7.setText(new ReadFile().getNumber("src\\TxtFiles\\StaffIdNo.mov") + "");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

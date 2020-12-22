@@ -48,7 +48,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jPanel3 = new JpanelGradient(new Color(0,51,121), new Color(0,0,0));
+        jPanel3 = new JpanelGradient(new Color(0,216,255), new Color(0,26,51),2);
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
@@ -118,7 +118,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         jPanel3.setPreferredSize(new java.awt.Dimension(300, 960));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(204, 204, 204));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_male_user_30px.png"))); // NOI18N
         jButton4.setText("My Profile                         ");
         jButton4.setBorder(null);
@@ -130,7 +130,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(204, 204, 204));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_user_30px.png"))); // NOI18N
         jButton5.setText("Add Visitor                         ");
         jButton5.setBorder(null);
@@ -146,7 +146,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(204, 204, 204));
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_view_schedule_30px.png"))); // NOI18N
         jButton6.setText("View Appoinment              ");
         jButton6.setBorder(null);
@@ -157,7 +157,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(204, 204, 204));
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_survey_30px.png"))); // NOI18N
         jButton7.setText("View Complaient               ");
         jButton7.setBorder(null);
@@ -173,7 +173,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(204, 204, 204));
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_protection_mask_30px.png"))); // NOI18N
         jButton8.setText("View Patient                     ");
         jButton8.setToolTipText("");
@@ -185,7 +185,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(204, 204, 204));
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_being_sick_30px.png"))); // NOI18N
         jButton9.setText("Add Patient                       ");
         jButton9.setBorder(null);
@@ -196,7 +196,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(204, 204, 204));
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_find_user_male_30px.png"))); // NOI18N
         jButton10.setText("View Visitor                       ");
         jButton10.setBorder(null);
@@ -208,7 +208,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
 
         jButton11.setBackground(new java.awt.Color(204, 204, 204));
         jButton11.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(204, 204, 204));
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_forward_message_30px.png"))); // NOI18N
         jButton11.setText("Add Dispatched PostalMail ");
         jButton11.setBorder(null);
@@ -219,7 +219,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton12.setForeground(new java.awt.Color(204, 204, 204));
+        jButton12.setForeground(new java.awt.Color(255, 255, 255));
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_reply_30px.png"))); // NOI18N
         jButton12.setText("Add Received PostalMail    ");
         jButton12.setBorder(null);
@@ -230,7 +230,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton13.setForeground(new java.awt.Color(204, 204, 204));
+        jButton13.setForeground(new java.awt.Color(255, 255, 255));
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_mail_privacy_30px.png"))); // NOI18N
         jButton13.setText("View ReceivedMail            ");
         jButton13.setBorder(null);
@@ -241,7 +241,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton14.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton14.setForeground(new java.awt.Color(204, 204, 204));
+        jButton14.setForeground(new java.awt.Color(255, 255, 255));
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_complaint_30px.png"))); // NOI18N
         jButton14.setText("Add Complaint                  ");
         jButton14.setBorder(null);
@@ -252,14 +252,14 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton16.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton16.setForeground(new java.awt.Color(204, 204, 204));
+        jButton16.setForeground(new java.awt.Color(255, 255, 255));
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_night_30px.png"))); // NOI18N
         jButton16.setText("Dark Mode                        ");
         jButton16.setBorder(null);
         jButton16.setPreferredSize(new java.awt.Dimension(275, 45));
 
         jButton17.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton17.setForeground(new java.awt.Color(204, 204, 204));
+        jButton17.setForeground(new java.awt.Color(255, 255, 255));
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_sign_out_30px.png"))); // NOI18N
         jButton17.setText("Log Out                            ");
         jButton17.setBorder(null);
@@ -275,7 +275,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton18.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton18.setForeground(new java.awt.Color(204, 204, 204));
+        jButton18.setForeground(new java.awt.Color(255, 255, 255));
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_health_checkup_30px.png"))); // NOI18N
         jButton18.setText("Add Appoinment               ");
         jButton18.setBorder(null);
@@ -286,7 +286,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton19.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton19.setForeground(new java.awt.Color(204, 204, 204));
+        jButton19.setForeground(new java.awt.Color(255, 255, 255));
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_message_preview_30px.png"))); // NOI18N
         jButton19.setText("View DispatchMail            ");
         jButton19.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -296,7 +296,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton15.setForeground(new java.awt.Color(204, 204, 204));
+        jButton15.setForeground(new java.awt.Color(255, 255, 255));
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_ask_question_30px.png"))); // NOI18N
         jButton15.setText("Help                                ");
         jButton15.setBorder(null);

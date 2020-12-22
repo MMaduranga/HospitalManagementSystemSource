@@ -86,7 +86,7 @@ public class ReadFile {
         }
     }
 
-    public int getStaffIdNo(String filePath) {
+    public int getNumber(String filePath) {
         int intStaffId = 0;
         try {
             FileSecurity fileSecurity = new FileSecurity(filePath);

@@ -1,6 +1,6 @@
 package ReceptionistInterface;
 
-import Classes.SubClasses.SimpleMethods;
+import Classes.SubClasses.SimpleMethodsController;
 import java.awt.Color;
 import Classes.MainClasses.Visitor;
 import java.io.File;
@@ -644,7 +644,7 @@ public class ReceptionistAddVisitor extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-     jTextField4.setText(new SimpleMethods().fileChooser().toString());
+     jTextField4.setText(new SimpleMethodsController().fileChooser().toString());
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
