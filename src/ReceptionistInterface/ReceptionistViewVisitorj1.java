@@ -1,9 +1,9 @@
 package ReceptionistInterface;
 
 
-import Classes.MainClasses.Visitor;
-import Classes.SubClasses.ReadFile;
-import Classes.SubClasses.WriteFile;
+import Model.Visitor;
+import Controllers.ReadFile;
+import Controllers.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;

@@ -1,6 +1,6 @@
 package PateintInterface;
 
-import Classes.SubClasses.ReadFile;
+import Controllers.ReadFile;
 import java.io.File;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;

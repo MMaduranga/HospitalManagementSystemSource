@@ -1,6 +1,6 @@
-package Classes.MainClasses;
+package Model;
 
-import Classes.SubClasses.Main;
+import Controllers.Main;
 import java.time.LocalDate;
 import java.time.LocalTime;
 

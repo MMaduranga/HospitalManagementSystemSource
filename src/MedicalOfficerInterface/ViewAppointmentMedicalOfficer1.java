@@ -1,8 +1,8 @@
 package MedicalOfficerInterface;
 
-import Classes.MainClasses.Apponitment;
-import Classes.SubClasses.ReadFile;
-import Classes.SubClasses.WriteFile;
+import Model.Apponitment;
+import Controllers.ReadFile;
+import Controllers.WriteFile;
 import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalTime;

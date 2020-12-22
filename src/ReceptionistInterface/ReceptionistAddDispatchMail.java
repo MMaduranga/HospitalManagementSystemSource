@@ -1,9 +1,9 @@
 package ReceptionistInterface;
 
-import Classes.MainClasses.DispatchPostalMail;
+import Model.DispatchPostalMail;
 
-import Classes.SubClasses.SimpleMethodsController;
-import Classes.SubClasses.WriteFile;
+import Controllers.SimpleMethodsController;
+import Controllers.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;

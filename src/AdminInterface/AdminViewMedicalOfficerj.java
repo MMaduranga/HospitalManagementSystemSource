@@ -1,12 +1,12 @@
 package AdminInterface;
 
-import Classes.MainClasses.MedicalOfficer;
+import Model.MedicalOfficer;
 
-import Classes.SubClasses.CheckValidation;
-import Classes.SubClasses.ImageController;
-import Classes.SubClasses.ReadFile;
-import Classes.SubClasses.SimpleMethodsController;
-import Classes.SubClasses.WriteFile;
+import Controllers.CheckValidation;
+import Controllers.ImageController;
+import Controllers.ReadFile;
+import Controllers.SimpleMethodsController;
+import Controllers.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
@@ -1094,21 +1094,21 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
     }
 
     public void setTextFieldText(String[] details) {
-        jTextArea1.setText(details[8]);
-        jComboBox1.setSelectedItem(details[4]);
+        jTextField3.setText(details[1]);
+        jTextField7.setText(details[2]);
         jTextField5.setText(details[3]);
+        jComboBox1.setSelectedItem(details[4]);
         jTextField4.setText(details[5]);
         jTextField1.setText(details[6]);
-        jTextField3.setText(details[1]);
         jTextField6.setText(details[7]);
+        jTextArea1.setText(details[8]);
         jComboBox2.setSelectedItem(details[9]);
-        jTextField7.setText(details[2]);
         jTextField9.setText(details[10]);
         jTextField10.setText(details[11]);
+        jTextField14.setText(details[12]);
         jTextField12.setText(details[13]);
         jTextField13.setText(details[14]);
         jTextField2.setText(details[15]);
-        jTextField14.setText(details[12]);
         jComboBox3.setSelectedItem(details[16]);
 
     }

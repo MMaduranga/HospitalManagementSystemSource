@@ -1,10 +1,10 @@
 package ReceptionistInterface;
 
-import Classes.MainClasses.ComplaintRecord;
-import Classes.SubClasses.ReadFile;
+import Model.ComplaintRecord;
+import Controllers.ReadFile;
 import java.awt.Color;
-import Classes.SubClasses.SimpleMethodsController;
-import Classes.SubClasses.WriteFile;
+import Controllers.SimpleMethodsController;
+import Controllers.WriteFile;
 import java.io.File;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;

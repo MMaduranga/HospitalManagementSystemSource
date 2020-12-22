@@ -1,14 +1,14 @@
 package PateintInterface;
 
-import Classes.MainClasses.ComplaintRecord;
-import Classes.SubClasses.CheckValidation;
-import Classes.SubClasses.JpanelGradient;
-import Classes.SubClasses.ReadFile;
-import Classes.SubClasses.WriteFile;
+import Model.ComplaintRecord;
+import Controllers.CheckValidation;
+import Controllers.JpanelGradient;
+import Controllers.ReadFile;
+import Controllers.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;
-import Classes.SubClasses.SimpleMethodsController;
+import Controllers.SimpleMethodsController;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;

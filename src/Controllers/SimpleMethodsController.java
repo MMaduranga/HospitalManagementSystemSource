@@ -1,12 +1,15 @@
-package Classes.SubClasses;
+package Controllers;
 
 import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JTextField;
 
-public class SimpleMethods {
+public class SimpleMethodsController {
     
     public File fileChooser() {
         JFileChooser choosefile = new JFileChooser();
@@ -30,5 +33,9 @@ public class SimpleMethods {
         new ChangeFileDestination().copydir(new File(strPath), new File("src\\UsersDocuments"
                 + "\\" + strPathArray[strPathArray.length - 1]));
         textField.setText("src\\UsersDocuments\\" + strPathArray[strPathArray.length - 1]);
+    }
+    public LocalDate typeCastDateToLocalDate(com.toedter.calendar.JDateChooser datechooser){
+    DateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd");
+    return LocalDate.parse(dateFormat.format(datechooser.getDate()));
     }
 }

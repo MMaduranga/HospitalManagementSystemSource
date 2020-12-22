@@ -5,7 +5,7 @@ Version : 1
 Description : Class for Patient
 */
 //import packages
-package Classes.MainClasses;
+package Model;
 
 import java.io.File;
 import java.time.LocalDate;

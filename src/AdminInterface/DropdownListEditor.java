@@ -1,8 +1,8 @@
 package AdminInterface;
 
-import Classes.SubClasses.ReadFile;
-import Classes.SubClasses.SimpleMethodsController;
-import Classes.SubClasses.WriteFile;
+import Controllers.ReadFile;
+import Controllers.SimpleMethodsController;
+import Controllers.WriteFile;
 import java.awt.Color;
 
 import java.io.File;

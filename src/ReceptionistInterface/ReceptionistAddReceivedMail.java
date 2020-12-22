@@ -1,10 +1,10 @@
 package ReceptionistInterface;
-import Classes.SubClasses.SimpleMethodsController;
-import Classes.SubClasses.WriteFile;
+import Controllers.SimpleMethodsController;
+import Controllers.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;
-import Classes.MainClasses.ReceivedPostalMail;
+import Model.ReceivedPostalMail;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 

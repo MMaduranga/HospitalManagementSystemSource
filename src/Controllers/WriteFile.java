@@ -1,4 +1,4 @@
-package Classes.SubClasses;
+package Controllers;
 
 import java.io.File;
 
@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import Classes.SubClasses.FileSecurity;
+import Controllers.FileSecurity;
 import java.util.ArrayList;
 
 public class WriteFile {

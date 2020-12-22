@@ -1,7 +1,7 @@
 package ReceptionistInterface;
-import Classes.MainClasses.Patient;
-import Classes.SubClasses.ReadFile;
-import Classes.SubClasses.WriteFile;
+import Model.Patient;
+import Controllers.ReadFile;
+import Controllers.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;
