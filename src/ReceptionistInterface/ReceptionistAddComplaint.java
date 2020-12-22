@@ -3,7 +3,7 @@ package ReceptionistInterface;
 import Classes.MainClasses.ComplaintRecord;
 import Classes.SubClasses.ReadFile;
 import java.awt.Color;
-import Classes.SubClasses.SimpleMethods;
+import Classes.SubClasses.SimpleMethodsController;
 import Classes.SubClasses.WriteFile;
 import java.io.File;
 import java.time.LocalDate;
@@ -512,7 +512,7 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 public void handleDropdownListItem() {
        
-       new SimpleMethods().addItemsToDropdown(new ReadFile().getItemsForDropdownList
+       new SimpleMethodsController().addItemsToDropdown(new ReadFile().getItemsForDropdownList
         (new File("src\\TxtFiles\\ComplaintType.mov")), jComboBox1);
    
     }
@@ -536,7 +536,7 @@ public void handleDropdownListItem() {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jTextField4.setText(new SimpleMethods().fileChooser().toString());
+        jTextField4.setText(new SimpleMethodsController().fileChooser().toString());
     }//GEN-LAST:event_jButton3ActionPerformed
 
 

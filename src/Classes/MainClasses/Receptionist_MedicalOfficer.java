@@ -1,15 +1,8 @@
-/*
-Date : 25-11-2020
-Author : H.A.N.Sahani Hettiarachchi
-Version : 1
-Description : Class for Receptionist and Medical Officer
-*/
-//import packages
 package Classes.MainClasses;
 
 import java.io.File;
 import java.time.LocalDate;
-//Declare variables
+
 public class Receptionist_MedicalOfficer extends User {
 
     private int staffId;
@@ -17,7 +10,7 @@ public class Receptionist_MedicalOfficer extends User {
     private LocalDate dateOfJoin;
     private File staffPhoto;
     private File attachDoc;
-//Constructor
+
     public Receptionist_MedicalOfficer(int staffId, String staffEmailAddress,
             String userName, String name, String gender, int phoneNo,
             String idNo, String address, String materialStatus, String password, 
@@ -29,7 +22,7 @@ public class Receptionist_MedicalOfficer extends User {
         this.setStaffPhoto(staffPhoto);
         this.setDateOfJoin(dateofJoin);
     }
-//Generate Setters
+
     public void setDateOfJoin(LocalDate date) {
         this.dateOfJoin = date;
     }
@@ -41,14 +34,7 @@ public class Receptionist_MedicalOfficer extends User {
     public void setAttachDoc(File attachDoc) {
         this.attachDoc = attachDoc;
     }
-     public void setStaffId(int staffId) {
-        this.staffId = staffId;
-    }
 
-    public void setStaffEmailAddress(String staffEmailAddress) {
-        this.staffEmailAddress = staffEmailAddress;
-    }
-//Generate Getters
     public int getStaffId() {
         return staffId;
     }
@@ -69,6 +55,12 @@ public class Receptionist_MedicalOfficer extends User {
         return this.dateOfJoin;
     }
 
- 
+    public void setStaffId(int staffId) {
+        this.staffId = staffId;
+    }
+
+    public void setStaffEmailAddress(String staffEmailAddress) {
+        this.staffEmailAddress = staffEmailAddress;
+    }
 
 }

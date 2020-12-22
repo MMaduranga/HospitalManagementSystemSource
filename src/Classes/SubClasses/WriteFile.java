@@ -57,11 +57,11 @@ public class WriteFile {
 
     }
 
-    public void setStaffId() {
+    public void setNumber(String filePath) {
 
         try {
-            FileSecurity fileSecuryty = new FileSecurity("src\\TxtFiles\\StaffIdNo.mov");
-            int intNewStaffIdNo = new ReadFile().getStaffIdNo("src\\TxtFiles\\StaffIdNo.mov") + 1;
+            FileSecurity fileSecuryty = new FileSecurity(filePath);
+            int intNewStaffIdNo = new ReadFile().getNumber(filePath) + 1;
             FileWriter file = new FileWriter(fileSecuryty.setFilePathToTxt());
             PrintWriter write = new PrintWriter(file);
             write.print(intNewStaffIdNo);

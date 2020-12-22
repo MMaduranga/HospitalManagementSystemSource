@@ -202,7 +202,7 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
         jLabel14.setText(">>");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel15.setText("My Profile");
+        jLabel15.setText("Profile");
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel16.setText("E-mail :");
@@ -490,7 +490,7 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 908, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
                 .addGap(25, 25, 25))
         );
 
@@ -502,7 +502,7 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
         );
 
         pack();

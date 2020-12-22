@@ -42,7 +42,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jPanel3 = new JpanelGradient(new Color(0,51,121), new Color(0,0,0));
+        jPanel3 = new JpanelGradient(new Color(0,216,255), new Color(0,26,51),2);
         jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
@@ -54,7 +54,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         setMinimumSize(new java.awt.Dimension(1397, 988));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(240, 248, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1397, 988));
         jPanel1.setPreferredSize(new java.awt.Dimension(1397, 988));
@@ -101,7 +101,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         jPanel3.setPreferredSize(new java.awt.Dimension(300, 960));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(204, 204, 204));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_male_user_30px.png"))); // NOI18N
         jButton4.setText("My Profile                         ");
         jButton4.setBorder(null);
@@ -113,7 +113,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(204, 204, 204));
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_view_schedule_30px.png"))); // NOI18N
         jButton6.setText("View Appoinment             ");
         jButton6.setBorder(null);
@@ -129,7 +129,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton15.setForeground(new java.awt.Color(204, 204, 204));
+        jButton15.setForeground(new java.awt.Color(255, 255, 255));
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_ask_question_30px.png"))); // NOI18N
         jButton15.setText("Help                                 ");
         jButton15.setBorder(null);
@@ -140,14 +140,14 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         });
 
         jButton16.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton16.setForeground(new java.awt.Color(204, 204, 204));
+        jButton16.setForeground(new java.awt.Color(255, 255, 255));
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_night_30px.png"))); // NOI18N
         jButton16.setText("Dark Mode                        ");
         jButton16.setBorder(null);
         jButton16.setPreferredSize(new java.awt.Dimension(275, 45));
 
         jButton17.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton17.setForeground(new java.awt.Color(204, 204, 204));
+        jButton17.setForeground(new java.awt.Color(255, 255, 255));
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_sign_out_30px.png"))); // NOI18N
         jButton17.setText("Log Out                            ");
         jButton17.setBorder(null);

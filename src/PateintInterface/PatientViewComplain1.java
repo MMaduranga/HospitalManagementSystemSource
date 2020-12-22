@@ -1,10 +1,7 @@
 package PateintInterface;
 
-import Classes.ComplaintRecord;
-import Classes.ReadFile;
-import Classes.WriteFile;
+import Classes.SubClasses.ReadFile;
 import java.io.File;
-import java.time.LocalDate;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -50,7 +47,6 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
@@ -58,10 +54,12 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -109,16 +107,16 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setMinimumSize(new java.awt.Dimension(1066, 756));
 
-        jTextField4.setBackground(new java.awt.Color(240, 248, 255));
+        jTextField4.setEditable(false);
+        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
         jTextField4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
         jTextField4.setPreferredSize(new java.awt.Dimension(460, 37));
 
-        jTextField6.setBackground(new java.awt.Color(240, 248, 255));
         jTextField6.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
 
-        jTextField8.setBackground(new java.awt.Color(240, 248, 255));
+        jTextField8.setEditable(false);
         jTextField8.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
 
@@ -138,7 +136,7 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel12.setText("Description");
 
-        jTextField5.setBackground(new java.awt.Color(240, 248, 255));
+        jTextField5.setEditable(false);
         jTextField5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
 
@@ -148,6 +146,7 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel14.setText("Note");
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextArea1.setRows(5);
@@ -165,9 +164,10 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
         });
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel15.setText("Action Taken");
+        jLabel15.setText("Action Taken:");
 
-        jTextField10.setBackground(new java.awt.Color(240, 248, 255));
+        jTextField10.setEditable(false);
+        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
         jTextField10.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
 
@@ -184,13 +184,11 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel19.setText(":");
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel20.setText(":");
-
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel21.setText(":");
 
-        jTextField7.setBackground(new java.awt.Color(240, 248, 255));
+        jTextField7.setEditable(false);
+        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
         jTextField7.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextField7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
         jTextField7.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -220,16 +218,6 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
         jLabel26.setForeground(new java.awt.Color(255, 0, 0));
         jLabel26.setText("*");
 
-        jButton4.setBackground(new java.awt.Color(0, 26, 51));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Save Changes");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel27.setText(":");
 
@@ -237,6 +225,18 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
         jLabel28.setText(":");
 
         jSeparator1.setBackground(new java.awt.Color(0, 153, 204));
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel29.setText("*");
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel30.setText("Complaint Type:");
+
+        jTextField11.setEditable(false);
+        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField11.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jTextField11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -288,14 +288,9 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addComponent(jLabel15)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton4))
                             .addComponent(jScrollPane1)
                             .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -313,7 +308,14 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextField11)
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addComponent(jLabel30)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 294, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(36, 36, 36))
         );
         jPanel6Layout.setVerticalGroup(
@@ -356,28 +358,31 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                        .addGap(315, 315, 315))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(28, 28, 28)
+                        .addComponent(jTextField11, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                        .addGap(256, 256, 256))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                             .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField8)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel20)
                             .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(28, 28, 28)
-                        .addComponent(jTextField10)
-                        .addGap(207, 207, 207)))
-                .addComponent(jButton4)
-                .addContainerGap())
+                        .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                        .addGap(257, 257, 257))))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -484,7 +489,7 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1082, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1085, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -528,42 +533,6 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
         compareAppoinmentNo(jTextField6.getText(), 2);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if (jTextField6.getText().length() != 0) {
-
-            try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\Complaint.txt"));
-                addChanges();
-
-            } catch (Exception e) {
-
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Please Enter Phone Number");
-        }
-        setTextFieldText(blankArray);
-    }//GEN-LAST:event_jButton4ActionPerformed
-    public void addChanges() {
-
-        try {
-            String complaintBy = jTextField7.getText().toLowerCase();
-            String complaintType = "";
-            int PhoneNo = Integer.valueOf(jTextField6.getText());
-            LocalDate currentDate = LocalDate.parse(jTextField4.getText());
-            String description = jTextField5.getText().toLowerCase();
-            String actionTaken = jTextField10.getText().toLowerCase();
-            String note = jTextArea1.getText().toLowerCase();
-            File attachDoc = new File(jTextField8.getText());
-            new WriteFile().WriteInFile(new ComplaintRecord(complaintType,
-                    complaintBy, PhoneNo, currentDate, description, actionTaken,
-                    note, attachDoc), new File("src\\TxtFiles\\Complaint.txt"));
-            JOptionPane.showMessageDialog(null, "Success");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Fail", "", 2);
-        }
-
-    }
-
     public void compareAppoinmentNo(String primarykey, int location) {
         if (primarykey.length() == 0) {
             JOptionPane.showMessageDialog(null, "Please Enter ID Number");
@@ -571,7 +540,7 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
 
             try {
                 String[] strComplanitDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\Complaint.txt"), location);
+                        new File("src\\TxtFiles\\Complaint.mov"), location);
                 if (strComplanitDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid Phone Number");
                 } else {
@@ -593,11 +562,11 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
         jTextArea1.setText(details[7]);
         jTextField7.setText(details[3]);
         jTextField6.setText(details[2]);
+        jTextField11.setText(details[1]);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -610,7 +579,6 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -619,7 +587,9 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -636,6 +606,7 @@ public class PatientViewComplain1 extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;

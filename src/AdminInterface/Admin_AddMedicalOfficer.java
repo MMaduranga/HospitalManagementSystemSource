@@ -3,6 +3,7 @@ package AdminInterface;
 import Classes.MainClasses.MedicalOfficer;
 import Classes.SubClasses.CheckValidation;
 import Classes.SubClasses.ImageController;
+import Classes.SubClasses.JpanelGradient;
 import Classes.SubClasses.ReadFile;
 import Classes.SubClasses.SimpleMethodsController;
 import Classes.SubClasses.WriteFile;
@@ -10,6 +11,7 @@ import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
+import javax.swing.ImageIcon;
 
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -21,29 +23,29 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
 
     public Admin_AddMedicalOfficer() {
         initComponents();
-        jButton1.setBackground(new Color(0, 0, 0, 0));
+
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
-        jComboBox1.setBackground(new Color(0, 0, 0, 0));
-        jComboBox2.setBackground(new Color(0, 0, 0, 0));
-        jComboBox3.setBackground(new Color(0, 0, 0, 0));
 
+        jButton1.setBackground(new Color(0, 0, 0, 0));
         jComboBox1.setSelectedItem(null);
         jComboBox2.setSelectedItem(null);
         jComboBox3.setSelectedItem(null);
-
+      
         setPreferredSize(getMinimumSize());
         setStaffId();
         pack();
         handleDropdownListItem();
         AutoCompleteDecorator.decorate(jComboBox3);
-
+jComboBox3.setBackground(new Color(0,0,0,0));
     }
 
     public String getMedicalOfficerFilePath() {
         return this.strMedicalOfficerFilePath;
     }
+
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -52,7 +54,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel3 = new JpanelGradient(new Color(0,230,255), new Color(0,26,51),1);
         jPanel5 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -120,13 +122,14 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         setMaximumSize(new java.awt.Dimension(1190, 1070));
         setMinimumSize(new java.awt.Dimension(990, 860));
 
-        jPanel1.setBackground(new java.awt.Color(240, 248, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 0, 0, 0, new java.awt.Color(0, 26, 51)));
         jPanel1.setMaximumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
         jPanel2.setPreferredSize(new java.awt.Dimension(1066, 28));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -183,9 +186,9 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel17.setText("ID Card Number : ");
 
-        jTextField2.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField2.setBackground(new Color(0, 0, 0, 0));
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField2.setMaximumSize(new java.awt.Dimension(460, 37));
         jTextField2.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField2.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -194,10 +197,10 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel12.setForeground(new java.awt.Color(255, 0, 0));
         jLabel12.setText("*");
 
-        jComboBox1.setBackground(new java.awt.Color(240, 248, 255));
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jComboBox1.setBackground(new Color(0, 0, 0, 0));
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jComboBox1.setMaximumSize(new java.awt.Dimension(460, 37));
         jComboBox1.setMinimumSize(new java.awt.Dimension(460, 37));
         jComboBox1.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -207,9 +210,9 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextField4.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField4.setBackground(new Color(0, 0, 0, 0));
+        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField4.setMaximumSize(new java.awt.Dimension(460, 37));
         jTextField4.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField4.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -253,10 +256,10 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel21.setForeground(new java.awt.Color(255, 0, 0));
         jLabel21.setText("*");
 
-        jComboBox2.setBackground(new java.awt.Color(240, 248, 255));
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jComboBox2.setBackground(new Color(0, 0, 0, 0));
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single", "Married" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jComboBox2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jComboBox2.setMaximumSize(new java.awt.Dimension(460, 37));
         jComboBox2.setMinimumSize(new java.awt.Dimension(460, 37));
         jComboBox2.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -276,11 +279,11 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel24.setText("Address :");
 
-        jTextArea2.setBackground(new java.awt.Color(240, 248, 255));
+        jTextArea2.setBackground(new Color(0, 0, 0, 0));
         jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jTextArea2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jTextArea2.setRows(5);
-        jTextArea2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextArea2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jScrollPane2.setViewportView(jTextArea2);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -290,22 +293,22 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel26.setForeground(new java.awt.Color(255, 0, 0));
         jLabel26.setText("*");
 
-        jButton2.setBackground(new java.awt.Color(0, 26, 51));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setBackground(new java.awt.Color(0, 40, 51));
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 216, 255));
         jButton2.setText("Save");
         jButton2.setMaximumSize(new java.awt.Dimension(122, 43));
         jButton2.setMinimumSize(new java.awt.Dimension(122, 43));
-        jButton2.setPreferredSize(new java.awt.Dimension(200, 43));
+        jButton2.setPreferredSize(new java.awt.Dimension(200, 45));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jPasswordField1.setBackground(new java.awt.Color(240, 248, 255));
-        jPasswordField1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jPasswordField1.setBackground(new Color(0, 0, 0, 0));
+        jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jPasswordField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jPasswordField1.setMaximumSize(new java.awt.Dimension(460, 37));
         jPasswordField1.setMinimumSize(new java.awt.Dimension(460, 37));
         jPasswordField1.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -319,9 +322,9 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel27.setForeground(new java.awt.Color(255, 0, 0));
         jLabel27.setText("*");
 
-        jTextField6.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField6.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField6.setBackground(new Color(0, 0, 0, 0));
+        jTextField6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField6.setMaximumSize(new java.awt.Dimension(460, 37));
         jTextField6.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField6.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -335,9 +338,9 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel28.setText("Staff Email Address :");
 
         jTextField7.setEditable(false);
-        jTextField7.setBackground(new java.awt.Color(240, 248, 255));
+        jTextField7.setBackground(new Color(0, 0, 0, 0));
         jTextField7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField7.setMaximumSize(new java.awt.Dimension(460, 37));
         jTextField7.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField7.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -359,10 +362,10 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel32.setText("Speaciality :");
 
-        jComboBox3.setBackground(new java.awt.Color(240, 248, 255));
+        jComboBox3.setBackground(new Color(0, 0, 0, 0));
         jComboBox3.setEditable(true);
-        jComboBox3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jComboBox3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jComboBox3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jComboBox3.setMaximumSize(new java.awt.Dimension(460, 37));
         jComboBox3.setMinimumSize(new java.awt.Dimension(460, 37));
         jComboBox3.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -372,9 +375,9 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextField1.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField1.setBackground(new Color(0, 0, 0, 0));
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField1.setPreferredSize(new java.awt.Dimension(363, 37));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -382,10 +385,11 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(0, 26, 51));
+        jButton3.setBackground(new java.awt.Color(0, 40, 51));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_image_gallery_30px.png"))); // NOI18N
+        jButton3.setPreferredSize(new java.awt.Dimension(45, 40));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -396,9 +400,9 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel33.setForeground(new java.awt.Color(255, 0, 0));
         jLabel33.setText("*");
 
-        jTextField8.setBackground(new java.awt.Color(240, 248, 255));
+        jTextField8.setBackground(new Color(0, 0, 0, 0));
         jTextField8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField8.setMaximumSize(new java.awt.Dimension(460, 37));
         jTextField8.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField8.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -408,9 +412,9 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextField5.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField5.setBackground(new Color(0, 0, 0, 0));
+        jTextField5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField5.setMaximumSize(new java.awt.Dimension(460, 37));
         jTextField5.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField5.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -431,23 +435,24 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel37.setForeground(new java.awt.Color(255, 0, 0));
         jLabel37.setText("*");
 
-        jButton4.setBackground(new java.awt.Color(0, 26, 51));
+        jButton4.setBackground(new java.awt.Color(0, 40, 51));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_new_copy_30px.png"))); // NOI18N
         jButton4.setMaximumSize(new java.awt.Dimension(87, 37));
         jButton4.setMinimumSize(new java.awt.Dimension(87, 37));
-        jButton4.setPreferredSize(new java.awt.Dimension(87, 37));
+        jButton4.setPreferredSize(new java.awt.Dimension(45, 37));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(0, 26, 51));
+        jButton5.setBackground(new java.awt.Color(0, 40, 51));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_preview_pane_30px.png"))); // NOI18N
+        jButton5.setPreferredSize(new java.awt.Dimension(45, 40));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -461,9 +466,9 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jLabel39.setForeground(new java.awt.Color(255, 0, 0));
         jLabel39.setText("*");
 
-        jTextField3.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField3.setBackground(new Color(0, 0, 0, 0));
+        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField3.setPreferredSize(new java.awt.Dimension(363, 37));
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -471,48 +476,50 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(0, 26, 51));
+        jButton6.setBackground(new java.awt.Color(0, 40, 51));
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_image_gallery_30px.png"))); // NOI18N
         jButton6.setMaximumSize(new java.awt.Dimension(87, 37));
         jButton6.setMinimumSize(new java.awt.Dimension(87, 37));
-        jButton6.setPreferredSize(new java.awt.Dimension(87, 37));
+        jButton6.setPreferredSize(new java.awt.Dimension(45, 37));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(0, 26, 51));
+        jButton7.setBackground(new java.awt.Color(0, 40, 51));
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_preview_pane_30px.png"))); // NOI18N
         jButton7.setMinimumSize(new java.awt.Dimension(105, 37));
-        jButton7.setPreferredSize(new java.awt.Dimension(105, 37));
+        jButton7.setPreferredSize(new java.awt.Dimension(45, 37));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
 
-        jDateChooser1.setBackground(new java.awt.Color(240, 248, 255));
-        jDateChooser1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
-        jDateChooser1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jDateChooser1.setBackground(new java.awt.Color(0, 40, 51));
+        jDateChooser1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jDateChooser1.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jDateChooser1.setIcon(new ImageIcon("src\\Icon\\icons8_pay_date_20px.png"));
         jDateChooser1.setMaximumSize(new java.awt.Dimension(460, 37));
         jDateChooser1.setMinimumSize(new java.awt.Dimension(460, 37));
         jDateChooser1.setPreferredSize(new java.awt.Dimension(460, 37));
 
-        jDateChooser2.setBackground(new java.awt.Color(240, 248, 255));
-        jDateChooser2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
-        jDateChooser2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jDateChooser2.setBackground(new java.awt.Color(0, 40, 51));
+        jDateChooser2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jDateChooser2.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jDateChooser2.setIcon(new ImageIcon("src\\Icon\\icons8_pay_date_20px.png"));
         jDateChooser2.setMaximumSize(new java.awt.Dimension(460, 37));
         jDateChooser2.setMinimumSize(new java.awt.Dimension(460, 37));
         jDateChooser2.setPreferredSize(new java.awt.Dimension(460, 37));
 
-        jTextField9.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField9.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField9.setBackground(new Color(0, 0, 0, 0));
+        jTextField9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField9.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -587,12 +594,12 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -602,9 +609,9 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(jTextField9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jDateChooser2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -654,7 +661,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton5)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField9))
                 .addGap(4, 4, 4)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -669,14 +676,14 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
                         .addGap(9, 9, 9))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)))
+                        .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(2, 2, 2)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
@@ -696,7 +703,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
                         .addGap(4, 4, 4)
                         .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                         .addGap(4, 4, 4)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -777,20 +784,20 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addGap(825, 825, 825))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 813, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
         jPanel4.setMinimumSize(new java.awt.Dimension(1066, 22));
         jPanel4.setPreferredSize(new java.awt.Dimension(1066, 22));
 
@@ -816,11 +823,11 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
 
         jLabel1.setBackground(new java.awt.Color(230, 230, 230));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 204));
+        jLabel1.setForeground(new java.awt.Color(0, 26, 51));
         jLabel1.setText("User ");
 
-        jLabel5.setBackground(new java.awt.Color(230, 230, 230));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 153, 204));
         jLabel5.setText("Add User");
 
         jLabel6.setBackground(new java.awt.Color(230, 230, 230));
@@ -835,7 +842,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
 
         jLabel7.setBackground(new java.awt.Color(230, 230, 230));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setForeground(new java.awt.Color(0, 216, 255));
         jLabel7.setText("Add Medical Officer");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -877,7 +884,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 895, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -891,7 +898,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1068, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
         );
 
         pack();
@@ -957,10 +964,10 @@ public void handleDropdownListItem() {
                     userName, name, gender, phoneNo, idNo,
                     address, materialStatus, password, DOB, profilePic, dateOfJoin,
                     staffPhoto, attachDoc, spetialtyArea), new File(this.getMedicalOfficerFilePath()));
-            writeFileObj.setStaffId();
+            writeFileObj.setNumber("src\\TxtFiles\\StaffIdNo.mov");
             JOptionPane.showMessageDialog(null, "Success");
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Fail", "", 2);
+            JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -1031,7 +1038,7 @@ public void handleDropdownListItem() {
     }//GEN-LAST:event_jButton7ActionPerformed
     public void setStaffId() {
 
-        jTextField7.setText(new ReadFile().getStaffIdNo("src\\TxtFiles\\StaffIdNo.mov") + "");
+        jTextField7.setText(new ReadFile().getNumber("src\\TxtFiles\\StaffIdNo.mov") + "");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
