@@ -1,11 +1,13 @@
 package ReceptionistInterface;
 
+import Controllers.CheckValidation;
 import Model.ComplaintRecord;
 import Controllers.ReadFile;
 import java.awt.Color;
 import Controllers.SimpleMethodsController;
 import Controllers.WriteFile;
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -13,7 +15,8 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
 
-    
+    private String strComplaintFilePath = "src\\TxtFiles\\Complaint.mov";
+
     public ReceptionistAddComplaint() {
         initComponents();
 
@@ -25,11 +28,14 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
         jTextField6.setText(LocalDate.now().toString());
 
         jComboBox1.setBackground(new Color(0, 0, 0, 0));//remove combobox background
- handleDropdownListItem();
+        handleDropdownListItem();
         AutoCompleteDecorator.decorate(jComboBox1);
     }
 
-   
+    public String getComplaintFilePath() {
+        return this.strComplaintFilePath;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -511,27 +517,33 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 public void handleDropdownListItem() {
-       
-       new SimpleMethodsController().addItemsToDropdown(new ReadFile().getItemsForDropdownList
-        (new File("src\\TxtFiles\\ComplaintType.mov")), jComboBox1);
-   
+
+        new SimpleMethodsController().addItemsToDropdown(new ReadFile().getItemsForDropdownList(new File(this.getComplaintFilePath())), jComboBox1);
+
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String complaintBy = jTextField1.getText().toLowerCase();
-        String complaintType = jComboBox1.getSelectedItem().toString().toLowerCase();
-        int PhoneNo = Integer.valueOf(jTextField2.getText());
-        LocalDate currentDate = LocalDate.now();
-        String description = jTextField3.getText().toLowerCase();
-        String actionTaken = jTextField5.getText().toLowerCase();
-        String note = jTextArea2.getText().toLowerCase();
-        File attachDoc = new File(jTextField4.getText());
+        String strErrorMessage = "Fail";
         try {
+            CheckValidation checkValidation = new CheckValidation();
+            String complaintBy = jTextField1.getText().toLowerCase();
+            String complaintType = jComboBox1.getSelectedItem().toString().toLowerCase();
+            String PhoneNo = jTextField2.getText();
+            if (!checkValidation.checkPhoneNumber(PhoneNo, this.getComplaintFilePath(), 2)) {
+                strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
+                throw new IOException();
+            }
+            LocalDate currentDate = LocalDate.now();
+            String description = jTextField3.getText().toLowerCase();
+            String actionTaken = jTextField5.getText().toLowerCase();
+            String note = jTextArea2.getText().toLowerCase();
+            File attachDoc = new File(jTextField4.getText());
+
             new WriteFile().WriteInFile(new ComplaintRecord(complaintType,
                     complaintBy, PhoneNo, currentDate, description, actionTaken,
-                    note, attachDoc), new File("src\\TxtFiles\\Complaint.mov"));
+                    note, attachDoc), new File(this.getComplaintFilePath()));
             JOptionPane.showMessageDialog(null, "Success");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Fail", "", 2);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -13,14 +13,14 @@ public class ComplaintRecord extends Main{
 
     private String complaintBy;
     private String complaintType;
-    private int PhoneNo;
+    private String PhoneNo;
     private LocalDate currentDate;
     private String description;
     private String actionTaken;
     private String note;
     private File attachDoc;
 
-    public ComplaintRecord(String complaintType, String complaintBy, int phoneNo,
+    public ComplaintRecord(String complaintType, String complaintBy, String phoneNo,
             LocalDate date, String description, String actionTaken, String note, File attachDoc) {
 this.setComplaintType(complaintType);
 this.setComplaintBy(complaintBy);
@@ -45,7 +45,7 @@ this.setAttachDoc(attachDoc);
         return this.note;
     }
 
-    public int getPhoneNo() {
+    public String getPhoneNo() {
         return this.PhoneNo;
     }
 
@@ -74,7 +74,7 @@ this.setAttachDoc(attachDoc);
         this.complaintBy = complaintBy;
     }
 
-    public void setPhoneNo(int PhoneNo) {
+    public void setPhoneNo(String PhoneNo) {
         this.PhoneNo = PhoneNo;
     }
 

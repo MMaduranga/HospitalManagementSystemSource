@@ -1,15 +1,9 @@
 package Model;
-import Controllers.Main;
+
 import Controllers.Main;
 import java.io.File;
 import java.time.LocalDate;
 
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
  * @author Minushi
@@ -17,13 +11,13 @@ import java.time.LocalDate;
 public class PostalMail extends Main {
     
     //Declare vatiables 
-    private int referenceNo;
+    private String referenceNo;
     private LocalDate currentDate;
     private File attachDoc;
     private String note;
     
     //Parametrized Constructor
-    public PostalMail(int referenceNo, LocalDate currentDate, File attachDoc, String note) {
+    public PostalMail(String referenceNo, LocalDate currentDate, File attachDoc, String note) {
         this.setCurrentDate(currentDate);
         this.setNote(note);
         this.setReferenceNo(referenceNo);
@@ -35,7 +29,7 @@ public class PostalMail extends Main {
         return this.attachDoc;
     }
     
-    public int getReferenceNo() {
+    public String getReferenceNo() {
         return this.referenceNo;
     }
     
@@ -52,7 +46,7 @@ public class PostalMail extends Main {
         this.attachDoc = AttachDoc;
     }
     
-    public void setReferenceNo(int referenceNo) {
+    public void setReferenceNo(String referenceNo) {
         this.referenceNo = referenceNo;
     }
     

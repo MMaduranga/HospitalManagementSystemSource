@@ -1,26 +1,27 @@
 package ReceptionistInterface;
+
+import Controllers.CheckValidation;
 import Controllers.SimpleMethodsController;
 import Controllers.WriteFile;
 import java.awt.Color;
 import java.io.File;
 import java.time.LocalDate;
 import Model.ReceivedPostalMail;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-
 public class ReceptionistAddReceivedMail extends javax.swing.JInternalFrame {
 
-  
     public ReceptionistAddReceivedMail() {
-        
+
         initComponents();
         //remove help button background and border
         jButton1.setBackground(new Color(0, 0, 0, 0));
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
-        
+
         jTextField6.setText(LocalDate.now().toString());
     }
 
@@ -483,19 +484,26 @@ public class ReceptionistAddReceivedMail extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int referenceNo = Integer.valueOf(jTextField1.getText());
-        LocalDate currentDate = LocalDate.now();
-        File attachDoc=new File(jTextField5.getText());
-        String note=jTextArea1.getText().toLowerCase();
-        String fromName=jTextField2.getText().toLowerCase();
-        String fromAddress=jTextField4.getText().toLowerCase();
-        String toName=jTextField3.getText().toLowerCase();
+        String strErrorMessage = "Fail";
         try {
+            CheckValidation checkValidation = new CheckValidation();
+            String referenceNo = jTextField1.getText();
+            if (!checkValidation.checkReferenceNo(referenceNo, "src\\TxtFiles\\ReceviedMail.mov", 7)) {
+                strErrorMessage = "Reference Number Already Exists";
+                throw new IOException();
+            }
+            LocalDate currentDate = LocalDate.now();
+            File attachDoc = new File(jTextField5.getText());
+            String note = jTextArea1.getText().toLowerCase();
+            String fromName = jTextField2.getText().toLowerCase();
+            String fromAddress = jTextField4.getText().toLowerCase();
+            String toName = jTextField3.getText().toLowerCase();
+
             new WriteFile().WriteInFile(new ReceivedPostalMail(referenceNo, currentDate,
                     attachDoc, note, fromName, fromAddress, toName), new File("src\\TxtFiles\\ReceviedMail.mov"));
             JOptionPane.showMessageDialog(null, "Success");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Fail", "", 2);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -504,7 +512,7 @@ public class ReceptionistAddReceivedMail extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       jTextField5.setText(new SimpleMethodsController().fileChooser().toString());
+        jTextField5.setText(new SimpleMethodsController().fileChooser().toString());
     }//GEN-LAST:event_jButton3ActionPerformed
 
 

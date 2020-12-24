@@ -180,7 +180,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JpanelGradient(new Color(0,216,255), new Color(0,26,51),2)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JpanelGradient(new Color(0,26,51), new Color(0,216,255),700)"/>
           </AuxValues>
 
           <Layout>

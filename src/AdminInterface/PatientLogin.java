@@ -32,7 +32,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
 
         this.setTotalRowArray(new ReadFile().readTotalFile(new File("src\\TxtFiles\\Pateint.mov")));
 
-        jTextArea1.setText(new CreatePDF().arrangeParagraphLines(this.getTotalRowArray()));
+        jLabel1.setText(arrangeData());
 
     }
 
@@ -43,13 +43,13 @@ public class PatientLogin extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jButton2 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jLabel1 = new javax.swing.JLabel();
 
         setOpaque(true);
 
@@ -72,13 +72,6 @@ public class PatientLogin extends javax.swing.JInternalFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(240, 248, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 26, 51)));
-        jScrollPane1.setViewportView(jTextArea1);
 
         jButton2.setBackground(new java.awt.Color(0, 26, 51));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -107,14 +100,17 @@ public class PatientLogin extends javax.swing.JInternalFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel9.setText("Patient Login Credential");
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jScrollPane1.setViewportView(jLabel1);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
-                .addGap(100, 100, 100))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jSeparator1)
+                .addGap(22, 22, 22))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jLabel7)
@@ -124,16 +120,14 @@ public class PatientLogin extends javax.swing.JInternalFrame {
                 .addComponent(jLabel9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                .addContainerGap(77, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jSeparator1)
-                        .addGap(22, 22, 22))))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(71, 71, 71))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,13 +139,13 @@ public class PatientLogin extends javax.swing.JInternalFrame {
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
-                .addGap(47, 47, 47)
+                .addGap(65, 65, 65)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -167,7 +161,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 924, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 928, Short.MAX_VALUE)
                 .addGap(25, 25, 25))
         );
 
@@ -182,7 +176,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 976, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -208,11 +202,19 @@ public class PatientLogin extends javax.swing.JInternalFrame {
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
-
+public String arrangeData(){
+ String strParagraphContent = String.format("<html><table border=\"1\"><tr><th>NAME</th><th>USER NAME</th><th>PASSWORD</th></tr>");
+  for(String line:this.getTotalRowArray()){
+  String[] lineDetails=line.split("~");
+   strParagraphContent +="<tr><td>"+lineDetails[3] + "</td><td>"+ lineDetails[1] + "</td><td>"+ lineDetails[2]+"</td></tr>";
+  }
+  return strParagraphContent;
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -220,6 +222,5 @@ public class PatientLogin extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

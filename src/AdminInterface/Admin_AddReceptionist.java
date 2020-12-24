@@ -867,7 +867,7 @@ public class Admin_AddReceptionist extends javax.swing.JInternalFrame {
             }
             String name = jTextField2.getText().toLowerCase();
             String gender = jComboBox1.getSelectedItem().toString().toLowerCase();
-            int phoneNo = Integer.valueOf(jTextField5.getText());
+            String phoneNo = jTextField5.getText();
             if (!checkValidation.checkPhoneNumber(phoneNo, this.getReceptionistFilePath(), 5)) {
                 strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
                 throw new IOException();

@@ -600,7 +600,7 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
             CheckValidation checkValidation = new CheckValidation();
             String complaintBy = jTextField7.getText().toLowerCase();
             String complaintType = jTextField5.getText().toLowerCase();
-            int PhoneNo = Integer.valueOf(jTextField6.getText());
+            String PhoneNo = jTextField6.getText();
             if (!checkValidation.checkPhoneNumber(PhoneNo, this.getComplaintFilePath(), 2)) {
                 strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
                 throw new IOException();

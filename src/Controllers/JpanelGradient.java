@@ -24,11 +24,9 @@ public class JpanelGradient extends JPanel {
         int width = getWidth();
         int height = getHeight();
         GradientPaint gp;
-        if (count == 1) {
-            gp = new GradientPaint(0, 0, firstColor, 600, height, secondColor);
-        } else {
-            gp = new GradientPaint(0, 0, secondColor, 700, width, firstColor);
-        }
+      
+            gp = new GradientPaint(0, 0, firstColor, this.count, height, secondColor);
+        
         g2D.setPaint(gp);
         g2D.fillRect(0, 0, width, height);
 

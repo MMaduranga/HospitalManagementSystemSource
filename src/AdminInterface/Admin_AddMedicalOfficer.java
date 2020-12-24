@@ -32,20 +32,18 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
         jComboBox1.setSelectedItem(null);
         jComboBox2.setSelectedItem(null);
         jComboBox3.setSelectedItem(null);
-      
+
         setPreferredSize(getMinimumSize());
         setStaffId();
-        pack();
+        // pack();
         handleDropdownListItem();
         AutoCompleteDecorator.decorate(jComboBox3);
-jComboBox3.setBackground(new Color(0,0,0,0));
+        jComboBox3.setBackground(new Color(0, 0, 0, 0));
     }
 
     public String getMedicalOfficerFilePath() {
         return this.strMedicalOfficerFilePath;
     }
-
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -926,22 +924,22 @@ public void handleDropdownListItem() {
             CheckValidation checkValidation = new CheckValidation();
 
             String userName = jTextField4.getText().toLowerCase();
-            /*  if (!checkValidation.checkUserName(userName, this.getMedicalOfficerFilePath(), 1)) {
-            strErrorMessage = "User Name Already Exists";
-            throw new IOException();
-            }*/
+            if (!checkValidation.checkUserName(userName, this.getMedicalOfficerFilePath(), 1)) {
+                strErrorMessage = "User Name Already Exists";
+                throw new IOException();
+            }
             String name = jTextField2.getText().toLowerCase();
             String gender = jComboBox1.getSelectedItem().toString().toLowerCase();
-            int phoneNo = Integer.valueOf(jTextField5.getText());
-            /* if (!checkValidation.checkPhoneNumber(phoneNo, this.getMedicalOfficerFilePath(), 5)) {
-            strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
-            throw new IOException();
-            }*/
+            String phoneNo = jTextField5.getText();
+            if (!checkValidation.checkPhoneNumber(phoneNo, this.getMedicalOfficerFilePath(), 5)) {
+                strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
+                throw new IOException();
+            }
             String idNo = jTextField6.getText().toLowerCase();
-            /* if (!checkValidation.checkIdNumber(idNo, this.getMedicalOfficerFilePath(), 6)) {
-            strErrorMessage = "Invalid Id Numbers Or Id Number Already Exists";
-            throw new IOException();
-            }*/
+            if (!checkValidation.checkIdNumber(idNo, this.getMedicalOfficerFilePath(), 6)) {
+                strErrorMessage = "Invalid Id Numbers Or Id Number Already Exists";
+                throw new IOException();
+            }
             LocalDate DOB = new SimpleMethodsController().typeCastDateToLocalDate(jDateChooser1);
             String address = jTextArea2.getText().toLowerCase();
             String materialStatus = jComboBox2.getSelectedItem().toString().toLowerCase();
@@ -950,10 +948,10 @@ public void handleDropdownListItem() {
 
             int staffId = Integer.valueOf(jTextField7.getText());
             String staffEmailAddress = jTextField8.getText().toLowerCase();
-            /*  if (!checkValidation.checkEmailId(staffEmailAddress, this.getMedicalOfficerFilePath(), 12)) {
-            strErrorMessage = "Invalid Email Address Numbers Or Email Address Already Exists";
-            throw new IOException();
-            }*/
+            if (!checkValidation.checkEmailId(staffEmailAddress, this.getMedicalOfficerFilePath(), 12)) {
+                strErrorMessage = "Invalid Email Address Numbers Or Email Address Already Exists";
+                throw new IOException();
+            }
             LocalDate dateOfJoin = new SimpleMethodsController().typeCastDateToLocalDate(jDateChooser2);
             File staffPhoto = new File(jTextField3.getText());
             File attachDoc = new File(jTextField1.getText());
@@ -967,6 +965,7 @@ public void handleDropdownListItem() {
             writeFileObj.setNumber("src\\TxtFiles\\StaffIdNo.mov");
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
+            System.out.println(e);
             JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
         }
 

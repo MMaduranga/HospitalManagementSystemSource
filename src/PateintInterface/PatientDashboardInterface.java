@@ -44,7 +44,7 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jPanel3 = new JpanelGradient(new Color(0,216,255), new Color(0,26,51),2);
+        jPanel3 = new JpanelGradient(new Color(0,26,51), new Color(0,216,255),700);
         jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();

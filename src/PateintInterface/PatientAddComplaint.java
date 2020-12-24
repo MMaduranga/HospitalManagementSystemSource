@@ -501,7 +501,7 @@ public void handleDropdownListItem() {
             CheckValidation checkValidation = new CheckValidation();
             String complaintBy = jTextField1.getText().toLowerCase();
             String complaintType = jComboBox1.getSelectedItem().toString().toLowerCase();
-            int PhoneNo = Integer.valueOf(jTextField2.getText());
+            String PhoneNo = jTextField2.getText();
             if (!checkValidation.checkPhoneNumber(PhoneNo, this.getComplaintFilePath(), 2)) {
                 strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
                 throw new IOException();

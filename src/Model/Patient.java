@@ -16,7 +16,7 @@ public class Patient extends User {
     private String allergies;
 //Constructor
     public Patient(String bloodGroup, String allergies, String userName,
-            String name, String gender, int phoneNo, String idNo, String address,
+            String name, String gender, String phoneNo, String idNo, String address,
             String materialStatus, String password, LocalDate DOB, File profilePic) {
         super(userName, name, gender, phoneNo, idNo, address, materialStatus, password, DOB, profilePic);
         this.setBloodGroup(bloodGroup);

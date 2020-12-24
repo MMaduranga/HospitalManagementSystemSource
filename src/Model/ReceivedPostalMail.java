@@ -12,7 +12,7 @@ public class ReceivedPostalMail extends PostalMail {//inheritance
     private String toName;
 
     //Parameterized Constructor 
-    public ReceivedPostalMail(int referenceNo, LocalDate currentDate, File attachDoc,
+    public ReceivedPostalMail(String referenceNo, LocalDate currentDate, File attachDoc,
             String note, String fromName, String fromAddress, String toName) { 
         super(referenceNo, currentDate, attachDoc, note);//calling the constructor of the super class 
         this.setFromName(fromName);

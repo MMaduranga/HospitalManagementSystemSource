@@ -21,15 +21,16 @@ public class CheckValidation {
         }
     }
 
-    public boolean checkPhoneNumber(int phoneNo, String filelocation, int location) {
-        FileSecurity fileSecurity = new FileSecurity(filelocation);
-        String[] objectArrayExist = new ReadFile().findObjLine(phoneNo + "", new File(fileSecurity.setFilePathToTxt()), location);
+    public boolean checkPhoneNumber(String phoneNo, String filelocation, int location) {
+       FileSecurity fileSecurity = new FileSecurity(filelocation);
+        String[] objectArrayExist = new ReadFile().findObjLine(phoneNo, new File(fileSecurity.setFilePathToTxt()), location);
         if (objectArrayExist == null) {
+          
             Pattern patternPhoneNo = Pattern.compile("0[1-8][1-8][0-9]{7}");
-            Matcher matchPhoneNo = patternPhoneNo.matcher(phoneNo + "");
-            fileSecurity.setFilePathMOV();
+            Matcher matchPhoneNo = patternPhoneNo.matcher(phoneNo);
+         fileSecurity.setFilePathMOV();
             return matchPhoneNo.matches();
-        } else {
+       } else {
             fileSecurity.setFilePathMOV();
             return false;
         }
@@ -47,6 +48,17 @@ public class CheckValidation {
         }
     }
 
+    public boolean checkReferenceNo(String referenceNo, String filelocation, int location) {
+        FileSecurity fileSecurity = new FileSecurity(filelocation);
+        String[] objectArrayExist = new ReadFile().findObjLine(referenceNo, new File(fileSecurity.setFilePathToTxt()), location);
+        if (objectArrayExist == null) {
+            fileSecurity.setFilePathMOV();
+            return true;
+        } else {
+            fileSecurity.setFilePathMOV();
+            return false;
+        }
+    }
     public boolean checkEmailId(String email, String filelocation, int location) {
         FileSecurity fileSecurity = new FileSecurity(filelocation);
         String[] objectArrayExist = new ReadFile().findObjLine(email, new File(fileSecurity.setFilePathToTxt()), location);
@@ -60,4 +72,5 @@ public class CheckValidation {
             return false;
         }
     }
+  
 }

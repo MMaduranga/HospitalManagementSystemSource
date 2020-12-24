@@ -28,9 +28,9 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new JpanelGradient(new Color(255,255,255,250), new Color(0,206,255,250),1);
+        jPanel1 = new JpanelGradient(new Color(255,255,255,200), new Color(0,206,255,200),1500);
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new JpanelGradient(new Color(0,206,255), new Color(0,26,51),1);
+        jPanel3 = new JpanelGradient(new Color(0,206,255), new Color(0,26,51),600);
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,7 +58,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1367, 960));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 5, 5, new java.awt.Color(153, 153, 153)));
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 8, 8, new java.awt.Color(220, 220, 220)));
         jPanel2.setMinimumSize(new java.awt.Dimension(1167, 760));
         jPanel2.setPreferredSize(new java.awt.Dimension(1167, 760));
 
@@ -78,7 +78,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jLabel7)
-                .addContainerGap(406, Short.MAX_VALUE))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,7 +176,7 @@ public class Login extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -210,7 +210,7 @@ public class Login extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 771, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jButton3)
@@ -249,7 +249,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jCheckBox1)
                         .addGap(29, 29, 29)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(131, Short.MAX_VALUE))))
+                        .addContainerGap(132, Short.MAX_VALUE))))
         );
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
