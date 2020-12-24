@@ -128,9 +128,9 @@ public class ReadFile {
         return dropDownlistArray;
     }
 
-    public String readLoginSavedUser() {
+    public String readLoginSavedUserAndColorFiles(String filePath) {
         try {
-            FileSecurity fileSecurity = new FileSecurity("src\\TxtFiles\\SavedUser.mov");
+            FileSecurity fileSecurity = new FileSecurity(filePath);
             FileReader readUserFile = new FileReader(fileSecurity.setFilePathToTxt());//open users file to read
             BufferedReader readFile = new BufferedReader(readUserFile);
             String strLine = readFile.readLine();
