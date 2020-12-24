@@ -18,11 +18,11 @@ public class ImageController {
             JOptionPane.showMessageDialog(null, "Select a Image");
         }
     }
-      public ImageIcon setImageSize(String imagePath,JLabel ladel) {
+      public ImageIcon setImageSize(String imagePath,int height,int width) {
         if (imagePath.length() != 0) {
             ImageIcon image = new ImageIcon(imagePath);
             Image resize = image.getImage();
-            Image resizedImage = resize.getScaledInstance(450, 337, Image.SCALE_SMOOTH);
+            Image resizedImage = resize.getScaledInstance(width, height, Image.SCALE_SMOOTH);
             image = new ImageIcon(resizedImage);
             return image;
         }

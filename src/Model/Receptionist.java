@@ -6,7 +6,7 @@ import java.time.LocalDate;
 public class Receptionist extends Receptionist_MedicalOfficer {
 
     public Receptionist(int staffId, String staffEmailAddress, String userName,
-            String name, String gender, int phoneNo, String idNo, String address,
+            String name, String gender, String phoneNo, String idNo, String address,
             String materialStatus, String password, LocalDate DOB, File profilePic,
             LocalDate dateofJoin, File staffPhoto, File attachDoc) {
         super(staffId, staffEmailAddress, userName, name, gender, phoneNo, idNo,

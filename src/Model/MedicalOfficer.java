@@ -14,7 +14,7 @@ public class MedicalOfficer extends Receptionist_MedicalOfficer{
     private String spetialtyArea ;
 
     public MedicalOfficer(int staffId, String staffEmailAddress, String userName,
-            String name, String gender, int phoneNo, String idNo, String address, 
+            String name, String gender, String phoneNo, String idNo, String address, 
             String materialStatus, String password, LocalDate DOB, File profilePic,
             LocalDate dateofJoin, File staffPhoto, File attachDoc,String spetialtyArea) {
         super(staffId, staffEmailAddress, userName, name, gender, phoneNo, idNo, address, materialStatus, password, DOB, profilePic, dateofJoin, staffPhoto, attachDoc);

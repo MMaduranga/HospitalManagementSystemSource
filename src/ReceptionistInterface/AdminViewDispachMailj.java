@@ -1,30 +1,35 @@
 package ReceptionistInterface;
 
+import Controllers.CheckValidation;
 import Model.DispatchPostalMail;
 import Controllers.ReadFile;
+import Controllers.SimpleMethodsController;
 import Controllers.WriteFile;
 import java.io.File;
 import java.awt.Color;
 import java.time.LocalDate;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 
 
-
 public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
 
+    private String strDispatchMailFilePath = "src\\TxtFiles\\DispatchMail.mov";
     ReadFile readFileObj = new ReadFile();
     String[] blankArray = {"", "", "", "", "", "", "", ""};
+
     public AdminViewDispachMailj() {
         initComponents();
-        jButton1.setBackground(new Color(0,0,0,0));
-        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
-        BasicInternalFrameUI basicinternalform=(BasicInternalFrameUI)this.getUI();
+        jButton1.setBackground(new Color(0, 0, 0, 0));
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
-       
 
+    }
+
+    public String getDispatchMailFilePath() {
+        return this.strDispatchMailFilePath;
     }
 
     @SuppressWarnings("unchecked")
@@ -71,7 +76,7 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(240, 248, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
@@ -114,16 +119,15 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
         jLabel30.setForeground(java.awt.Color.red);
         jLabel30.setText("*");
 
-        jTextField1.setBackground(new java.awt.Color(240, 248, 255));
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 26, 51)));
         jTextField1.setPreferredSize(new java.awt.Dimension(460, 37));
 
-        jButton2.setBackground(new java.awt.Color(0, 26, 51));
+        jButton2.setBackground(new java.awt.Color(0, 216, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("View");
-        jButton2.setPreferredSize(new java.awt.Dimension(122, 43));
+        jButton2.setPreferredSize(new java.awt.Dimension(200, 45));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -158,9 +162,8 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
         jLabel35.setForeground(java.awt.Color.red);
         jLabel35.setText("*");
 
-        jTextField7.setBackground(new java.awt.Color(240, 248, 255));
         jTextField7.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 26, 51)));
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
@@ -173,33 +176,33 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         jLabel24.setText("From Name : ");
 
-        jTextField9.setBackground(new java.awt.Color(240, 248, 255));
         jTextField9.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField9.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 26, 51)));
 
-        jButton4.setBackground(new java.awt.Color(0, 26, 51));
+        jButton4.setBackground(new java.awt.Color(0, 216, 255));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Save Changes");
+        jButton4.setPreferredSize(new java.awt.Dimension(200, 45));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(0, 26, 51));
+        jButton5.setBackground(new java.awt.Color(0, 216, 255));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Delete");
+        jButton5.setPreferredSize(new java.awt.Dimension(200, 45));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
 
-        jTextField5.setBackground(new java.awt.Color(240, 248, 255));
         jTextField5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 26, 51)));
 
         jLabel37.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel37.setForeground(java.awt.Color.red);
@@ -209,100 +212,106 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
         jLabel38.setForeground(java.awt.Color.red);
         jLabel38.setText("*");
 
-        jTextArea3.setBackground(new java.awt.Color(240, 248, 255));
         jTextArea3.setColumns(20);
         jTextArea3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextArea3.setRows(5);
-        jTextArea3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextArea3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 26, 51)));
         jScrollPane3.setViewportView(jTextArea3);
 
-        jTextArea1.setBackground(new java.awt.Color(240, 248, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 26, 51)));
         jTextArea1.setPreferredSize(new java.awt.Dimension(460, 129));
         jScrollPane1.setViewportView(jTextArea1);
 
-        jTextField2.setBackground(new java.awt.Color(240, 248, 255));
+        jTextField2.setEditable(false);
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 26, 51)));
 
         jSeparator2.setBackground(new java.awt.Color(0, 153, 204));
         jSeparator2.setForeground(new java.awt.Color(0, 153, 204));
 
         jButton3.setBackground(new java.awt.Color(0, 26, 51));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_new_copy_30px.png"))); // NOI18N
+        jButton3.setPreferredSize(new java.awt.Dimension(45, 37));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator2)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator2)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel24)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel38))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel18)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel34))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel30))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel21)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel35))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel15)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel32)))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jTextField7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton3)))
-                                .addGap(70, 70, 70)))
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addGap(34, 38, Short.MAX_VALUE)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                                .addComponent(jLabel23)
+                                                .addComponent(jLabel24)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel37))
+                                                .addComponent(jLabel38))
                                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                                .addComponent(jLabel16)
+                                                .addComponent(jLabel18)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel33)))
+                                                .addComponent(jLabel34))
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addComponent(jLabel11)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel30))
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addComponent(jLabel21)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel35))
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addComponent(jLabel15)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel32)))
                                         .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane1))))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+                                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addComponent(jTextField7)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(70, 70, 70)))
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                        .addGap(34, 38, Short.MAX_VALUE)
+                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                                        .addComponent(jLabel23)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel37))
+                                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                                        .addComponent(jLabel16)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel33)))
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jScrollPane1))))))))
                 .addGap(29, 29, 29))
         );
         jPanel5Layout.setVerticalGroup(
@@ -317,10 +326,10 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
                         .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(11, 11, 11)
                 .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 11, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
@@ -352,7 +361,7 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                                 .addGap(5, 5, 5))
-                            .addComponent(jButton3)))
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addGap(84, 84, 84)))
@@ -386,8 +395,8 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addGap(112, 112, 112)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton5)
-                            .addComponent(jButton4))
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
 
@@ -411,7 +420,7 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
                 .addGap(14, 14, 14)
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 766, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -486,7 +495,7 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -500,25 +509,25 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-       
+
     }//GEN-LAST:event_jTextField7ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-   compareAppoinmentNo(jTextField1.getText());
+        compareReferenceNo(jTextField1.getText());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-          if (jTextField1.getText().length() > 0) {
+        if (jTextField1.getText().length() > 0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\DispatchMail.mov"));
+                readFileObj.deleteObj(new File(this.getDispatchMailFilePath()));
                 addChanges();
 
             } catch (Exception e) {
@@ -531,10 +540,10 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-                if (jTextField1.getText().length() > 0) {
+        if (jTextField1.getText().length() > 0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\DispatchMail.mov"));
+                readFileObj.deleteObj(new File(this.getDispatchMailFilePath()));
                 JOptionPane.showMessageDialog(null, "Deleted");
             } catch (Exception e) {
                 System.out.println(e);
@@ -544,30 +553,39 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
         }
         setTextFieldText(blankArray);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        jTextField1.setText(new SimpleMethodsController().fileChooser().toString());
+    }//GEN-LAST:event_jButton3ActionPerformed
     public void addChanges() {
-        int referenceNo = Integer.valueOf(jTextField1.getText());
-        LocalDate currentDate = LocalDate.parse(jTextField2.getText());
-        File attachDoc = new File(jTextField7.getText());
-        String note = jTextArea3.getText().toLowerCase();
-        String toName = jTextField5.getText().toLowerCase();
-        String toAddress = jTextArea1.getText().toLowerCase();
-        String fromName = jTextField9.getText().toLowerCase();
+        String strErrorMessage = "Fail";
         try {
+      
+            String referenceNo = jTextField1.getText();
+         
+            LocalDate currentDate = LocalDate.parse(jTextField2.getText());
+            File attachDoc = new File(jTextField7.getText());
+            String note = jTextArea3.getText().toLowerCase();
+            String toName = jTextField5.getText().toLowerCase();
+            String toAddress = jTextArea1.getText().toLowerCase();
+            String fromName = jTextField9.getText().toLowerCase();
+
             new WriteFile().WriteInFile(new DispatchPostalMail(referenceNo, currentDate,
-                    attachDoc, note, toName, toAddress, fromName), new File("src\\TxtFiles\\DispatchMail.mov"));
+                    attachDoc, note, toName, toAddress, fromName), new File(this.getDispatchMailFilePath()));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Fail", "", 2);
+            JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
         }
     }
-    public void compareAppoinmentNo(String primarykey) {
+
+    public void compareReferenceNo(String primarykey) {
         if (primarykey.length() == 0) {
             JOptionPane.showMessageDialog(null, "Please Enter Reference Number");
         } else {
 
             try {
                 String[] strAppoinmentDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\DispatchMail.mov"), 7);
+                        new File(this.getDispatchMailFilePath()), 7);
                 if (strAppoinmentDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid Reference Number");
                 } else {
@@ -582,14 +600,14 @@ public class AdminViewDispachMailj extends javax.swing.JInternalFrame {
     }
 
     public void setTextFieldText(String[] details) {
-        jTextArea3.setText(details[4]);
-        jTextField1.setText(details[7]);
-        jTextField9.setText(details[1]);
-        jTextField7.setText(details[5]);
 
-        jTextField5.setText(details[3]);
-        jTextField2.setText(details[6]);
+        jTextField9.setText(details[1]);
         jTextArea1.setText(details[2]);
+        jTextField5.setText(details[3]);
+        jTextArea3.setText(details[4]);
+        jTextField7.setText(details[5]);
+        jTextField2.setText(details[6]);
+        jTextField1.setText(details[7]);
 
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,11 +1,13 @@
 package ReceptionistInterface;
 
+import Controllers.CheckValidation;
 import Model.DispatchPostalMail;
 
 import Controllers.SimpleMethodsController;
 import Controllers.WriteFile;
 import java.awt.Color;
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 
 import javax.swing.JOptionPane;
@@ -13,7 +15,8 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
 
-  
+    private String strDispatchMailFilePath = "src\\TxtFiles\\DispatchMail.mov";
+
     public ReceptionistAddDispatchMail() {
 
         initComponents();
@@ -27,6 +30,9 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
 
     }
 
+    public String getDispatchMailFilePath() {
+        return this.strDispatchMailFilePath;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -146,6 +152,11 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
         jTextField4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, new java.awt.Color(0, 153, 204)));
         jTextField4.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField4.setPreferredSize(new java.awt.Dimension(460, 37));
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel12.setText("Current Date :");
@@ -378,7 +389,7 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -471,7 +482,7 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 828, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -486,7 +497,7 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 996, Short.MAX_VALUE)
                 .addGap(4, 4, 4))
         );
 
@@ -498,19 +509,27 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int referenceNo = Integer.valueOf(jTextField1.getText());
-        LocalDate currentDate = LocalDate.now();
-        File attachDoc = new File(jTextField5.getText());
-        String note = jTextArea1.getText().toLowerCase();
-        String toName = jTextField2.getText().toLowerCase();
-        String toAddress = jTextField4.getText().toLowerCase();
-        String fromName = jTextField3.getText().toLowerCase();
+        String strErrorMessage = "Fail";
         try {
+            CheckValidation checkValidation = new CheckValidation();
+
+            String referenceNo = jTextField1.getText();
+            if (!checkValidation.checkReferenceNo(referenceNo, this.getDispatchMailFilePath(), 7)) {
+                strErrorMessage = "Reference Number Already Exists";
+                throw new IOException();
+            }
+            LocalDate currentDate = LocalDate.now();
+            File attachDoc = new File(jTextField5.getText());
+            String note = jTextArea1.getText().toLowerCase();
+            String toName = jTextField2.getText().toLowerCase();
+            String toAddress = jTextField4.getText().toLowerCase();
+            String fromName = jTextField3.getText().toLowerCase();
+
             new WriteFile().WriteInFile(new DispatchPostalMail(referenceNo, currentDate,
-                    attachDoc, note, toName, toAddress, fromName), new File("src\\TxtFiles\\DispatchMail.mov"));
+                    attachDoc, note, toName, toAddress, fromName), new File(this.getDispatchMailFilePath()));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Fail", "", 2);
+            JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -521,6 +540,10 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jTextField5.setText(new SimpleMethodsController().fileChooser().toString());
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

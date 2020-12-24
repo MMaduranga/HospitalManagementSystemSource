@@ -16,7 +16,7 @@ public class User extends Main{
     private String userName;
     private String name;
     private String gender;
-    private int phoneNo;
+    private String phoneNo;
     private String idNo;
     private LocalDate dob;
     private String address;
@@ -24,7 +24,7 @@ public class User extends Main{
     private String password;
     private File profilePic;
 //Constructor
-    public User(String userName, String name, String gender, int phoneNo,
+    public User(String userName, String name, String gender, String phoneNo,
             String idNo, String address, String materialStatus, String password, LocalDate dob, File profilePic) {
         this.setUserName(userName);
         this.setName(name);
@@ -58,7 +58,7 @@ public class User extends Main{
         return this.gender;
     }
 
-    public int getPhoneNo() {
+    public String getPhoneNo() {
         return this.phoneNo;
     }
 
@@ -90,7 +90,7 @@ public class User extends Main{
         this.gender = gender;
     }
 
-    public void setPhoneNo(int phoneNo) {
+    public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
     }
 

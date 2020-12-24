@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Model;
 
 import java.io.File;
@@ -20,7 +16,7 @@ public class DispatchPostalMail extends PostalMail { //inheritance
     private String fromName;
     
     //Parameterized Constructor
-    public DispatchPostalMail(int referenceNo, LocalDate currentDate, File attachDoc, 
+    public DispatchPostalMail(String referenceNo, LocalDate currentDate, File attachDoc, 
             String note, String toName, String toAddress, String fromName) {
         super(referenceNo, currentDate, attachDoc, note); //calling the constructor of the super class 
         this.setToName(toName);

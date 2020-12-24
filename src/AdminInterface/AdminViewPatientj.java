@@ -842,7 +842,7 @@ public class AdminViewPatientj extends javax.swing.JInternalFrame {
             }
             String name = jTextField6.getText().toLowerCase();
             String gender = jComboBox4.getSelectedItem().toString();
-            int phoneNo = Integer.valueOf(jTextField4.getText());
+            String phoneNo = jTextField4.getText();
             if (!checkValidation.checkPhoneNumber(phoneNo, this.getPatientFilePath(), 5)) {
                 strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
                 throw new IOException();

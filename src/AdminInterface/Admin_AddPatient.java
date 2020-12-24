@@ -33,7 +33,7 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
 
         setPreferredSize(getMinimumSize());
 
-        pack();
+  
     }
 
     public String getPatientFilePath() {
@@ -720,7 +720,7 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
             }
             String name = jTextField2.getText().toLowerCase();
             String gender = jComboBox1.getSelectedItem().toString();
-            int phoneNo = Integer.valueOf(jTextField5.getText());
+            String phoneNo = jTextField5.getText();
             if (!checkValidation.checkPhoneNumber(phoneNo, this.getPatientFilePath(), 5)) {
                 strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
                 throw new IOException();

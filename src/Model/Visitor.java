@@ -14,10 +14,10 @@ public  class Visitor extends Main{
     private LocalTime outTime;
     private File attachDoc;
     private String note;
-    private int phoneNo;
+    private String phoneNo;
 //constructor
     public Visitor(String purpose,String name,String idNo,LocalDate date,
-            LocalTime intime,LocalTime outtime,File attachdoc,String note,int phoneNo){
+            LocalTime intime,LocalTime outtime,File attachdoc,String note,String phoneNo){
     this.setPurpose(purpose);
     this.setName(name);
     this.setDate(date);
@@ -31,10 +31,10 @@ public  class Visitor extends Main{
     
     
  //getters and setters
-    public void setPhoneNo(int phoneNo){
+    public void setPhoneNo(String phoneNo){
     this.phoneNo=phoneNo;
     }
-    public int getPhoneNo(){
+    public String getPhoneNo(){
     return this.phoneNo;
     }
     public String getPurpose() {

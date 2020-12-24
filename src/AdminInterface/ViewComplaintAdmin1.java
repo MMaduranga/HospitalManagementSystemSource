@@ -595,7 +595,7 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
     public void addChanges() {
         String complaintBy = jTextField7.getText().toLowerCase();
         String complaintType = "";
-        int PhoneNo = Integer.valueOf(jTextField6.getText());
+        String PhoneNo =jTextField6.getText();
         LocalDate currentDate = LocalDate.parse(jTextField4.getText());
         String description = jTextField5.getText().toLowerCase();
         String actionTaken = jTextField10.getText().toLowerCase();

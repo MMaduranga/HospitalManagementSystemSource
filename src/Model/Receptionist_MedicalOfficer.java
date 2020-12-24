@@ -12,7 +12,7 @@ public class Receptionist_MedicalOfficer extends User {
     private File attachDoc;
 
     public Receptionist_MedicalOfficer(int staffId, String staffEmailAddress,
-            String userName, String name, String gender, int phoneNo,
+            String userName, String name, String gender, String phoneNo,
             String idNo, String address, String materialStatus, String password, 
             LocalDate DOB, File profilePic,LocalDate dateofJoin,File staffPhoto,File attachDoc) {
         super(userName, name, gender, phoneNo, idNo, address, materialStatus, password, DOB, profilePic);
