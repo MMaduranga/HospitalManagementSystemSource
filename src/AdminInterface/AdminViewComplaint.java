@@ -2,8 +2,10 @@ package AdminInterface;
 
 import Model.ComplaintRecord;
 import Controllers.CheckValidation;
+import Controllers.JpanelGradient;
 import Controllers.ReadFile;
 import Controllers.WriteFile;
+import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -30,7 +32,7 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel3 = new JpanelGradient(new Color(0,230,255), new Color(0,26,51),600);
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jTextField4 = new javax.swing.JTextField();
@@ -79,12 +81,13 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(240, 248, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 26, 51)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
         jPanel2.setPreferredSize(new java.awt.Dimension(1021, 28));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -117,19 +120,16 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setMinimumSize(new java.awt.Dimension(1066, 756));
 
-        jTextField4.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField4.setPreferredSize(new java.awt.Dimension(460, 37));
 
-        jTextField6.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField6.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField6.setPreferredSize(new java.awt.Dimension(460, 37));
 
-        jTextField8.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField8.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField8.setPreferredSize(new java.awt.Dimension(4, 37));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -148,9 +148,8 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel12.setText("Complaint Type");
 
-        jTextField5.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField5.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -160,28 +159,28 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
         jLabel14.setText("Note");
 
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextArea1.setPreferredSize(new java.awt.Dimension(460, 74));
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton3.setBackground(new java.awt.Color(0, 26, 51));
+        jButton3.setBackground(new java.awt.Color(0, 40, 51));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setForeground(new java.awt.Color(0, 216, 255));
         jButton3.setText("View");
-        jButton3.setPreferredSize(new java.awt.Dimension(199, 39));
+        jButton3.setPreferredSize(new java.awt.Dimension(200, 45));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(0, 26, 51));
+        jButton4.setBackground(new java.awt.Color(0, 40, 51));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setForeground(new java.awt.Color(0, 216, 255));
         jButton4.setText("Save Changes");
-        jButton4.setPreferredSize(new java.awt.Dimension(200, 39));
+        jButton4.setPreferredSize(new java.awt.Dimension(200, 45));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -191,9 +190,8 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel15.setText("Attachement");
 
-        jTextField10.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField10.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField10.setPreferredSize(new java.awt.Dimension(4, 37));
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,9 +218,8 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel21.setText(":");
 
-        jTextField7.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField7.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField7.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -245,11 +242,11 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
         jLabel26.setForeground(new java.awt.Color(255, 0, 0));
         jLabel26.setText("*");
 
-        jButton5.setBackground(new java.awt.Color(0, 26, 51));
+        jButton5.setBackground(new java.awt.Color(0, 40, 51));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setForeground(new java.awt.Color(0, 216, 255));
         jButton5.setText("Delete");
-        jButton5.setPreferredSize(new java.awt.Dimension(200, 39));
+        jButton5.setPreferredSize(new java.awt.Dimension(200, 45));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -272,9 +269,8 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
         jLabel31.setForeground(new java.awt.Color(255, 0, 0));
         jLabel31.setText("*");
 
-        jTextField11.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField11.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField11.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField11.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField11.setPreferredSize(new java.awt.Dimension(4, 37));
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -294,7 +290,7 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
@@ -323,48 +319,52 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(87, 87, 87)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel21)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel27)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel30)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(6, 6, 6))))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jSeparator1)
+                                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+                                            .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+                                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+                                            .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                                .addGap(87, 87, 87)
+                                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE)
+                                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel21)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel27)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel30)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                                        .addComponent(jTextField11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addGap(6, 6, 6))
+                                                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE)))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jSeparator1))
                                 .addGap(6, 6, 6)))))
                 .addGap(30, 30, 30))
         );
@@ -377,10 +377,10 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 8, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -393,12 +393,10 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
                         .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel12)
@@ -417,7 +415,7 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
                             .addComponent(jLabel13)
                             .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -460,6 +458,7 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
 
         jLabel2.setBackground(new java.awt.Color(0, 153, 204));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 26, 51));
         jLabel2.setText("View Complaint");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -482,7 +481,7 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
         jPanel4.setMinimumSize(new java.awt.Dimension(1066, 22));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -507,11 +506,12 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
 
         jLabel1.setBackground(new java.awt.Color(230, 230, 230));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 204));
+        jLabel1.setForeground(new java.awt.Color(0, 26, 51));
         jLabel1.setText("Admin");
 
         jLabel5.setBackground(new java.awt.Color(230, 230, 230));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 153, 204));
         jLabel5.setText("Complaint");
 
         jLabel6.setBackground(new java.awt.Color(230, 230, 230));
@@ -526,7 +526,7 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
 
         jLabel7.setBackground(new java.awt.Color(230, 230, 230));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setForeground(new java.awt.Color(0, 216, 255));
         jLabel7.setText("View Complaint");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -569,7 +569,7 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 832, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -583,7 +583,7 @@ public class AdminViewComplaint extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 991, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1003, Short.MAX_VALUE)
         );
 
         pack();

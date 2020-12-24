@@ -1,6 +1,8 @@
 package AdminInterface;
 
+import Controllers.JpanelGradient;
 import Controllers.ReadFile;
+import java.awt.Color;
 import java.io.File;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -25,7 +27,7 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel3 = new JpanelGradient(new Color(0,230,255), new Color(0,26,51),600);
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
@@ -75,11 +77,13 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
 
         setPreferredSize(new java.awt.Dimension(1090, 960));
 
-        jPanel1.setBackground(new java.awt.Color(240, 248, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 26, 51)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
         jPanel2.setPreferredSize(new java.awt.Dimension(1021, 28));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -113,9 +117,9 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
         jPanel6.setMinimumSize(new java.awt.Dimension(1066, 756));
         jPanel6.setPreferredSize(new java.awt.Dimension(1066, 756));
 
-        jButton2.setBackground(new java.awt.Color(0, 26, 51));
+        jButton2.setBackground(new java.awt.Color(0, 40, 51));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(0, 216, 255));
         jButton2.setText("Delete");
         jButton2.setMaximumSize(new java.awt.Dimension(111, 45));
         jButton2.setMinimumSize(new java.awt.Dimension(111, 45));
@@ -126,19 +130,16 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextField4.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField4.setPreferredSize(new java.awt.Dimension(460, 37));
 
-        jTextField6.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField6.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField6.setPreferredSize(new java.awt.Dimension(4, 37));
 
-        jTextField8.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField8.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel9.setText("Enter Appointment Number");
@@ -156,9 +157,8 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel12.setText("Apointment Date");
 
-        jTextField5.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField5.setPreferredSize(new java.awt.Dimension(4, 37));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -168,16 +168,16 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
         jLabel14.setText("Symptoms");
 
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton3.setBackground(new java.awt.Color(0, 26, 51));
+        jButton3.setBackground(new java.awt.Color(0, 40, 51));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setForeground(new java.awt.Color(0, 216, 255));
         jButton3.setText("View");
-        jButton3.setPreferredSize(new java.awt.Dimension(93, 45));
+        jButton3.setPreferredSize(new java.awt.Dimension(200, 45));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -187,9 +187,8 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel15.setText("Appoinment Time");
 
-        jTextField10.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField10.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField10.setPreferredSize(new java.awt.Dimension(4, 37));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -207,9 +206,8 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel21.setText(":");
 
-        jTextField7.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField7.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField7.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -252,12 +250,11 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
         jLabel36.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel36.setText(":");
 
-        jSeparator1.setBackground(new java.awt.Color(0, 153, 204));
-        jSeparator1.setForeground(new java.awt.Color(0, 153, 204));
+        jSeparator1.setBackground(new java.awt.Color(0, 216, 255));
+        jSeparator1.setForeground(new java.awt.Color(0, 216, 255));
 
-        jTextField9.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField9.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField9.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -266,9 +263,6 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jSeparator1)
-                        .addGap(40, 40, 40))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -288,7 +282,7 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -333,12 +327,9 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel26))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
-                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
-                                                .addComponent(jLabel8)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel21)))
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel21)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel23))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
@@ -346,7 +337,14 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
                                             .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE))
                                         .addGap(2, 2, 2)))))
-                        .addGap(38, 38, 38))))
+                        .addGap(38, 38, 38))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator1))
+                        .addGap(40, 40, 40))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -359,8 +357,8 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
                 .addGap(8, 8, 8)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -449,6 +447,7 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
 
         jLabel2.setBackground(new java.awt.Color(0, 153, 204));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 26, 51));
         jLabel2.setText("View Appointment");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -471,7 +470,7 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
         jPanel4.setMinimumSize(new java.awt.Dimension(1066, 22));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -496,11 +495,12 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
 
         jLabel1.setBackground(new java.awt.Color(230, 230, 230));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 204));
+        jLabel1.setForeground(new java.awt.Color(0, 26, 51));
         jLabel1.setText("Admin");
 
         jLabel5.setBackground(new java.awt.Color(230, 230, 230));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 153, 204));
         jLabel5.setText("Appointment");
 
         jLabel6.setBackground(new java.awt.Color(230, 230, 230));
@@ -515,7 +515,7 @@ public class AdminViewAppointment1 extends javax.swing.JInternalFrame {
 
         jLabel7.setBackground(new java.awt.Color(230, 230, 230));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setForeground(new java.awt.Color(0, 216, 255));
         jLabel7.setText("View Appointment");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

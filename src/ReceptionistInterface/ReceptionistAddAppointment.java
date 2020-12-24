@@ -1,4 +1,5 @@
 package ReceptionistInterface;
+import Controllers.JpanelGradient;
 import Controllers.ReadFile;
 import Controllers.SimpleMethodsController;
 import Controllers.WriteFile;
@@ -40,7 +41,7 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel3 = new JpanelGradient(new Color(0,230,255), new Color(0,26,51),600);
         jPanel5 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -77,12 +78,14 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(240, 248, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 216, 255)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
+        jPanel2.setForeground(new java.awt.Color(0, 216, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1066, 28));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -121,15 +124,15 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
         jLabel9.setText("Appointment No :");
 
         jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField1.setBackground(new Color(0,0,0,0));
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField1.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField1.setPreferredSize(new java.awt.Dimension(460, 37));
 
-        jTextField2.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField2.setBackground(new Color(0,0,0,0));
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField2.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField2.setPreferredSize(new java.awt.Dimension(460, 37));
 
@@ -142,17 +145,17 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel12.setText("Medical Officer :");
 
-        jComboBox1.setBackground(new java.awt.Color(240, 248, 255));
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jComboBox1.setBackground(new Color(0,0,0,0));
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "doctor1", "doctor2", "doctor3" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jComboBox1.setMinimumSize(new java.awt.Dimension(460, 37));
         jComboBox1.setPreferredSize(new java.awt.Dimension(460, 37));
 
-        jComboBox2.setBackground(new java.awt.Color(240, 248, 255));
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jComboBox2.setBackground(new Color(0,0,0,0));
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "S.area1", "S.aera2", "S.area3", " " }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jComboBox2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel13.setText("Symptoms :");
@@ -160,16 +163,16 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel14.setText("Appointment Record status :");
 
-        jComboBox3.setBackground(new java.awt.Color(240, 248, 255));
-        jComboBox3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jComboBox3.setBackground(new Color(0,0,0,0));
+        jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "pending", "approved" }));
-        jComboBox3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jComboBox3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jComboBox3.setMinimumSize(new java.awt.Dimension(460, 37));
         jComboBox3.setPreferredSize(new java.awt.Dimension(460, 37));
 
-        jButton2.setBackground(new java.awt.Color(0, 26, 51));
+        jButton2.setBackground(new java.awt.Color(0, 40, 51));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(0, 216, 255));
         jButton2.setText("Save");
         jButton2.setToolTipText("");
         jButton2.setPreferredSize(new java.awt.Dimension(200, 45));
@@ -179,11 +182,11 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextArea1.setBackground(new java.awt.Color(240, 248, 255));
+        jTextArea1.setBackground(new Color(0,0,0,0));
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -214,13 +217,13 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
         jLabel21.setForeground(new java.awt.Color(255, 0, 0));
         jLabel21.setText("*");
 
-        jDateChooser1.setBackground(new java.awt.Color(240, 248, 255));
-        jDateChooser1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
-        jDateChooser1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jDateChooser1.setBackground(new java.awt.Color(255, 255, 255));
+        jDateChooser1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jDateChooser1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jDateChooser1.setPreferredSize(new java.awt.Dimension(460, 37));
 
-        jSpinner1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jSpinner1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jSpinner1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jSpinner1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jSpinner1.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -238,36 +241,48 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
+                        .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel23)
-                        .addGap(332, 332, 332))
+                        .addComponent(jLabel20)
+                        .addContainerGap())
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel9)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel15))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel17)))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(82, 82, 82)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addComponent(jLabel9)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel15))
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addComponent(jLabel10)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel17)))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(82, 82, 82))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel19)
+                                .addGap(414, 414, 414)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel23)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jSpinner1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -277,29 +292,13 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
                                             .addGroup(jPanel5Layout.createSequentialGroup()
                                                 .addComponent(jLabel8)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel16)))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jSpinner1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(31, 31, 31))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel14)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel21))
-                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel20)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                                                .addComponent(jLabel16))
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addComponent(jLabel14)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel21)))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(31, 31, 31))))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,7 +306,7 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
                 .addGap(45, 45, 45)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
                         .addGap(4, 4, 4))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
@@ -327,21 +326,26 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
                 .addGap(47, 47, 47)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel19)
-                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel23)))
+                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                                    .addComponent(jLabel23))))
+                        .addGap(6, 6, 6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -359,9 +363,9 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(133, 133, 133)
+                .addGap(115, 115, 115)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(31, 31, 31))
         );
 
         JSpinner.DateEditor dateEditor = new JSpinner.DateEditor(jSpinner1, "HH:mm:ss");
@@ -369,6 +373,7 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
 
         jLabel2.setBackground(new java.awt.Color(0, 153, 204));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 26, 51));
         jLabel2.setText("Add Appointment");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -385,13 +390,14 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 783, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
+        jPanel4.setForeground(new java.awt.Color(0, 216, 255));
         jPanel4.setMinimumSize(new java.awt.Dimension(1066, 22));
         jPanel4.setPreferredSize(new java.awt.Dimension(1066, 22));
 
@@ -417,11 +423,12 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
 
         jLabel1.setBackground(new java.awt.Color(230, 230, 230));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 204));
+        jLabel1.setForeground(new java.awt.Color(0, 26, 51));
         jLabel1.setText("Receptionist");
 
         jLabel5.setBackground(new java.awt.Color(230, 230, 230));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 153, 204));
         jLabel5.setText("Appointment");
 
         jLabel6.setBackground(new java.awt.Color(230, 230, 230));
@@ -436,7 +443,7 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
 
         jLabel7.setBackground(new java.awt.Color(230, 230, 230));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setForeground(new java.awt.Color(0, 216, 255));
         jLabel7.setText("AddAppointment");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -477,7 +484,7 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 832, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -492,7 +499,7 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 976, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
                 .addGap(4, 4, 4))
         );
 

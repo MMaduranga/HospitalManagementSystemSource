@@ -313,7 +313,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void checkLogin() {
-        String strLine = new ReadFile().readLoginSavedUser();
+        String strLine = new ReadFile().readLoginSavedUserAndColorFiles("src\\TxtFiles\\SavedUser.mov");
         if (strLine != null) {
             String[] strLineArry = strLine.split("~");
             jTextField1.setText(strLineArry[0]);

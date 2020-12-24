@@ -1,5 +1,6 @@
 package PateintInterface;
 
+import CommonFrames.WelcomeFrameArt;
 import Controllers.ResizeInternalFrame;
 import java.awt.Color;
 import Controllers.JpanelGradient;
@@ -13,7 +14,7 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
     public PatientDashboardInterface() {
         initComponents();
         setBackgroundColor(new Color(0, 0, 0, 0));//set background null
-
+new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
     }
 
     public void setBackgroundColor(Color color) {
@@ -59,7 +60,7 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1397, 988));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(240, 248, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1397, 988));
         jPanel1.setPreferredSize(new java.awt.Dimension(1397, 988));

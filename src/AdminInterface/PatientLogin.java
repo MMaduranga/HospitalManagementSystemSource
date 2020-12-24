@@ -2,7 +2,9 @@ package AdminInterface;
 
 import Controllers.CreateCSV;
 import Controllers.CreatePDF;
+import Controllers.JpanelGradient;
 import Controllers.ReadFile;
+import java.awt.Color;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -40,7 +42,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new JpanelGradient(new Color(0,230,255), new Color(0,26,51),1000);
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -54,7 +56,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
         setOpaque(true);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 204));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 26, 51)));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 26, 51)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
@@ -88,7 +90,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 153, 204));
+        jLabel7.setForeground(new java.awt.Color(0, 26, 51));
         jLabel7.setText("Admin");
 
         jLabel8.setBackground(new java.awt.Color(230, 230, 230));
@@ -98,6 +100,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 153, 204));
         jLabel9.setText("Patient Login Credential");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -161,7 +164,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 928, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 937, Short.MAX_VALUE)
                 .addGap(25, 25, 25))
         );
 
@@ -176,7 +179,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 

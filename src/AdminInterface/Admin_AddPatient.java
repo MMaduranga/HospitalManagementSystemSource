@@ -2,7 +2,9 @@ package AdminInterface;
 
 import Model.Patient;
 import Controllers.CheckValidation;
+
 import Controllers.ImageController;
+import Controllers.JpanelGradient;
 import Controllers.SimpleMethodsController;
 import Controllers.WriteFile;
 
@@ -11,6 +13,7 @@ import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
+import javax.swing.ImageIcon;
 
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -20,6 +23,7 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
     private String strPatientFilePath = "src\\TxtFiles\\Pateint.mov";
 
     public Admin_AddPatient() {
+       
         initComponents();
         jButton1.setBackground(new Color(0, 0, 0, 0));
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
@@ -33,7 +37,6 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
 
         setPreferredSize(getMinimumSize());
 
-  
     }
 
     public String getPatientFilePath() {
@@ -47,7 +50,7 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel3 = new JpanelGradient(new Color(0,230,255), new Color(0,26,51),600);
         jPanel5 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -101,13 +104,15 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         setMaximumSize(new java.awt.Dimension(1190, 1070));
         setMinimumSize(new java.awt.Dimension(990, 860));
 
-        jPanel1.setBackground(new java.awt.Color(240, 248, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 26, 51)));
+        jPanel1.setForeground(new java.awt.Color(0, 26, 51));
         jPanel1.setMaximumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
         jPanel2.setPreferredSize(new java.awt.Dimension(1066, 28));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -135,6 +140,7 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204), 2));
+        jPanel5.setForeground(new java.awt.Color(255, 255, 255));
         jPanel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel5.setMinimumSize(new java.awt.Dimension(1066, 756));
         jPanel5.setPreferredSize(new java.awt.Dimension(1066, 756));
@@ -144,26 +150,33 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         jLabel9.setText("*");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 26, 51));
         jLabel10.setText("Username :");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 26, 51));
         jLabel11.setText("Martial Status :");
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 26, 51));
         jLabel14.setText("Date of Birth :");
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 26, 51));
         jLabel15.setText("Contact Number :");
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 26, 51));
         jLabel16.setText("Gender :");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 26, 51));
         jLabel17.setText("ID Card Number : ");
 
-        jTextField2.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField2.setBackground(new Color(0,0,0,0));
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(0, 26, 51));
+        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField2.setMaximumSize(new java.awt.Dimension(460, 37));
         jTextField2.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField2.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -172,10 +185,11 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         jLabel12.setForeground(new java.awt.Color(255, 0, 0));
         jLabel12.setText("*");
 
-        jComboBox1.setBackground(new java.awt.Color(240, 248, 255));
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jComboBox1.setBackground(new Color(0,0,0,0));
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(0, 26, 51));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jComboBox1.setMaximumSize(new java.awt.Dimension(460, 37));
         jComboBox1.setMinimumSize(new java.awt.Dimension(460, 37));
         jComboBox1.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -185,9 +199,10 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextField4.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField4.setBackground(new Color(0,0,0,0));
+        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(0, 26, 51));
+        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField4.setMaximumSize(new java.awt.Dimension(460, 37));
         jTextField4.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField4.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -213,10 +228,11 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         jLabel21.setForeground(new java.awt.Color(255, 0, 0));
         jLabel21.setText("*");
 
-        jComboBox2.setBackground(new java.awt.Color(240, 248, 255));
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jComboBox2.setBackground(new Color(0,0,0,0));
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jComboBox2.setForeground(new java.awt.Color(0, 26, 51));
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single", "Married" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jComboBox2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jComboBox2.setMaximumSize(new java.awt.Dimension(460, 37));
         jComboBox2.setMinimumSize(new java.awt.Dimension(460, 37));
         jComboBox2.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -227,41 +243,46 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         });
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 26, 51));
         jLabel22.setText("Name : ");
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(0, 26, 51));
         jLabel24.setText("Address :");
 
-        jTextArea2.setBackground(new java.awt.Color(240, 248, 255));
+        jTextArea2.setBackground(new Color(0,0,0,0));
         jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jTextArea2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextArea2.setForeground(new java.awt.Color(0, 26, 51));
         jTextArea2.setRows(5);
-        jTextArea2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextArea2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jScrollPane2.setViewportView(jTextArea2);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 26, 51));
         jLabel25.setText("Password :");
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 0, 0));
         jLabel26.setText("*");
 
-        jButton2.setBackground(new java.awt.Color(0, 26, 51));
+        jButton2.setBackground(new java.awt.Color(0, 40, 51));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(0, 216, 255));
         jButton2.setText("Save");
         jButton2.setMaximumSize(new java.awt.Dimension(122, 43));
         jButton2.setMinimumSize(new java.awt.Dimension(122, 43));
-        jButton2.setPreferredSize(new java.awt.Dimension(122, 43));
+        jButton2.setPreferredSize(new java.awt.Dimension(200, 45));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jPasswordField1.setBackground(new java.awt.Color(240, 248, 255));
-        jPasswordField1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jPasswordField1.setBackground(new Color(0,0,0,0));
+        jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jPasswordField1.setForeground(new java.awt.Color(0, 26, 51));
+        jPasswordField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jPasswordField1.setMaximumSize(new java.awt.Dimension(460, 37));
         jPasswordField1.setMinimumSize(new java.awt.Dimension(460, 37));
         jPasswordField1.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -275,9 +296,10 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         jLabel27.setForeground(new java.awt.Color(255, 0, 0));
         jLabel27.setText("*");
 
-        jTextField6.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField6.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField6.setBackground(new Color(0,0,0,0));
+        jTextField6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField6.setForeground(new java.awt.Color(0, 26, 51));
+        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField6.setMaximumSize(new java.awt.Dimension(460, 37));
         jTextField6.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField6.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -287,9 +309,10 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextField5.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField5.setBackground(new Color(0,0,0,0));
+        jTextField5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(0, 26, 51));
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField5.setMaximumSize(new java.awt.Dimension(460, 37));
         jTextField5.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField5.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -298,10 +321,11 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         jLabel34.setForeground(new java.awt.Color(255, 0, 0));
         jLabel34.setText("*");
 
-        jComboBox4.setBackground(new java.awt.Color(240, 248, 255));
-        jComboBox4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jComboBox4.setBackground(new Color(0,0,0,0));
+        jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jComboBox4.setForeground(new java.awt.Color(0, 26, 51));
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "O+", "B+", "AB+", "A-", "O-", "B-", "AB-" }));
-        jComboBox4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jComboBox4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jComboBox4.setMaximumSize(new java.awt.Dimension(460, 37));
         jComboBox4.setMinimumSize(new java.awt.Dimension(460, 37));
         jComboBox4.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -312,38 +336,45 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 26, 51));
         jLabel8.setText("Blood Group :");
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 26, 51));
         jLabel13.setText("Profile Picture :");
 
         jScrollPane3.setPreferredSize(new java.awt.Dimension(460, 83));
 
-        jTextArea3.setBackground(new java.awt.Color(240, 248, 255));
+        jTextArea3.setBackground(new Color(0,0,0,0));
         jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jTextArea3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextArea3.setForeground(new java.awt.Color(0, 26, 51));
         jTextArea3.setRows(5);
-        jTextArea3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
-        jTextArea3.setPreferredSize(new java.awt.Dimension(460, 83));
+        jTextArea3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jScrollPane3.setViewportView(jTextArea3);
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 0, 0));
         jLabel23.setText("*");
 
-        jDateChooser1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jDateChooser1.setBackground(new Color(0,0,0,0));
+        jDateChooser1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jDateChooser1.setForeground(new java.awt.Color(0, 26, 51));
         jDateChooser1.setDateFormatString("yyyy-MM-dd");
         jDateChooser1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jDateChooser1.setIcon(new ImageIcon("src\\Icon\\icons8_pay_date_20px.png"));
         jDateChooser1.setMaximumSize(new java.awt.Dimension(460, 37));
         jDateChooser1.setMinimumSize(new java.awt.Dimension(460, 37));
         jDateChooser1.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 26, 51));
         jLabel28.setText("Allergies :");
 
-        jTextField7.setBackground(new java.awt.Color(240, 248, 255));
-        jTextField7.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(0, 153, 204), new java.awt.Color(0, 153, 204)));
+        jTextField7.setBackground(new Color(0,0,0,0));
+        jTextField7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(0, 26, 51));
+        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jTextField7.setPreferredSize(new java.awt.Dimension(460, 37));
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -351,26 +382,26 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(0, 26, 51));
+        jButton6.setBackground(new java.awt.Color(0, 40, 51));
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_image_gallery_30px.png"))); // NOI18N
         jButton6.setMaximumSize(new java.awt.Dimension(87, 37));
         jButton6.setMinimumSize(new java.awt.Dimension(87, 37));
-        jButton6.setPreferredSize(new java.awt.Dimension(87, 37));
+        jButton6.setPreferredSize(new java.awt.Dimension(45, 37));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(0, 26, 51));
+        jButton7.setBackground(new java.awt.Color(0, 40, 51));
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_preview_pane_30px.png"))); // NOI18N
         jButton7.setMaximumSize(new java.awt.Dimension(105, 37));
         jButton7.setMinimumSize(new java.awt.Dimension(105, 37));
-        jButton7.setPreferredSize(new java.awt.Dimension(105, 37));
+        jButton7.setPreferredSize(new java.awt.Dimension(45, 37));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -441,13 +472,13 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
                                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(jPanel5Layout.createSequentialGroup()
                                             .addGap(0, 0, Short.MAX_VALUE)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel5Layout.createSequentialGroup()
                                             .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGap(3, 3, 3)))
                             .addGap(47, 47, 47)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -511,12 +542,11 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
                             .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(1, 1, 1)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                        .addGap(14, 14, 14))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(1, 1, 1)
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -530,14 +560,14 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(7, 7, 7)
-                        .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                        .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -548,24 +578,25 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
                         .addComponent(jComboBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(213, 213, 213))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(160, 160, 160)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
         jLabel2.setBackground(new java.awt.Color(0, 153, 204));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 26, 51));
         jLabel2.setText("Add Patient");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -582,13 +613,13 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
         jPanel4.setMinimumSize(new java.awt.Dimension(1066, 22));
         jPanel4.setPreferredSize(new java.awt.Dimension(1066, 22));
 
@@ -614,11 +645,12 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
 
         jLabel1.setBackground(new java.awt.Color(230, 230, 230));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 204));
+        jLabel1.setForeground(new java.awt.Color(0, 26, 51));
         jLabel1.setText("User ");
 
-        jLabel5.setBackground(new java.awt.Color(230, 230, 230));
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 153, 204));
         jLabel5.setText("Add User");
 
         jLabel6.setBackground(new java.awt.Color(230, 230, 230));
@@ -633,7 +665,7 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
 
         jLabel7.setBackground(new java.awt.Color(230, 230, 230));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setForeground(new java.awt.Color(0, 216, 255));
         jLabel7.setText("Add Patient");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -677,7 +709,7 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -691,7 +723,7 @@ public class Admin_AddPatient extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1036, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1068, Short.MAX_VALUE)
         );
 
         pack();
