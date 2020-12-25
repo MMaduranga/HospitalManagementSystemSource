@@ -11,6 +11,11 @@ public class ReadFile {
 
     String line;
 
+    public ReadFile() {
+    }
+public ReadFile(String strLine) {
+    this.line=strLine;
+    }
     public String[] findObjLine(String primaryKey, File filelocation, int location) {
         String[] selectedObjDetails = null;
 

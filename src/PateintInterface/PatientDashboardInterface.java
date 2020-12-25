@@ -1,5 +1,6 @@
 package PateintInterface;
 
+import ReceptionistInterface.ReceptionistViewComplain;
 import CommonFrames.WelcomeFrameArt;
 import Controllers.ResizeInternalFrame;
 import java.awt.Color;
@@ -10,11 +11,30 @@ import javax.swing.JButton;
 
 public class PatientDashboardInterface extends javax.swing.JFrame {
 
-    //PatientAddComplaint addComplaint=new PatientAddComplaint(); //create jinternal frame object
+    private String PatientDetails;
+
     public PatientDashboardInterface() {
+        startUp();
+
+    }
+
+    public PatientDashboardInterface(String patientDetails) {
+        startUp();
+        this.setPatientDetails(patientDetails);
+    }
+
+    public void startUp() {
         initComponents();
         setBackgroundColor(new Color(0, 0, 0, 0));//set background null
-new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
+        new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
+    }
+
+    public void setPatientDetails(String medicalofficerDetails) {
+        this.PatientDetails = medicalofficerDetails;
+    }
+
+    public String getPatientDetails() {
+        return this.PatientDetails;
     }
 
     public void setBackgroundColor(Color color) {
@@ -307,8 +327,8 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
         try {
-               this.dispose();
-        new Login().setVisible(true);
+            this.dispose();
+            new Login().setVisible(true);
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton17MouseClicked
@@ -328,7 +348,7 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
 
         clearDesktopPane(jButton9);
 
-        new ResizeInternalFrame(new PatientAddComplaint(), jDesktopPane1);
+        new ResizeInternalFrame(new PatientAddComplaint(this.getPatientDetails()), jDesktopPane1);
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
@@ -345,16 +365,16 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
 
         clearDesktopPane(jButton7);
 
-        new ResizeInternalFrame(new PatientViewComplain1(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistViewComplain(), jDesktopPane1);
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         clearDesktopPane(jButton4);
 
         try {
-            new ResizeInternalFrame(new PatientProfile(), jDesktopPane1);
+            new ResizeInternalFrame(new PatientProfile(this.getPatientDetails()), jDesktopPane1);
         } catch (Exception e) {
-       
+
         }
     }//GEN-LAST:event_jButton4MouseClicked
 

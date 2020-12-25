@@ -18,12 +18,18 @@ public class ReceptionistViewAppointment1 extends javax.swing.JInternalFrame {
     String[] blankArray = {"", "", "", "", "", "", "", ""};
 
     public ReceptionistViewAppointment1() {
-        initComponents();
+      startUp();
+    }
+  public ReceptionistViewAppointment1(String appoinmentNo) {
+       startUp();
+       compareAppoinmentNo(appoinmentNo);
+    }
+  public void startUp(){
+   initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
-    }
-
+  }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -581,7 +587,7 @@ public class ReceptionistViewAppointment1 extends javax.swing.JInternalFrame {
         if (jTextField6.getText().length() > 0) {
 
             try {
-                readFileObj.deleteObj(new File("src\\TxtFiles\\Appoinment.txt"));
+                readFileObj.deleteObj(new File("src\\TxtFiles\\Appoinment.mov"));
                 addChanges();
 
             } catch (Exception e) {
@@ -607,7 +613,7 @@ public class ReceptionistViewAppointment1 extends javax.swing.JInternalFrame {
         try {
             new WriteFile().WriteInFile(new Apponitment(patient, appointmentDate,
                     appointmentTime, symptoms, appointmentRecordStatus, appointmentNo,
-                    medicalOfficer), new File("src\\TxtFiles\\Appoinment.txt"));
+                    medicalOfficer), new File("src\\TxtFiles\\Appoinment.mov"));
             JOptionPane.showMessageDialog(null, "Success");
         } catch (HeadlessException e) {
             JOptionPane.showMessageDialog(null, "Fail", "", 2);
@@ -621,7 +627,7 @@ public class ReceptionistViewAppointment1 extends javax.swing.JInternalFrame {
 
             try {
                 String[] strAppoinmentDetailsArray = readFileObj.findObjLine(primarykey,
-                        new File("src\\TxtFiles\\Appoinment.txt"), 6);
+                        new File("src\\TxtFiles\\Appoinment.mov"), 6);
                 if (strAppoinmentDetailsArray == null) {
                     JOptionPane.showMessageDialog(null, "Invalid Appoinment Number");
                 } else {

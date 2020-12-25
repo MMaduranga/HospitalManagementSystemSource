@@ -131,10 +131,10 @@ public class SignIn {
                 return new MedicalOfficerDashboardInterface(userDetails);
             }
             if (this.getUserMode().equals("Patient")) {
-                return new PatientDashboardInterface();
+                return new PatientDashboardInterface(userDetails);
             }
             if (this.getUserMode().equals("Receptionist")) {
-                return new ReceptionistDashboardInterface();
+                return new ReceptionistDashboardInterface(userDetails);
             }
         } catch (Exception e) {
 

@@ -16,12 +16,12 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
-
+    
     private String strMedicalOfficerFilePath = "src\\TxtFiles\\MedicalOfficer.mov";
     ReadFile readFileObj = new ReadFile();
     String[] blankArray = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
     private SimpleMethodsController simpleMethods;
-
+    
     public AdminViewMedicalOfficerj() {
         initComponents();
         jComboBox1.setSelectedItem(null);
@@ -34,13 +34,13 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         jComboBox1.setBackground(new Color(0, 0, 0, 0));
         jComboBox2.setBackground(new Color(0, 0, 0, 0));
         jComboBox3.setBackground(new Color(0, 0, 0, 0));
-
+        
     }
-
+    
     public String getMedicalOfficerFilePath() {
         return this.strMedicalOfficerFilePath;
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -812,7 +812,7 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 952, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -905,7 +905,7 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1005, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
@@ -920,7 +920,7 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1158, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1166, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -981,31 +981,32 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         simpleMethods.changeFilesLocation(jTextField13);
         simpleMethods.changeFilesLocation(jTextField2);
         if (jTextField3.getText().length() != 0 || jTextField1.getText().length() > 0) {
-
+            
             try {
                 readFileObj.deleteObj(new File(this.getMedicalOfficerFilePath()));
                 addChanges();
-
+                Thread.sleep(1000);
+                setTextFieldText(blankArray);
             } catch (Exception e) {
-
+                
             }
         } else {
             JOptionPane.showMessageDialog(null, "Please Enter ID Number");
         }
-        setTextFieldText(blankArray);
+        
     }//GEN-LAST:event_jButton12ActionPerformed
     public void addChanges() {
         String strErrorMessage = "Fail";
         try {
             CheckValidation checkValidation = new CheckValidation();
-
+            
             String userName = jTextField3.getText().toLowerCase();
             if (!checkValidation.checkUserName(userName, this.getMedicalOfficerFilePath(), 1)) {
                 strErrorMessage = "User Name Already Exists";
                 throw new IOException();
             }
             String name = jTextField5.getText().toLowerCase();
-            String gender = jComboBox1.getSelectedItem().toString().toLowerCase();
+            String gender = jComboBox1.getSelectedItem().toString();
             String phoneNo = jTextField4.getText();
             if (!checkValidation.checkPhoneNumber(phoneNo, this.getMedicalOfficerFilePath(), 5)) {
                 strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
@@ -1018,10 +1019,10 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
             }
             LocalDate DOB = LocalDate.parse(jTextField6.getText());
             String address = jTextArea1.getText().toLowerCase();
-            String materialStatus = jComboBox2.getSelectedItem().toString().toLowerCase();
+            String materialStatus = jComboBox2.getSelectedItem().toString();
             String password = jTextField7.getText();
             File profilePic = new File(jTextField9.getText());
-
+            
             int staffId = Integer.valueOf(jTextField10.getText());
             String staffEmailAddress = jTextField14.getText().toLowerCase();
             if (!checkValidation.checkEmailId(staffEmailAddress, this.getMedicalOfficerFilePath(), 12)) {
@@ -1032,21 +1033,21 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
             File staffPhoto = new File(jTextField13.getText());
             File attachDoc = new File(jTextField2.getText());
             String spetialtyArea = jComboBox3.getSelectedItem().toString().toLowerCase();
-
+            
             WriteFile writeFileObj = new WriteFile();
             writeFileObj.WriteInFile(new MedicalOfficer(staffId, staffEmailAddress,
                     userName, name, gender, phoneNo, idNo,
                     address, materialStatus, password, DOB, profilePic, dateOfJoin,
                     staffPhoto, attachDoc, spetialtyArea), new File(this.getMedicalOfficerFilePath()));
-
+            
             JOptionPane.showMessageDialog(null, "Success");
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Fail", "", 2);
+            JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
         }
     }
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         if (jTextField3.getText().length() != 0 || jTextField1.getText().length() > 0) {
-
+            
             try {
                 readFileObj.deleteObj(new File(this.getMedicalOfficerFilePath()));
                 JOptionPane.showMessageDialog(null, "Deleted");
@@ -1074,7 +1075,7 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         if (primarykey.length() == 0) {
             JOptionPane.showMessageDialog(null, "Please Enter ID Number");
         } else {
-
+            
             try {
                 String[] strPatientDetailsArray = readFileObj.findObjLine(primarykey,
                         new File("src\\TxtFiles\\MedicalOfficer.mov"), location);
@@ -1082,15 +1083,15 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
                     JOptionPane.showMessageDialog(null, "Invalid ID Number");
                 } else {
                     setTextFieldText(strPatientDetailsArray);
-
+                    
                     JOptionPane.showMessageDialog(null, "Done");
                 }
             } catch (Exception e) {
-
+                
             }
         }
     }
-
+    
     public void setTextFieldText(String[] details) {
         jTextField3.setText(details[1]);
         jTextField7.setText(details[2]);
@@ -1107,8 +1108,8 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         jTextField12.setText(details[13]);
         jTextField13.setText(details[14]);
         jTextField2.setText(details[15]);
-        jComboBox3.setSelectedItem(details[16]);
-
+        jComboBox3.addItem(details[16]);
+        
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

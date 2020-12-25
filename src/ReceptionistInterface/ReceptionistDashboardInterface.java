@@ -4,17 +4,28 @@ import Controllers.JpanelGradient;
 import Controllers.ResizeInternalFrame;
 import CommonFrames.WelcomeFrameArt;
 import LoginInterface.Login;
-
 import java.awt.Color;
-
 import javax.swing.JButton;
 
 public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
+    private String receptionistDetails;
+
     public ReceptionistDashboardInterface() {
-        initComponents();
-        setBackgroundColor(new Color(0, 0, 0, 0));//set background null
-new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
+        startUp();
+    }
+
+    public ReceptionistDashboardInterface(String receptionistDetails) {
+        startUp();
+        this.setReceptionistDetails(receptionistDetails);
+    }
+
+    public void setReceptionistDetails(String medicalofficerDetails) {
+        this.receptionistDetails = medicalofficerDetails;
+    }
+
+    public String getReceptionistDetails() {
+        return this.receptionistDetails;
     }
 
     public void setBackgroundColor(Color color) {
@@ -37,6 +48,12 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         jButton17.setBackground(color);//set background null
         jButton18.setBackground(color);//set background null
         jButton19.setBackground(color);//set background null
+    }
+
+    public void startUp() {
+        initComponents();
+        setBackgroundColor(new Color(0, 0, 0, 0));//set background null
+        new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
     }
 
     @SuppressWarnings("unchecked")
@@ -71,8 +88,8 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
         setMinimumSize(new java.awt.Dimension(1397, 988));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(240, 248, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 26, 51)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1397, 988));
         jPanel1.setPreferredSize(new java.awt.Dimension(1397, 988));
 
@@ -505,6 +522,9 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
 
+        clearDesktopPane(jButton7);
+
+        new ResizeInternalFrame(new ReceptionistViewComplain(), jDesktopPane1);
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
@@ -542,9 +562,9 @@ new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
     }//GEN-LAST:event_jButton19MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-      clearDesktopPane(jButton4);
+        clearDesktopPane(jButton4);
 
-        new ResizeInternalFrame(new ReceptionistProfile(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistProfile(this.getReceptionistDetails(), jDesktopPane1), jDesktopPane1);
     }//GEN-LAST:event_jButton4MouseClicked
 
     public void clearDesktopPane(JButton button) {
