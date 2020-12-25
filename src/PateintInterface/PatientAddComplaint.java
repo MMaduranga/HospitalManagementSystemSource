@@ -17,8 +17,9 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 public class PatientAddComplaint extends javax.swing.JInternalFrame {
 
     private String strComplaintFilePath = "src\\TxtFiles\\Complaint.mov";
+    private String patientDetails;
 
-    public PatientAddComplaint() {
+    public PatientAddComplaint(String patientDetails) {
         initComponents();
 
         //remove help button backgrond and border
@@ -26,10 +27,19 @@ public class PatientAddComplaint extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
-        jTextField5.setText(LocalDate.now().toString());
-        jComboBox1.setBackground(new Color(0, 0, 0, 0));//remove combobox1 background
+
+        this.setPatientDetails(patientDetails);
         handleDropdownListItem();
         AutoCompleteDecorator.decorate(jComboBox1);
+        setComplaintByFieldName();
+    }
+
+    public void setPatientDetails(String patientdetails) {
+        this.patientDetails = patientdetails;
+    }
+
+    public String getPatientDetails() {
+        return this.patientDetails;
     }
 
     @SuppressWarnings("unchecked")
@@ -286,9 +296,7 @@ public class PatientAddComplaint extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1))
                         .addGap(1, 1, 1)))
                 .addGap(29, 29, 29))
@@ -382,7 +390,7 @@ public class PatientAddComplaint extends javax.swing.JInternalFrame {
                 .addGap(13, 13, 13)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 807, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 811, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -473,7 +481,7 @@ public class PatientAddComplaint extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 856, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 860, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -487,15 +495,26 @@ public class PatientAddComplaint extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 public void handleDropdownListItem() {
 
-        new SimpleMethodsController().addItemsToDropdown(new ReadFile().getItemsForDropdownList(new File("src\\TxtFiles\\ComplaintType.mov")), jComboBox1);
+        new SimpleMethodsController().addItemsToDropdown(new ReadFile().getItemsForDropdownList
+        (new File("src\\TxtFiles\\ComplaintType.mov")), jComboBox1);
 
+    }
+
+    public void setComplaintByFieldName() {
+        try {
+            jTextField5.setText(LocalDate.now().toString());
+            String[] patientDetailsArray = this.getPatientDetails().split("~");
+            jTextField1.setText(patientDetailsArray[3]);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public String getComplaintFilePath() {

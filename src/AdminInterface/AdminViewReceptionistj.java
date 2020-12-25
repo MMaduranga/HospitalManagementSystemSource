@@ -995,7 +995,7 @@ public class AdminViewReceptionistj extends javax.swing.JInternalFrame {
                 throw new IOException();
             }
             String name = jTextField5.getText().toLowerCase();
-            String gender = jComboBox1.getSelectedItem().toString().toLowerCase();
+            String gender = jComboBox1.getSelectedItem().toString();
             String phoneNo =jTextField4.getText();
             if (!checkValidation.checkPhoneNumber(phoneNo, this.getReceptionistFilePath(), 5)) {
                 strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
@@ -1009,7 +1009,7 @@ public class AdminViewReceptionistj extends javax.swing.JInternalFrame {
 
             LocalDate DOB = LocalDate.parse(jTextField6.getText());
             String address = jTextArea1.getText().toLowerCase();
-            String materialStatus = jComboBox2.getSelectedItem().toString().toLowerCase();
+            String materialStatus = jComboBox2.getSelectedItem().toString();
             String password = jTextField8.getText();
             File profilePic = new File(jTextField9.getText());
             int staffId = Integer.valueOf(jTextField10.getText());

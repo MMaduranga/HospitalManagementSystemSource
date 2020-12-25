@@ -525,7 +525,8 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 public void handleDropdownListItem() {
 
-        new SimpleMethodsController().addItemsToDropdown(new ReadFile().getItemsForDropdownList(new File(this.getComplaintFilePath())), jComboBox1);
+         new SimpleMethodsController().addItemsToDropdown(new ReadFile().getItemsForDropdownList
+        (new File("src\\TxtFiles\\ComplaintType.mov")), jComboBox1);
 
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

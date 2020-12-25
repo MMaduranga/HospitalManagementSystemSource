@@ -757,7 +757,10 @@ public class ReceptionistViewPatientj extends javax.swing.JInternalFrame {
             CheckValidation checkValidation = new CheckValidation();
 
             String userName = jTextField8.getText().toLowerCase();
-
+            if (!checkValidation.checkUserName(userName, this.getPatientFilePath(), 1)) {
+                strErrorMessage = "User Name Already Exists";
+                throw new IOException();
+            }
             String name = jTextField10.getText().toLowerCase();
             String gender = jComboBox1.getSelectedItem().toString();
             String phoneNo = jTextField5.getText();

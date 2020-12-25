@@ -166,7 +166,7 @@ public class PatientAddAppointment extends javax.swing.JInternalFrame {
         jComboBox3.setBackground(new Color(0,0,0,0));
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jComboBox3.setForeground(new java.awt.Color(153, 153, 153));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "pending" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pending" }));
         jComboBox3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jComboBox3.setMinimumSize(new java.awt.Dimension(460, 37));
         jComboBox3.setPreferredSize(new java.awt.Dimension(460, 37));
@@ -328,7 +328,7 @@ public class PatientAddAppointment extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,7 +412,7 @@ public class PatientAddAppointment extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -503,7 +503,7 @@ public class PatientAddAppointment extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 844, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -518,7 +518,7 @@ public class PatientAddAppointment extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 996, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
                 .addGap(4, 4, 4))
         );
 
@@ -537,7 +537,7 @@ public void handleDropdownListItem() {
        
          try {
        
-        String medicalOfficer = jComboBox2.getSelectedItem().toString().toLowerCase();
+        String medicalOfficer = jComboBox2.getSelectedItem().toString();
         String patientName = jTextField1.getText().toLowerCase();
         
         LocalTime appoinmentTime = LocalTime.parse(dateFormat.format(jSpinner1.getValue()));
@@ -545,7 +545,7 @@ public void handleDropdownListItem() {
         LocalDate appoinmentDate = new SimpleMethodsController().typeCastDateToLocalDate(jDateChooser1);
         String symptoms = jTextArea1.getText().toLowerCase();
      
-        String appoinmentRecordStatus = jComboBox3.getSelectedItem().toString().toLowerCase();
+        String appoinmentRecordStatus = jComboBox3.getSelectedItem().toString();
         
         WriteFile writeFileObj = new WriteFile();
         writeFileObj.WriteInFile(new Apponitment(patientName, appoinmentDate, appoinmentTime, symptoms, appoinmentRecordStatus, AppoinmentNo, medicalOfficer), new File("src\\TxtFiles\\Appoinment.mov"));

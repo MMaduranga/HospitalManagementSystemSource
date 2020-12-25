@@ -8,6 +8,8 @@ import LoginInterface.Login;
 
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import java.io.File;
+
 import javax.swing.JButton;
 
 public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
@@ -304,10 +306,12 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         
         clearDesktopPane(jButton4);
         
-        new ResizeInternalFrame(new MedicalOfficer_profile(this.getMedicalofficerDetails()), jDesktopPane1);
+        new ResizeInternalFrame(new MedicalOfficer_profile(this.getMedicalofficerDetails()
+                ,jDesktopPane1), jDesktopPane1);
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+          new File("src\\TxtFiles\\SavedUser.mov").delete();
         this.dispose();
         new Login().setVisible(true);
 

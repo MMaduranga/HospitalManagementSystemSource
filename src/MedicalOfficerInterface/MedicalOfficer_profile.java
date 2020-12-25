@@ -1,33 +1,61 @@
 package MedicalOfficerInterface;
 
+import AdminInterface.AdminDashboardInterface;
+import Controllers.CheckValidation;
 import Controllers.ImageController;
 import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import Controllers.JpanelGradient;
+import Controllers.ReadFile;
+import Controllers.ResizeInternalFrame;
+import Controllers.SimpleMethodsController;
+import Controllers.WriteFile;
+import LoginInterface.Login;
+import Model.MedicalOfficer;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JDesktopPane;
+import javax.swing.JOptionPane;
 
 public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
-    
+
     private String medicalofficerDetails;
-    
-    public MedicalOfficer_profile(String medicalOfficerDetails) {
+    private SimpleMethodsController simpleMethods;
+    private String profilePicPath;
+    private String strMedicalOfficerFilePath = "src\\TxtFiles\\MedicalOfficer.mov";
+    JDesktopPane desktopPane;
+
+    public MedicalOfficer_profile(String medicalOfficerDetails, JDesktopPane desktopPane) {
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
+        
         this.setMedicalofficerDetails(medicalOfficerDetails);
-        startUp();
+        startUp(this.getMedicalofficerDetails());
+        addApprovedAppoinmentsToDropDown();
+        simpleMethods = new SimpleMethodsController();
+        this.desktopPane = desktopPane;
     }
-    
+
     public void setMedicalofficerDetails(String medicalofficerDetails) {
         this.medicalofficerDetails = medicalofficerDetails;
     }
-    
+
     public String getMedicalofficerDetails() {
         return this.medicalofficerDetails;
     }
-    
-    public void startUp() {
-        String[] details = this.getMedicalofficerDetails().split("~");
+
+    public String getMedicalOfficerFilePath() {
+        return this.strMedicalOfficerFilePath;
+    }
+
+    public void startUp(String medicalOfficerdetails) {
+        String[] details = medicalOfficerdetails.split("~");
         jTextField3.setText(details[1]);
         jTextField8.setText(details[2]);
         jTextField6.setText(details[3]);
@@ -37,16 +65,17 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
         jTextField9.setText(details[7]);
         jTextArea2.setText(details[8]);
         jComboBox2.setSelectedItem(details[9]);
-        jLabel1.setIcon(new ImageController().setImageSize(details[10],303,449));
+
         jTextField14.setText(details[11]);
         jTextField19.setText(details[12]);
         jTextField20.setText(details[13]);
         jTextField21.setText(details[14]);
         jTextField17.setText(details[15]);
-        jTextField18.setText(details[16]);
-        
+        jComboBox4.setSelectedItem(details[16]);
+        this.profilePicPath = details[10];
+        setImage();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -74,7 +103,6 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
         jLabel24 = new javax.swing.JLabel();
         jTextField17 = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jTextField8 = new javax.swing.JTextField();
@@ -102,6 +130,7 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
         jComboBox3 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
+        jComboBox4 = new javax.swing.JComboBox<>();
 
         setOpaque(true);
 
@@ -128,7 +157,7 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 153, 204));
         jSeparator1.setForeground(new java.awt.Color(0, 153, 204));
 
-        jLabel1.setPreferredSize(new java.awt.Dimension(450, 337));
+        jLabel1.setPreferredSize(new java.awt.Dimension(430, 297));
         jLabel1.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 jLabel1ComponentResized(evt);
@@ -235,20 +264,6 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel25.setText("Speciality : ");
 
-        jTextField18.setBackground(new Color(0,0,0,0));
-        jTextField18.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField18.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
-        jTextField18.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextField18.setMaximumSize(new java.awt.Dimension(230, 27));
-        jTextField18.setMinimumSize(new java.awt.Dimension(230, 27));
-        jTextField18.setPreferredSize(new java.awt.Dimension(260, 27));
-        jTextField18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField18ActionPerformed(evt);
-            }
-        });
-
         jTextArea2.setBackground(new Color(0,0,0,0));
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -348,12 +363,22 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
         jButton4.setForeground(new java.awt.Color(0, 216, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_preview_pane_30px.png"))); // NOI18N
         jButton4.setPreferredSize(new java.awt.Dimension(45, 37));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(0, 40, 53));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 216, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_image_gallery_30px.png"))); // NOI18N
         jButton3.setPreferredSize(new java.awt.Dimension(45, 37));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel29.setText("Staff Photograph :");
@@ -377,12 +402,22 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
         jButton6.setForeground(new java.awt.Color(0, 216, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_new_copy_30px.png"))); // NOI18N
         jButton6.setPreferredSize(new java.awt.Dimension(45, 37));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(0, 40, 53));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 216, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_image_gallery_30px.png"))); // NOI18N
         jButton2.setPreferredSize(new java.awt.Dimension(45, 37));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -404,6 +439,11 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
         jButton5.setForeground(new java.awt.Color(0, 216, 255));
         jButton5.setText("Save Changes");
         jButton5.setPreferredSize(new java.awt.Dimension(200, 45));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jComboBox1.setBackground(new Color(0,0,0,0));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -422,14 +462,26 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
 
         jComboBox3.setBackground(new Color(0,0,0,0));
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single", "Married" }));
         jComboBox3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jComboBox3.setPreferredSize(new java.awt.Dimension(260, 27));
 
         jButton1.setBackground(new java.awt.Color(0, 40, 53));
         jButton1.setForeground(new java.awt.Color(0, 216, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_message_preview_30px.png"))); // NOI18N
-        jButton1.setPreferredSize(new java.awt.Dimension(45, 37));
+        jButton1.setPreferredSize(new java.awt.Dimension(79, 37));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+
+        jComboBox4.setBackground(new Color(0,0,0,0));
+        jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "fkgjj", "hgjkghjk", "ghjghj" }));
+        jComboBox4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -442,52 +494,36 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
                         .addComponent(jSeparator1)
                         .addGap(6, 6, 6))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(2, 2, 2))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 353, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(3, 3, 3))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel29))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)))
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                            .addComponent(jTextField18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                            .addComponent(jTextField20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jTextField21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                        .addGap(7, 7, 7)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
-                                        .addGap(2, 2, 2))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel27)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextField17, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(50, 50, 50))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel15)
+                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox3, 0, 1, Short.MAX_VALUE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                    .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(50, 50, 50)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -502,7 +538,7 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
                                             .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -523,15 +559,12 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel23)
                                             .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(50, 50, 50)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                             .addComponent(jTextField19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jTextField15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -544,7 +577,17 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
                         .addComponent(jLabel14)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jSeparator3)
+                        .addComponent(jLabel11)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator3))
                         .addGap(31, 31, 31))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -592,12 +635,12 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
                             .addComponent(jLabel6)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 6, Short.MAX_VALUE))
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 9, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
                         .addGap(8, 8, 8)))
                 .addGap(0, 0, 0)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
                 .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -606,26 +649,17 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 13, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel21))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -640,7 +674,7 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
                             .addComponent(jLabel29)
                             .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -650,12 +684,22 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(100, 100, 100))
+                            .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel21))
+                        .addGap(24, 24, 24)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(89, 89, 89))
         );
 
         jComboBox1.setBackground(new Color(0,0,0,0));
@@ -673,7 +717,7 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 981, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 993, Short.MAX_VALUE)
                 .addGap(28, 28, 28))
         );
 
@@ -688,7 +732,7 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1033, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1045, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -702,10 +746,6 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
-
-    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18ActionPerformed
 
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
         // TODO add your handling code here:
@@ -748,14 +788,129 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jLabel1ComponentResized
 
     private void jPanel2ComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel2ComponentResized
-      
+
     }//GEN-LAST:event_jPanel2ComponentResized
 
     private void jPanel1ComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel1ComponentResized
 
+        setImage();
     }//GEN-LAST:event_jPanel1ComponentResized
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.profilePicPath = simpleMethods.fileChooser().toString();
+        setImage();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        jTextField21.setText(simpleMethods.fileChooser().toString());
+        simpleMethods.changeFilesLocation(jTextField21);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        jTextField17.setText(simpleMethods.fileChooser().toString());
+        simpleMethods.changeFilesLocation(jTextField17);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+        simpleMethods.changeFilesLocation(this.profilePicPath);
+
+        try {
+            new ReadFile(this.getMedicalofficerDetails()).deleteObj(new File(this.getMedicalOfficerFilePath()));
+            addChanges();
+
+        } catch (Exception e) {
+
+        }
+
+
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new ImageController().previewImage(jTextField21.getText());
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String[] appoinmentDetails = jComboBox3.getSelectedItem().toString().split("-");
+        new ResizeInternalFrame(new ViewAppointmentMedicalOfficer1(appoinmentDetails[1]), this.desktopPane);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+    public void setImage() {
+
+        ImageIcon welcomeFrameArt = new ImageIcon(this.profilePicPath);
+        Image resizeImage = welcomeFrameArt.getImage();
+
+        Image newResizedImage = resizeImage.getScaledInstance((int) (this.getWidth() / 2.3), (int) (this.getHeight() / 3.3), Image.SCALE_SMOOTH);
+        welcomeFrameArt = new ImageIcon(newResizedImage);
+
+        jLabel1.setIcon(welcomeFrameArt);
+    }
+
+    public void addChanges() {
+        System.out.println("bfbvfkj");
+        String strErrorMessage = "Fail";
+        try {
+            CheckValidation checkValidation = new CheckValidation();
+
+            String userName = jTextField3.getText().toLowerCase();
+            if (!checkValidation.checkUserName(userName, this.getMedicalOfficerFilePath(), 1)) {
+                strErrorMessage = "User Name Already Exists";
+                throw new IOException();
+            }
+            String name = jTextField6.getText().toLowerCase();
+            String gender = jComboBox1.getSelectedItem().toString();
+            String phoneNo = jTextField15.getText();
+            if (!checkValidation.checkPhoneNumber(phoneNo, this.getMedicalOfficerFilePath(), 5)) {
+                strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
+                throw new IOException();
+            }
+            String idNo = jTextField5.getText().toLowerCase();
+            if (!checkValidation.checkIdNumber(idNo, this.getMedicalOfficerFilePath(), 6)) {
+                strErrorMessage = "Invalid Id Numbers Or Id Number Already Exists";
+                throw new IOException();
+            }
+            LocalDate DOB = LocalDate.parse(jTextField9.getText());
+            String address = jTextArea2.getText().toLowerCase();
+            String materialStatus = jComboBox2.getSelectedItem().toString();
+            String password = jTextField8.getText();
+            File profilePic = new File(this.profilePicPath);
+
+            int staffId = Integer.valueOf(jTextField14.getText());
+            String staffEmailAddress = jTextField19.getText().toLowerCase();
+            if (!checkValidation.checkEmailId(staffEmailAddress, this.getMedicalOfficerFilePath(), 12)) {
+                strErrorMessage = "Invalid Email Address Numbers Or Email Address Already Exists";
+                throw new IOException();
+            }
+            LocalDate dateOfJoin = LocalDate.parse(jTextField20.getText());
+            File staffPhoto = new File(jTextField21.getText());
+            File attachDoc = new File(jTextField17.getText());
+            String spetialtyArea = jComboBox4.getSelectedItem().toString().toLowerCase();
+
+            WriteFile writeFileObj = new WriteFile();
+            MedicalOfficer medicalOfficerDetails = new MedicalOfficer(staffId, staffEmailAddress,
+                    userName, name, gender, phoneNo, idNo,
+                    address, materialStatus, password, DOB, profilePic, dateOfJoin,
+                    staffPhoto, attachDoc, spetialtyArea);
+            this.setMedicalofficerDetails(medicalofficerDetails);
+            writeFileObj.WriteInFile(medicalOfficerDetails, new File(this.getMedicalOfficerFilePath()));
+
+            JOptionPane.showMessageDialog(null, "To Load the new Details Please SignIn again");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
+        }
+    }
+
+    public void addApprovedAppoinmentsToDropDown() {
+
+        ArrayList<String> totalFileLines = new ReadFile().readTotalFile(new File("src\\TxtFiles\\Appoinment.mov"));
+        for (int count = 0; count < totalFileLines.size(); count++) {
+            String[] appoinmentDetails = totalFileLines.get(count).split("~");
+            if (appoinmentDetails[1].equals("Approved")) {
+                jComboBox3.addItem(appoinmentDetails[3] + "-" + appoinmentDetails[6]);
+            }
+        }
+
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -766,6 +921,7 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -799,7 +955,6 @@ public class MedicalOfficer_profile extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
