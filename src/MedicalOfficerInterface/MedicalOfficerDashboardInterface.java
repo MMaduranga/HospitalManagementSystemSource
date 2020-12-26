@@ -14,6 +14,7 @@ import javax.swing.JButton;
 
 public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
 
+    int x, y;
     private String medicalofficerDetails;
 
     public MedicalOfficerDashboardInterface() {
@@ -38,7 +39,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     public void startUp() {
         setBackgroundColor(new Color(0, 0, 0, 0));//set background null
         new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
-        
+
     }
 
     public void setBackgroundColor(Color color) {
@@ -54,7 +55,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         jButton17.setBackground(color);//set background null
 
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -80,6 +81,16 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1397, 988));
         jPanel1.setPreferredSize(new java.awt.Dimension(1397, 988));
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
+            }
+        });
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
+            }
+        });
 
         jDesktopPane1.setMinimumSize(new java.awt.Dimension(1090, 960));
 
@@ -259,27 +270,27 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
     public void resizeInternalFrame(javax.swing.JInternalFrame internalFrame) {//to create resizeable j internal frames
         jDesktopPane1.setOpaque(true);
-        
+
         internalFrame.setSize(jDesktopPane1.getSize());
-        
+
         jDesktopPane1.addComponentListener(new ComponentListener() {
             public void componentResized(ComponentEvent e) {
-                
+
                 internalFrame.setSize(jDesktopPane1.getSize());
             }
-            
+
             public void componentMoved(ComponentEvent e) {
             }
-            
+
             public void componentShown(ComponentEvent e) {
             }
-            
+
             public void componentHidden(ComponentEvent e) {
             }
         });
-        
+
         jDesktopPane1.add(internalFrame).setVisible(true);
-        
+
     }
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -303,15 +314,15 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        
+
         clearDesktopPane(jButton4);
-        
-        new ResizeInternalFrame(new MedicalOfficer_profile(this.getMedicalofficerDetails()
-                ,jDesktopPane1), jDesktopPane1);
+
+        new ResizeInternalFrame(new MedicalOfficer_profile(this.getMedicalofficerDetails(),
+                 jDesktopPane1), jDesktopPane1);
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
-          new File("src\\TxtFiles\\SavedUser.mov").delete();
+        new File("src\\TxtFiles\\SavedUser.mov").delete();
         this.dispose();
         new Login().setVisible(true);
 
@@ -323,12 +334,23 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         button.setBackground(new Color(0, 0, 0, 100));
     }
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        
+
         clearDesktopPane(jButton6);
-        
+
         new ResizeInternalFrame(new ViewAppointmentMedicalOfficer1(), jDesktopPane1);
 
     }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        int setX = evt.getXOnScreen();
+        int setY = evt.getYOnScreen();
+        this.setLocation(setX - x, setY - y);
+    }//GEN-LAST:event_jPanel1MouseDragged
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        x = evt.getX();
+        y = evt.getY();
+    }//GEN-LAST:event_jPanel1MousePressed
 
     /**
      * @param args the command line arguments

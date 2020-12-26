@@ -1,4 +1,7 @@
 package ReceptionistInterface;
+
+import Controllers.DropDownListController;
+import Controllers.ImageController;
 import Controllers.JpanelGradient;
 import Controllers.ReadFile;
 import Controllers.SimpleMethodsController;
@@ -17,21 +20,24 @@ import javax.swing.JSpinner;
 import javax.swing.SpinnerDateModel;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-
 public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
-
+  private DropDownListController manageDropdownlist;
     public ReceptionistAddAppointment() {
         initComponents();
-        jButton1.setBackground(new Color(0,0,0,0));
-        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
-        BasicInternalFrameUI basicinternalform=(BasicInternalFrameUI)this.getUI();
+
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
-        
-        jComboBox1.setBackground(new Color(0,0,0,0));//remove combobox1 background
-        jComboBox2.setBackground(new Color(0,0,0,0));//remove combobox2 background
-        jComboBox3.setBackground(new Color(0,0,0,0));//remove combobox3 background
-   setAppoinmentNo();
+        this.manageDropdownlist=new DropDownListController();
+        handleDropdownListItem();
+        setAppoinmentNo();
         jTextField1.setText(new ReadFile().getNumber("src\\TxtFiles\\Appoinment Number.mov") + "");
+    }
+
+    public void handleDropdownListItem() {
+
+         this.manageDropdownlist.addItemsToDropdown(new ReadFile().getItemsForDropdownList(new File("src\\TxtFiles\\SpecialistArea.mov")), jComboBox2);
+
     }
 
     @SuppressWarnings("unchecked")
@@ -69,6 +75,7 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
         jSpinner1 = new javax.swing.JSpinner(new SpinnerDateModel(new Date(), null, null, Calendar.HOUR_OF_DAY));
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -88,7 +95,7 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
         jPanel2.setForeground(new java.awt.Color(0, 216, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1066, 28));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new Color(0,0,0,0));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jButton1.setForeground(new java.awt.Color(153, 153, 153));
         jButton1.setText("Help?");
@@ -147,14 +154,22 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
 
         jComboBox1.setBackground(new Color(0,0,0,0));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "doctor1", "doctor2", "doctor3" }));
         jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
         jComboBox1.setMinimumSize(new java.awt.Dimension(460, 37));
         jComboBox1.setPreferredSize(new java.awt.Dimension(460, 37));
+        jComboBox1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                jComboBox1PopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
 
         jComboBox2.setBackground(new Color(0,0,0,0));
         jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "S.area1", "S.aera2", "S.area3", " " }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " " }));
         jComboBox2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -233,6 +248,14 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
         jLabel23.setForeground(new java.awt.Color(255, 0, 0));
         jLabel23.setText("*");
 
+        jButton3.setBackground(new java.awt.Color(0, 40, 51));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_preview_pane_30px.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -250,20 +273,23 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                                                 .addComponent(jLabel9)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel15))
-                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                                                 .addComponent(jLabel10)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel17)))
                                         .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(jComboBox1, 0, 0, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(82, 82, 82))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel13)
@@ -306,7 +332,7 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
                 .addGap(45, 45, 45)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                         .addGap(4, 4, 4))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
@@ -326,12 +352,12 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
                 .addGap(47, 47, 47)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -358,11 +384,13 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
                         .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)))
+                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton3))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(115, 115, 115)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
@@ -392,7 +420,7 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -484,7 +512,7 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -499,44 +527,57 @@ public class ReceptionistAddAppointment extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 992, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 996, Short.MAX_VALUE)
                 .addGap(4, 4, 4))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-public void setAppoinmentNo(){}
+public void setAppoinmentNo() {
+    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-           DateFormat dateFormat=new SimpleDateFormat("hh:mm:ss");
-       
-         try {
-       
-        String medicalOfficer = jComboBox1.getSelectedItem().toString().toLowerCase();
-        String patientName = jTextField2.getText().toLowerCase();
-        
-        LocalTime appoinmentTime = LocalTime.parse(dateFormat.format(jSpinner1.getValue()));
-        int AppoinmentNo = Integer.valueOf(jTextField1.getText());
-        LocalDate appoinmentDate = new SimpleMethodsController().typeCastDateToLocalDate(jDateChooser1);
-        String symptoms = jTextArea1.getText().toLowerCase();
-    
-        String appoinmentRecordStatus = jComboBox3.getSelectedItem().toString().toLowerCase();
-        
-        WriteFile writeFileObj = new WriteFile();
-        writeFileObj.WriteInFile(new Apponitment(patientName, appoinmentDate, appoinmentTime, 
-                symptoms, appoinmentRecordStatus, AppoinmentNo, medicalOfficer),
-                new File("src\\TxtFiles\\Appoinment.mov"));
-       writeFileObj.setNumber("src\\TxtFiles\\Appoinment Number.mov");
-        JOptionPane.showMessageDialog(null, "Success");
+        DateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
+
+        try {
+
+            String medicalOfficer = jComboBox1.getSelectedItem().toString().toLowerCase();
+            String patientName = jTextField2.getText().toLowerCase();
+
+            LocalTime appoinmentTime = LocalTime.parse(dateFormat.format(jSpinner1.getValue()));
+            int AppoinmentNo = Integer.valueOf(jTextField1.getText());
+            LocalDate appoinmentDate = new SimpleMethodsController().typeCastDateToLocalDate(jDateChooser1);
+            String symptoms = jTextArea1.getText().toLowerCase();
+
+            String appoinmentRecordStatus = jComboBox3.getSelectedItem().toString().toLowerCase();
+
+            WriteFile writeFileObj = new WriteFile();
+            writeFileObj.WriteInFile(new Apponitment(patientName, appoinmentDate, appoinmentTime,
+                    symptoms, appoinmentRecordStatus, AppoinmentNo, medicalOfficer),
+                    new File("src\\TxtFiles\\Appoinment.mov"));
+            writeFileObj.setNumber("src\\TxtFiles\\Appoinment Number.mov");
+            JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "Fail", "", 2);
-            
+            JOptionPane.showMessageDialog(null, "Fail", "", 2);
+
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox1PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jComboBox1PopupMenuWillBecomeInvisible
+        String strSpecilityArea = jComboBox2.getSelectedItem().toString();
+        if (strSpecilityArea != null) {
+            this.manageDropdownlist.addDoctorsToDropDown(strSpecilityArea, jComboBox1);
+        }
+    }//GEN-LAST:event_jComboBox1PopupMenuWillBecomeInvisible
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    new ImageController().previewImage(jComboBox1.getSelectedItem().toString().split("-")[1]);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox3;

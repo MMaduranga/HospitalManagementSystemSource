@@ -2,6 +2,7 @@ package AdminInterface;
 
 import Model.MedicalOfficer;
 import Controllers.CheckValidation;
+import Controllers.DropDownListController;
 import Controllers.ImageController;
 import Controllers.JpanelGradient;
 import Controllers.ReadFile;
@@ -910,7 +911,7 @@ public class Admin_AddMedicalOfficer extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 public void handleDropdownListItem() {
 
-        new SimpleMethodsController().addItemsToDropdown(new ReadFile().getItemsForDropdownList
+        new DropDownListController().addItemsToDropdown(new ReadFile().getItemsForDropdownList
         (new File("src\\TxtFiles\\SpecialistArea.mov")), jComboBox3);
 
     }

@@ -12,7 +12,7 @@ import java.io.File;
 import javax.swing.JButton;
 
 public class AdminDashboardInterface extends javax.swing.JFrame {
-
+int x,y;
     public AdminDashboardInterface() {
       
         initComponents();
@@ -87,6 +87,16 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1397, 988));
         jPanel1.setPreferredSize(new java.awt.Dimension(1397, 988));
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
+            }
+        });
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
+            }
+        });
 
         jDesktopPane1.setMinimumSize(new java.awt.Dimension(1090, 960));
 
@@ -543,6 +553,17 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
         new ResizeInternalFrame(new UserLog(), jDesktopPane1);
     }//GEN-LAST:event_jButton12MouseClicked
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+       x=evt.getX();
+       y=evt.getY();
+    }//GEN-LAST:event_jPanel1MousePressed
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        int setX=evt.getXOnScreen();
+        int setY=evt.getYOnScreen();
+        this.setLocation(setX-x, setY-y);
+    }//GEN-LAST:event_jPanel1MouseDragged
 
     /**
      * @param args the command line arguments

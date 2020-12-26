@@ -1,8 +1,9 @@
 package AdminInterface;
 
+import Controllers.DropDownListController;
 import Controllers.JpanelGradient;
 import Controllers.ReadFile;
-import Controllers.SimpleMethodsController;
+
 import Controllers.WriteFile;
 import java.awt.Color;
 
@@ -22,8 +23,8 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
-jComboBox1.setBackground(new Color(0,0,0,0));
-jComboBox2.setBackground(new Color(0,0,0,0));
+        jComboBox1.setBackground(new Color(0, 0, 0, 0));
+        jComboBox2.setBackground(new Color(0, 0, 0, 0));
         handleDropdownListItem();
         AutoCompleteDecorator.decorate(jComboBox1);
         AutoCompleteDecorator.decorate(jComboBox2);
@@ -265,11 +266,11 @@ jComboBox2.setBackground(new Color(0,0,0,0));
     }// </editor-fold>//GEN-END:initComponents
 public void handleDropdownListItem() {
         ReadFile raedFileObj = new ReadFile();
-        SimpleMethodsController simpleMethodsObj = new SimpleMethodsController();
+        DropDownListController manageDropdownList=new DropDownListController();
         specialityArea = raedFileObj.getItemsForDropdownList(new File("src\\TxtFiles\\SpecialistArea.mov"));
         complaintType = raedFileObj.getItemsForDropdownList(new File("src\\TxtFiles\\ComplaintType.mov"));
-        simpleMethodsObj.addItemsToDropdown(this.specialityArea, jComboBox1);
-        simpleMethodsObj.addItemsToDropdown(this.complaintType, jComboBox2);
+        manageDropdownList.addItemsToDropdown(this.specialityArea, jComboBox1);
+        manageDropdownList.addItemsToDropdown(this.complaintType, jComboBox2);
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
