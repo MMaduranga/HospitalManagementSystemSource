@@ -12,7 +12,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
-    
+
+    int x, y;
+
     public Login() {
         initComponents();
         jButton1.setBackground(new Color(0, 0, 0, 0));//hide jbutton1 background
@@ -21,9 +23,9 @@ public class Login extends javax.swing.JFrame {
         jComboBox1.setSelectedItem(null);//blank the jcomboBox1 at the start
         jButton4.setBackground(new Color(0, 0, 0, 0));//hide jbutton1 background
         checkLogin();
-        
+
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -56,6 +58,16 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255), 2));
         jPanel1.setMinimumSize(new java.awt.Dimension(1367, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1367, 960));
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
+            }
+        });
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 8, 8, new java.awt.Color(220, 220, 220)));
@@ -320,7 +332,7 @@ public class Login extends javax.swing.JFrame {
             jTextField2.setText(strLineArry[1]);
             jComboBox1.setSelectedItem(strLineArry[2]);
             jCheckBox1.setSelected(true);
-            
+
         }
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -341,19 +353,19 @@ public class Login extends javax.swing.JFrame {
             if (frame != null) {
                 new WriteFile().UserLog(strUserName, strUserMode);
                 setFrameVisible(frame);
-                
+
             } else {
                 JOptionPane.showMessageDialog(null, "Invalid UserName or Password Please Check Again", "", 3);//if user name or password is invalid shaow a message
             }
         } catch (Exception e) {
-            
+
         }
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String strUserName = jTextField1.getText();
         String strPassword = jTextField2.getText();
         String strUserMode = jComboBox1.getSelectedItem().toString();
-        
+
         if (jCheckBox1.isSelected()) {
             new WriteFile().writeInSavedUserFile(strUserName + "~" + strPassword + "~"
                     + strUserMode, new File("src\\TxtFiles\\SavedUser.mov"));
@@ -361,10 +373,10 @@ public class Login extends javax.swing.JFrame {
         this.executeLogin(strUserName, strPassword, strUserMode);
     }//GEN-LAST:event_jButton2ActionPerformed
     public void setFrameVisible(JFrame frame) {
-        
+
         try {
-             this.dispose();
-        frame.setVisible(true);
+            this.dispose();
+            frame.setVisible(true);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -377,6 +389,17 @@ public class Login extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         this.setExtendedState(Login.ICONIFIED);//minimize the frame
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        x = evt.getX();
+        y = evt.getY();
+    }//GEN-LAST:event_jPanel1MousePressed
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        int setX = evt.getXOnScreen();
+        int setY = evt.getYOnScreen();
+        this.setLocation(setX - x, setY - y);
+    }//GEN-LAST:event_jPanel1MouseDragged
 
     /**
      * @param args the command line arguments

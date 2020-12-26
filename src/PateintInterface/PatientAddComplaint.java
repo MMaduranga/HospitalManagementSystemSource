@@ -2,6 +2,7 @@ package PateintInterface;
 
 import Model.ComplaintRecord;
 import Controllers.CheckValidation;
+import Controllers.DropDownListController;
 import Controllers.JpanelGradient;
 import Controllers.ReadFile;
 import Controllers.WriteFile;
@@ -502,7 +503,7 @@ public class PatientAddComplaint extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 public void handleDropdownListItem() {
 
-        new SimpleMethodsController().addItemsToDropdown(new ReadFile().getItemsForDropdownList
+        new DropDownListController().addItemsToDropdown(new ReadFile().getItemsForDropdownList
         (new File("src\\TxtFiles\\ComplaintType.mov")), jComboBox1);
 
     }

@@ -19,13 +19,7 @@ public class SimpleMethodsController {
         return file;
     }
 
-    public void addItemsToDropdown(ArrayList<String> strDropDownListItems, JComboBox comboBox) {
-
-        for (int count = 0; count < strDropDownListItems.size(); count++) {
-            comboBox.addItem(strDropDownListItems.get(count));
-        }
-        comboBox.setSelectedItem(null);
-    }
+   
 
     public void changeFilesLocation(JTextField textField) {
         String strPath = textField.getText();

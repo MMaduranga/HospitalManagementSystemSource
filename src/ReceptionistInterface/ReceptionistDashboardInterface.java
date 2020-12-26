@@ -1,5 +1,6 @@
 package ReceptionistInterface;
 
+import CommonFrames.ViewComplain;
 import Controllers.JpanelGradient;
 import Controllers.ResizeInternalFrame;
 import CommonFrames.WelcomeFrameArt;
@@ -9,6 +10,7 @@ import javax.swing.JButton;
 
 public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
+    int x, y;
     private String receptionistDetails;
 
     public ReceptionistDashboardInterface() {
@@ -92,6 +94,16 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 26, 51)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1397, 988));
         jPanel1.setPreferredSize(new java.awt.Dimension(1397, 988));
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
+            }
+        });
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
+            }
+        });
 
         jDesktopPane1.setMinimumSize(new java.awt.Dimension(1090, 960));
 
@@ -524,7 +536,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
         clearDesktopPane(jButton7);
 
-        new ResizeInternalFrame(new ReceptionistViewComplain(), jDesktopPane1);
+        new ResizeInternalFrame(new ViewComplain("Receptionist"), jDesktopPane1);
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
@@ -566,6 +578,17 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
         new ResizeInternalFrame(new ReceptionistProfile(this.getReceptionistDetails(), jDesktopPane1), jDesktopPane1);
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        int setX = evt.getXOnScreen();
+        int setY = evt.getYOnScreen();
+        this.setLocation(setX - x, setY - y);
+    }//GEN-LAST:event_jPanel1MouseDragged
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        x = evt.getX();
+        y = evt.getY();
+    }//GEN-LAST:event_jPanel1MousePressed
 
     public void clearDesktopPane(JButton button) {
         setBackgroundColor(new Color(0, 0, 0, 0));
