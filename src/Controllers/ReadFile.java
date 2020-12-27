@@ -150,6 +150,7 @@ public ReadFile(String strLine) {
 
     public ArrayList<String> readTotalFile(File fileLocation) {
         ArrayList<String> totalRowsArray = new ArrayList<>();
+     
         try {
             FileSecurity fileSecurity = new FileSecurity(fileLocation.toString());
             FileReader readUserFile = new FileReader(fileSecurity.setFilePathToTxt());//open users file to read

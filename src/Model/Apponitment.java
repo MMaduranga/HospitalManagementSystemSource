@@ -3,7 +3,7 @@ package Model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Apponitment extends Main{
+public class Apponitment {
 
     private String patient;
     private LocalDate appointmentDate;

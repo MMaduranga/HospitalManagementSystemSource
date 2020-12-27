@@ -1,6 +1,6 @@
 package Controllers;
 
-import Model.Main;
+
 import java.io.File;
 
 import java.io.IOException;
@@ -12,21 +12,6 @@ import Controllers.FileSecurity;
 import java.util.ArrayList;
 
 public class WriteFile {
-
-    public void WriteInFile(Main writingObj, File filelocation) {
-        FileSecurity fileSecuryty = new FileSecurity(filelocation.toString());
-
-        try {
-            FileWriter file = new FileWriter(fileSecuryty.setFilePathToTxt(), true);
-            PrintWriter write = new PrintWriter(file);
-
-            write.print(writingObj + "\n");
-            file.close();
-            write.close();
-            fileSecuryty.setFilePathMOV();
-        } catch (IOException e) {
-        }
-    }
 
     public void WriteInFile(String line, File filelocation) {
 

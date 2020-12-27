@@ -7,7 +7,7 @@ import java.time.LocalDate;
  *
  * @author Minushi
  */
-public class PostalMail extends Main {
+abstract class PostalMail {
     
     //Declare vatiables 
     private String referenceNo;
