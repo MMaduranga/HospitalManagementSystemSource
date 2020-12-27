@@ -10,7 +10,7 @@ package Model;
 import java.io.File;
 import java.time.LocalDate;
 //Declare variables
-public class User extends Main{
+abstract class User {
 
     private String userName;
     private String name;

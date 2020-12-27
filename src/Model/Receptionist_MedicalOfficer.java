@@ -3,7 +3,7 @@ package Model;
 import java.io.File;
 import java.time.LocalDate;
 
-public class Receptionist_MedicalOfficer extends User {
+abstract class Receptionist_MedicalOfficer extends User {
 
     private int staffId;
     private String staffEmailAddress;

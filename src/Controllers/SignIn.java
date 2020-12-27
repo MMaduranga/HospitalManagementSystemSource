@@ -3,10 +3,10 @@ package Controllers;
 import javax.swing.JFrame;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import AdminInterface.AdminDashboardInterface;
-import MedicalOfficerInterface.MedicalOfficerDashboardInterface;
-import PateintInterface.PatientDashboardInterface;
-import ReceptionistInterface.ReceptionistDashboardInterface;
+import View.AdminInterface.AdminDashboardInterface;
+import View.MedicalOfficerInterface.MedicalOfficerDashboardInterface;
+import View.PateintInterface.PatientDashboardInterface;
+import View.ReceptionistInterface.ReceptionistDashboardInterface;
 
 import java.io.IOException;
 

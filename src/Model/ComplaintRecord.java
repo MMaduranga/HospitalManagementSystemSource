@@ -7,7 +7,7 @@ import java.time.LocalDate;
  *
  * @Erandika
  */
-public class ComplaintRecord extends Main{
+public class ComplaintRecord{
     //-----------------Variables------------------------
 
     private String complaintBy;
