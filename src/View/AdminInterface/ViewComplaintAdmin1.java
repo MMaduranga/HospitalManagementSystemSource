@@ -14,12 +14,32 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
 
     ReadFile readFileObj = new ReadFile();
     String[] blankArray = {"", "", "", "", "", "", "", "", ""};
+    private Color panelBackgroundColor;
+    private Color fontBorderColor;
 
-    public ViewComplaintAdmin1() {
+    public ViewComplaintAdmin1(Color panelBackgroundColor, Color fontBorderColor) {
+        this.setPanelBackgroundColor(panelBackgroundColor);
+        this.setFontBorderColor(fontBorderColor);
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
+    }
+
+    public Color getPanelBackgroundColor() {
+        return panelBackgroundColor;
+    }
+
+    public void setPanelBackgroundColor(Color panelBackgroundColor) {
+        this.panelBackgroundColor = panelBackgroundColor;
+    }
+
+    public Color getFontBorderColor() {
+        return fontBorderColor;
+    }
+
+    public void setFontBorderColor(Color fontBorderColor) {
+        this.fontBorderColor = fontBorderColor;
     }
 
     @SuppressWarnings("unchecked")
@@ -78,18 +98,18 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 26, 51)));
+        jPanel1.setBackground(this.getPanelBackgroundColor());
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 0, 0, 0, new java.awt.Color(0, 216, 255)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
+        jPanel2.setBackground(this.getPanelBackgroundColor());
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255), 2));
         jPanel2.setPreferredSize(new java.awt.Dimension(1021, 28));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new Color(0,0,0,0));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(153, 153, 153));
+        jButton1.setForeground(this.getFontBorderColor());
         jButton1.setText("Help?");
         jButton1.setBorder(null);
 
@@ -98,12 +118,12 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 1017, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 204));
@@ -114,56 +134,72 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204), 2));
         jPanel5.setMinimumSize(new java.awt.Dimension(1066, 756));
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBackground(this.getPanelBackgroundColor());
         jPanel6.setMinimumSize(new java.awt.Dimension(1066, 756));
 
         jTextField4.setBackground(new Color(0,0,0,0));
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField4.setForeground(this.getFontBorderColor());
+        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField4.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jTextField6.setBackground(new Color(0,0,0,0));
         jTextField6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField6.setForeground(this.getFontBorderColor());
+        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField6.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jTextField8.setBackground(new Color(0,0,0,0));
         jTextField8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField8.setForeground(this.getFontBorderColor());
+        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField8.setPreferredSize(new java.awt.Dimension(4, 37));
 
+        jLabel9.setBackground(new Color(0,0,0,0));
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel9.setForeground(this.getFontBorderColor());
         jLabel9.setText("Enter Phone Number");
 
+        jLabel10.setBackground(new Color(0,0,0,0));
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel10.setForeground(this.getFontBorderColor());
         jLabel10.setText("Complaint By");
 
+        jLabel8.setBackground(new Color(0,0,0,0));
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel8.setForeground(this.getFontBorderColor());
         jLabel8.setText("Date");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 0, 0));
         jLabel11.setText("*");
 
+        jLabel12.setBackground(new Color(0,0,0,0));
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel12.setForeground(this.getFontBorderColor());
         jLabel12.setText("Complaint Type");
 
         jTextField5.setBackground(new Color(0,0,0,0));
         jTextField5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField5.setForeground(this.getFontBorderColor());
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField5.setPreferredSize(new java.awt.Dimension(460, 37));
 
+        jLabel13.setBackground(new Color(0,0,0,0));
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel13.setForeground(this.getFontBorderColor());
         jLabel13.setText("Description");
 
+        jLabel14.setBackground(new Color(0,0,0,0));
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel14.setForeground(this.getFontBorderColor());
         jLabel14.setText("Note");
 
         jTextArea1.setBackground(new Color(0,0,0,0));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextArea1.setPreferredSize(new java.awt.Dimension(460, 74));
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -189,12 +225,15 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel15.setBackground(new Color(0,0,0,0));
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel15.setForeground(this.getFontBorderColor());
         jLabel15.setText("Attachement");
 
         jTextField10.setBackground(new Color(0,0,0,0));
         jTextField10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField10.setForeground(this.getFontBorderColor());
+        jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField10.setPreferredSize(new java.awt.Dimension(4, 37));
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,24 +245,35 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
         jLabel16.setForeground(new java.awt.Color(255, 0, 0));
         jLabel16.setText("*");
 
+        jLabel17.setBackground(new Color(0,0,0,0));
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel17.setForeground(this.getFontBorderColor());
         jLabel17.setText(":");
 
+        jLabel18.setBackground(new Color(0,0,0,0));
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel18.setForeground(this.getFontBorderColor());
         jLabel18.setText(":");
 
+        jLabel19.setBackground(new Color(0,0,0,0));
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel19.setForeground(this.getFontBorderColor());
         jLabel19.setText(":");
 
+        jLabel20.setBackground(new Color(0,0,0,0));
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel20.setForeground(this.getFontBorderColor());
         jLabel20.setText(":");
 
+        jLabel21.setBackground(new Color(0,0,0,0));
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel21.setForeground(this.getFontBorderColor());
         jLabel21.setText(":");
 
         jTextField7.setBackground(new Color(0,0,0,0));
         jTextField7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField7.setForeground(this.getFontBorderColor());
+        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField7.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -257,16 +307,24 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel27.setBackground(new Color(0,0,0,0));
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel27.setForeground(this.getFontBorderColor());
         jLabel27.setText(":");
 
+        jLabel28.setBackground(new Color(0,0,0,0));
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel28.setForeground(this.getFontBorderColor());
         jLabel28.setText(":");
 
+        jLabel29.setBackground(new Color(0,0,0,0));
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel29.setForeground(this.getFontBorderColor());
         jLabel29.setText("Action Taken");
 
+        jLabel30.setBackground(new Color(0,0,0,0));
         jLabel30.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel30.setForeground(this.getFontBorderColor());
         jLabel30.setText(":");
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -275,7 +333,8 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
 
         jTextField11.setBackground(new Color(0,0,0,0));
         jTextField11.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField11.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField11.setForeground(this.getFontBorderColor());
+        jTextField11.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField11.setPreferredSize(new java.awt.Dimension(4, 37));
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -283,8 +342,8 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
             }
         });
 
-        jSeparator1.setBackground(new java.awt.Color(0, 153, 204));
-        jSeparator1.setForeground(new java.awt.Color(0, 153, 204));
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -383,7 +442,7 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -459,8 +518,9 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
             .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jLabel2.setBackground(new java.awt.Color(0, 153, 204));
+        jLabel2.setBackground(new Color(0,0,0,0));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(this.getFontBorderColor());
         jLabel2.setText("View Complaint");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -482,12 +542,13 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
+        jPanel4.setBackground(this.getPanelBackgroundColor());
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255), 2));
         jPanel4.setMinimumSize(new java.awt.Dimension(1066, 22));
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setBackground(new Color(0,0,0,0));
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(this.getFontBorderColor());
         jLabel3.setText("Copyright (c) 2020 by usjp/ict");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -496,7 +557,7 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
                 .addGap(865, 865, 865))
         );
         jPanel4Layout.setVerticalGroup(
@@ -506,13 +567,14 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.setBackground(new java.awt.Color(230, 230, 230));
+        jLabel1.setBackground(new Color(0,0,0,0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 204));
+        jLabel1.setForeground(this.getFontBorderColor());
         jLabel1.setText("Admin");
 
         jLabel5.setBackground(new java.awt.Color(230, 230, 230));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 153, 204));
         jLabel5.setText("Complaint");
 
         jLabel6.setBackground(new java.awt.Color(230, 230, 230));
@@ -570,7 +632,7 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 824, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -584,7 +646,7 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 995, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1007, Short.MAX_VALUE)
         );
 
         pack();
@@ -596,7 +658,7 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
     public void addChanges() {
         String complaintBy = jTextField7.getText().toLowerCase();
         String complaintType = "";
-        String PhoneNo =jTextField6.getText();
+        String PhoneNo = jTextField6.getText();
         LocalDate currentDate = LocalDate.parse(jTextField4.getText());
         String description = jTextField5.getText().toLowerCase();
         String actionTaken = jTextField10.getText().toLowerCase();
@@ -644,7 +706,7 @@ public class ViewComplaintAdmin1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        compareAppoinmentNo(jTextField6.getText(),2);
+        compareAppoinmentNo(jTextField6.getText(), 2);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed

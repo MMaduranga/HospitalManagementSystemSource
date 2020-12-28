@@ -18,13 +18,33 @@ public class UserLog extends javax.swing.JInternalFrame {
 
     private ArrayList<String> totalRowsArray;
     private String[] strLineContent;
+    private Color panelBackgroundColor;
+    private Color fontBorderColor;
 
-    public UserLog() {
+    public UserLog(Color panelBackgroundColor, Color fontBorderColor) {
+        this.setPanelBackgroundColor(panelBackgroundColor);
+        this.setFontBorderColor(fontBorderColor);
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
         getDataToArrayListFromFile();
+    }
+
+    public Color getPanelBackgroundColor() {
+        return panelBackgroundColor;
+    }
+
+    public void setPanelBackgroundColor(Color panelBackgroundColor) {
+        this.panelBackgroundColor = panelBackgroundColor;
+    }
+
+    public Color getFontBorderColor() {
+        return fontBorderColor;
+    }
+
+    public void setFontBorderColor(Color fontBorderColor) {
+        this.fontBorderColor = fontBorderColor;
     }
 
     public void setTotalRowArray(ArrayList<String> totalRowArry) {
@@ -67,7 +87,7 @@ public class UserLog extends javax.swing.JInternalFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(this.getPanelBackgroundColor());
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 26, 51)));
         jPanel2.setMinimumSize(new java.awt.Dimension(990, 910));
         jPanel2.setPreferredSize(new java.awt.Dimension(990, 910));
@@ -82,8 +102,9 @@ public class UserLog extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setBackground(new Color(0,0,0,0));
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel2.setForeground(this.getFontBorderColor());
         jLabel2.setText("User Type:");
         jLabel2.setToolTipText("");
 
@@ -93,13 +114,15 @@ public class UserLog extends javax.swing.JInternalFrame {
         jLabel1.setText("*");
 
         jDateChooser1.setBackground(new Color(0,0,0,0));
-        jDateChooser1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jDateChooser1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
+        jDateChooser1.setForeground(this.getFontBorderColor());
         jDateChooser1.setDateFormatString("yyyy-MM-dd");
         jDateChooser1.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jDateChooser1.setIcon(new ImageIcon("src\\Icon\\icons8_pay_date_20px.png"));
 
         jDateChooser2.setBackground(new Color(0,0,0,0));
-        jDateChooser2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jDateChooser2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
+        jDateChooser2.setForeground(this.getFontBorderColor());
         jDateChooser2.setDateFormatString("yyyy-MM-dd");
         jDateChooser2.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jDateChooser2.setIcon(new ImageIcon("src\\Icon\\icons8_pay_date_20px.png"));
@@ -108,12 +131,14 @@ public class UserLog extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel3.setText("To:");
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setBackground(new Color(0,0,0,0));
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel4.setForeground(this.getFontBorderColor());
         jLabel4.setText("From:");
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setBackground(new Color(0,0,0,0));
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel5.setForeground(this.getFontBorderColor());
         jLabel5.setText("Select Date Range:");
         jLabel5.setToolTipText("");
 
@@ -124,8 +149,9 @@ public class UserLog extends javax.swing.JInternalFrame {
 
         jComboBox1.setBackground(new Color(0,0,0,0));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jComboBox1.setForeground(this.getFontBorderColor());
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Patient", "Medical Officer", "Receptionist" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
 
         jButton2.setBackground(new java.awt.Color(0, 26, 51));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -149,13 +175,14 @@ public class UserLog extends javax.swing.JInternalFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setBackground(new Color(0,0,0,0));
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 153, 204));
         jLabel9.setText("User Log");
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setBackground(new Color(0,0,0,0));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 153, 204));
+        jLabel7.setForeground(this.getFontBorderColor());
         jLabel7.setText("Admin");
 
         jLabel8.setBackground(new java.awt.Color(230, 230, 230));
@@ -163,7 +190,7 @@ public class UserLog extends javax.swing.JInternalFrame {
         jLabel8.setForeground(new java.awt.Color(153, 153, 153));
         jLabel8.setText(">>");
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setBackground(this.getPanelBackgroundColor());
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jScrollPane1.setViewportView(jLabel10);
 
@@ -273,7 +300,7 @@ public class UserLog extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 953, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
                 .addGap(25, 25, 25))
         );
 
@@ -288,7 +315,7 @@ public class UserLog extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1004, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -340,7 +367,7 @@ public class UserLog extends javax.swing.JInternalFrame {
                                 strLineContent[1], strLineContent[2], strLineContent[3], strLineContent[4]);
                     }
                 } catch (Exception e) {
-                   
+
                 }
             }
         }
@@ -359,7 +386,7 @@ public class UserLog extends javax.swing.JInternalFrame {
                                 + "</td><td>" + strLineContent[3] + "</td><td>" + strLineContent[4] + "</td></tr>";
                     }
                 } catch (Exception e) {
-                    
+
                 }
             }
         }

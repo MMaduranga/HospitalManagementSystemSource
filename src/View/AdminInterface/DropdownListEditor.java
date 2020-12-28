@@ -17,8 +17,12 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
 
     private ArrayList<String> specialityArea;
     private ArrayList<String> complaintType;
+    private Color panelBackgroundColor;
+    private Color fontBorderColor;
 
-    public DropdownListEditor() {
+    public DropdownListEditor(Color panelBackgroundColor, Color fontBorderColor) {
+        this.setPanelBackgroundColor(panelBackgroundColor);
+        this.setFontBorderColor(fontBorderColor);
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
@@ -29,6 +33,22 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         AutoCompleteDecorator.decorate(jComboBox1);
         AutoCompleteDecorator.decorate(jComboBox2);
 
+    }
+
+    public Color getPanelBackgroundColor() {
+        return panelBackgroundColor;
+    }
+
+    public void setPanelBackgroundColor(Color panelBackgroundColor) {
+        this.panelBackgroundColor = panelBackgroundColor;
+    }
+
+    public Color getFontBorderColor() {
+        return fontBorderColor;
+    }
+
+    public void setFontBorderColor(Color fontBorderColor) {
+        this.fontBorderColor = fontBorderColor;
     }
 
     @SuppressWarnings("unchecked")
@@ -57,19 +77,21 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(this.getPanelBackgroundColor());
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 26, 51)));
         jPanel2.setMinimumSize(new java.awt.Dimension(990, 910));
         jPanel2.setPreferredSize(new java.awt.Dimension(990, 910));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setBackground(new Color(0,0,0,0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel1.setForeground(this.getFontBorderColor());
         jLabel1.setText("Complaint Types:");
 
         jComboBox1.setBackground(new Color(0,0,0,0));
         jComboBox1.setEditable(true);
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jComboBox1.setForeground(this.getFontBorderColor());
+        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jComboBox1.setPreferredSize(new java.awt.Dimension(460, 42));
         jComboBox1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -99,14 +121,16 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setBackground(new Color(0,0,0,0));
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel2.setForeground(this.getFontBorderColor());
         jLabel2.setText("Specialist Area of Medical Officer:");
 
         jComboBox2.setBackground(new Color(0,0,0,0));
         jComboBox2.setEditable(true);
         jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jComboBox2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jComboBox2.setForeground(this.getFontBorderColor());
+        jComboBox2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jComboBox2.setOpaque(false);
         jComboBox2.setPreferredSize(new java.awt.Dimension(460, 42));
 
@@ -148,9 +172,9 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         jLabel9.setForeground(new java.awt.Color(0, 153, 204));
         jLabel9.setText("Edit Dropdown Lists");
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setBackground(new Color(0,0,0,0));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 26, 51));
+        jLabel7.setForeground(this.getFontBorderColor());
         jLabel7.setText("Admin");
 
         jLabel8.setBackground(new java.awt.Color(230, 230, 230));
@@ -180,7 +204,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
                             .addComponent(jComboBox1, 0, 0, Short.MAX_VALUE)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
-                            .addComponent(jComboBox2, 0, 513, Short.MAX_VALUE))
+                            .addComponent(jComboBox2, 0, 492, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -191,7 +215,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(314, 314, 314))))
+                        .addGap(335, 335, 335))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -243,7 +267,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 957, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 969, Short.MAX_VALUE)
                 .addGap(25, 25, 25))
         );
 
@@ -258,7 +282,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1008, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -266,7 +290,7 @@ public class DropdownListEditor extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 public void handleDropdownListItem() {
         ReadFile raedFileObj = new ReadFile();
-        DropDownListController manageDropdownList=new DropDownListController();
+        DropDownListController manageDropdownList = new DropDownListController();
         specialityArea = raedFileObj.getItemsForDropdownList(new File("src\\TxtFiles\\SpecialistArea.mov"));
         complaintType = raedFileObj.getItemsForDropdownList(new File("src\\TxtFiles\\ComplaintType.mov"));
         manageDropdownList.addItemsToDropdown(this.specialityArea, jComboBox1);

@@ -17,9 +17,12 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
 
     private String strDispatchMailFilePath = "src\\TxtFiles\\DispatchMail.mov";
+    private Color panelBackgroundColor;
+    private Color fontBorderColor;
 
-    public ReceptionistAddDispatchMail() {
-
+    public ReceptionistAddDispatchMail(Color panelBackgroundColor, Color fontBorderColor) {
+        this.setPanelBackgroundColor(panelBackgroundColor);
+        this.setFontBorderColor(fontBorderColor);
         initComponents();
         //remove help button background and border
         jButton1.setBackground(new Color(0, 0, 0, 0));
@@ -30,7 +33,21 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
         jTextField6.setText(LocalDate.now().toString());
 
     }
+  public Color getPanelBackgroundColor() {
+        return panelBackgroundColor;
+    }
 
+    public void setPanelBackgroundColor(Color panelBackgroundColor) {
+        this.panelBackgroundColor = panelBackgroundColor;
+    }
+
+    public Color getFontBorderColor() {
+        return fontBorderColor;
+    }
+
+    public void setFontBorderColor(Color fontBorderColor) {
+        this.fontBorderColor = fontBorderColor;
+    }
     public String getDispatchMailFilePath() {
         return this.strDispatchMailFilePath;
     }
@@ -77,18 +94,18 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 216, 255)));
+        jPanel1.setBackground(this.getPanelBackgroundColor());
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 0, 0, 0, new java.awt.Color(0, 216, 255)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
+        jPanel2.setBackground(this.getPanelBackgroundColor());
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255), 2));
         jPanel2.setPreferredSize(new java.awt.Dimension(1066, 28));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new Color(0,0,0,0));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(153, 153, 153));
+        jButton1.setForeground(this.getFontBorderColor());
         jButton1.setText("Help?");
         jButton1.setBorder(null);
 
@@ -102,24 +119,27 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 204));
         jPanel3.setMinimumSize(new java.awt.Dimension(1066, 805));
         jPanel3.setPreferredSize(new java.awt.Dimension(1066, 805));
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBackground(this.getPanelBackgroundColor());
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204), 2));
         jPanel5.setMinimumSize(new java.awt.Dimension(1066, 756));
         jPanel5.setPreferredSize(new java.awt.Dimension(1066, 756));
 
+        jLabel8.setBackground(new Color(0,0,0,0));
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel8.setForeground(this.getFontBorderColor());
         jLabel8.setText("Reference No :");
 
         jTextField1.setBackground(new Color(0,0,0,0));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField1.setForeground(this.getFontBorderColor());
+        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField1.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField1.setPreferredSize(new java.awt.Dimension(460, 37));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -128,30 +148,39 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel9.setBackground(new Color(0,0,0,0));
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel9.setForeground(this.getFontBorderColor());
         jLabel9.setText("To Name :");
 
+        jLabel10.setBackground(new Color(0,0,0,0));
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel10.setForeground(this.getFontBorderColor());
         jLabel10.setText("To Address :");
 
+        jLabel11.setBackground(new Color(0,0,0,0));
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel11.setForeground(this.getFontBorderColor());
         jLabel11.setText("From Name :");
 
         jTextField2.setBackground(new Color(0,0,0,0));
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField2.setForeground(this.getFontBorderColor());
+        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField2.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField2.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jTextField3.setBackground(new Color(0,0,0,0));
         jTextField3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField3.setForeground(this.getFontBorderColor());
+        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField3.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField3.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jTextField4.setBackground(new Color(0,0,0,0));
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField4.setForeground(this.getFontBorderColor());
+        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField4.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField4.setPreferredSize(new java.awt.Dimension(460, 37));
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
@@ -160,20 +189,26 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel12.setBackground(new Color(0,0,0,0));
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel12.setForeground(this.getFontBorderColor());
         jLabel12.setText("Current Date :");
 
+        jLabel13.setBackground(new Color(0,0,0,0));
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel13.setForeground(this.getFontBorderColor());
         jLabel13.setText("Attach Document :");
 
+        jLabel14.setBackground(new Color(0,0,0,0));
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel14.setForeground(this.getFontBorderColor());
         jLabel14.setText("Note :");
 
         jTextArea1.setBackground(new Color(0,0,0,0));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton2.setBackground(new java.awt.Color(0, 40, 51));
@@ -190,7 +225,8 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
 
         jTextField5.setBackground(new Color(0,0,0,0));
         jTextField5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField5.setForeground(this.getFontBorderColor());
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField5.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField5.setPreferredSize(new java.awt.Dimension(460, 37));
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
@@ -230,7 +266,8 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
         jTextField6.setEditable(false);
         jTextField6.setBackground(new Color(0,0,0,0));
         jTextField6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField6.setForeground(this.getFontBorderColor());
+        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
 
         jButton3.setBackground(new java.awt.Color(0, 40, 51));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_new_copy_30px.png"))); // NOI18N
@@ -326,7 +363,7 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -338,7 +375,7 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
@@ -354,7 +391,7 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
                         .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)))
+                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -371,13 +408,13 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1))
                 .addGap(190, 190, 190)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jLabel2.setBackground(new java.awt.Color(0, 153, 204));
+        jLabel2.setBackground(new Color(0,0,0,0));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 26, 51));
+        jLabel2.setForeground(this.getFontBorderColor());
         jLabel2.setText("Add Dispatched Mail");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -396,17 +433,18 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 799, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
+        jPanel4.setBackground(this.getPanelBackgroundColor());
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255), 2));
         jPanel4.setMinimumSize(new java.awt.Dimension(1066, 22));
         jPanel4.setPreferredSize(new java.awt.Dimension(1066, 22));
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setBackground(new Color(0,0,0,0));
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(this.getFontBorderColor());
         jLabel3.setText("Copyright (c) 2020 by usjp/ict");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -415,8 +453,8 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addGap(865, 865, 865))
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -425,9 +463,9 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.setBackground(new java.awt.Color(230, 230, 230));
+        jLabel1.setBackground(new Color(0,0,0,0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 26, 51));
+        jLabel1.setForeground(this.getFontBorderColor());
         jLabel1.setText("Receptionist");
 
         jLabel5.setBackground(new java.awt.Color(230, 230, 230));
@@ -490,7 +528,7 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 843, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -505,7 +543,7 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1004, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE)
                 .addGap(4, 4, 4))
         );
 
@@ -517,7 +555,8 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String strErrorMessage = "Fail";
+        try {
+                   String strErrorMessage = "Fail";
         try {
             CheckValidation checkValidation = new CheckValidation();
 
@@ -536,8 +575,10 @@ public class ReceptionistAddDispatchMail extends javax.swing.JInternalFrame {
             new WriteFile().WriteInFile(new DispatchPostalMail(referenceNo, currentDate,
                     attachDoc, note, toName, toAddress, fromName).toString(), new File(this.getDispatchMailFilePath()));
             JOptionPane.showMessageDialog(null, "Success");
-        } catch (Exception e) {
+        } catch (IOException e) {
             JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
+        }
+        } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

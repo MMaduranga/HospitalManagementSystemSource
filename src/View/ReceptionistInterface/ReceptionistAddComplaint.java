@@ -18,24 +18,43 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
 
     private String strComplaintFilePath = "src\\TxtFiles\\Complaint.mov";
+    private Color panelBackgroundColor;
+    private Color fontBorderColor;
 
-    public ReceptionistAddComplaint() {
+    public ReceptionistAddComplaint(Color panelBackgroundColor, Color fontBorderColor) {
+        this.setPanelBackgroundColor(panelBackgroundColor);
+        this.setFontBorderColor(fontBorderColor);
+        startUp();
+    }
+
+    public void startUp() {
         initComponents();
-
-        //remove help button background and border
-        jButton1.setBackground(new Color(0, 0, 0, 0));
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
         jTextField6.setText(LocalDate.now().toString());
-
-        jComboBox1.setBackground(new Color(0, 0, 0, 0));//remove combobox background
         handleDropdownListItem();
         AutoCompleteDecorator.decorate(jComboBox1);
     }
 
     public String getComplaintFilePath() {
         return this.strComplaintFilePath;
+    }
+
+    public Color getPanelBackgroundColor() {
+        return panelBackgroundColor;
+    }
+
+    public void setPanelBackgroundColor(Color panelBackgroundColor) {
+        this.panelBackgroundColor = panelBackgroundColor;
+    }
+
+    public Color getFontBorderColor() {
+        return fontBorderColor;
+    }
+
+    public void setFontBorderColor(Color fontBorderColor) {
+        this.fontBorderColor = fontBorderColor;
     }
 
     @SuppressWarnings("unchecked")
@@ -84,18 +103,18 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 216, 255)));
+        jPanel1.setBackground(this.getPanelBackgroundColor());
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 0, 0, 0, new java.awt.Color(0, 216, 255)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
+        jPanel2.setBackground(this.getPanelBackgroundColor());
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255), 2));
         jPanel2.setPreferredSize(new java.awt.Dimension(1066, 28));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new Color(0,0,0,0));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(153, 153, 153));
+        jButton1.setForeground(this.getFontBorderColor());
         jButton1.setText("Help?");
         jButton1.setBorder(null);
 
@@ -118,60 +137,79 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
         jPanel3.setMinimumSize(new java.awt.Dimension(1066, 805));
         jPanel3.setPreferredSize(new java.awt.Dimension(1066, 805));
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBackground(this.getPanelBackgroundColor());
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204), 2));
         jPanel5.setMinimumSize(new java.awt.Dimension(1066, 756));
         jPanel5.setPreferredSize(new java.awt.Dimension(1066, 756));
 
+        jLabel8.setBackground(new Color(0,0,0,0));
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel8.setForeground(this.getFontBorderColor());
         jLabel8.setText("Complaint Type :");
 
         jComboBox1.setBackground(new Color(0,0,0,0));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jComboBox1.setForeground(this.getFontBorderColor());
+        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jComboBox1.setMinimumSize(new java.awt.Dimension(460, 37));
         jComboBox1.setPreferredSize(new java.awt.Dimension(460, 37));
 
+        jLabel9.setBackground(new Color(0,0,0,0));
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel9.setForeground(this.getFontBorderColor());
         jLabel9.setText(" Date :");
 
+        jLabel10.setBackground(new Color(0,0,0,0));
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel10.setForeground(this.getFontBorderColor());
         jLabel10.setText("Complaint By :");
 
         jTextField1.setBackground(new Color(0,0,0,0));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField1.setForeground(this.getFontBorderColor());
+        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField1.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField1.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jTextField2.setBackground(new Color(0,0,0,0));
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField2.setForeground(this.getFontBorderColor());
+        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField2.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField2.setPreferredSize(new java.awt.Dimension(460, 37));
 
+        jLabel11.setBackground(new Color(0,0,0,0));
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel11.setForeground(this.getFontBorderColor());
         jLabel11.setText("Phone No :");
 
+        jLabel12.setBackground(new Color(0,0,0,0));
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel12.setForeground(this.getFontBorderColor());
         jLabel12.setText("Description :");
 
         jTextField3.setBackground(new Color(0,0,0,0));
         jTextField3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField3.setForeground(this.getFontBorderColor());
+        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField3.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField3.setPreferredSize(new java.awt.Dimension(460, 37));
 
+        jLabel13.setBackground(new Color(0,0,0,0));
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel13.setForeground(this.getFontBorderColor());
         jLabel13.setText("Attach Document :");
 
         jTextField4.setBackground(new Color(0,0,0,0));
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField4.setForeground(this.getFontBorderColor());
+        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField4.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField4.setPreferredSize(new java.awt.Dimension(460, 37));
 
+        jLabel14.setBackground(new Color(0,0,0,0));
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel14.setForeground(this.getFontBorderColor());
         jLabel14.setText("Note :");
 
         jButton2.setBackground(new java.awt.Color(0, 40, 51));
@@ -186,13 +224,16 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel15.setBackground(new Color(0,0,0,0));
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel15.setForeground(this.getFontBorderColor());
         jLabel15.setText("Action Taken :");
 
         jTextField5.setBackground(new Color(0,0,0,0));
         jTextField5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField5.setForeground(this.getFontBorderColor());
         jTextField5.setText("\n\n");
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField5.setMinimumSize(new java.awt.Dimension(460, 37));
         jTextField5.setPreferredSize(new java.awt.Dimension(460, 37));
 
@@ -232,13 +273,14 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jTextArea2.setRows(5);
-        jTextArea2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextArea2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jScrollPane2.setViewportView(jTextArea2);
 
         jTextField6.setEditable(false);
         jTextField6.setBackground(new Color(0,0,0,0));
         jTextField6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField6.setForeground(this.getFontBorderColor());
+        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField6.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jButton3.setBackground(new java.awt.Color(0, 40, 51));
@@ -333,7 +375,7 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,7 +389,7 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -361,7 +403,7 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -371,7 +413,7 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
+                                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
                             .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -382,7 +424,7 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
                         .addGap(4, 4, 4)
                         .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                        .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                         .addGap(1, 1, 1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -393,9 +435,9 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jLabel2.setBackground(new java.awt.Color(0, 153, 204));
+        jLabel2.setBackground(new Color(0,0,0,0));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 26, 51));
+        jLabel2.setForeground(this.getFontBorderColor());
         jLabel2.setText("Add Complaint");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -414,16 +456,17 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 804, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 823, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
+        jPanel4.setBackground(this.getPanelBackgroundColor());
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255), 2));
         jPanel4.setMinimumSize(new java.awt.Dimension(1066, 22));
         jPanel4.setPreferredSize(new java.awt.Dimension(1066, 22));
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setBackground(new Color(0,0,0,0));
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(this.getFontBorderColor());
         jLabel3.setText("Copyright (c) 2020 by usjp/ict");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -438,13 +481,13 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 3, Short.MAX_VALUE)
+                .addGap(0, 1, Short.MAX_VALUE)
                 .addComponent(jLabel3))
         );
 
-        jLabel1.setBackground(new java.awt.Color(230, 230, 230));
+        jLabel1.setBackground(new Color(0,0,0,0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 26, 51));
+        jLabel1.setForeground(this.getFontBorderColor());
         jLabel1.setText("Receptionist");
 
         jLabel5.setBackground(new java.awt.Color(230, 230, 230));
@@ -505,7 +548,7 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 860, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 879, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -519,40 +562,43 @@ public class ReceptionistAddComplaint extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1036, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 public void handleDropdownListItem() {
 
-         new DropDownListController().addItemsToDropdown(new ReadFile().getItemsForDropdownList
-        (new File("src\\TxtFiles\\ComplaintType.mov")), jComboBox1);
+        new DropDownListController().addItemsToDropdown(new ReadFile().getItemsForDropdownList(new File("src\\TxtFiles\\ComplaintType.mov")), jComboBox1);
 
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String strErrorMessage = "Fail";
         try {
-            CheckValidation checkValidation = new CheckValidation();
-            String complaintBy = jTextField1.getText().toLowerCase();
-            String complaintType = jComboBox1.getSelectedItem().toString().toLowerCase();
-            String PhoneNo = jTextField2.getText();
-            if (!checkValidation.checkPhoneNumber(PhoneNo, this.getComplaintFilePath(), 2)) {
-                strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
-                throw new IOException();
-            }
-            LocalDate currentDate = LocalDate.now();
-            String description = jTextField3.getText().toLowerCase();
-            String actionTaken = jTextField5.getText().toLowerCase();
-            String note = jTextArea2.getText().toLowerCase();
-            File attachDoc = new File(jTextField4.getText());
+            String strErrorMessage = "Fail";
+            try {
+                CheckValidation checkValidation = new CheckValidation();
+                String complaintBy = jTextField1.getText().toLowerCase();
+                String complaintType = jComboBox1.getSelectedItem().toString().toLowerCase();
+                String PhoneNo = jTextField2.getText();
+                if (!checkValidation.checkPhoneNumber(PhoneNo, this.getComplaintFilePath(), 2)) {
+                    strErrorMessage = "Invalid Phone Numbers Or Phone Number Already Exists";
+                    throw new IOException();
+                }
+                LocalDate currentDate = LocalDate.now();
+                String description = jTextField3.getText().toLowerCase();
+                String actionTaken = jTextField5.getText().toLowerCase();
+                String note = jTextArea2.getText().toLowerCase();
+                File attachDoc = new File(jTextField4.getText());
 
-            new WriteFile().WriteInFile(new ComplaintRecord(complaintType,
-                    complaintBy, PhoneNo, currentDate, description, actionTaken,
-                    note, attachDoc).toString(), new File(this.getComplaintFilePath()));
-            JOptionPane.showMessageDialog(null, "Success");
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
+                new WriteFile().WriteInFile(new ComplaintRecord(complaintType,
+                        complaintBy, PhoneNo, currentDate, description, actionTaken,
+                        note, attachDoc).toString(), new File(this.getComplaintFilePath()));
+                JOptionPane.showMessageDialog(null, "Success");
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
+            }
+        } catch (Exception e) {
+            
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

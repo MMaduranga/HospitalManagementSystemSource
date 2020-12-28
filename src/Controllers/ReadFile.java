@@ -63,7 +63,7 @@ public ReadFile(String strLine) {
         return selectedObjDetails;
     }
 
-    public void deleteObj(File fileLocation) {
+    public boolean deleteObj(File fileLocation) {
         ArrayList<String> linesArray = new ArrayList<>();
 
         try {
@@ -87,7 +87,9 @@ public ReadFile(String strLine) {
                 }
             }
             fileSecurity.setFilePathMOV();
+            return true;
         } catch (Exception e) {
+            return false;
         }
     }
 

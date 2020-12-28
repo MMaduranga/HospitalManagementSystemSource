@@ -46,8 +46,8 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="selectColors.getPanelBackgroundColor()" type="code"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -127,6 +127,9 @@
         </Container>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="d8" red="0" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Icons/icons8-cancel-24.png"/>
             </Property>
@@ -140,6 +143,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="d8" red="0" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Icons/icons8-maximize-window-24.png"/>
             </Property>
@@ -153,6 +159,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="d8" red="0" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Icons/icons8-macos-minimize-24.png"/>
             </Property>
@@ -256,6 +265,9 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="jButton4">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -279,6 +291,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton5">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="19" style="0"/>
                 </Property>
@@ -300,6 +315,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton6">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -320,6 +338,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton7">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -340,6 +361,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton8">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -361,6 +385,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton9">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -381,6 +408,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton10">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -401,8 +431,8 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton11">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
@@ -425,6 +455,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton12">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -445,6 +478,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton13">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -465,6 +501,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton14">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -485,6 +524,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton15">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -502,6 +544,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton16">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -519,9 +564,15 @@
                   <Dimension value="[275, 45]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton16MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton18">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -542,6 +593,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton19">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>
@@ -562,6 +616,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton17">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color(0,0,0,0)" type="code"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="0"/>
                 </Property>

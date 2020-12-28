@@ -16,31 +16,45 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
-    
+
     private String strMedicalOfficerFilePath = "src\\TxtFiles\\MedicalOfficer.mov";
     ReadFile readFileObj = new ReadFile();
     String[] blankArray = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
     private SimpleMethodsController simpleMethods;
-    
-    public AdminViewMedicalOfficerj() {
+    private Color panelBackgroundColor;
+    private Color fontBorderColor;
+
+    public AdminViewMedicalOfficerj(Color panelBackgroundColor, Color fontBorderColor) {
+        this.setPanelBackgroundColor(panelBackgroundColor);
+        this.setFontBorderColor(fontBorderColor);
         initComponents();
-        jComboBox1.setSelectedItem(null);
-        jComboBox2.setSelectedItem(null);
-        jComboBox3.setSelectedItem(null);
-        jButton1.setBackground(new Color(0, 0, 0, 0));
+
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
-        jComboBox1.setBackground(new Color(0, 0, 0, 0));
-        jComboBox2.setBackground(new Color(0, 0, 0, 0));
-        jComboBox3.setBackground(new Color(0, 0, 0, 0));
-        
+
     }
-    
+
+    public Color getPanelBackgroundColor() {
+        return panelBackgroundColor;
+    }
+
+    public void setPanelBackgroundColor(Color panelBackgroundColor) {
+        this.panelBackgroundColor = panelBackgroundColor;
+    }
+
+    public Color getFontBorderColor() {
+        return fontBorderColor;
+    }
+
+    public void setFontBorderColor(Color fontBorderColor) {
+        this.fontBorderColor = fontBorderColor;
+    }
+
     public String getMedicalOfficerFilePath() {
         return this.strMedicalOfficerFilePath;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -120,18 +134,18 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 26, 51)));
+        jPanel1.setBackground(this.getPanelBackgroundColor());
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 0, 0, 0, new java.awt.Color(0, 216, 255)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jPanel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
+        jPanel2.setBackground(this.getPanelBackgroundColor());
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255), 2));
         jPanel2.setPreferredSize(new java.awt.Dimension(1066, 28));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new Color(0,0,0,0));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(153, 153, 153));
+        jButton1.setForeground(this.getFontBorderColor());
         jButton1.setText("Help?");
         jButton1.setBorder(null);
 
@@ -145,32 +159,38 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 204));
         jPanel3.setMinimumSize(new java.awt.Dimension(1066, 805));
         jPanel3.setPreferredSize(new java.awt.Dimension(1066, 805));
 
-        jLabel2.setBackground(new java.awt.Color(0, 153, 204));
+        jLabel2.setBackground(new Color(0,0,0,0));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 26, 51));
+        jLabel2.setForeground(this.getFontBorderColor());
         jLabel2.setText("View Medical Officer");
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel5.setBackground(this.getPanelBackgroundColor());
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204), 2));
         jPanel5.setMinimumSize(new java.awt.Dimension(1066, 756));
         jPanel5.setPreferredSize(new java.awt.Dimension(1066, 960));
 
+        jLabel11.setBackground(new Color(0,0,0,0));
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel11.setForeground(this.getFontBorderColor());
         jLabel11.setText("Enter ID Number : ");
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel30.setForeground(java.awt.Color.red);
         jLabel30.setText("*");
 
+        jTextField1.setBackground(new Color(0,0,0,0));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField1.setForeground(this.getFontBorderColor());
+        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField1.setPreferredSize(new java.awt.Dimension(460, 37));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,7 +198,9 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel12.setBackground(new Color(0,0,0,0));
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel12.setForeground(this.getFontBorderColor());
         jLabel12.setText("User Name : ");
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -200,35 +222,47 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel15.setBackground(new Color(0,0,0,0));
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel15.setForeground(this.getFontBorderColor());
         jLabel15.setText("Medical Officer's Name : ");
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel32.setForeground(java.awt.Color.red);
         jLabel32.setText("*");
 
+        jLabel16.setBackground(new Color(0,0,0,0));
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel16.setForeground(this.getFontBorderColor());
         jLabel16.setText("Gender : ");
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel33.setForeground(java.awt.Color.red);
         jLabel33.setText("*");
 
+        jTextField4.setBackground(new Color(0,0,0,0));
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField4.setForeground(this.getFontBorderColor());
+        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField4.setPreferredSize(new java.awt.Dimension(460, 37));
 
+        jLabel18.setBackground(new Color(0,0,0,0));
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel18.setForeground(this.getFontBorderColor());
         jLabel18.setText("Phone Number : ");
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel34.setForeground(java.awt.Color.red);
         jLabel34.setText("*");
 
+        jLabel20.setBackground(new Color(0,0,0,0));
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel20.setForeground(this.getFontBorderColor());
         jLabel20.setText("DOB Date : ");
 
+        jLabel21.setBackground(new Color(0,0,0,0));
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel21.setForeground(this.getFontBorderColor());
         jLabel21.setText("Address : ");
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -237,17 +271,24 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 26, 51));
         jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jScrollPane1.setViewportView(jTextArea1);
 
+        jLabel23.setBackground(new Color(0,0,0,0));
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel23.setForeground(this.getFontBorderColor());
         jLabel23.setText("Marital States : ");
 
+        jLabel24.setBackground(new Color(0,0,0,0));
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        jLabel24.setForeground(this.getFontBorderColor());
         jLabel24.setText("Password : ");
 
+        jLabel25.setBackground(new Color(0,0,0,0));
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel25.setForeground(this.getFontBorderColor());
         jLabel25.setText("Profile Picture : ");
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -265,28 +306,37 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
             }
         });
 
+        jTextField5.setBackground(new Color(0,0,0,0));
         jTextField5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField5.setForeground(this.getFontBorderColor());
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField5.setPreferredSize(new java.awt.Dimension(460, 37));
 
+        jComboBox1.setBackground(new Color(0,0,0,0));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jComboBox1.setForeground(this.getFontBorderColor());
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jComboBox1.setPreferredSize(new java.awt.Dimension(460, 37));
 
+        jComboBox2.setBackground(new Color(0,0,0,0));
         jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jComboBox2.setForeground(this.getFontBorderColor());
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single", "Married" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jComboBox2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jComboBox2.setPreferredSize(new java.awt.Dimension(460, 37));
 
+        jTextField3.setBackground(new Color(0,0,0,0));
         jTextField3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField3.setForeground(this.getFontBorderColor());
+        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField3.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jTextField6.setEditable(false);
-        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField6.setBackground(new Color(0,0,0,0));
         jTextField6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField6.setForeground(this.getFontBorderColor());
+        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField6.setPreferredSize(new java.awt.Dimension(460, 37));
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -317,28 +367,36 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
             }
         });
 
+        jTextField9.setBackground(new Color(0,0,0,0));
         jTextField9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField9.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField9.setForeground(this.getFontBorderColor());
+        jTextField9.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField9.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jSeparator1.setBackground(new java.awt.Color(0, 26, 51));
         jSeparator1.setForeground(new java.awt.Color(0, 26, 51));
 
+        jLabel17.setBackground(new Color(0,0,0,0));
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel17.setForeground(this.getFontBorderColor());
         jLabel17.setText("Date Of Join : ");
 
         jLabel40.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel40.setForeground(java.awt.Color.red);
         jLabel40.setText("*");
 
+        jLabel19.setBackground(new Color(0,0,0,0));
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel19.setForeground(this.getFontBorderColor());
         jLabel19.setText("Staff E-mail Address :");
 
         jLabel41.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel41.setForeground(java.awt.Color.red);
         jLabel41.setText("*");
 
+        jLabel22.setBackground(new Color(0,0,0,0));
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel22.setForeground(this.getFontBorderColor());
         jLabel22.setText("Staff ID :");
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -346,9 +404,10 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         jLabel42.setText("*");
 
         jTextField12.setEditable(false);
-        jTextField12.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField12.setBackground(new Color(0,0,0,0));
         jTextField12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField12.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField12.setForeground(this.getFontBorderColor());
+        jTextField12.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField12.setPreferredSize(new java.awt.Dimension(460, 37));
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -356,15 +415,19 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel26.setBackground(new Color(0,0,0,0));
         jLabel26.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel26.setForeground(this.getFontBorderColor());
         jLabel26.setText("Staff Photograph : ");
 
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel43.setForeground(java.awt.Color.red);
         jLabel43.setText("*");
 
+        jTextField13.setBackground(new Color(0,0,0,0));
         jTextField13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField13.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField13.setForeground(this.getFontBorderColor());
+        jTextField13.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField13.setPreferredSize(new java.awt.Dimension(460, 37));
         jTextField13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -372,11 +435,15 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel27.setBackground(new Color(0,0,0,0));
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel27.setForeground(this.getFontBorderColor());
         jLabel27.setText("Attach Document : ");
 
+        jTextField2.setBackground(new Color(0,0,0,0));
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField2.setForeground(this.getFontBorderColor());
+        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField2.setPreferredSize(new java.awt.Dimension(363, 37));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -395,7 +462,9 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel44.setBackground(new Color(0,0,0,0));
         jLabel44.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel44.setForeground(this.getFontBorderColor());
         jLabel44.setText("Speaciality :");
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -406,9 +475,11 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         jLabel46.setForeground(java.awt.Color.red);
         jLabel46.setText("*");
 
+        jComboBox3.setBackground(new Color(0,0,0,0));
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jComboBox3.setForeground(this.getFontBorderColor());
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALLERGY SPECIALIST", "ANOMALY SCAN", "CARDIAC ELECTROPHYSIOLOGIST", "CARDIOLOGIST", "CHEST PHYSICIAN", "CHEST SPECIALIST", "CHILD AND ADOLESCENT PHYCHIATRIST", "CLINICAL HAEMATOLOGIST", "CLINICAL PHYSIOLOGIST", "CONSULTANT DENTAL SURGEON AND PROSTHODONTIST", "CONSULTANT DENTAL SURGEON IN RESTORATIVE PERIODONTOLOGY", "CONSULTANT JUDICIAL MEDICINE", "DENTAL ORAL AND MAXILLOFACIAL SURGEON", "DENTAL SURGEON", "DENTAL SURGEON AND GENERAL AND LASER", "DENTAL SURGEON IN PROSTHODONTICS AND ENDODONTICS", "DERMATOLOGIST", "DIABETIC EDUCATOR", "DIETICIAN", "DIETICIAN AND NUTRICIAN", "EMBRYOLOGIST", "ENDOCRINOLOGIST AND DIABETOLOGIST", "ENT SURGEON", "EYE SURGEON", "FAMILY PHYSICIAN", "GASTROENTEROLOGICAL SURGEON", "GASTROENTEROLOGIST", "GENERAL PHYSICIAN", "GENERAL SURGEON", "GENITO URINARY SURGEON", "GYNAECOLOGICAL ONCOLOGIST", "HAEMATO ONCOLOGIST", "HAEMATOLOGIST", "MEDICAL MICROBIOLOGIST", "MYCOLOGIST", "NEPHROLOGIST", "NEURO PHYSICIAN", "NEURO PHYSIOLOGIST", "NEURO SURGEON", "NEUROLOGIST", "NUTRITIONIST", "OBSTETRICIAN AND GYNAECOLOGIST", "OCCUPATIONAL THERAPIST", "ONCOLOGICAL SURGEON", "ONCOLOGIST", "ONCOLOGIST AND CANCER SPECIALIST", "ORAL AND MAXILLOFACIAL SURGEON", "ORTHODONTIST", "ORTHOPAEDIC SURGEON", "ORTHOPAEDIC SURGEON AND SPORTS MEDICINE", "PAEDIATRIC AND ADOLESCENTS ONCOLOGIST", "PAEDIATRIC CARDIOLOGIST", "PAEDIATRIC CHEST PHYSICIAN", "PAEDIATRIC ENDOCRINOLOGIST", "PAEDIATRIC NEONATOLOGIST", "PAEDIATRIC NEPHROLOGIST", "PAEDIATRIC NEUROLOGIST", "PAEDIATRIC ONCOLOGIST", "PAEDIATRIC SURGEON", "PAEDIATRICIAN", "PAEDIATRICIAN AND NEONATAL PAEDIATRICIAN", "PAIN MANAGEMENT", "PEDIATRIC CARDIAC SURGEON", "PHYSICIAN", "PHYSICIAN AND GASTRO ENTEROLOGISTS", "PHYSIOTHERAPIST", "PHYSIOTHERAPY AND REHABILITATION", "PLASTIC AND RECONSTRUCTIVE SURGEON", "PLASTIC SURGEON", "PSYCHIATRIST", "PSYCHOLOGICAL COUNSELOR", "PSYCHOLOGIST", "PSYCOLOGIST PSYCOTHERAPIST PROFESSIONAL COUNSELOR", "PSYCOTHERAPIST", "RADIOLOGISTS", "RHEUMATOLOGIST", "S.T.D", "SEXUAL WELLNESS AND S. T. D", "SPEECH AND LANGUAGE THERAPIST", "SPEECH THERAPIST", "SPEECH THERAPIST AND AUDIOLOGIST", "SPORTS AND EXERCISE MEDICINE", "SPORTS MEDICINE", "SURGEON", "THORACIC SURGEON", "TRANSPLANT SURGEON", "UROLOGICAL AND TRANSPLANT SURGEON", "UROLOGICAL SURGEON", "UROLOGIST", "VASCULAR AND TRANSPLANT SURGEON", "VASCULAR SURGEON", "VENERELOGY", "VENEREOLOGIST", "VENEREOLOGIST AND STD AND SEXUAL HEALTH", "VENEREOLOGIST(CONSULTANT IN SEXUAL MEDICINE)", "VENEREOLOGIST(S.T.D)", "WOUND CONSULTATION" }));
-        jComboBox3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jComboBox3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jComboBox3.setPreferredSize(new java.awt.Dimension(460, 37));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -460,18 +531,23 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
             }
         });
 
+        jTextField7.setBackground(new Color(0,0,0,0));
         jTextField7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField7.setForeground(this.getFontBorderColor());
+        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField7.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jTextField10.setEditable(false);
-        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField10.setBackground(new Color(0,0,0,0));
         jTextField10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField10.setForeground(this.getFontBorderColor());
+        jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField10.setPreferredSize(new java.awt.Dimension(460, 37));
 
+        jTextField14.setBackground(new Color(0,0,0,0));
         jTextField14.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField14.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField14.setForeground(this.getFontBorderColor());
+        jTextField14.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0,this.getFontBorderColor()));
         jTextField14.setPreferredSize(new java.awt.Dimension(460, 37));
 
         jButton13.setBackground(new java.awt.Color(0, 40, 51));
@@ -503,9 +579,6 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
                                     .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
                                     .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
@@ -522,6 +595,7 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
                                         .addGap(4, 4, 4))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel5Layout.createSequentialGroup()
                                                 .addComponent(jLabel22)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -831,13 +905,14 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane2))
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255)));
+        jPanel4.setBackground(this.getPanelBackgroundColor());
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255), 2));
         jPanel4.setMinimumSize(new java.awt.Dimension(1066, 22));
         jPanel4.setPreferredSize(new java.awt.Dimension(1066, 22));
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setBackground(new Color(0,0,0,0));
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(this.getFontBorderColor());
         jLabel3.setText("Copyright (c) 2020 by usjp/ict");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -852,13 +927,13 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 3, Short.MAX_VALUE)
+                .addGap(0, 1, Short.MAX_VALUE)
                 .addComponent(jLabel3))
         );
 
-        jLabel1.setBackground(new java.awt.Color(230, 230, 230));
+        jLabel1.setBackground(new Color(0,0,0,0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 26, 51));
+        jLabel1.setForeground(this.getFontBorderColor());
         jLabel1.setText("User");
 
         jLabel5.setBackground(new java.awt.Color(230, 230, 230));
@@ -921,7 +996,7 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1031, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
@@ -936,7 +1011,7 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1170, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1186, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -996,29 +1071,30 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         simpleMethods.changeFilesLocation(jTextField9);
         simpleMethods.changeFilesLocation(jTextField13);
         simpleMethods.changeFilesLocation(jTextField2);
-     
+
         checkValidation("");
         setTextFieldText(blankArray);
     }//GEN-LAST:event_jButton12ActionPerformed
-   public void checkValidation(String appendToEnd){
-      if (jTextField3.getText().length() != 0 || jTextField1.getText().length() > 0) {
-            
+    public void checkValidation(String appendToEnd) {
+        if (jTextField3.getText().length() != 0 || jTextField1.getText().length() > 0) {
+
             try {
                 readFileObj.deleteObj(new File(this.getMedicalOfficerFilePath()));
                 addChanges(appendToEnd);
-               
+
             } catch (Exception e) {
-                
+
             }
         } else {
             JOptionPane.showMessageDialog(null, "Please Enter ID Number");
         }
-   }
+    }
+
     public void addChanges(String appendToEnd) {
         String strErrorMessage = "Fail";
         try {
             CheckValidation checkValidation = new CheckValidation();
-            
+
             String userName = jTextField3.getText().toLowerCase();
             if (!checkValidation.checkUserName(userName, this.getMedicalOfficerFilePath(), 1)) {
                 strErrorMessage = "User Name Already Exists";
@@ -1041,7 +1117,7 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
             String materialStatus = jComboBox2.getSelectedItem().toString();
             String password = jTextField7.getText();
             File profilePic = new File(jTextField9.getText());
-            
+
             int staffId = Integer.valueOf(jTextField10.getText());
             String staffEmailAddress = jTextField14.getText().toLowerCase();
             if (!checkValidation.checkEmailId(staffEmailAddress, this.getMedicalOfficerFilePath(), 12)) {
@@ -1052,13 +1128,13 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
             File staffPhoto = new File(jTextField13.getText());
             File attachDoc = new File(jTextField2.getText());
             String spetialtyArea = jComboBox3.getSelectedItem().toString().toLowerCase();
-            
+
             WriteFile writeFileObj = new WriteFile();
             writeFileObj.WriteInFile(new MedicalOfficer(staffId, staffEmailAddress,
                     userName, name, gender, phoneNo, idNo,
                     address, materialStatus, password, DOB, profilePic, dateOfJoin,
-                    staffPhoto, attachDoc, spetialtyArea).toString()+appendToEnd, new File(this.getMedicalOfficerFilePath()));
-            
+                    staffPhoto, attachDoc, spetialtyArea).toString() + appendToEnd, new File(this.getMedicalOfficerFilePath()));
+
             JOptionPane.showMessageDialog(null, "Success");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, strErrorMessage, "", 2);
@@ -1066,7 +1142,7 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
     }
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         if (jTextField3.getText().length() != 0 || jTextField1.getText().length() > 0) {
-            
+
             try {
                 readFileObj.deleteObj(new File(this.getMedicalOfficerFilePath()));
                 JOptionPane.showMessageDialog(null, "Deleted");
@@ -1098,7 +1174,7 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         if (primarykey.length() == 0) {
             JOptionPane.showMessageDialog(null, "Please Enter ID Number");
         } else {
-            
+
             try {
                 String[] strPatientDetailsArray = readFileObj.findObjLine(primarykey,
                         new File("src\\TxtFiles\\MedicalOfficer.mov"), location);
@@ -1106,15 +1182,15 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
                     JOptionPane.showMessageDialog(null, "Invalid ID Number");
                 } else {
                     setTextFieldText(strPatientDetailsArray);
-                    
+
                     JOptionPane.showMessageDialog(null, "Done");
                 }
             } catch (Exception e) {
-                
+
             }
         }
     }
-    
+
     public void setTextFieldText(String[] details) {
         jTextField3.setText(details[1]);
         jTextField7.setText(details[2]);
@@ -1132,7 +1208,7 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         jTextField13.setText(details[14]);
         jTextField2.setText(details[15]);
         jComboBox3.addItem(details[16]);
-        
+
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
