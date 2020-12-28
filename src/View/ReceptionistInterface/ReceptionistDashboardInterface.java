@@ -1,6 +1,7 @@
 package View.ReceptionistInterface;
 
 import Controllers.ColorContoller;
+import Controllers.ImageController;
 import View.CommonFrames.ViewComplain;
 import Controllers.JpanelGradient;
 import Controllers.ResizeInternalFrame;
@@ -35,7 +36,9 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     public String getReceptionistDetails() {
         return this.receptionistDetails;
     }
-
+  public void setLogo() {
+        jLabel1.setIcon(new ImageController().setImageSize("src\\Logos\\logo2darkbg.png", 60, 240));
+    }
     public void setBackgroundColor(Color color) {
 
         jButton4.setBackground(color);//set background null
@@ -59,6 +62,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     public void startUp() {
         initComponents();
         selectColors.setUpButton(jButton16);
+        setLogo();
         new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
     }
 
@@ -88,6 +92,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         jButton18 = new javax.swing.JButton();
         jButton19 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hospital Management System");
@@ -123,7 +128,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         );
 
         jButton1.setBackground(new Color(0,216,255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-cancel-24.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8-cancel-24.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +137,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new Color(0,216,255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-maximize-window-24.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8-maximize-window-24.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +146,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         });
 
         jButton3.setBackground(new Color(0,216,255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-macos-minimize-24.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8-macos-minimize-24.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -362,6 +367,8 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setPreferredSize(new java.awt.Dimension(240, 60));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -385,11 +392,17 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
                     .addComponent(jButton13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -421,7 +434,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
                 .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -704,6 +717,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
