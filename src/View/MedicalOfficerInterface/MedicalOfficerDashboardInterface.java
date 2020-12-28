@@ -1,8 +1,10 @@
 package View.MedicalOfficerInterface;
 
+import Controllers.ColorContoller;
 import java.awt.Color;
 import Controllers.JpanelGradient;
 import Controllers.ResizeInternalFrame;
+import Controllers.WriteFile;
 import View.CommonFrames.WelcomeFrameArt;
 import View.LoginInterface.Login;
 
@@ -17,14 +19,16 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
 
     int x, y;
     private String medicalofficerDetails;
+    ColorContoller selectColors = new ColorContoller();
 
     public MedicalOfficerDashboardInterface() {
-        initComponents();
+
         startUp();
+
     }
 
     public MedicalOfficerDashboardInterface(String medicalofficerDetails) {
-        initComponents();
+
         startUp();
         this.setMedicalofficerDetails(medicalofficerDetails);
     }
@@ -38,15 +42,15 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     }
 
     public void startUp() {
-        setBackgroundColor(new Color(0, 0, 0, 0));//set background null
+        initComponents();
+        selectColors.setUpButton(jButton16);
+
         new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
 
     }
 
     public void setBackgroundColor(Color color) {
-        jButton1.setBackground(color);//set background null
-        jButton2.setBackground(color);//set background null
-        jButton3.setBackground(color);//set background null
+
         jButton4.setBackground(color);//set background null
 
         jButton6.setBackground(color);//set background null
@@ -78,8 +82,8 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1397, 988));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204)));
+        jPanel1.setBackground(selectColors.getPanelBackgroundColor());
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 216, 255), 2));
         jPanel1.setMinimumSize(new java.awt.Dimension(1397, 988));
         jPanel1.setPreferredSize(new java.awt.Dimension(1397, 988));
         jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -106,6 +110,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
             .addGap(0, 960, Short.MAX_VALUE)
         );
 
+        jButton1.setBackground(new java.awt.Color(0, 216, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-cancel-24.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -114,6 +119,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(0, 216, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-maximize-window-24.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +128,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(0, 216, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-macos-minimize-24.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -134,6 +141,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         jPanel3.setMinimumSize(new java.awt.Dimension(300, 960));
         jPanel3.setPreferredSize(new java.awt.Dimension(300, 960));
 
+        jButton4.setBackground(new Color(0,0,0,0));
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_male_user_30px.png"))); // NOI18N
@@ -146,6 +154,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setBackground(new Color(0,0,0,0));
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_view_schedule_30px.png"))); // NOI18N
@@ -162,6 +171,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton15.setBackground(new Color(0,0,0,0));
         jButton15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton15.setForeground(new java.awt.Color(255, 255, 255));
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_ask_question_30px.png"))); // NOI18N
@@ -173,13 +183,25 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton16.setBackground(new Color(0,0,0,0));
         jButton16.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton16.setForeground(new java.awt.Color(255, 255, 255));
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_night_30px.png"))); // NOI18N
-        jButton16.setText("Dark Mode                        ");
+        jButton16.setText("Light Theme                     ");
         jButton16.setBorder(null);
         jButton16.setPreferredSize(new java.awt.Dimension(275, 45));
+        jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton16MouseClicked(evt);
+            }
+        });
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
+        jButton17.setBackground(new Color(0,0,0,0));
         jButton17.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton17.setForeground(new java.awt.Color(255, 255, 255));
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_sign_out_30px.png"))); // NOI18N
@@ -318,13 +340,20 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
 
         clearDesktopPane(jButton4);
 
-        new ResizeInternalFrame(new MedicalOfficer_profile(this.getMedicalofficerDetails(),
-                 jDesktopPane1), jDesktopPane1);
-         String[] details = this.getMedicalofficerDetails().split("~");
-            if (details[17].equals("ResetPassword")) {
-                JOptionPane.showMessageDialog(null, "Reset the Password", "", 0);
+        try {
+            new ResizeInternalFrame(new MedicalOfficer_profile(this.getMedicalofficerDetails(),
+                    jDesktopPane1, selectColors.getPanelBackgroundColor(), selectColors.getFontBorderColor()), jDesktopPane1);
+            try {
+                String[] details = this.getMedicalofficerDetails().split("~");
+                if (details[17].equals("ResetPassword")) {
+                    JOptionPane.showMessageDialog(null, "Reset the Password", "", 0);
 
+                }
+            } catch (Exception e) {
             }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Please SignIn Again ");
+        }
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
@@ -343,7 +372,8 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
 
         clearDesktopPane(jButton6);
 
-        new ResizeInternalFrame(new ViewAppointmentMedicalOfficer1(), jDesktopPane1);
+        new ResizeInternalFrame(new ViewAppointmentMedicalOfficer1(selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
 
     }//GEN-LAST:event_jButton6MouseClicked
 
@@ -357,6 +387,16 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         x = evt.getX();
         y = evt.getY();
     }//GEN-LAST:event_jPanel1MousePressed
+
+    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
+        new WriteFile().setNumber("src\\TxtFiles\\Colors.mov");
+        this.dispose();
+        new Login().setVisible(true);
+    }//GEN-LAST:event_jButton16MouseClicked
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
 
     /**
      * @param args the command line arguments

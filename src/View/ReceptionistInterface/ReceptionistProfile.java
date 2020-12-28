@@ -26,9 +26,13 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
     private SimpleMethodsController simpleMethods;
     public String profilePicPath;
     private String strReceptionistFilePath = "src\\TxtFiles\\Receptionist.mov";
+    private Color panelBackgroundColor;
+    private Color fontBorderColor;
     JDesktopPane desktopPane;
 
-    public ReceptionistProfile(String receptionistDetails, JDesktopPane desktopPane) {
+    public ReceptionistProfile(String receptionistDetails, JDesktopPane desktopPane, Color panelBackgroundColor, Color fontBorderColor) {
+        this.setPanelBackgroundColor(panelBackgroundColor);
+        this.setFontBorderColor(fontBorderColor);
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
@@ -40,7 +44,23 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
 
         this.desktopPane = desktopPane;
         simpleMethods = new SimpleMethodsController();
-        
+
+    }
+
+    public Color getPanelBackgroundColor() {
+        return panelBackgroundColor;
+    }
+
+    public void setPanelBackgroundColor(Color panelBackgroundColor) {
+        this.panelBackgroundColor = panelBackgroundColor;
+    }
+
+    public Color getFontBorderColor() {
+        return fontBorderColor;
+    }
+
+    public void setFontBorderColor(Color fontBorderColor) {
+        this.fontBorderColor = fontBorderColor;
     }
 
     public void setReceptionistDetails(String medicalofficerDetails) {
@@ -74,10 +94,13 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
             jTextField11.setText(details[13]);
             jTextField12.setText(details[14]);
             jTextField13.setText(details[15]);
-            if (details[16].equals("ResetPassword")) {
+            try {
+                 if (details[16].equals("ResetPassword")) {
                 jTextField2.setForeground(new Color(255, 0, 0));
                 jTextField2.setFont(new Font("Tahoma", Font.BOLD, 24));
 
+            }
+            } catch (Exception e) {
             }
             setImage();
         } catch (Exception e) {
@@ -159,7 +182,7 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(this.getPanelBackgroundColor());
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 26, 51)));
         jPanel2.setMinimumSize(new java.awt.Dimension(250, 27));
         jPanel2.setPreferredSize(new java.awt.Dimension(250, 27));
@@ -185,35 +208,44 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
         jLabel2.setText("BASIC INFORMATIONS");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel3.setForeground(this.getFontBorderColor());
         jLabel3.setText("User Name :");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel4.setForeground(this.getFontBorderColor());
         jLabel4.setText("Password :");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel5.setForeground(this.getFontBorderColor());
         jLabel5.setText("Name :");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel6.setForeground(this.getFontBorderColor());
         jLabel6.setText("Gender :");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel7.setForeground(this.getFontBorderColor());
         jLabel7.setText("ID Card No :");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel8.setForeground(this.getFontBorderColor());
         jLabel8.setText("Date of Birth :");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel9.setForeground(this.getFontBorderColor());
         jLabel9.setText("Maritial Status :");
 
         jTextField1.setBackground(new Color(0,0,0,0));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField1.setForeground(this.getFontBorderColor());
+        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField1.setMinimumSize(new java.awt.Dimension(250, 27));
         jTextField1.setPreferredSize(new java.awt.Dimension(250, 27));
 
         jTextField2.setBackground(new Color(0,0,0,0));
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jTextField2.setForeground(this.getFontBorderColor());
+        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField2.setMinimumSize(new java.awt.Dimension(250, 27));
         jTextField2.setPreferredSize(new java.awt.Dimension(250, 27));
         jTextField2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -224,19 +256,22 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
 
         jTextField3.setBackground(new Color(0,0,0,0));
         jTextField3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField3.setForeground(this.getFontBorderColor());
+        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField3.setMinimumSize(new java.awt.Dimension(250, 27));
         jTextField3.setPreferredSize(new java.awt.Dimension(250, 27));
 
         jTextField5.setBackground(new Color(0,0,0,0));
         jTextField5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField5.setForeground(this.getFontBorderColor());
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField5.setMinimumSize(new java.awt.Dimension(250, 27));
         jTextField5.setPreferredSize(new java.awt.Dimension(250, 27));
 
         jTextField6.setBackground(new Color(0,0,0,0));
         jTextField6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField6.setForeground(this.getFontBorderColor());
+        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField6.setMinimumSize(new java.awt.Dimension(250, 27));
         jTextField6.setPreferredSize(new java.awt.Dimension(250, 27));
 
@@ -248,14 +283,17 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
         jLabel10.setText("CONTACT INFORMATIONS");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel11.setForeground(this.getFontBorderColor());
         jLabel11.setText("Telephone :");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel12.setForeground(this.getFontBorderColor());
         jLabel12.setText("Address :");
 
         jTextField8.setBackground(new Color(0,0,0,0));
         jTextField8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField8.setForeground(this.getFontBorderColor());
+        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField8.setMinimumSize(new java.awt.Dimension(250, 27));
         jTextField8.setPreferredSize(new java.awt.Dimension(250, 27));
 
@@ -263,13 +301,13 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextArea1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextArea1.setMinimumSize(new java.awt.Dimension(250, 130));
         jTextArea1.setPreferredSize(new java.awt.Dimension(250, 130));
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 26, 51));
+        jLabel13.setForeground(this.getFontBorderColor());
         jLabel13.setText("Receptionist");
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -281,11 +319,13 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
         jLabel15.setText("Profile");
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel16.setForeground(this.getFontBorderColor());
         jLabel16.setText("E-mail :");
 
         jTextField10.setBackground(new Color(0,0,0,0));
         jTextField10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField10.setForeground(this.getFontBorderColor());
+        jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField10.setMinimumSize(new java.awt.Dimension(424, 29));
         jTextField10.setPreferredSize(new java.awt.Dimension(424, 29));
 
@@ -294,9 +334,11 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
         jLabel19.setText("STAFF  INFORMATIONS");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel17.setForeground(this.getFontBorderColor());
         jLabel17.setText("Staff ID :");
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel18.setForeground(this.getFontBorderColor());
         jLabel18.setText("Date of Join :");
 
         jButton2.setBackground(new java.awt.Color(0, 40, 53));
@@ -311,26 +353,31 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
         });
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel20.setForeground(this.getFontBorderColor());
         jLabel20.setText("Staff Photograph :");
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel21.setForeground(this.getFontBorderColor());
         jLabel21.setText("Attach doc :");
 
         jTextField9.setBackground(new Color(0,0,0,0));
         jTextField9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField9.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField9.setForeground(this.getFontBorderColor());
+        jTextField9.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField9.setMinimumSize(new java.awt.Dimension(250, 27));
         jTextField9.setPreferredSize(new java.awt.Dimension(250, 27));
 
         jTextField11.setBackground(new Color(0,0,0,0));
         jTextField11.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField11.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField11.setForeground(this.getFontBorderColor());
+        jTextField11.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField11.setMinimumSize(new java.awt.Dimension(250, 27));
         jTextField11.setPreferredSize(new java.awt.Dimension(250, 27));
 
         jTextField12.setBackground(new Color(0,0,0,0));
         jTextField12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField12.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField12.setForeground(this.getFontBorderColor());
+        jTextField12.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField12.setMinimumSize(new java.awt.Dimension(250, 27));
         jTextField12.setPreferredSize(new java.awt.Dimension(250, 27));
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
@@ -341,7 +388,8 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
 
         jTextField13.setBackground(new Color(0,0,0,0));
         jTextField13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jTextField13.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jTextField13.setForeground(this.getFontBorderColor());
+        jTextField13.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
         jTextField13.setMinimumSize(new java.awt.Dimension(250, 27));
         jTextField13.setPreferredSize(new java.awt.Dimension(250, 27));
 
@@ -382,11 +430,13 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel22.setForeground(this.getFontBorderColor());
         jLabel22.setText("Pending Appoinments :");
 
         jComboBox1.setBackground(new Color(0,0,0,0));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jComboBox1.setForeground(this.getFontBorderColor());
+        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
 
         jButton6.setBackground(new java.awt.Color(0, 40, 53));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_message_preview_30px.png"))); // NOI18N
@@ -399,13 +449,15 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
 
         jComboBox2.setBackground(new Color(0,0,0,0));
         jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jComboBox2.setForeground(this.getFontBorderColor());
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jComboBox2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
 
         jComboBox3.setBackground(new Color(0,0,0,0));
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jComboBox3.setForeground(this.getFontBorderColor());
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single", "Married" }));
-        jComboBox3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26,51)));
+        jComboBox3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, this.getFontBorderColor()));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -653,7 +705,7 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 928, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 936, Short.MAX_VALUE)
                 .addGap(25, 25, 25))
         );
 
@@ -665,7 +717,7 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
         );
 
         pack();
@@ -675,8 +727,9 @@ public class ReceptionistProfile extends javax.swing.JInternalFrame {
         simpleMethods.changeFilesLocation(this.profilePicPath);
 
         try {
-            new ReadFile(this.geReceptionistDetails()).deleteObj(new File(this.getReceptionistFilePath()));
-            addChanges();
+            if (new ReadFile(this.geReceptionistDetails()).deleteObj(new File(this.getReceptionistFilePath()))) {
+                addChanges();
+            }
 
         } catch (Exception e) {
 

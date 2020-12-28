@@ -1,11 +1,15 @@
 package View.ReceptionistInterface;
 
+import Controllers.ColorContoller;
 import View.CommonFrames.ViewComplain;
 import Controllers.JpanelGradient;
 import Controllers.ResizeInternalFrame;
+import Controllers.WriteFile;
+import View.CommonFrames.AddPatient;
 import View.CommonFrames.WelcomeFrameArt;
 import View.LoginInterface.Login;
 import java.awt.Color;
+import java.io.File;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
@@ -13,6 +17,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
     int x, y;
     private String receptionistDetails;
+    ColorContoller selectColors = new ColorContoller();
 
     public ReceptionistDashboardInterface() {
         startUp();
@@ -32,9 +37,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }
 
     public void setBackgroundColor(Color color) {
-        jButton1.setBackground(color);//set background null
-        jButton2.setBackground(color);//set background null
-        jButton3.setBackground(color);//set background null
+
         jButton4.setBackground(color);//set background null
         jButton5.setBackground(color);//set background null
         jButton6.setBackground(color);//set background null
@@ -55,7 +58,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
     public void startUp() {
         initComponents();
-        setBackgroundColor(new Color(0, 0, 0, 0));//set background null
+        selectColors.setUpButton(jButton16);
         new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
     }
 
@@ -91,7 +94,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1397, 988));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(selectColors.getPanelBackgroundColor());
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 26, 51)));
         jPanel1.setMinimumSize(new java.awt.Dimension(1397, 988));
         jPanel1.setPreferredSize(new java.awt.Dimension(1397, 988));
@@ -119,6 +122,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             .addGap(0, 960, Short.MAX_VALUE)
         );
 
+        jButton1.setBackground(new Color(0,216,255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-cancel-24.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -127,6 +131,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new Color(0,216,255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-maximize-window-24.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -135,6 +140,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new Color(0,216,255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/icons8-macos-minimize-24.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +153,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         jPanel3.setMinimumSize(new java.awt.Dimension(300, 960));
         jPanel3.setPreferredSize(new java.awt.Dimension(300, 960));
 
+        jButton4.setBackground(new Color(0,0,0,0));
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_male_user_30px.png"))); // NOI18N
@@ -159,6 +166,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setBackground(new Color(0,0,0,0));
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_user_30px.png"))); // NOI18N
@@ -175,6 +183,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setBackground(new Color(0,0,0,0));
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_view_schedule_30px.png"))); // NOI18N
@@ -186,6 +195,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setBackground(new Color(0,0,0,0));
         jButton7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_survey_30px.png"))); // NOI18N
@@ -202,6 +212,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton8.setBackground(new Color(0,0,0,0));
         jButton8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_protection_mask_30px.png"))); // NOI18N
@@ -214,6 +225,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton9.setBackground(new Color(0,0,0,0));
         jButton9.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_being_sick_30px.png"))); // NOI18N
@@ -225,6 +237,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton10.setBackground(new Color(0,0,0,0));
         jButton10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_find_user_male_30px.png"))); // NOI18N
@@ -236,7 +249,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
-        jButton11.setBackground(new java.awt.Color(204, 204, 204));
+        jButton11.setBackground(new Color(0,0,0,0));
         jButton11.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_forward_message_30px.png"))); // NOI18N
@@ -248,6 +261,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton12.setBackground(new Color(0,0,0,0));
         jButton12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton12.setForeground(new java.awt.Color(255, 255, 255));
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_reply_30px.png"))); // NOI18N
@@ -259,6 +273,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton13.setBackground(new Color(0,0,0,0));
         jButton13.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton13.setForeground(new java.awt.Color(255, 255, 255));
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_mail_privacy_30px.png"))); // NOI18N
@@ -270,6 +285,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton14.setBackground(new Color(0,0,0,0));
         jButton14.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton14.setForeground(new java.awt.Color(255, 255, 255));
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_complaint_30px.png"))); // NOI18N
@@ -281,13 +297,20 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton16.setBackground(new Color(0,0,0,0));
         jButton16.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton16.setForeground(new java.awt.Color(255, 255, 255));
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_night_30px.png"))); // NOI18N
         jButton16.setText("Dark Mode                        ");
         jButton16.setBorder(null);
         jButton16.setPreferredSize(new java.awt.Dimension(275, 45));
+        jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton16MouseClicked(evt);
+            }
+        });
 
+        jButton17.setBackground(new Color(0,0,0,0));
         jButton17.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton17.setForeground(new java.awt.Color(255, 255, 255));
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_sign_out_30px.png"))); // NOI18N
@@ -304,6 +327,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton18.setBackground(new Color(0,0,0,0));
         jButton18.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton18.setForeground(new java.awt.Color(255, 255, 255));
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_health_checkup_30px.png"))); // NOI18N
@@ -315,6 +339,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton19.setBackground(new Color(0,0,0,0));
         jButton19.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton19.setForeground(new java.awt.Color(255, 255, 255));
         jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_message_preview_30px.png"))); // NOI18N
@@ -325,6 +350,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jButton15.setBackground(new Color(0,0,0,0));
         jButton15.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton15.setForeground(new java.awt.Color(255, 255, 255));
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_ask_question_30px.png"))); // NOI18N
@@ -480,6 +506,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+        new File("src\\TxtFiles\\SavedUser.mov").delete();
         this.dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_jButton17MouseClicked
@@ -498,7 +525,8 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         try {
             clearDesktopPane(jButton9);
 
-            new ResizeInternalFrame(new Receptionist_AddPatient(), jDesktopPane1);
+            new ResizeInternalFrame(new AddPatient("Receptionist",selectColors.getPanelBackgroundColor(),
+                    selectColors.getFontBorderColor()), jDesktopPane1);
         } catch (Exception e) {
         }
 
@@ -508,21 +536,24 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
         clearDesktopPane(jButton14);
 
-        new ResizeInternalFrame(new ReceptionistAddComplaint(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistAddComplaint(selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton14MouseClicked
 
     private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
 
         clearDesktopPane(jButton18);
 
-        new ResizeInternalFrame(new ReceptionistAddAppointment(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistAddAppointment(selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton18MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
 
         clearDesktopPane(jButton11);
 
-        new ResizeInternalFrame(new ReceptionistAddDispatchMail(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistAddDispatchMail(selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
 
     }//GEN-LAST:event_jButton11MouseClicked
 
@@ -530,58 +561,66 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
 
         clearDesktopPane(jButton12);
 
-        new ResizeInternalFrame(new ReceptionistAddReceivedMail(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistAddReceivedMail(selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
 
         clearDesktopPane(jButton7);
 
-        new ResizeInternalFrame(new ViewComplain("Receptionist"), jDesktopPane1);
+        new ResizeInternalFrame(new ViewComplain("Receptionist", selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
 
         clearDesktopPane(jButton8);
 
-        new ResizeInternalFrame(new ReceptionistViewPatientj(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistViewPatientj(selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
 
         clearDesktopPane(jButton6);
 
-        new ResizeInternalFrame(new ReceptionistViewAppointment1(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistViewAppointment1(selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
 
         clearDesktopPane(jButton10);
 
-        new ResizeInternalFrame(new ReceptionistViewVisitorj1(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistViewVisitorj1(selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
 
         clearDesktopPane(jButton13);
 
-        new ResizeInternalFrame(new ReceptionistViewReceived(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistViewReceived(selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
         clearDesktopPane(jButton19);
 
-        new ResizeInternalFrame(new ReceptionistViewDispachMail(), jDesktopPane1);
+        new ResizeInternalFrame(new ReceptionistViewDispachMail(selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton19MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         clearDesktopPane(jButton4);
 
-        new ResizeInternalFrame(new ReceptionistProfile(this.getReceptionistDetails(), jDesktopPane1), jDesktopPane1);
-        String[] details=this.getReceptionistDetails().split("~");
-        if(details[16].equals("ResetPassword")){
-            JOptionPane.showMessageDialog(null, "Reset the Password","",0);
-        
+        new ResizeInternalFrame(new ReceptionistProfile(this.getReceptionistDetails(), jDesktopPane1, selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
+        String[] details = this.getReceptionistDetails().split("~");
+        if (details[16].equals("ResetPassword")) {
+            JOptionPane.showMessageDialog(null, "Reset the Password", "", 0);
+
         }
     }//GEN-LAST:event_jButton4MouseClicked
 
@@ -595,6 +634,12 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         x = evt.getX();
         y = evt.getY();
     }//GEN-LAST:event_jPanel1MousePressed
+
+    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
+        new WriteFile().setNumber("src\\TxtFiles\\Colors.mov");
+        this.dispose();
+        new Login().setVisible(true);
+    }//GEN-LAST:event_jButton16MouseClicked
 
     public void clearDesktopPane(JButton button) {
         setBackgroundColor(new Color(0, 0, 0, 0));
