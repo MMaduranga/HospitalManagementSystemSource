@@ -82,11 +82,14 @@ public class PatientProfile extends javax.swing.JInternalFrame {
             this.profilePicPath = details[12];
             jTextField7.setText(details[10]);
             jTextArea2.setText(details[11]);
-            /* if (details[13].equals("ResetPassword")) {
+            try {
+                  if (details[13].equals("ResetPassword")) {
             jTextField1.setForeground(new Color(255, 0, 0));
             jTextField1.setFont(new Font("Tahoma", Font.BOLD, 24));
             
-            }*/
+            }
+            } catch (Exception e) {
+            }
             setImage();
         } catch (Exception e) {
 

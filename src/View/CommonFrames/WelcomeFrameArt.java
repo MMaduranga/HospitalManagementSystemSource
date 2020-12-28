@@ -71,7 +71,7 @@ public class WelcomeFrameArt extends javax.swing.JInternalFrame {
         setImage();
     }//GEN-LAST:event_jPanel1ComponentResized
     public void setImage() {
-        ImageIcon welcomeFrameArt = new ImageIcon("src\\View\\CommonFrames\\doctor1.jpg");
+        ImageIcon welcomeFrameArt = new ImageIcon("P:\\NetBeans\\HospitalManagementSystem\\src\\Logos\\7c075451aa96f9c01ee1b9118203df1d-removebg-preview.png");
         Image resizeImage = welcomeFrameArt.getImage();
 
         Image newResizedImage = resizeImage.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
