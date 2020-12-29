@@ -21,12 +21,17 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     public AdminDashboardInterface() {
 
         initComponents();
-        new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
-        selectColors.setUpButton(jButton16);
         setLogo();
+        new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
     }
+    Thread resizeFrame = new Thread() {//make the frame resizeable
+        public void run() {
+
+        }
+    };
 
     public void setLogo() {
+        selectColors.setUpButton(jButton16);
         jLabel1.setIcon(new ImageController().setImageSize("src\\Logos\\logo2darkbg.png", 60, 240));
     }
 

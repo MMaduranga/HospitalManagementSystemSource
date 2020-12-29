@@ -18,14 +18,11 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
-        jButton1.setBackground(new Color(0, 0, 0, 0));//hide jbutton1 background
-        jComboBox1.setBackground(new Color(0, 0, 0, 0));//hide jcomboBox1 background
-        jButton3.setBackground(new Color(0, 0, 0, 0));//hide jbutton3 background
-        jComboBox1.setSelectedItem(null);//blank the jcomboBox1 at the start
-        jButton4.setBackground(new Color(0, 0, 0, 0));//hide jbutton1 background
-       jLabel11.setIcon( new ImageController().setImageSize("src\\Logos\\logo1darkbg.png",249, 440));
-        checkLogin();
 
+        jComboBox1.setSelectedItem(null);//blank the jcomboBox1 at the start
+
+        jLabel11.setIcon(new ImageController().setImageSize("src\\Logos\\logo1darkbg.png", 249, 440));
+        checkLogin();
     }
 
     @SuppressWarnings("unchecked")
@@ -81,7 +78,7 @@ public class Login extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 26, 51)));
         jPanel3.setPreferredSize(new java.awt.Dimension(467, 760));
 
-        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7.setBackground(new Color(0,0,0,0));
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Version 1.0");
@@ -123,6 +120,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("UserName");
 
+        jTextField1.setBackground(new Color(0,0,0,0));
         jTextField1.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 22)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(0, 26, 51));
         jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26, 51)));
@@ -131,6 +129,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Password");
 
+        jTextField2.setBackground(new Color(0,0,0,0));
         jTextField2.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 22)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(0, 26, 51));
         jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 26, 51)));
@@ -139,6 +138,7 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("UserMode");
 
+        jComboBox1.setBackground(new Color(0,0,0,0));
         jComboBox1.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 22)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(0, 26, 51));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Patient", "Receptionist", "Medical Officer" }));
@@ -161,7 +161,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setBackground(new Color(0,0,0,0));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jButton3.setForeground(new java.awt.Color(102, 102, 102));
         jButton3.setText("Don't have an account?");
@@ -275,6 +275,7 @@ public class Login extends javax.swing.JFrame {
                         .addContainerGap(130, Short.MAX_VALUE))))
         );
 
+        jButton1.setBackground(new Color(0,0,0,0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8-cancel-24.png"))); // NOI18N
         jButton1.setBorder(null);
@@ -285,6 +286,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setBackground(new Color(0,0,0,0));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8-macos-minimize-24.png"))); // NOI18N
         jButton4.setBorder(null);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -335,7 +337,7 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public void checkLogin() {
+    public void checkLogin() {//check the user saved the login infromation
         String strLine = new ReadFile().readLoginSavedUserAndColorFiles("src\\TxtFiles\\SavedUser.mov");
         if (strLine != null) {
             String[] strLineArry = strLine.split("~");
@@ -357,13 +359,27 @@ public class Login extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         JOptionPane.showMessageDialog(null, "Contact Receptionist or Admin");//show a message to user to create and new account
     }//GEN-LAST:event_jButton3ActionPerformed
-    public void executeLogin(String strUserName, String strPassword, String strUserMode) {
+    public void executeLogin(String strUserName, String strPassword, String strUserMode) {//compare the user details and visible users dashboard interface
         try {
             SignIn signIn = new SignIn(strUserName, strPassword, strUserMode);
             JFrame frame = signIn.compare();
             if (frame != null) {
-                new WriteFile().UserLog(strUserName, strUserMode);
-                setFrameVisible(frame);
+                Thread writeInUserLoginfile = new Thread() {
+                    public void run() {
+                        new WriteFile().UserLog(strUserName, strUserMode);
+                    }
+
+                };
+                Thread showuserDashboard = new Thread() {
+                    public void run() {
+                        if (jCheckBox1.isSelected()) {
+                            setFrameVisible(frame);
+                        }
+                    }
+
+                };
+                showuserDashboard.start();
+                writeInUserLoginfile.start();
 
             } else {
                 JOptionPane.showMessageDialog(null, "Invalid UserName or Password Please Check Again", "", 3);//if user name or password is invalid shaow a message
@@ -376,14 +392,25 @@ public class Login extends javax.swing.JFrame {
         String strUserName = jTextField1.getText();
         String strPassword = jTextField2.getText();
         String strUserMode = jComboBox1.getSelectedItem().toString();
+        Thread saveUserDetails = new Thread() {//remember the user information to login again
+            public void run() {
+                if (jCheckBox1.isSelected()) {
+                    new WriteFile().writeInSavedUserFile(strUserName + "~" + strPassword + "~"
+                            + strUserMode, new File("src\\TxtFiles\\SavedUser.mov"));
+                }
+            }
 
-        if (jCheckBox1.isSelected()) {
-            new WriteFile().writeInSavedUserFile(strUserName + "~" + strPassword + "~"
-                    + strUserMode, new File("src\\TxtFiles\\SavedUser.mov"));
-        }
-        this.executeLogin(strUserName, strPassword, strUserMode);
+        };
+        Thread executeUserlogin = new Thread() {//remember the user information to login again
+            public void run() {
+                executeLogin(strUserName, strPassword, strUserMode);
+            }
+
+        };
+        saveUserDetails.start();
+        executeUserlogin.start();
     }//GEN-LAST:event_jButton2ActionPerformed
-    public void setFrameVisible(JFrame frame) {
+    public void setFrameVisible(JFrame frame) {//make the users dashboard visible true
 
         try {
             this.dispose();
@@ -407,7 +434,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        int setX = evt.getXOnScreen();
+        int setX = evt.getXOnScreen();//make the frame draggable
         int setY = evt.getYOnScreen();
         this.setLocation(setX - x, setY - y);
     }//GEN-LAST:event_jPanel1MouseDragged

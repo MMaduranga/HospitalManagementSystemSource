@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-public class CreateCSV {
+public class CreateCSV{
 
     public void writeInCSVFile(File fileLocation, ArrayList<String> totalLinesInFile) {
         try {

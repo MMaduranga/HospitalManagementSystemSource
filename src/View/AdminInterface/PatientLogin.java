@@ -54,7 +54,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
 
         this.setTotalRowArray(new ReadFile().readTotalFile(new File("src\\TxtFiles\\Pateint.mov")));
 
-        jLabel1.setText(arrangeData());
+        jTextArea1.setText(arrangeData());
 
     }
 
@@ -70,8 +70,8 @@ public class PatientLogin extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setOpaque(true);
 
@@ -85,9 +85,9 @@ public class PatientLogin extends javax.swing.JInternalFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(990, 910));
         jPanel2.setPreferredSize(new java.awt.Dimension(990, 910));
 
-        jButton1.setBackground(new java.awt.Color(0, 26, 51));
+        jButton1.setBackground(new java.awt.Color(0, 40, 51));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setForeground(new java.awt.Color(0, 216, 255));
         jButton1.setText("Export PDF");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,9 +95,9 @@ public class PatientLogin extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(0, 26, 51));
+        jButton2.setBackground(new java.awt.Color(0, 40, 51));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(0, 216, 255));
         jButton2.setText("Export CSV");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,9 +123,13 @@ public class PatientLogin extends javax.swing.JInternalFrame {
         jLabel9.setForeground(new java.awt.Color(0, 153, 204));
         jLabel9.setText("Patient Login Credential");
 
-        jLabel1.setBackground(new Color(0,0,0,0));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jScrollPane1.setViewportView(jLabel1);
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(this.panelBackgroundColor);
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jTextArea1.setForeground(    this.getFontBorderColor());
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -144,14 +148,15 @@ public class PatientLogin extends javax.swing.JInternalFrame {
                 .addComponent(jLabel9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
+                .addGap(54, 54, 54)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 478, Short.MAX_VALUE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE))
-                .addGap(71, 71, 71))
+                    .addComponent(jScrollPane2))
+                .addGap(49, 49, 49))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,13 +168,13 @@ public class PatientLogin extends javax.swing.JInternalFrame {
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
-                .addGap(60, 60, 60)
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 718, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -185,7 +190,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 949, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 953, Short.MAX_VALUE)
                 .addGap(25, 25, 25))
         );
 
@@ -200,7 +205,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1004, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -209,7 +214,7 @@ public class PatientLogin extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            new CreatePDF().writeInPDF(new CreatePDF().arrangeParagraphLines(this.getTotalRowArray()),
+            new CreatePDF().writeInPDF(this.arrangeData(),
                     "C:\\Users\\DELL\\Desktop\\Patient Login Credential.pdf");
             JOptionPane.showMessageDialog(null, "Successfully Created the PDF ");
         } catch (Exception e) {
@@ -227,10 +232,11 @@ public class PatientLogin extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_jButton2ActionPerformed
     public String arrangeData() {
-        String strParagraphContent = String.format("<html><table border=\"1\"><tr><th>NAME</th><th>USER NAME</th><th>PASSWORD</th></tr>");
+        String strParagraphContent = "PATIENT LOGIN CREDENTIAL\n";
         for (String line : this.getTotalRowArray()) {
             String[] lineDetails = line.split("~");
-            strParagraphContent += "<tr><td>" + lineDetails[3] + "</td><td>" + lineDetails[1] + "</td><td>" + lineDetails[2] + "</td></tr>";
+            strParagraphContent += "\n------------------------------------------------------------------------\n"
+                    + "NAME:" + lineDetails[3] + "\nUSER NAME:" + lineDetails[1] + "\nPASSWORD:" + lineDetails[2];
         }
         return strParagraphContent;
     }
@@ -238,13 +244,13 @@ public class PatientLogin extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
