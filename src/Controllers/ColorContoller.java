@@ -2,7 +2,7 @@ package Controllers;
 
 import java.awt.Color;
 import javax.swing.JButton;
-
+//ColorContoller.java
 public class ColorContoller {
 
     private Color panelBackgroundColor;
@@ -38,7 +38,7 @@ public class ColorContoller {
         return this.fontBorderColor;
     }
 
-    public void setColors() {
+    public void setColors() {//store the colors in veriables
         if (this.getModeNumber() % 2 == 0) {
 
             this.setFontBorderColor(new Color(255, 255, 255));
@@ -51,11 +51,11 @@ public class ColorContoller {
 
     }
 
-    public void selectColorMode() {
+    public void selectColorMode() {//select the color theme by reading the file
         this.setModeNumber(new ReadFile().getNumber("src\\TxtFiles\\Colors.mov"));
     }
 
-    public void setUpButton(JButton button) {
+    public void setUpButton(JButton button) {//set the theme button text and icon
         if (this.getModeNumber() % 2 == 0) {
             button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_sun_30px.png")));
             button.setText("Light Theme                     ");

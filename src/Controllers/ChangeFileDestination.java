@@ -6,10 +6,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-
+//ChangeFileDestination.java
 public class ChangeFileDestination {
 
-    public void copydir(File sourceFile, File duplicateFile) {
+    public void copydir(File sourceFile, File duplicateFile) {//change file path
 
         try {
             if (sourceFile.isDirectory()) {// if directory not exists, create it

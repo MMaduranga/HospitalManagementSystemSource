@@ -6,7 +6,8 @@ import Controllers.ResizeInternalFrame;
 import java.awt.Color;
 import Controllers.JpanelGradient;
 import Controllers.WriteFile;
-import View.CommonFrames.ViewComplain;
+import View.CommonFrames.AddPatient;
+import View.CommonFrames.Help;
 import View.CommonFrames.WelcomeFrameArt;
 import View.LoginInterface.Login;
 import java.io.File;
@@ -24,13 +25,8 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         setLogo();
         new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
     }
-    Thread resizeFrame = new Thread() {//make the frame resizeable
-        public void run() {
 
-        }
-    };
-
-    public void setLogo() {
+    public void setLogo() {//set hospital logo to button
         selectColors.setUpButton(jButton16);
         jLabel1.setIcon(new ImageController().setImageSize("src\\Logos\\logo2darkbg.png", 60, 240));
     }
@@ -56,7 +52,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
 
     }
 
-    public void clearDesktopPane(JButton button) {
+    public void clearDesktopPane(JButton button) {//clear desktopPane
         setBackgroundColor(new Color(0, 0, 0, 0));
         jDesktopPane1.removeAll();
         jDesktopPane1.repaint();
@@ -306,6 +302,11 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_ask_question_30px.png"))); // NOI18N
         jButton15.setText("Help                                 ");
         jButton15.setBorder(null);
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
 
         jButton16.setBackground(new Color(0,0,0,0));
         jButton16.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -489,7 +490,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (this.getExtendedState() != AdminDashboardInterface.MAXIMIZED_BOTH) {
+        if (this.getExtendedState() != AdminDashboardInterface.MAXIMIZED_BOTH) {//make the frame resizeable 
             this.setExtendedState(AdminDashboardInterface.MAXIMIZED_BOTH);
         } else {
             this.setExtendedState(AdminDashboardInterface.NORMAL);
@@ -501,7 +502,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
-
+//make admin view Complaint frame visible
         clearDesktopPane(jButton7);
 
         new ResizeInternalFrame(new AdminViewComplaint(selectColors.getPanelBackgroundColor(),
@@ -513,7 +514,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-
+//make admin view appoinment frame visible
         clearDesktopPane(jButton6);
 
         new ResizeInternalFrame(new AdminViewAppointment1(selectColors.getPanelBackgroundColor(),
@@ -521,7 +522,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
-
+//make admins view patient frame visible
         clearDesktopPane(jButton8);
 
         new ResizeInternalFrame(new AdminViewPatient(selectColors.getPanelBackgroundColor(),
@@ -530,7 +531,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
-
+//make admins add receptionist frame visible
         clearDesktopPane(jButton11);
 
         new ResizeInternalFrame(new Admin_AddReceptionist(selectColors.getPanelBackgroundColor(),
@@ -538,14 +539,14 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-
+//make admins add patient frame visible
         clearDesktopPane(jButton9);
-        new ResizeInternalFrame(new ViewComplain("Admin", selectColors.getPanelBackgroundColor(),
+        new ResizeInternalFrame(new AddPatient("Admin", selectColors.getPanelBackgroundColor(),
                 selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
-
+//make admins add medical officer frame visible
         clearDesktopPane(jButton10);
 
         new ResizeInternalFrame(new Admin_AddMedicalOfficer(selectColors.getPanelBackgroundColor(),
@@ -553,7 +554,7 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
-        new File("src\\TxtFiles\\SavedUser.mov").delete();
+        new File("src\\TxtFiles\\SavedUser.mov").delete();//make the admins dashboard invisible and make the login frame visible
         this.dispose();
         new Login().setVisible(true);
 
@@ -564,21 +565,21 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
-        clearDesktopPane(jButton18);
+        clearDesktopPane(jButton18);//make the admins view receptionist frame visible
 
         new ResizeInternalFrame(new AdminViewReceptionistj(selectColors.getPanelBackgroundColor(),
                 selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton18MouseClicked
 
     private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
-        clearDesktopPane(jButton19);
+        clearDesktopPane(jButton19);//make the admins view medical officer frame visible
 
         new ResizeInternalFrame(new AdminViewMedicalOfficerj(selectColors.getPanelBackgroundColor(),
                 selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton19MouseClicked
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
-        clearDesktopPane(jButton14);
+        clearDesktopPane(jButton14);//make the admins dropdown list editing frame visible
 
         new ResizeInternalFrame(new DropdownListEditor(selectColors.getPanelBackgroundColor(),
                 selectColors.getFontBorderColor()), jDesktopPane1);
@@ -589,21 +590,21 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
-        clearDesktopPane(jButton13);
+        clearDesktopPane(jButton13);//make the admins patient login credentials frame visible
 
         new ResizeInternalFrame(new PatientLogin(selectColors.getPanelBackgroundColor(),
                 selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-        clearDesktopPane(jButton5);
+        clearDesktopPane(jButton5);//make the admins appoinment report details frame visible
 
         new ResizeInternalFrame(new AppoinmentReport(selectColors.getPanelBackgroundColor(),
                 selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
-        clearDesktopPane(jButton12);
+        clearDesktopPane(jButton12);//make the admins userlog details frame visible
 
         new ResizeInternalFrame(new UserLog(selectColors.getPanelBackgroundColor(),
                 selectColors.getFontBorderColor()), jDesktopPane1);
@@ -615,16 +616,23 @@ public class AdminDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        int setX = evt.getXOnScreen();
+        int setX = evt.getXOnScreen();//make the frame draggable
         int setY = evt.getYOnScreen();
         this.setLocation(setX - x, setY - y);
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
-        new WriteFile().setNumber("src\\TxtFiles\\Colors.mov");
+        new WriteFile().setNumber("src\\TxtFiles\\Colors.mov");//change the background color theme
         this.dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_jButton16MouseClicked
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+        clearDesktopPane(jButton15);//make the admins help details frame visible
+
+        new ResizeInternalFrame(new Help("Admin",selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
+    }//GEN-LAST:event_jButton15MouseClicked
 
     /**
      * @param args the command line arguments

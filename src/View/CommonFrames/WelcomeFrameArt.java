@@ -30,7 +30,7 @@ public class WelcomeFrameArt extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 26, 51)));
+        jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 216, 255)));
         jLabel1.setMinimumSize(new java.awt.Dimension(1090, 960));
         jLabel1.setPreferredSize(new java.awt.Dimension(1090, 960));
 
@@ -60,7 +60,7 @@ public class WelcomeFrameArt extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -71,7 +71,7 @@ public class WelcomeFrameArt extends javax.swing.JInternalFrame {
         setImage();
     }//GEN-LAST:event_jPanel1ComponentResized
     public void setImage() {
-        ImageIcon welcomeFrameArt = new ImageIcon("P:\\NetBeans\\HospitalManagementSystem\\src\\Logos\\7c075451aa96f9c01ee1b9118203df1d-removebg-preview.png");
+        ImageIcon welcomeFrameArt = new ImageIcon("P:\\NetBeans\\HospitalManagementSystem\\src\\Logos\\unnamed.jpg");
         Image resizeImage = welcomeFrameArt.getImage();
 
         Image newResizedImage = resizeImage.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);

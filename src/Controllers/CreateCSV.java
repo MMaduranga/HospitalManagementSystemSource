@@ -3,10 +3,10 @@ package Controllers;
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-
+//CreateCSV.java
 public class CreateCSV{
 
-    public void writeInCSVFile(File fileLocation, ArrayList<String> totalLinesInFile) {
+    public void writeInCSVFile(File fileLocation, ArrayList<String> totalLinesInFile) {//arrange the data to write in csv file
         try {
             PrintWriter write = new PrintWriter(fileLocation);
             String strParagraphContent = String.format("%s,%s,%s,%s\n", "NO", "NAME", "USER NAME", "PASSWORD");
@@ -21,7 +21,7 @@ public class CreateCSV{
         }
     }
 
-    public void writeInCSVFile(File fileLocation, String totalLines) {
+    public void writeInCSVFile(File fileLocation, String totalLines) {//write in csv file
         try {
             PrintWriter write = new PrintWriter(fileLocation);
 

@@ -4,10 +4,10 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 import javax.swing.JOptionPane;
-
+//ImageController.java
 public class ImageController {
 
-    public void previewImage(String imagePath) {
+    public void previewImage(String imagePath) {//show image preview
         if (imagePath.length() != 0) {
             ImageIcon image = new ImageIcon(imagePath);
             Image resize = image.getImage();
@@ -18,7 +18,7 @@ public class ImageController {
             JOptionPane.showMessageDialog(null, "Select a Image");
         }
     }
-      public ImageIcon setImageSize(String imagePath,int height,int width) {
+      public ImageIcon setImageSize(String imagePath,int height,int width) {//resize the image and return it
         if (imagePath.length() != 0) {
             ImageIcon image = new ImageIcon(imagePath);
             Image resize = image.getImage();

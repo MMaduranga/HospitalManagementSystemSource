@@ -6,11 +6,9 @@ import java.awt.Color;
 import Controllers.JpanelGradient;
 import Controllers.ResizeInternalFrame;
 import Controllers.WriteFile;
+import View.CommonFrames.Help;
 import View.CommonFrames.WelcomeFrameArt;
 import View.LoginInterface.Login;
-
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
 import java.io.File;
 
 import javax.swing.JButton;
@@ -28,14 +26,14 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
 
     }
 
-    public void setLogo() {
-        jLabel1.setIcon(new ImageController().setImageSize("src\\Logos\\logo2darkbg.png", 60, 240));
-    }
-
     public MedicalOfficerDashboardInterface(String medicalofficerDetails) {
 
         startUp();
         this.setMedicalofficerDetails(medicalofficerDetails);
+    }
+
+    public void setLogo() {//set the hospital logo to lable
+        jLabel1.setIcon(new ImageController().setImageSize("src\\Logos\\logo2darkbg.png", 60, 240));
     }
 
     public void setMedicalofficerDetails(String medicalofficerDetails) {
@@ -46,7 +44,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         return this.medicalofficerDetails;
     }
 
-    public void startUp() {
+    public void startUp() {//startup functions
         initComponents();
         selectColors.setUpButton(jButton16);
         setLogo();
@@ -183,6 +181,11 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_ask_question_30px.png"))); // NOI18N
         jButton15.setText("Help                                 ");
         jButton15.setBorder(null);
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton15ActionPerformed(evt);
@@ -305,37 +308,14 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();//close the programme
     }//GEN-LAST:event_jButton1ActionPerformed
-    public void resizeInternalFrame(javax.swing.JInternalFrame internalFrame) {//to create resizeable j internal frames
-        jDesktopPane1.setOpaque(true);
 
-        internalFrame.setSize(jDesktopPane1.getSize());
-
-        jDesktopPane1.addComponentListener(new ComponentListener() {
-            public void componentResized(ComponentEvent e) {
-
-                internalFrame.setSize(jDesktopPane1.getSize());
-            }
-
-            public void componentMoved(ComponentEvent e) {
-            }
-
-            public void componentShown(ComponentEvent e) {
-            }
-
-            public void componentHidden(ComponentEvent e) {
-            }
-        });
-
-        jDesktopPane1.add(internalFrame).setVisible(true);
-
-    }
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.setExtendedState(MedicalOfficerDashboardInterface.ICONIFIED);//minimize the frame
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (this.getExtendedState() != MedicalOfficerDashboardInterface.MAXIMIZED_BOTH) {
+        if (this.getExtendedState() != MedicalOfficerDashboardInterface.MAXIMIZED_BOTH) {// make the frame resizeable
             this.setExtendedState(MedicalOfficerDashboardInterface.MAXIMIZED_BOTH);
         } else {
             this.setExtendedState(MedicalOfficerDashboardInterface.NORMAL);
@@ -351,7 +331,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-
+//make the medical officer profile visible
         clearDesktopPane(jButton4);
 
         try {
@@ -371,19 +351,19 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
-        new File("src\\TxtFiles\\SavedUser.mov").delete();
+        new File("src\\TxtFiles\\SavedUser.mov").delete();// make the medical officer dashboard invisible and login frame visible
         this.dispose();
         new Login().setVisible(true);
 
     }//GEN-LAST:event_jButton17MouseClicked
     public void clearDesktopPane(JButton button) {
-        setBackgroundColor(new Color(0, 0, 0, 0));
+        setBackgroundColor(new Color(0, 0, 0, 0));//clear the desktoppane 
         jDesktopPane1.removeAll();
         jDesktopPane1.repaint();
         button.setBackground(new Color(0, 0, 0, 100));
     }
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-
+//make medical officers view appoinment frame visible 
         clearDesktopPane(jButton6);
 
         new ResizeInternalFrame(new ViewAppointmentMedicalOfficer1(selectColors.getPanelBackgroundColor(),
@@ -392,7 +372,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        int setX = evt.getXOnScreen();
+        int setX = evt.getXOnScreen();// make the frame draggable
         int setY = evt.getYOnScreen();
         this.setLocation(setX - x, setY - y);
     }//GEN-LAST:event_jPanel1MouseDragged
@@ -403,7 +383,7 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
-        new WriteFile().setNumber("src\\TxtFiles\\Colors.mov");
+        new WriteFile().setNumber("src\\TxtFiles\\Colors.mov");//change the color the of the programme
         this.dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_jButton16MouseClicked
@@ -411,6 +391,13 @@ public class MedicalOfficerDashboardInterface extends javax.swing.JFrame {
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+              clearDesktopPane(jButton15);
+
+        new ResizeInternalFrame(new Help("Mecidal Officer",selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
+    }//GEN-LAST:event_jButton15MouseClicked
 
     /**
      * @param args the command line arguments

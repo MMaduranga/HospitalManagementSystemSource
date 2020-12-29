@@ -2,10 +2,10 @@ package Controllers;
 
 import java.io.File;
 import java.util.regex.*;
-
+//CheckValidation.java
 public class CheckValidation {
 
-    public boolean checkIdNumber(String idNo, String filelocation, int location) {
+    public boolean checkIdNumber(String idNo, String filelocation, int location) {//check the validation of id number using id number format
 
         FileSecurity fileSecurity = new FileSecurity(filelocation);
         String[] objectArrayExist = new ReadFile().findObjLine(idNo, new File(fileSecurity.setFilePathToTxt()), location);
@@ -21,7 +21,7 @@ public class CheckValidation {
         }
     }
 
-    public boolean checkPhoneNumber(String phoneNo, String filelocation, int location) {
+    public boolean checkPhoneNumber(String phoneNo, String filelocation, int location) {//check validation of phone number using phone number format pattern
        FileSecurity fileSecurity = new FileSecurity(filelocation);
         String[] objectArrayExist = new ReadFile().findObjLine(phoneNo, new File(fileSecurity.setFilePathToTxt()), location);
         if (objectArrayExist == null) {
@@ -36,7 +36,7 @@ public class CheckValidation {
         }
     }
 
-    public boolean checkUserName(String userName, String filelocation, int location) {
+    public boolean checkUserName(String userName, String filelocation, int location) {//check validation of user name by checking user name already exsits
         FileSecurity fileSecurity = new FileSecurity(filelocation);
         String[] objectArrayExist = new ReadFile().findObjLine(userName, new File(fileSecurity.setFilePathToTxt()), location);
         if (objectArrayExist == null) {
@@ -48,7 +48,7 @@ public class CheckValidation {
         }
     }
 
-    public boolean checkReferenceNo(String referenceNo, String filelocation, int location) {
+    public boolean checkReferenceNo(String referenceNo, String filelocation, int location) {//check the validination of reference number by checking reference number already exsits
         FileSecurity fileSecurity = new FileSecurity(filelocation);
         String[] objectArrayExist = new ReadFile().findObjLine(referenceNo, new File(fileSecurity.setFilePathToTxt()), location);
         if (objectArrayExist == null) {
@@ -59,7 +59,7 @@ public class CheckValidation {
             return false;
         }
     }
-    public boolean checkEmailId(String email, String filelocation, int location) {
+    public boolean checkEmailId(String email, String filelocation, int location) {//check the validation of email address using email address format
         FileSecurity fileSecurity = new FileSecurity(filelocation);
         String[] objectArrayExist = new ReadFile().findObjLine(email, new File(fileSecurity.setFilePathToTxt()), location);
         if (objectArrayExist == null) {

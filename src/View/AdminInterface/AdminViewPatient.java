@@ -800,7 +800,7 @@ public class AdminViewPatient extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        checkValidation("");
+        checkValidation("~none");
         setTextFieldText(blankArray);
     }//GEN-LAST:event_jButton4ActionPerformed
     public void checkValidation(String appendToEnd) {

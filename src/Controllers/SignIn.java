@@ -121,7 +121,7 @@ public class SignIn {
         }
     }
 
-    public JFrame chooseFrame(String userDetails) {
+    public JFrame chooseFrame(String userDetails) {//choose the usertype and parameter
         JFrame frame = null;
         try {
             if (this.getUserMode().equals("Admin")) {
@@ -142,7 +142,7 @@ public class SignIn {
         return frame;
     }
 
-    public String selectUserMode() {
+    public String selectUserMode() {//select the user mode and find the file path
         try {
             if (this.getUserMode().equals("Admin")) {
                 return this.getFilePath()[0];

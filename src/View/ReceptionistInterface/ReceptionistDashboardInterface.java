@@ -7,6 +7,7 @@ import Controllers.JpanelGradient;
 import Controllers.ResizeInternalFrame;
 import Controllers.WriteFile;
 import View.CommonFrames.AddPatient;
+import View.CommonFrames.Help;
 import View.CommonFrames.WelcomeFrameArt;
 import View.LoginInterface.Login;
 import java.awt.Color;
@@ -36,9 +37,11 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     public String getReceptionistDetails() {
         return this.receptionistDetails;
     }
-  public void setLogo() {
+
+    public void setLogo() {//set the hospital logo
         jLabel1.setIcon(new ImageController().setImageSize("src\\Logos\\logo2darkbg.png", 60, 240));
     }
+
     public void setBackgroundColor(Color color) {
 
         jButton4.setBackground(color);//set background null
@@ -59,7 +62,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         jButton19.setBackground(color);//set background null
     }
 
-    public void startUp() {
+    public void startUp() {//this methods will run startup
         initComponents();
         selectColors.setUpButton(jButton16);
         setLogo();
@@ -360,6 +363,11 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
         jButton15.setText("Help                                ");
         jButton15.setBorder(null);
         jButton15.setPreferredSize(new java.awt.Dimension(271, 43));
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton15ActionPerformed(evt);
@@ -529,7 +537,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (this.getExtendedState() != ReceptionistDashboardInterface.MAXIMIZED_BOTH) {
+        if (this.getExtendedState() != ReceptionistDashboardInterface.MAXIMIZED_BOTH) {//make the frame resizeable
             this.setExtendedState(ReceptionistDashboardInterface.MAXIMIZED_BOTH);
         } else {
             this.setExtendedState(ReceptionistDashboardInterface.NORMAL);
@@ -553,12 +561,13 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
-        new File("src\\TxtFiles\\SavedUser.mov").delete();
+        new File("src\\TxtFiles\\SavedUser.mov").delete();//make the receptionist frame invisible and login frame visible
         this.dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_jButton17MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        //make the receptionist add visitor frame visible
         try {
             clearDesktopPane(jButton5);
 
@@ -569,11 +578,11 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-
+        //make the receptionist  add patient frame visible
         try {
             clearDesktopPane(jButton9);
 
-            new ResizeInternalFrame(new AddPatient("Receptionist",selectColors.getPanelBackgroundColor(),
+            new ResizeInternalFrame(new AddPatient("Receptionist", selectColors.getPanelBackgroundColor(),
                     selectColors.getFontBorderColor()), jDesktopPane1);
         } catch (Exception e) {
         }
@@ -581,7 +590,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
-
+        //make the receptionist add complaint frame visible
         clearDesktopPane(jButton14);
 
         new ResizeInternalFrame(new ReceptionistAddComplaint(selectColors.getPanelBackgroundColor(),
@@ -589,7 +598,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton14MouseClicked
 
     private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
-
+        //make the receptionist  add appoinment frame visible 
         clearDesktopPane(jButton18);
 
         new ResizeInternalFrame(new ReceptionistAddAppointment(selectColors.getPanelBackgroundColor(),
@@ -597,7 +606,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton18MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
-
+        //make the receptionist  add dispatch mail frame visible
         clearDesktopPane(jButton11);
 
         new ResizeInternalFrame(new ReceptionistAddDispatchMail(selectColors.getPanelBackgroundColor(),
@@ -606,7 +615,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11MouseClicked
 
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
-
+        //make the receptionist add received mail frame visible
         clearDesktopPane(jButton12);
 
         new ResizeInternalFrame(new ReceptionistAddReceivedMail(selectColors.getPanelBackgroundColor(),
@@ -614,7 +623,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
-
+        //make the receptionist  view complaint frame visible
         clearDesktopPane(jButton7);
 
         new ResizeInternalFrame(new ViewComplain("Receptionist", selectColors.getPanelBackgroundColor(),
@@ -622,7 +631,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
-
+        //make the receptionist  view patient frame visible 
         clearDesktopPane(jButton8);
 
         new ResizeInternalFrame(new ReceptionistViewPatientj(selectColors.getPanelBackgroundColor(),
@@ -630,7 +639,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-
+//make the receptionist view appoinment frame visible
         clearDesktopPane(jButton6);
 
         new ResizeInternalFrame(new ReceptionistViewAppointment1(selectColors.getPanelBackgroundColor(),
@@ -638,7 +647,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
-
+        //make the receptionist  view visitor frame visible
         clearDesktopPane(jButton10);
 
         new ResizeInternalFrame(new ReceptionistViewVisitorj1(selectColors.getPanelBackgroundColor(),
@@ -646,7 +655,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
-
+        //make the receptionist  view received mail frame visible
         clearDesktopPane(jButton13);
 
         new ResizeInternalFrame(new ReceptionistViewReceived(selectColors.getPanelBackgroundColor(),
@@ -654,14 +663,14 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
-        clearDesktopPane(jButton19);
+        clearDesktopPane(jButton19);        //make the receptionist view dispatch mail frame visible
 
         new ResizeInternalFrame(new ReceptionistViewDispachMail(selectColors.getPanelBackgroundColor(),
                 selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton19MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        clearDesktopPane(jButton4);
+        clearDesktopPane(jButton4);        //make the receptionist profile frame visible
 
         new ResizeInternalFrame(new ReceptionistProfile(this.getReceptionistDetails(), jDesktopPane1, selectColors.getPanelBackgroundColor(),
                 selectColors.getFontBorderColor()), jDesktopPane1);
@@ -673,7 +682,7 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        int setX = evt.getXOnScreen();
+        int setX = evt.getXOnScreen();//make the frame draggable
         int setY = evt.getYOnScreen();
         this.setLocation(setX - x, setY - y);
     }//GEN-LAST:event_jPanel1MouseDragged
@@ -684,20 +693,27 @@ public class ReceptionistDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
-        new WriteFile().setNumber("src\\TxtFiles\\Colors.mov");
+        new WriteFile().setNumber("src\\TxtFiles\\Colors.mov");//change the color theme of programme
         this.dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_jButton16MouseClicked
 
     private void jButton20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton20MouseClicked
-   clearDesktopPane(jButton20);
+        clearDesktopPane(jButton20);        //make the receptionist approved appoinmnet details frame visible
 
         new ResizeInternalFrame(new ApprovedAppoinmentDetails(selectColors.getPanelBackgroundColor(),
                 selectColors.getFontBorderColor()), jDesktopPane1);
     }//GEN-LAST:event_jButton20MouseClicked
 
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+    clearDesktopPane(jButton15);        //make the receptionist approved appoinmnet details frame visible
+
+        new ResizeInternalFrame(new Help("Receptionist",selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
+    }//GEN-LAST:event_jButton15MouseClicked
+
     public void clearDesktopPane(JButton button) {
-        setBackgroundColor(new Color(0, 0, 0, 0));
+        setBackgroundColor(new Color(0, 0, 0, 0));//clear the desktoppane
         jDesktopPane1.removeAll();
         jDesktopPane1.repaint();
         button.setBackground(new Color(0, 0, 0, 100));
