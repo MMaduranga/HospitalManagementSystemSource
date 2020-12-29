@@ -6,7 +6,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 
-public class CreatePDF {
+public class CreatePDF{
   public String arrangeParagraphLines(ArrayList<String> totalLinesInFile) {
         String strParagraphContent = String.format("%30s %30s %30s\n\n", "NAME", "USER NAME", "PASSWORD");
         for (int count = 0; count < totalLinesInFile.size(); count++) {

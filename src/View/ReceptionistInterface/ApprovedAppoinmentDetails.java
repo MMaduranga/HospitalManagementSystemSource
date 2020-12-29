@@ -1,6 +1,6 @@
 package View.ReceptionistInterface;
 
-import Controllers.CreateCSV;
+
 import Controllers.CreatePDF;
 import Controllers.JpanelGradient;
 import Controllers.ReadFile;
@@ -23,6 +23,7 @@ public class ApprovedAppoinmentDetails extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI basicinternalform = (BasicInternalFrameUI) this.getUI();
         basicinternalform.setNorthPane(null);
+        
         addDataToTextArea();
     }
 
@@ -52,9 +53,9 @@ public class ApprovedAppoinmentDetails extends javax.swing.JInternalFrame {
 
     public void addDataToTextArea() {
 
-        this.setTotalRowArray(new ReadFile().readTotalFile(new File("src\\TxtFiles\\Pateint.mov")));
+        this.setTotalRowArray(new ReadFile().readTotalFile(new File("src\\TxtFiles\\Appoinment.mov")));
 
-        jLabel1.setText(arrangeData());
+        jTextArea1.setText(arrangeData());
 
     }
 
@@ -70,8 +71,8 @@ public class ApprovedAppoinmentDetails extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setOpaque(true);
 
@@ -87,7 +88,7 @@ public class ApprovedAppoinmentDetails extends javax.swing.JInternalFrame {
 
         jButton1.setBackground(new java.awt.Color(0, 26, 51));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setForeground(new java.awt.Color(0, 216, 255));
         jButton1.setText("Print PDF");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,7 +98,7 @@ public class ApprovedAppoinmentDetails extends javax.swing.JInternalFrame {
 
         jButton2.setBackground(new java.awt.Color(0, 26, 51));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(0, 216, 255));
         jButton2.setText("Export PDF");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,10 +124,14 @@ public class ApprovedAppoinmentDetails extends javax.swing.JInternalFrame {
         jLabel9.setForeground(new java.awt.Color(0, 153, 204));
         jLabel9.setText("Approved Appoinment Details");
 
-        jLabel1.setBackground(new Color(0,0,0,0));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setViewportView(jLabel1);
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(this.getPanelBackgroundColor());
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jTextArea1.setForeground(this.getFontBorderColor());
+        jTextArea1.setRows(5);
+        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane2.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -136,23 +141,25 @@ public class ApprovedAppoinmentDetails extends javax.swing.JInternalFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jSeparator1)
                 .addGap(22, 22, 22))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(77, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(71, 71, 71))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9)
+                        .addGap(0, 334, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jScrollPane2)))
+                .addGap(46, 46, 46))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,9 +171,9 @@ public class ApprovedAppoinmentDetails extends javax.swing.JInternalFrame {
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -186,7 +193,7 @@ public class ApprovedAppoinmentDetails extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 957, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 961, Short.MAX_VALUE)
                 .addGap(25, 25, 25))
         );
 
@@ -201,7 +208,7 @@ public class ApprovedAppoinmentDetails extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1008, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -209,43 +216,54 @@ public class ApprovedAppoinmentDetails extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    
         try {
-            new CreatePDF().writeInPDF(new CreatePDF().arrangeParagraphLines(this.getTotalRowArray()),
-                    "C:\\Users\\DELL\\Desktop\\Patient Login Credential.pdf");
-            JOptionPane.showMessageDialog(null, "Successfully Created the PDF ");
+            jTextArea1.print();
+          JOptionPane.showMessageDialog(null, "Success");
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Fail");
         }
-
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        try {
-            new CreateCSV().writeInCSVFile(new File("C:\\Users\\DELL\\Desktop\\Patient Login Credential.csv"), this.getTotalRowArray());
-            JOptionPane.showMessageDialog(null, "Successfully Created the CSV ");
+       try {
+            new CreatePDF().writeInPDF(arrangeData(),
+                    "C:\\Users\\DELL\\Desktop\\Approved Appoinment Details.pdf");
+            JOptionPane.showMessageDialog(null, "Successfully Created the PDF in Desktop");
         } catch (Exception e) {
+              JOptionPane.showMessageDialog(null, "Fail");
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
     public String arrangeData() {
-        String strParagraphContent = String.format("<html><table border=\"1\"><tr><th>NAME</th><th>USER NAME</th><th>PASSWORD</th></tr>");
-        for (String line : this.getTotalRowArray()) {
-            String[] lineDetails = line.split("~");
-            strParagraphContent += "<tr><td>" + lineDetails[3] + "</td><td>" + lineDetails[1] + "</td><td>" + lineDetails[2] + "</td></tr>";
+  String approvedAppoinmentDetails="Approved Appoinment Details\n";
+  String[] appoinmentDetails;
+        for (int count = 0; count < this.getTotalRowArray().size(); count++) {
+          appoinmentDetails=this.getTotalRowArray().get(count).split("~");
+          if(appoinmentDetails[1].equalsIgnoreCase("Approved")){
+          approvedAppoinmentDetails+="\n------------------------------------------------------------------------\n"
+                  + "Appoinment No:"+appoinmentDetails[6]+"\nPatient Name:"
+                  +appoinmentDetails[3]+"\nDoctor:"+appoinmentDetails[2]+"\nAppoinment Date:"+
+                  appoinmentDetails[5]+"\nAppoinment Time:"+appoinmentDetails[7]+"\nSymptoms:"
+                  +appoinmentDetails[4];
+         
+          }
         }
-        return strParagraphContent;
+    
+        return approvedAppoinmentDetails;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

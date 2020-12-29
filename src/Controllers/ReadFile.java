@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import Controllers.WriteFile;
 
-public class ReadFile {
+public class ReadFile   {
 
     String line;
 
