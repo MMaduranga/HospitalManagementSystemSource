@@ -6,17 +6,20 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import Controllers.WriteFile;
+//ReadFile.java
 
-public class ReadFile   {
+public class ReadFile {
 
     String line;
 
     public ReadFile() {
     }
-public ReadFile(String strLine) {
-    this.line=strLine;
+
+    public ReadFile(String strLine) {//store the parametered data 
+        this.line = strLine;
     }
-    public String[] findObjLine(String primaryKey, File filelocation, int location) {
+
+    public String[] findObjLine(String primaryKey, File filelocation, int location) {//read the file and select the correct line and return the line details as a array
         String[] selectedObjDetails = null;
 
         try {
@@ -63,7 +66,7 @@ public ReadFile(String strLine) {
         return selectedObjDetails;
     }
 
-    public boolean deleteObj(File fileLocation) {
+    public boolean deleteObj(File fileLocation) {//delete the file and rewrite the data in it by skiping specified line
         ArrayList<String> linesArray = new ArrayList<>();
 
         try {
@@ -93,7 +96,7 @@ public ReadFile(String strLine) {
         }
     }
 
-    public int getNumber(String filePath) {
+    public int getNumber(String filePath) {//read the file and return a number
         int intStaffId = 0;
         try {
             FileSecurity fileSecurity = new FileSecurity(filePath);
@@ -109,7 +112,7 @@ public ReadFile(String strLine) {
         return intStaffId;
     }
 
-    public ArrayList<String> getItemsForDropdownList(File fileLocation) {
+    public ArrayList<String> getItemsForDropdownList(File fileLocation) {//read the file for dropdown list and return the data in arrylist
         String strDropDownListItems = "";
         String[] strDropDownListItemsArray;
         ArrayList<String> dropDownlistArray = new ArrayList<>();
@@ -135,7 +138,7 @@ public ReadFile(String strLine) {
         return dropDownlistArray;
     }
 
-    public String readLoginSavedUserAndColorFiles(String filePath) {
+    public String readLoginSavedUserAndColorFiles(String filePath) {//read the user saved login file 
         try {
             FileSecurity fileSecurity = new FileSecurity(filePath);
             FileReader readUserFile = new FileReader(fileSecurity.setFilePathToTxt());//open users file to read
@@ -150,9 +153,9 @@ public ReadFile(String strLine) {
         }
     }
 
-    public ArrayList<String> readTotalFile(File fileLocation) {
+    public ArrayList<String> readTotalFile(File fileLocation) {//read the total file and return the total file lines
         ArrayList<String> totalRowsArray = new ArrayList<>();
-     
+
         try {
             FileSecurity fileSecurity = new FileSecurity(fileLocation.toString());
             FileReader readUserFile = new FileReader(fileSecurity.setFilePathToTxt());//open users file to read

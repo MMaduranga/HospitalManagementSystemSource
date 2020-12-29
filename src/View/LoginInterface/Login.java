@@ -364,22 +364,9 @@ public class Login extends javax.swing.JFrame {
             SignIn signIn = new SignIn(strUserName, strPassword, strUserMode);
             JFrame frame = signIn.compare();
             if (frame != null) {
-                Thread writeInUserLoginfile = new Thread() {
-                    public void run() {
-                        new WriteFile().UserLog(strUserName, strUserMode);
-                    }
 
-                };
-                Thread showuserDashboard = new Thread() {
-                    public void run() {
-                        if (jCheckBox1.isSelected()) {
-                            setFrameVisible(frame);
-                        }
-                    }
-
-                };
-                showuserDashboard.start();
-                writeInUserLoginfile.start();
+                new WriteFile().UserLog(strUserName, strUserMode);
+                setFrameVisible(frame);
 
             } else {
                 JOptionPane.showMessageDialog(null, "Invalid UserName or Password Please Check Again", "", 3);//if user name or password is invalid shaow a message
@@ -392,23 +379,20 @@ public class Login extends javax.swing.JFrame {
         String strUserName = jTextField1.getText();
         String strPassword = jTextField2.getText();
         String strUserMode = jComboBox1.getSelectedItem().toString();
-        Thread saveUserDetails = new Thread() {//remember the user information to login again
-            public void run() {
-                if (jCheckBox1.isSelected()) {
-                    new WriteFile().writeInSavedUserFile(strUserName + "~" + strPassword + "~"
-                            + strUserMode, new File("src\\TxtFiles\\SavedUser.mov"));
-                }
+        //remember the user information to login again
+
+        try {
+            if (jCheckBox1.isSelected()) {
+                new WriteFile().writeInSavedUserFile(strUserName + "~" + strPassword + "~"
+                        + strUserMode, new File("src\\TxtFiles\\SavedUser.mov"));
             }
 
-        };
-        Thread executeUserlogin = new Thread() {//remember the user information to login again
-            public void run() {
-                executeLogin(strUserName, strPassword, strUserMode);
-            }
+            executeLogin(strUserName, strPassword, strUserMode);
+        } catch (Exception e) {
 
-        };
-        saveUserDetails.start();
-        executeUserlogin.start();
+        }
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
     public void setFrameVisible(JFrame frame) {//make the users dashboard visible true
 

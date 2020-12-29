@@ -6,10 +6,10 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import javax.swing.JFileChooser;
 import javax.swing.JTextField;
-
+//SimpleMethodsController.java
 public class SimpleMethodsController {
 
-    public File fileChooser() {
+    public File fileChooser() {//set visible a file chooser
         JFileChooser choosefile = new JFileChooser();
 
         choosefile.showOpenDialog(null);
@@ -19,7 +19,7 @@ public class SimpleMethodsController {
 
    
 
-    public void changeFilesLocation(JTextField textField) {
+    public void changeFilesLocation(JTextField textField) {//change the users uploading file location by making a copy of it
         String strPath = textField.getText();
 
         textField.setText(this.changeFilesLocation(strPath));
@@ -34,7 +34,7 @@ public class SimpleMethodsController {
         return "src\\UsersDocuments\\" + strPathArray[strPathArray.length - 1];
     }
 
-    public LocalDate typeCastDateToLocalDate(com.toedter.calendar.JDateChooser datechooser) {
+    public LocalDate typeCastDateToLocalDate(com.toedter.calendar.JDateChooser datechooser) {//change the type of date to local date
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return LocalDate.parse(dateFormat.format(datechooser.getDate()));
     }

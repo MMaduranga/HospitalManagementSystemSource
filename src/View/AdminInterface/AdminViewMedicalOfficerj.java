@@ -1072,7 +1072,7 @@ public class AdminViewMedicalOfficerj extends javax.swing.JInternalFrame {
         simpleMethods.changeFilesLocation(jTextField13);
         simpleMethods.changeFilesLocation(jTextField2);
 
-        checkValidation("");
+        checkValidation("~none");
         setTextFieldText(blankArray);
     }//GEN-LAST:event_jButton12ActionPerformed
     public void checkValidation(String appendToEnd) {

@@ -3,8 +3,9 @@ package Controllers;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
+//DropDownListController.java
 
-public class DropDownListController  {
+public class DropDownListController {
 
     ReadFile readFileObj;
 
@@ -12,7 +13,7 @@ public class DropDownListController  {
         this.readFileObj = new ReadFile();
     }
 
-    public void addDoctorsToDropDown(String strSpecilityArea, JComboBox listOfDoctorsComboBox) {
+    public void addDoctorsToDropDown(String strSpecilityArea, JComboBox listOfDoctorsComboBox) {//add doctors to doctors dropdowns in users interfaces
         ArrayList<String> totalRowsArray = this.readFileObj.readTotalFile(new File("src\\TxtFiles\\MedicalOfficer.mov"));
         String[] strDoctorLineDetails;
         for (int count = 0; count < totalRowsArray.size(); count++) {
@@ -24,7 +25,7 @@ public class DropDownListController  {
 
     }
 
-    public void addItemsToDropdown(ArrayList<String> strDropDownListItems, JComboBox comboBox) {
+    public void addItemsToDropdown(ArrayList<String> strDropDownListItems, JComboBox comboBox) {//add items to dropdown by raeding the file
 
         for (int count = 0; count < strDropDownListItems.size(); count++) {
             comboBox.addItem(strDropDownListItems.get(count));
@@ -32,7 +33,7 @@ public class DropDownListController  {
         comboBox.setSelectedItem(null);
     }
 
-    public void addPatientsToDropDown(JComboBox comboBox) {
+    public void addPatientsToDropDown(JComboBox comboBox) {//add patients to the patient dropdown by reading the patient file
 
         ArrayList<String> totalRowsArray = this.readFileObj.readTotalFile(new File("src\\TxtFiles\\Pateint.mov"));
 

@@ -8,6 +8,7 @@ import Controllers.ResizeInternalFrame;
 import java.awt.Color;
 import Controllers.JpanelGradient;
 import Controllers.WriteFile;
+import View.CommonFrames.Help;
 import View.LoginInterface.Login;
 import java.io.File;
 
@@ -30,14 +31,14 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
         this.setPatientDetails(patientDetails);
     }
 
-    public void startUp() {
+    public void startUp() {//startup methods
         initComponents();
         selectColors.setUpButton(jButton16);
         setLogo();
         new ResizeInternalFrame(new WelcomeFrameArt(), jDesktopPane1);
     }
 
-    public void setLogo() {
+    public void setLogo() {//set hospital logo to the lable
         jLabel1.setIcon(new ImageController().setImageSize("src\\Logos\\logo2darkbg.png", 60, 240));
     }
 
@@ -106,17 +107,18 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
             }
         });
 
+        jDesktopPane1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 216, 255)));
         jDesktopPane1.setMinimumSize(new java.awt.Dimension(1090, 960));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1090, Short.MAX_VALUE)
+            .addGap(0, 1088, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 960, Short.MAX_VALUE)
+            .addGap(0, 958, Short.MAX_VALUE)
         );
 
         jButton1.setBackground(new java.awt.Color(0, 216, 255));
@@ -232,6 +234,11 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_ask_question_30px.png"))); // NOI18N
         jButton15.setText("Help                                ");
         jButton15.setBorder(null);
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
 
         jButton16.setBackground(new Color(0,0,0,0));
         jButton16.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -359,7 +366,7 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (this.getExtendedState() != PatientDashboardInterface.MAXIMIZED_BOTH) {
+        if (this.getExtendedState() != PatientDashboardInterface.MAXIMIZED_BOTH) {//make the frame resizeable
             this.setExtendedState(PatientDashboardInterface.MAXIMIZED_BOTH);
         } else {
             this.setExtendedState(PatientDashboardInterface.NORMAL);
@@ -371,7 +378,7 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
-        try {
+        try {//make the patient dashboard invisible and login frame visible
             new File("src\\TxtFiles\\SavedUser.mov").delete();
             this.dispose();
             new Login().setVisible(true);
@@ -380,7 +387,7 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
-
+//make the patient add appoinment frame visible
         clearDesktopPane(jButton13);
 
         try {
@@ -392,7 +399,7 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-
+//make the patient add compalaint visible 
         clearDesktopPane(jButton9);
 
         new ResizeInternalFrame(new PatientAddComplaint(this.getPatientDetails(), selectColors.getPanelBackgroundColor(),
@@ -400,7 +407,7 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-
+// make the patient view appoinment frame visible
         clearDesktopPane(jButton6);
 
         try {
@@ -411,7 +418,7 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
-
+//make the patient view complaint frame visible
         clearDesktopPane(jButton7);
 
         new ResizeInternalFrame(new ViewComplain("Patient", selectColors.getPanelBackgroundColor(),
@@ -419,7 +426,7 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        clearDesktopPane(jButton4);
+        clearDesktopPane(jButton4);//make the patient profile visible
 
         try {
             new ResizeInternalFrame(new PatientProfile(this.getPatientDetails(), selectColors.getPanelBackgroundColor(),
@@ -443,7 +450,7 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        int setX = evt.getXOnScreen();
+        int setX = evt.getXOnScreen();//make the frame draggable
         int setY = evt.getYOnScreen();
         this.setLocation(setX - x, setY - y);
     }//GEN-LAST:event_jPanel1MouseDragged
@@ -454,12 +461,20 @@ public class PatientDashboardInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
-        new WriteFile().setNumber("src\\TxtFiles\\Colors.mov");
+        new WriteFile().setNumber("src\\TxtFiles\\Colors.mov");//change the color theme of programme
         this.dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_jButton16MouseClicked
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+       //make the patient Help frame visible
+        clearDesktopPane(jButton15);
+
+        new ResizeInternalFrame(new Help("Patient", selectColors.getPanelBackgroundColor(),
+                selectColors.getFontBorderColor()), jDesktopPane1);
+    }//GEN-LAST:event_jButton15MouseClicked
     public void clearDesktopPane(JButton button) {
-        setBackgroundColor(new Color(0, 0, 0, 0));
+        setBackgroundColor(new Color(0, 0, 0, 0));//clear the desktoppane
         jDesktopPane1.removeAll();
         jDesktopPane1.repaint();
         button.setBackground(new Color(0, 0, 0, 100));

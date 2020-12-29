@@ -1,6 +1,5 @@
 package Controllers;
 
-
 import java.io.File;
 
 import java.io.IOException;
@@ -10,10 +9,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import Controllers.FileSecurity;
 import java.util.ArrayList;
+//WriteFile.java
 
 public class WriteFile {
 
-    public void WriteInFile(String line, File filelocation) {
+    public void WriteInFile(String line, File filelocation) {//write the objects of users in files
 
         try {
             FileSecurity fileSecuryty = new FileSecurity(filelocation.toString());
@@ -27,14 +27,27 @@ public class WriteFile {
         }
     }
 
-    public void UserLog(String username, String userType) {
+    public void writeInSavedUserFile(String line, File fileLocation) {//write the saved login data in saveduser file 
+        try {
+            FileSecurity fileSecuryty = new FileSecurity(fileLocation.toString());
+            FileWriter file = new FileWriter(fileSecuryty.setFilePathToTxt());
+            PrintWriter write = new PrintWriter(file);
+            write.print(line);
+            file.close();
+            write.close();
+            fileSecuryty.setFilePathMOV();
+        } catch (Exception e) {
+        }
+    }
+
+    public void UserLog(String username, String userType) {//write the user login details in the file
 
         try {
             FileSecurity fileSecuryty = new FileSecurity("src\\TxtFiles\\UserLog.mov");
             FileWriter file = new FileWriter(fileSecuryty.setFilePathToTxt(), true);
             PrintWriter write = new PrintWriter(file);
 
-            write.print("|~"+LocalDate.now() + "~" + LocalDateTime.now().toLocalTime() + " ~" + username + "~" + userType + "\n");
+            write.print("|~" + LocalDate.now() + "~" + LocalDateTime.now().toLocalTime() + " ~" + username + "~" + userType + "\n");
             file.close();
             write.close();
             fileSecuryty.setFilePathMOV();
@@ -43,7 +56,7 @@ public class WriteFile {
 
     }
 
-    public void setNumber(String filePath) {
+    public void setNumber(String filePath) {// write numbers in the file 
 
         try {
             FileSecurity fileSecuryty = new FileSecurity(filePath);
@@ -58,7 +71,7 @@ public class WriteFile {
         }
     }
 
-    public void AddpdownListItem(ArrayList<String> strNewItem, File fileLocation) {
+    public void AddpdownListItem(ArrayList<String> strNewItem, File fileLocation) {// write in dropdownlist item file for add new items
         try {
             FileSecurity fileSecuryty = new FileSecurity(fileLocation.toString());
             new File(fileSecuryty.setFilePathToTxt()).delete();
@@ -76,16 +89,4 @@ public class WriteFile {
         }
     }
 
-    public void writeInSavedUserFile(String line, File fileLocation) {
-        try {
-            FileSecurity fileSecuryty = new FileSecurity(fileLocation.toString());
-            FileWriter file = new FileWriter(fileSecuryty.setFilePathToTxt());
-            PrintWriter write = new PrintWriter(file);
-            write.print(line);
-            file.close();
-            write.close();
-            fileSecuryty.setFilePathMOV();
-        } catch (Exception e) {
-        }
-    }
 }

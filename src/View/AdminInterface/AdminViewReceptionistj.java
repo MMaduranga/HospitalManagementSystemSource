@@ -1049,7 +1049,7 @@ public class AdminViewReceptionistj extends javax.swing.JInternalFrame {
         simpleMethods.changeFilesLocation(jTextField9);
         simpleMethods.changeFilesLocation(jTextField13);
         simpleMethods.changeFilesLocation(jTextField2);
-        checkValidation("");
+        checkValidation("~none");
         setTextFieldText(blankArray);
     }//GEN-LAST:event_jButton8ActionPerformed
 
